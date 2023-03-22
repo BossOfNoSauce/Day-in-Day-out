@@ -15,4 +15,10 @@ public class Interactor : MonoBehaviour
     {
         numFound = Physics.OverlapSphereNonAlloc(interactionPoint.position, interactionPointRadius, colliders, interactableMask);
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(interactionPoint.position, interactionPointRadius);
+    }
 }

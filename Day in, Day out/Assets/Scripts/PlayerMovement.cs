@@ -7,6 +7,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
 
+   
+    //public CharacterRotation = Transform.rotation;
+
+    public GameObject Camera;
     public float groundDrag;
 
     [Header("Ground Check")]
@@ -27,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+       
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
@@ -38,6 +43,16 @@ public class PlayerMovement : MonoBehaviour
 
         MyInput();
         SpeedControl();
+        
+        transform.rotation = Camera.transform.rotation;
+        //transform.rotation = Quaternion.identity;
+        //transform.rotation = Quaternion.identity;
+
+
+
+
+       
+
 
         if (grounded)
         {
@@ -51,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         if (verticalInput > 0 || horizontalInput > 0)
         {
             footstepsSound.enabled = true;
-            Debug.Log("jnhknikjhbnjk");
+            
         }
         else
         {
