@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Computer : MonoBehaviour, Iinteractable
 {
-    public string InteractionPrompt => throw new System.NotImplementedException();
+    [SerializeField] private string prompt;
+
+    public string InteractionPrompt => prompt; 
+
+    
 
     public bool Interact(Interactor interactor)
     {
-        throw new System.NotImplementedException();
+        //this is what happenes when you interact
+        Debug.Log("Turning on computer");
+        return true;
     }
 
     // Start is called before the first frame update
