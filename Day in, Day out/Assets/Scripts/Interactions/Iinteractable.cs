@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface Iinteractable
 {
-    public string InteractionPrompt { get; }
-    public bool Interact(Interactor interactor);
+   [SerializeField] string InteractionPrompt { get; }
+   [SerializeField] bool Interact(Interactor interactor);
 }
