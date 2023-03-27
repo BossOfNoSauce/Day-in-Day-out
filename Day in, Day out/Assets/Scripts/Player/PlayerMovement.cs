@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
-    bool grounded;
+    public bool grounded = true;
 
     public Transform orientation;
 
@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
 
     public AudioSource footstepsSound;
+
+    public bool InGame = false;
 
     private void Start()
     {
@@ -49,18 +51,14 @@ public class PlayerMovement : MonoBehaviour
         //transform.rotation = Quaternion.identity;
 
 
-
-
-       
-
-
         if (grounded)
         {
             rb.drag = groundDrag;
         }
         else
         {
-            rb.drag = 0;
+            rb.drag = groundDrag;
+
         }
 
         if (verticalInput > 0 || horizontalInput > 0)
@@ -89,8 +87,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        if(InGame == false)
+        {
+            moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        }
+       
 
 
     }

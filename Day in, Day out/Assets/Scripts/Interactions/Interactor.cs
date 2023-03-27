@@ -24,19 +24,32 @@ public class Interactor : MonoBehaviour
         {
             interactable = colliders[0].GetComponent<Iinteractable>();
 
-            if (interactable != null)
+             if (interactable != null)
             {
-                if (!interactionPromptUI.IsDisplayed) interactionPromptUI.SetUp(interactable.InteractionPrompt);
+               /* if (!interactionPromptUI.IsDisplayed)
+                {
+                    interactionPromptUI.SetUp(interactable.InteractionPrompt);
+                } */
 
-                if (Input.GetKeyDown("e")) interactable.Interact(this);
-            }
+                if (Input.GetKeyDown("e"))
+                {
+                    interactable.Interact(this);
+                }
+            } 
 
 
         }
         else
         {
-            if (interactable != null) interactable = null;
-            if (interactionPromptUI.IsDisplayed) interactionPromptUI.Close();
+            if (interactable != null)
+            {
+                interactable = null;
+            }
+
+           /* if (interactionPromptUI.IsDisplayed)
+            {
+                interactionPromptUI.Close();
+            }*/
         }
     }
 
