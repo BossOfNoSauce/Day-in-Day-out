@@ -109,4 +109,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+   /* public void IEnumerator()
+    {
+        yield return new WaitForSeconds(3);
+        // the text and shit
+
+    } */
+
 }

@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Urinal : MonoBehaviour, Iinteractable
 {
+    PlayerMovement playerController;
+    public GameObject Player;
+    //player is needed so it can get da script
+
+    PlayerCam playerCam;
+    public GameObject MainCam;
+
+
     [SerializeField] private string prompt;
 
     public string InteractionPrompt => prompt;
@@ -19,9 +27,9 @@ public class Urinal : MonoBehaviour, Iinteractable
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
+        playerController = Player.GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -33,9 +41,9 @@ public class Urinal : MonoBehaviour, Iinteractable
 
     public void game()
     {
-        //Set InGame bool to true
+        playerController.InGame = true;
 
-        //Move Camera into better position
+        //Move Camera into better position (maybe)
 
         //waitforseconds startup time and tutorial text
 
