@@ -9,10 +9,10 @@ public class PlayerMovement : MonoBehaviour
 
 
     //public CharacterRotation = Transform.rotation;
-   
 
 
-    PlayerCam playerCam;
+
+    FirstPersonCameraRotation playerCam;
     public GameObject Camera;
     public float groundDrag;
 
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        playerCam = Camera.GetComponent<PlayerCam>();
+        playerCam = Camera.GetComponent<FirstPersonCameraRotation>();
     }
 
     private void Start()
@@ -124,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
         
 
         Debug.Log("takin a fat piss bro");
-        playerCam.noMovement = true;
+        
         yield return new WaitForSeconds(21);
         InGame = false;
     }
