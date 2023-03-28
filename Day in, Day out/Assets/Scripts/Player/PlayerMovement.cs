@@ -7,9 +7,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
 
-   
-    //public CharacterRotation = Transform.rotation;
 
+    //public CharacterRotation = Transform.rotation;
+   
+
+
+    PlayerCam playerCam;
     public GameObject Camera;
     public float groundDrag;
 
@@ -30,6 +33,11 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource footstepsSound;
 
     public bool InGame = false;
+
+    private void Awake()
+    {
+        playerCam = Camera.GetComponent<PlayerCam>();
+    }
 
     private void Start()
     {
@@ -109,11 +117,21 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-   IEnumerator StartUrination()
+    IEnumerator Pissing()
     {
-        yield return new WaitForSeconds(3);
-        // the text and shit
+        //game timer
+        
+        
 
+        Debug.Log("takin a fat piss bro");
+        playerCam.noMovement = true;
+        yield return new WaitForSeconds(21);
+        InGame = false;
+    }
+
+    public void DummyFunc()
+    {
+        StartCoroutine(Pissing());
     }
 
 }
