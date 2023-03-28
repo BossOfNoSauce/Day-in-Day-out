@@ -11,6 +11,8 @@ public class Urinal : MonoBehaviour, Iinteractable
     PlayerCam playerCam;
     public GameObject MainCam;
 
+    public AudioSource audioSource;
+    public AudioClip pissmusic;
 
     [SerializeField] private string prompt;
 
@@ -30,6 +32,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     void Awake()
     {
         playerController = Player.GetComponent<PlayerMovement>();
+        
     }
 
     // Update is called once per frame
@@ -45,13 +48,22 @@ public class Urinal : MonoBehaviour, Iinteractable
 
         //Move Camera into better position (maybe)
 
-        //waitforseconds startup time and tutorial text
+        StartCoroutine(StartUrination());
 
-        //game timer start
+        
 
         //apply camera adjustments
 
         //end game
 
+    }
+
+    IEnumerator StartUrination()
+    {
+        Debug.Log("boutta piss");
+        yield return new WaitForSeconds(3);
+        audioSource.PlayOneShot(pissmusic, 0.7F);
+        playerController.DummyFunc();
+        // the text
     }
 }
