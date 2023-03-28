@@ -109,11 +109,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-   /* public void IEnumerator()
+   IEnumerator StartUrination()
     {
         yield return new WaitForSeconds(3);
         // the text and shit
 
-    } */
+    }
 
 }
