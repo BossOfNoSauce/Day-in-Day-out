@@ -124,8 +124,9 @@ public class PlayerMovement : MonoBehaviour
         
 
         Debug.Log("takin a fat piss bro");
-        
+     
         yield return new WaitForSeconds(21);
+
         InGame = false;
     }
 

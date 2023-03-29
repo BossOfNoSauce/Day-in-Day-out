@@ -5,11 +5,15 @@ using UnityEngine;
 public class Urinal : MonoBehaviour, Iinteractable
 {
     PlayerMovement playerController;
+    
     public GameObject Player;
     //player is needed so it can get da script
 
     PlayerCam playerCam;
     public GameObject MainCam;
+    FirstPersonCameraRotation firstPersonCameraRotation;
+
+    //public GameObject target;
 
     public AudioSource audioSource;
     public AudioClip pissmusic;
@@ -32,6 +36,8 @@ public class Urinal : MonoBehaviour, Iinteractable
     void Awake()
     {
         playerController = Player.GetComponent<PlayerMovement>();
+
+        firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
         
     }
 
@@ -64,6 +70,7 @@ public class Urinal : MonoBehaviour, Iinteractable
         yield return new WaitForSeconds(3);
         audioSource.PlayOneShot(pissmusic, 0.7F);
         playerController.DummyFunc();
+        firstPersonCameraRotation.noMovement = true;
         // the text
     }
 }
