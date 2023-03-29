@@ -9,6 +9,7 @@ public class FirstPersonCameraRotation : MonoBehaviour {
     public float _degreesPerSecond = 30f;
     public Vector3 _axis = Vector3.forward;
 
+    public GameObject target;
     public bool noMovement = false;
 
     private void Start()
@@ -39,9 +40,15 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 
         if(noMovement == false)
         {
-            transform.Rotate(_axis.normalized * _degreesPerSecond * Time.deltaTime);
-            Debug.Log("doodoofartballs");
+            FaceTarget();
         }
         
+    }
+
+    void FaceTarget()
+    {
+        Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+
+        transform.LookAt(Camera.main.transform.position, -Vector3.up);
     }
 }
