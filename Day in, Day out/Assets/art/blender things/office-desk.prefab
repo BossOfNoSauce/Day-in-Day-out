@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 1858508200697634875}
   - component: {fileID: 6933272712104564389}
   - component: {fileID: 1527251508867533434}
+  - component: {fileID: 4908881499616865099}
+  - component: {fileID: 9150033483031788993}
+  - component: {fileID: 4541188120691420577}
   m_Layer: 0
   m_Name: office-desk
   m_TagString: Untagged
@@ -81,3 +84,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4908881499616865099
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2431314053201260241}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.042352784, y: 0.020038866, z: 0.03043347}
+  m_Center: {x: -0.010491137, y: -0.000019463669, z: 0.00083090836}
+--- !u!65 &9150033483031788993
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2431314053201260241}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.034457996, y: 0.008231047, z: 0.030601481}
+  m_Center: {x: 0.02837487, y: -0.005879793, z: 0.0009149113}
+--- !u!65 &4541188120691420577
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2431314053201260241}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014795627, y: 0.016868198, z: 0.03055997}
+  m_Center: {x: 0.038044535, y: -0.018589111, z: 0.0008941612}
