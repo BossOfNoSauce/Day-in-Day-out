@@ -6,6 +6,12 @@ using UnityEngine;
 /// </summary>
 public class FirstPersonCameraRotation : MonoBehaviour {
 	
+    public float _degreesPerSecond = 30f;
+    public Vector3 _axis = Vector3.forward;
+
+    public GameObject target;
+    public bool noMovement = false;
+
     private void Start()
     {
 		Cursor.lockState = CursorLockMode.Locked;
@@ -31,5 +37,18 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 		var yQuat = Quaternion.AngleAxis(rotation.y, Vector3.left);
 
 		transform.localRotation = xQuat * yQuat; //Quaternions seem to rotate more consistently than EulerAngles. Sensitivity seemed to change slightly at certain degrees using Euler. transform.localEulerAngles = new Vector3(-rotation.y, rotation.x, 0);
-	}
+
+        if(noMovement == false)
+        {
+            FaceTarget();
+        }
+        
+    }
+
+    void FaceTarget()
+    {
+        Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+
+        transform.LookAt(Camera.main.transform.position, -Vector3.up);
+    }
 }
