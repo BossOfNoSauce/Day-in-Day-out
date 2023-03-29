@@ -8924,8 +8924,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _degreesPerSecond: 30
   _axis: {x: 0, y: 0, z: 1}
-  target: {fileID: 1467735987}
+  Camera: {fileID: 0}
   noMovement: 0
+  variable: 0
   sensitivity: 2
   yRotationLimit: 88
 --- !u!114 &963194230
@@ -21703,11 +21704,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: big-desk
       objectReference: {fileID: 0}
+    - target: {fileID: 1136100458326842816, guid: eba169ef6ba750a478b278a8ac5f12df, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eba169ef6ba750a478b278a8ac5f12df, type: 3}
 --- !u!4 &2102646971 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 362808478791581844, guid: eba169ef6ba750a478b278a8ac5f12df, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1136100458326842816, guid: eba169ef6ba750a478b278a8ac5f12df, type: 3}
   m_PrefabInstance: {fileID: 2102646970}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2106136679
