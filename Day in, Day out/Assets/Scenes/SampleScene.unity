@@ -3593,6 +3593,7 @@ GameObject:
   - component: {fileID: 269059054}
   - component: {fileID: 269059056}
   - component: {fileID: 269059057}
+  - component: {fileID: 269059058}
   m_Layer: 0
   m_Name: Test Guy
   m_TagString: Untagged
@@ -3694,6 +3695,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 110
   m_CollisionDetection: 0
+--- !u!65 &269059058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269059053}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999999, y: 2.9999993, z: 1.812483}
+  m_Center: {x: 0, y: 0, z: 0.045362744}
 --- !u!1 &278229192
 GameObject:
   m_ObjectHideFlags: 0
@@ -28492,10 +28506,10 @@ BoxCollider:
   m_GameObject: {fileID: 1926878008}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2166305, y: 2.5722845, z: 0.73775274}
-  m_Center: {x: -0.031981017, y: -0.9117819, z: -0.012198751}
+  m_Size: {x: 0.5127223, y: 1.243509, z: 1.1914033}
+  m_Center: {x: 0.013544989, y: -0.24739397, z: 0.21462654}
 --- !u!114 &1926878014
 MonoBehaviour:
   m_ObjectHideFlags: 0
