@@ -16,6 +16,6 @@ public class FaceCamera : MonoBehaviour
     {
         Vector3 targetPosition = new Vector3(camera.transform.position.x, transform.position.y, camera.transform.position.z);
 
-        transform.LookAt(Camera.main.transform.position, -Vector3.up);
+        transform.LookAt(Camera.main.transform.position, Vector3.up);
     }
 }
