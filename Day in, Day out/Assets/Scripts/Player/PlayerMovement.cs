@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     //public CharacterRotation = Transform.rotation;
-
+    FirstPersonCameraRotation firstPersonCameraRotation;
+    public GameObject MainCam;
 
 
     FirstPersonCameraRotation playerCam;
@@ -41,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-       
+        firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
@@ -126,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("takin a fat piss bro");
      
         yield return new WaitForSeconds(21);
-
+        firstPersonCameraRotation.noMovement = false;
         InGame = false;
     }
 

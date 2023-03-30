@@ -9,7 +9,9 @@ public class FirstPersonCameraRotation : MonoBehaviour {
     public float _degreesPerSecond = 30f;
     public Vector3 _axis = Vector3.forward;
 
-    public GameObject Camera;
+	private float time;
+	public Transform CameraPos;
+	public GameObject Camera;
     public bool noMovement = false;
 
 	float smooth = 5.0f;
@@ -42,19 +44,21 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 
 		transform.localRotation = xQuat * yQuat; //Quaternions seem to rotate more consistently than EulerAngles. Sensitivity seemed to change slightly at certain degrees using Euler. transform.localEulerAngles = new Vector3(-rotation.y, rotation.x, 0);
 
-        if(noMovement == true)
-        {
-			//float tiltAroundZ = Input.GetAxis("Horizontal") * tiltAngle;
-			//float tiltAroundX = Input.GetAxis("Vertical") * tiltAngle;
-			variable = variable + 1;
+		if (noMovement == true)
+		{
 
 
+
+
+
+
+			/* variable = variable + 1;
 			Quaternion target = Quaternion.Euler(0, variable, 0);
-
-			transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
+			Camera.transform.rotation = Quaternion.Slerp(Camera.transform.rotation, target, Time.deltaTime * smooth);*/
 		}
+	}
         
     }
 
    
-}
+

@@ -71,6 +71,11 @@ public class Urinal : MonoBehaviour, Iinteractable
         audioSource.PlayOneShot(pissmusic, 0.7F);
         playerController.DummyFunc();
         firstPersonCameraRotation.noMovement = true;
+        Debug.Log(playerController.InGame);
+        if (playerController.InGame == false)
+        {
+            firstPersonCameraRotation.noMovement = false;
+        }
         // the text
     }
 }
