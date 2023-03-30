@@ -9,6 +9,8 @@ public class FirstPersonCameraRotation : MonoBehaviour {
     public float _degreesPerSecond = 30f;
     public Vector3 _axis = Vector3.forward;
 
+
+	public GameObject target;
 	private float time;
 	public Transform CameraPos;
 	public GameObject Camera;
@@ -46,7 +48,9 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 
 		if (noMovement == true)
 		{
+			Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
 
+			Camera.transform.LookAt(target.transform.position, Vector3.up);
 
 
 

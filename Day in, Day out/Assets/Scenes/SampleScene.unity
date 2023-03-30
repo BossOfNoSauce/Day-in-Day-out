@@ -12264,7 +12264,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _degreesPerSecond: 30
   _axis: {x: 0, y: 0, z: 1}
-  Camera: {fileID: 0}
+  target: {fileID: 1467735987}
+  CameraPos: {fileID: 963194228}
+  Camera: {fileID: 963194225}
   noMovement: 0
   variable: 0
   sensitivity: 2
@@ -19818,7 +19820,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467735987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 82.14, y: 6.14, z: 10.11}
+  m_LocalPosition: {x: 82.14, y: 7.68, z: 10.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
