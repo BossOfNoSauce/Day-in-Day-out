@@ -8,7 +8,8 @@ public class Urinal : MonoBehaviour, Iinteractable
     
     public GameObject Player;
     //player is needed so it can get da script
-
+    TargetMovement targetMovement;
+    public GameObject dipshitCube;
     PlayerCam playerCam;
     public GameObject MainCam;
     FirstPersonCameraRotation firstPersonCameraRotation;
@@ -38,6 +39,8 @@ public class Urinal : MonoBehaviour, Iinteractable
         playerController = Player.GetComponent<PlayerMovement>();
 
         firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
+
+        targetMovement = dipshitCube.GetComponent<TargetMovement>();
         
     }
 
@@ -68,6 +71,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     {
         Debug.Log("boutta piss");
         yield return new WaitForSeconds(3);
+        targetMovement.GameIsActive = true;
         audioSource.PlayOneShot(pissmusic, 0.7F);
         playerController.DummyFunc();
         firstPersonCameraRotation.noMovement = true;
