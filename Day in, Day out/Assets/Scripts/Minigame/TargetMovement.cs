@@ -9,57 +9,54 @@ public class TargetMovement : MonoBehaviour
     Vector3 pointA;
     Vector3 pointB;
     float horizontalInput;
-    float thecube;
+    
+    public float swayTime = 5f;
+    float time = 0f;
     public bool GameIsActive = true;
-
+    public Vector3 right;
     public Rigidbody m_rigidbody;
     public float m_Thrust = 5f;
 
     void Start()
     {
+        time = swayTime / 2;
+
         horizontalInput = Input.GetAxisRaw("horizontalcool");
-        pointA = new Vector3(65, 8, 12);
-        pointB = new Vector3(100, 8, 12);
-        //thecube = transform.position.x + (horizontalInput * speed2);
+        
+        
+
+        m_rigidbody.velocity = right;
     }
 
     void Update()
     {
-        StartCoroutine(MoveObj());
-        Debug.Log(thecube);
-       // transform.position = new Vector3(thecube,8,12);
+        time += Time.deltaTime;
+        if (time > swayTime)
+        {
+            m_rigidbody.velocity = -1 * Mathf.Sign(m_rigidbody.velocity.x) * right;
+            time = 0f;
+        }
+     
+      //set barriers that when on collided, it game overs.
+
+      //have arrow keys add force to the cube;
 
     }
 
-    IEnumerator MoveObj()
+    void MoveObj()
     {
-        while (GameIsActive == true)
-        {
-            m_rigidbody.AddForce(transform.right * m_Thrust);
-            yield return new WaitForSeconds(1);
-            m_rigidbody.velocity = Vector3.zero;
-            m_rigidbody.AddForce(-transform.right * m_Thrust);
-            yield return new WaitForSeconds(1);
-            m_rigidbody.velocity = Vector3.zero;
-        }
+       
         
 
 
 
 
-        //PingPong between 0 and 1
-        //float time = Mathf.PingPong(Time.time * speed, 1);
-        //transform.position = Vector3.Lerp(pointA, pointB, time);
+        
+       
     }
 
-    void Move()
-    {
-      
-    }
+   
 
 
 
-    //have control over object
-
-    // if z position is over certain threshold, fail state
 }
