@@ -12188,7 +12188,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.65
+  m_Volume: 0.065
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -14731,7 +14731,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   - component: {fileID: 963194230}
   - component: {fileID: 963194229}
   m_Layer: 0
@@ -14741,14 +14740,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -23294,7 +23285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.15
-  swayTime: 5
+  swayTime: 3
   GameIsActive: 0
   right: {x: 5, y: 0, z: 0}
   m_rigidbody: {fileID: 1467735993}
@@ -34569,7 +34560,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.032
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -34669,7 +34660,11 @@ MonoBehaviour:
   dipshitCube: {fileID: 1467735987}
   MainCam: {fileID: 963194225}
   audioSource: {fileID: 2114999373}
-  pissmusic: {fileID: 8300000, guid: 0dcdde0cea53aaf46a59e9c4fc19f6c8, type: 3}
+  audioClips:
+  - {fileID: 8300000, guid: f92103565838fe44aa1447cfebb67f81, type: 3}
+  - {fileID: 8300000, guid: fb7e8c8f5b2a7b54c8d0b9d391f380ac, type: 3}
+  - {fileID: 8300000, guid: 0dcdde0cea53aaf46a59e9c4fc19f6c8, type: 3}
+  - {fileID: 8300000, guid: 90a86c217c4f2ad4b923797c3055df4d, type: 3}
   prompt: 
 --- !u!65 &2114999375
 BoxCollider:
