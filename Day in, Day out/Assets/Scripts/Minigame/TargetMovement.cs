@@ -17,6 +17,7 @@ public class TargetMovement : MonoBehaviour
     public bool GameFail = false;
     public float Power = 10f;
     public bool velocityActive = true;
+    public bool GameOver = false;
     
 
     void Start()
@@ -39,6 +40,10 @@ public class TargetMovement : MonoBehaviour
                 time = 0f;
                 Dafunk();
             }
+        }
+        if(GameOver== true)
+        {
+            m_rigidbody.velocity = Vector3.zero;
         }
 
         if (GameFail == true)
@@ -78,7 +83,7 @@ public class TargetMovement : MonoBehaviour
         }
     }
 
-
+   
 
 
 

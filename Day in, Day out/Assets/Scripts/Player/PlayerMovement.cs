@@ -118,22 +118,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    IEnumerator Pissing()
-    {
-        //game timer
-        
-        
-
-        Debug.Log("takin a fat piss bro");
-     
-        yield return new WaitForSeconds(21);
-        firstPersonCameraRotation.noMovement = false;
-        InGame = false;
-    }
-
-    public void DummyFunc()
-    {
-        StartCoroutine(Pissing());
-    }
+    
 
 }

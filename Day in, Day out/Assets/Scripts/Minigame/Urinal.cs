@@ -17,7 +17,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     //public GameObject target;
 
     public AudioSource audioSource;
-    public AudioClip pissmusic;
+    public AudioClip[] audioClips;
 
     [SerializeField] private string prompt;
 
@@ -69,17 +69,17 @@ public class Urinal : MonoBehaviour, Iinteractable
 
     IEnumerator StartUrination()
     {
-        Debug.Log("boutta piss");
+        
         yield return new WaitForSeconds(3);
         targetMovement.GameIsActive = true;
-        audioSource.PlayOneShot(pissmusic, 0.7F);
-        playerController.DummyFunc();
+        audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
+        audioSource.Play();
         firstPersonCameraRotation.noMovement = true;
-        Debug.Log(playerController.InGame);
-        if (playerController.InGame == false)
-        {
-            firstPersonCameraRotation.noMovement = false;
-        }
+        yield return new WaitForSeconds(21);
+        firstPersonCameraRotation.noMovement = false;
+        playerController.InGame = false;
+        targetMovement.GameOver = true;
+        
         // the text
     }
 }
