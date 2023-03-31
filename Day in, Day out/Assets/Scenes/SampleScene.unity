@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4310,8 +4310,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281129699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -394.6923, y: 449.3174, z: -7.4}
-  m_LocalScale: {x: 38.724857, y: 17.601963, z: 0.5321}
+  m_LocalPosition: {x: -394.7784, y: 449.3174, z: -7.4}
+  m_LocalScale: {x: 38.554466, y: 17.601963, z: 0.5321}
   m_Children: []
   m_Father: {fileID: 735837887}
   m_RootOrder: 35
@@ -18723,8 +18723,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165233774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -335.34, y: 454.2037, z: -20.5}
-  m_LocalScale: {x: 6.1601534, y: 6.001437, z: 0.5321}
+  m_LocalPosition: {x: -335.358, y: 454.2037, z: -20.5}
+  m_LocalScale: {x: 6.1964984, y: 6.001437, z: 0.5321}
   m_Children: []
   m_Father: {fileID: 735837887}
   m_RootOrder: 61
@@ -35131,6 +35131,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1136100458326842816, guid: eba169ef6ba750a478b278a8ac5f12df, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1646.0597
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136100458326842816, guid: eba169ef6ba750a478b278a8ac5f12df, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.73
       objectReference: {fileID: 0}
@@ -35140,7 +35144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1136100458326842816, guid: eba169ef6ba750a478b278a8ac5f12df, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -107.02741
+      value: -115.853
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eba169ef6ba750a478b278a8ac5f12df, type: 3}
