@@ -28,12 +28,11 @@ public class Urinal : MonoBehaviour, Iinteractable
     public bool Interact(Interactor interactor)
     {
         //this is what happenes when you interact
-        Debug.Log("im taking a peeesss");
         game();
         return true;
     }
 
-    // Start is called before the first frame update
+    // Awake is called before the first frame update
     void Awake()
     {
         playerController = Player.GetComponent<PlayerMovement>();
@@ -54,32 +53,24 @@ public class Urinal : MonoBehaviour, Iinteractable
     public void game()
     {
         playerController.InGame = true;
-
-        //Move Camera into better position (maybe)
-
         StartCoroutine(StartUrination());
-
-        
-
-        //apply camera adjustments
-
-        //end game
-
     }
 
     IEnumerator StartUrination()
     {
-        
-        yield return new WaitForSeconds(3);
-        targetMovement.GameIsActive = true;
-        audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
-        audioSource.Play();
-        firstPersonCameraRotation.noMovement = true;
-        yield return new WaitForSeconds(21);
-        firstPersonCameraRotation.noMovement = false;
-        playerController.InGame = false;
-        targetMovement.GameOver = true;
-        
-        // the text
+        if (targetMovement.GameOver == false || targetMovement.GameFail == false)
+        {
+            yield return new WaitForSeconds(3);
+            targetMovement.GameIsActive = true;
+            audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
+            audioSource.Play();
+            firstPersonCameraRotation.noMovement = true;
+            Player.transform.position = new Vector3(82, 7.5f, 27f);
+            yield return new WaitForSeconds(21);
+            firstPersonCameraRotation.noMovement = false;
+            playerController.InGame = false;
+            targetMovement.GameOver = true;
+        }
+       
     }
 }
