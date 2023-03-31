@@ -9,27 +9,47 @@ public class TargetMovement : MonoBehaviour
     Vector3 pointA;
     Vector3 pointB;
     float horizontalInput;
+    float thecube;
+    public bool GameIsActive = true;
 
+    public Rigidbody m_rigidbody;
+    public float m_Thrust = 5f;
 
     void Start()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal2");
+        horizontalInput = Input.GetAxisRaw("horizontalcool");
         pointA = new Vector3(65, 8, 12);
         pointB = new Vector3(100, 8, 12);
+        //thecube = transform.position.x + (horizontalInput * speed2);
     }
 
     void Update()
     {
-        //MoveObj();
-        transform.position = new Vector3(transform.position.x + (horizontalInput * speed2),8,12);
+        StartCoroutine(MoveObj());
+        Debug.Log(thecube);
+       // transform.position = new Vector3(thecube,8,12);
 
     }
 
-    void MoveObj()
+    IEnumerator MoveObj()
     {
+        while (GameIsActive == true)
+        {
+            m_rigidbody.AddForce(transform.right * m_Thrust);
+            yield return new WaitForSeconds(1);
+            m_rigidbody.velocity = Vector3.zero;
+            m_rigidbody.AddForce(-transform.right * m_Thrust);
+            yield return new WaitForSeconds(1);
+            m_rigidbody.velocity = Vector3.zero;
+        }
+        
+
+
+
+
         //PingPong between 0 and 1
-        float time = Mathf.PingPong(Time.time * speed, 1);
-        transform.position = Vector3.Lerp(pointA, pointB, time);
+        //float time = Mathf.PingPong(Time.time * speed, 1);
+        //transform.position = Vector3.Lerp(pointA, pointB, time);
     }
 
     void Move()
