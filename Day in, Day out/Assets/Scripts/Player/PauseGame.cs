@@ -5,20 +5,28 @@ using UnityEngine;
 public class PauseGame : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject MainCam;
     public bool menuActive = false;
-    
+    FirstPersonCameraRotation firstPersonCameraRotation;
+
     public void Paused()
     {
         Time.timeScale = 0f;
+        firstPersonCameraRotation.noMovement = true;
         pauseMenu.SetActive(true);
     }
 
     public void Resume()
     {
         Time.timeScale = 1.0f;
+        firstPersonCameraRotation.noMovement = false;
         pauseMenu.SetActive(false);
     }
 
+    void Start()
+    {
+        firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
+    }
     //Pauses and unpauses game on escape key
     void Update()
     {
