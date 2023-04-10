@@ -8,6 +8,8 @@ public class Computer : MonoBehaviour, Iinteractable
 
     public string InteractionPrompt => prompt;
 
+    public GameObject target;
+    public GameObject Camera;
     PlayerMovement playerMovement;
     public GameObject Player;
     public GameObject hand;
@@ -42,12 +44,19 @@ public class Computer : MonoBehaviour, Iinteractable
     {
         Mcollider.enabled = !Mcollider.enabled;
         yield return new WaitForSeconds(3);
-        Player.transform.position = new Vector3(140, 5.5f, 93.8f);
+        Player.transform.position = new Vector3(138, 5.5f, 93.8f);
         playerMovement.InGame = true;
+        firstPersonCameraRotation.FreezeMovement = true;
         hand.SetActive(true);
+        LookAt();
         
     }
 
+    void LookAt()
+    {
+        Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+        Camera.transform.LookAt(target.transform.position, Vector3.up);
+    }
     // code outline
   
     //Enable the hand object that was present THE WHOLE TIME. IT WAS ME BARRY.

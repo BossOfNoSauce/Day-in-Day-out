@@ -12,14 +12,14 @@ public class PauseGame : MonoBehaviour
     public void Paused()
     {
         Time.timeScale = 0f;
-        firstPersonCameraRotation.noMovement = true;
+        firstPersonCameraRotation.FreezeMovement = true;
         pauseMenu.SetActive(true);
     }
 
     public void Resume()
     {
         Time.timeScale = 1.0f;
-        firstPersonCameraRotation.noMovement = false;
+        firstPersonCameraRotation.FreezeMovement = false;
         pauseMenu.SetActive(false);
     }
 
