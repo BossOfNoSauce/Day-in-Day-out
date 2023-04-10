@@ -5,7 +5,11 @@ using UnityEngine;
 public class Urinal : MonoBehaviour, Iinteractable
 {
     PlayerMovement playerController;
-    
+
+    public GameObject manager;
+    GameManager gameManager;
+
+
     public GameObject Player;
     //player is needed so it can get da script
     TargetMovement targetMovement;
@@ -40,7 +44,9 @@ public class Urinal : MonoBehaviour, Iinteractable
         firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
 
         targetMovement = dipshitCube.GetComponent<TargetMovement>();
-        
+
+        gameManager = manager.GetComponent<GameManager>();
+
     }
 
     // Update is called once per frame
@@ -60,6 +66,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     {
         if (targetMovement.GameOver == false || targetMovement.GameFail == false)
         {
+            gameManager.gameActive = true;
             yield return new WaitForSeconds(3);
             targetMovement.GameIsActive = true;
             audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
