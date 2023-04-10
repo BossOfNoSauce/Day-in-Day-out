@@ -23,11 +23,11 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 
 	private void Start()
     {
-		if(FreezeMovement == false)
-        {
+		
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
-		}
+		
+		
 		
 	} 
     public float Sensitivity {
@@ -43,6 +43,14 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 	const string yAxis = "Mouse Y";
 
 	void Update(){
+		if (FreezeMovement == true)
+		{
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = false;
+			Debug.Log("poo");
+		}
+
+
 
 		if (FreezeMovement == false)
 		{
