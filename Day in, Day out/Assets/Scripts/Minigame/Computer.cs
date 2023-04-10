@@ -8,6 +8,10 @@ public class Computer : MonoBehaviour, Iinteractable
 
     public string InteractionPrompt => prompt;
 
+
+    public GameObject GameManager;
+    GameManager gameManager;
+
     public GameObject target;
     public GameObject Camera;
     PlayerMovement playerMovement;
@@ -28,10 +32,11 @@ public class Computer : MonoBehaviour, Iinteractable
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         playerMovement = Player.GetComponent<PlayerMovement>();
         firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
+        gameManager = gameManager.GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -42,6 +47,7 @@ public class Computer : MonoBehaviour, Iinteractable
 
     IEnumerator StartComputing()
     {
+        gameManager.gameActive = true;
         Mcollider.enabled = !Mcollider.enabled;
         yield return new WaitForSeconds(3);
         Player.transform.position = new Vector3(138, 5.5f, 93.8f);
