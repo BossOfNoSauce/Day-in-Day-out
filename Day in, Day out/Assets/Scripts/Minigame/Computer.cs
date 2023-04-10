@@ -8,6 +8,7 @@ public class Computer : MonoBehaviour, Iinteractable
 
     public string InteractionPrompt => prompt;
 
+    
 
     public GameObject manager;
     GameManager gameManager;
@@ -47,11 +48,11 @@ public class Computer : MonoBehaviour, Iinteractable
 
     IEnumerator StartComputing()
     {
+        playerMovement.InGame = true;
         gameManager.gameActive = true;
         Mcollider.enabled = !Mcollider.enabled;
         yield return new WaitForSeconds(3);
         Player.transform.position = new Vector3(138, 5.5f, 93.8f);
-        playerMovement.InGame = true;
         firstPersonCameraRotation.FreezeMovement = true;
         hand.SetActive(true);
         LookAt();
