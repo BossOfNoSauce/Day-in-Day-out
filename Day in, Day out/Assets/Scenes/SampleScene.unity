@@ -5030,7 +5030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 958188744}
   MainCam: {fileID: 963194225}
-  GameManager: {fileID: 1818565575}
+  manager: {fileID: 1818565575}
   menuActive: 0
 --- !u!1 &269059053
 GameObject:
@@ -44369,7 +44369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: 
-  GameManager: {fileID: 1818565575}
+  manager: {fileID: 1818565575}
   target: {fileID: 373038658}
   Camera: {fileID: 963194225}
   Player: {fileID: 1926878008}
@@ -44897,7 +44897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de88dcfe8cd83fb4ab90a4e43c5799c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 1818565575}
+  manager: {fileID: 1818565575}
   Player: {fileID: 1926878008}
   dipshitCube: {fileID: 1467735987}
   MainCam: {fileID: 963194225}

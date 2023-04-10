@@ -9,7 +9,7 @@ public class Computer : MonoBehaviour, Iinteractable
     public string InteractionPrompt => prompt;
 
 
-    public GameObject GameManager;
+    public GameObject manager;
     GameManager gameManager;
 
     public GameObject target;
@@ -36,7 +36,7 @@ public class Computer : MonoBehaviour, Iinteractable
     {
         playerMovement = Player.GetComponent<PlayerMovement>();
         firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
-        gameManager = gameManager.GetComponent<GameManager>();
+        gameManager = manager.GetComponent<GameManager>();
     }
 
     // Update is called once per frame

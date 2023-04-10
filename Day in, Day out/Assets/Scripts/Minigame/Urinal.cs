@@ -6,7 +6,7 @@ public class Urinal : MonoBehaviour, Iinteractable
 {
     PlayerMovement playerController;
 
-    public GameObject GameManager;
+    public GameObject manager;
     GameManager gameManager;
 
 
@@ -45,7 +45,7 @@ public class Urinal : MonoBehaviour, Iinteractable
 
         targetMovement = dipshitCube.GetComponent<TargetMovement>();
 
-        gameManager = gameManager.GetComponent<GameManager>();
+        gameManager = manager.GetComponent<GameManager>();
 
     }
 

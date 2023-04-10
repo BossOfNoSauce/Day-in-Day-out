@@ -6,7 +6,7 @@ public class PauseGame : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject MainCam;
-    public GameObject GameManager;
+    public GameObject manager;
     GameManager gameManager;
     
     public bool menuActive = false;
@@ -43,7 +43,7 @@ public class PauseGame : MonoBehaviour
     void Start()
     {
         firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
-        gameManager = gameManager.GetComponent<GameManager>();
+        gameManager = manager.GetComponent<GameManager>();
     }
     //Pauses and unpauses game on escape key
     void Update()
