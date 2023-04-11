@@ -13,6 +13,7 @@ public class Computer : MonoBehaviour, Iinteractable
     public GameObject manager;
     GameManager gameManager;
 
+    
     public GameObject target;
     public GameObject Camera;
     PlayerMovement playerMovement;
@@ -24,6 +25,17 @@ public class Computer : MonoBehaviour, Iinteractable
 
     public Collider Mcollider;
 
+    int score;
+    int index;
+    int index2;
+
+    public GameObject[] Spots;
+    public GameObject CurrentSpot;
+
+    public AudioSource audioSource;
+    public AudioClip type;
+
+    public bool cooldown;
     public bool Interact(Interactor interactor)
     {
         //this is what happenes when you interact
@@ -38,20 +50,26 @@ public class Computer : MonoBehaviour, Iinteractable
         playerMovement = Player.GetComponent<PlayerMovement>();
         firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
         gameManager = manager.GetComponent<GameManager>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (score == 10)
+        {
+            Debug.Log("you are win");
+        }
     }
 
     IEnumerator StartComputing()
     {
+        
         playerMovement.InGame = true;
         gameManager.gameActive = true;
         Mcollider.enabled = !Mcollider.enabled;
         yield return new WaitForSeconds(3);
+        CallSpot();
         Player.transform.position = new Vector3(138, 5.5f, 93.8f);
         firstPersonCameraRotation.FreezeMovement = true;
         hand.SetActive(true);
@@ -65,11 +83,39 @@ public class Computer : MonoBehaviour, Iinteractable
         Camera.transform.LookAt(target.transform.position, Vector3.up);
     }
     // code outline
-  
-    //Enable the hand object that was present THE WHOLE TIME. IT WAS ME BARRY.
-    //this does work, but it still might be better to freeze camera movement, and instead use mouse to control only the hand. as the current way has fucky rotation.
-    //but thats sound hard to do.
 
-    // collision array, like the parking game
-    // uh idk after that
+    //Enable the hand object that was present THE WHOLE TIME. IT WAS ME BARRY.
+
+
+    public void CallSpot()
+    {
+        index = Random.Range(0, Spots.Length);
+        CurrentSpot = Spots[index];
+        CurrentSpot.SetActive(true);
+        cooldown = false;
+    }
+
+
+    IEnumerator Reset()
+    {
+
+        audioSource.PlayOneShot(type, 1.0f);
+        yield return new WaitForSeconds(1.0f);
+        CallSpot();
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Hand" && cooldown == false)
+        {
+            cooldown = true;
+            Debug.Log("tipe");
+            score = score + 1;
+            CurrentSpot.SetActive(false);
+            StartCoroutine(Reset());
+
+        }
+
+
+    }
 }
