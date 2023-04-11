@@ -16125,6 +16125,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bc33abd088c8c804facf449280d0c4e5, type: 3}
   - {fileID: 8300000, guid: 82ae23862a9d734499e5d49f6118849b, type: 3}
   - {fileID: 8300000, guid: caaafff7f6d0abf49b2d22b8ffa5bb54, type: 3}
+  - {fileID: 8300000, guid: 1a501df4dfaad414c87f3a44268c1448, type: 3}
+  - {fileID: 8300000, guid: 45d95614302379b42b433a0323cfc435, type: 3}
   audioListener: {fileID: 830215004}
 --- !u!82 &830215006
 AudioSource:
