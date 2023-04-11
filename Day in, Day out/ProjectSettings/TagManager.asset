@@ -42,3 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: WallDetail
+    uniqueID: 2572567721
+    locked: 0
+  - name: Goop
+    uniqueID: 950275667
+    locked: 0
+  - name: Plant
+    uniqueID: 906231029
+    locked: 0
