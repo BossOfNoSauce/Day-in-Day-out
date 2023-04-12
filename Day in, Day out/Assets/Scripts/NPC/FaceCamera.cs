@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FaceCamera : MonoBehaviour
 {
-    public new GameObject camera;
+    public new GameObject target;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,8 +14,12 @@ public class FaceCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 targetPosition = new Vector3(camera.transform.position.x, transform.position.y, camera.transform.position.z);
+        Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
 
-        transform.LookAt(Camera.main.transform.position, Vector3.up);
+        transform.LookAt(targetPosition);
     }
+
+
+   
 }
+
