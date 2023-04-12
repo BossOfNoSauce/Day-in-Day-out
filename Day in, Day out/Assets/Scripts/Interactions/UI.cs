@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class UI : MonoBehaviour
 {
     public GameObject Camera;
+    public float speed;
+    public Transform target;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +20,9 @@ public class UI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            StartGame();
+            float step = speed * Time.deltaTime;
+            Camera.transform.position = Vector3.MoveTowards(Camera.transform.position, target.position, step);
+            //StartGame();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -35,4 +40,6 @@ public class UI : MonoBehaviour
     {
         Application.Quit();
     }
+
+    
 }

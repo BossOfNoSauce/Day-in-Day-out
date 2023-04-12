@@ -447,6 +447,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216277861}
   m_CullTransparentMesh: 1
+--- !u!1 &246220751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 246220752}
+  m_Layer: 0
+  m_Name: target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &246220752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246220751}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 136, y: 7.4, z: 93.68}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &332247523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,6 +1697,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d6a53abfd5b6c4cbd0578f421c3154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camera: {fileID: 1154595604}
+  speed: 10
+  target: {fileID: 246220752}
 --- !u!1 &1184148976
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,35 +2673,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4600142377430689007, guid: 435acfdf71bb1ad45916ec927906c210, type: 3}
   m_PrefabInstance: {fileID: 1629980450}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1629980453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629980451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d56093dbe7a5764d8f6053c868f86a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prompt: 
-  manager: {fileID: 0}
-  target: {fileID: 0}
-  Camera: {fileID: 0}
-  Player: {fileID: 0}
-  hand: {fileID: 0}
-  MainCam: {fileID: 0}
-  Mcollider: {fileID: 0}
-  Spots:
-  - {fileID: 1630847937}
-  - {fileID: 539046234}
-  - {fileID: 130845308}
-  - {fileID: 2065387719}
-  CurrentSpot: {fileID: 0}
-  audioSource: {fileID: 1629980454}
-  type: {fileID: 0}
-  cooldown: 0
 --- !u!82 &1629980454
 AudioSource:
   m_ObjectHideFlags: 0
