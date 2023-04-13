@@ -7,8 +7,11 @@ using System.Collections.Generic;
 /// Like those found in most FPS (First Person Shooter) games.
 /// </summary>
 public class FirstPersonCameraRotation : MonoBehaviour {
-	
-    public float _degreesPerSecond = 30f;
+
+	public GameObject manager;
+	GameManager gameManager;
+
+	public float _degreesPerSecond = 30f;
     public Vector3 _axis = Vector3.forward;
 
 	public bool David;
@@ -28,6 +31,7 @@ public class FirstPersonCameraRotation : MonoBehaviour {
     {
 
 		David = true;
+		gameManager = manager.GetComponent<GameManager>();
 
 	}
 
@@ -56,10 +60,11 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 		if(David == true)
         {
 			StartCoroutine(Thing());
-			
+			gameManager.dumb();
+
 		}
 
-		Debug.Log(David);
+		
 		
 
 		if (FreezeMovement == true)
@@ -93,6 +98,7 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 		yield return new WaitForSeconds(1f);
 		FreezeMovement = false;
 		David = false;
+		
 	}
 
 
