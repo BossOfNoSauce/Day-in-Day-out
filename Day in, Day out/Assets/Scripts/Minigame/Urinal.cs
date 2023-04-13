@@ -53,7 +53,12 @@ public class Urinal : MonoBehaviour, Iinteractable
     // Update is called once per frame
     void Update()
     {
-        
+        if (noMovement == true)
+        {
+            Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+
+            MainCam.transform.LookAt(target.transform.position, Vector3.up);
+        }
     }
 
 
@@ -84,17 +89,6 @@ public class Urinal : MonoBehaviour, Iinteractable
 
     void Freeze()
     {
-        if (noMovement == false)
-        {
-            Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
-
-           MainCam.transform.LookAt(target.transform.position, Vector3.up);
-
-
-
-
-
-           
-        }
+        
     }
 }

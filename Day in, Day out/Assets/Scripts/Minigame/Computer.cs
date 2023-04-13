@@ -58,6 +58,10 @@ public class Computer : MonoBehaviour, Iinteractable
     {
         if (score == 10)
         {
+            playerMovement.InGame = false;
+            gameManager.gameActive = false;
+            firstPersonCameraRotation.FreezeMovement = false;
+            hand.SetActive(false);
             Debug.Log("you are win");
         }
     }
@@ -117,5 +121,15 @@ public class Computer : MonoBehaviour, Iinteractable
         }
 
 
+    }
+
+    IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(1);
+        playerMovement.InGame = false;
+        gameManager.gameActive = false;
+        firstPersonCameraRotation.FreezeMovement = false;
+        hand.SetActive(false);
+        Debug.Log("you are win");
     }
 }
