@@ -5292,7 +5292,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1423548527}
+    m_TransformParent: {fileID: 308495669}
     m_Modifications:
     - target: {fileID: 4756681681627984967, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_Name
@@ -5312,39 +5312,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5418457073651457440, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 14.601391
+      value: 14.601387
       objectReference: {fileID: 0}
     - target: {fileID: 5418457073651457440, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 219.35461
+      value: 219.35458
       objectReference: {fileID: 0}
     - target: {fileID: 5418457073651457440, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.45
+      value: -0.43596047
       objectReference: {fileID: 0}
     - target: {fileID: 5418457073651457440, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2210002
+      value: 5.149048
       objectReference: {fileID: 0}
     - target: {fileID: 5418457073651457440, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.6782265
+      value: 0.10045245
       objectReference: {fileID: 0}
     - target: {fileID: 5418457073651457440, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.039080817
       objectReference: {fileID: 0}
     - target: {fileID: 5418457073651457440, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: -0.039080817
       objectReference: {fileID: 0}
     - target: {fileID: 5418457073651457440, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.706026
       objectReference: {fileID: 0}
     - target: {fileID: 5418457073651457440, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.706026
       objectReference: {fileID: 0}
     - target: {fileID: 5418457073651457440, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6967,6 +6967,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304744295}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &308495668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 308495669}
+  m_Layer: 0
+  m_Name: BottomPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &308495669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308495668}
+  m_LocalRotation: {x: 0.055268623, y: -0.99847156, z: -0, w: 0}
+  m_LocalPosition: {x: -0.62, y: -5.23, z: -2.58}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 243566622}
+  m_Father: {fileID: 1423548527}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: -6.337}
 --- !u!1 &317434907
 GameObject:
   m_ObjectHideFlags: 0
@@ -33379,7 +33410,7 @@ Transform:
   m_LocalPosition: {x: 8.72, y: 5.47, z: 55.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 243566622}
+  - {fileID: 308495669}
   m_Father: {fileID: 1342839062}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -33430,6 +33461,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: 
+  thebool: 0
+  audioSource: {fileID: 0}
+  door: {fileID: 0}
   animator: {fileID: 1423548529}
 --- !u!54 &1423548531
 Rigidbody:
@@ -43126,7 +43160,6 @@ MonoBehaviour:
   Dialogue: {fileID: 8300000, guid: cbe280c0f4f9e41488abfa0bb57f0192, type: 3}
   animator: {fileID: 756433541}
   TheBool: 0
-  door: {fileID: 8300000, guid: 55d04f859acfb4842ae643b6e08e1ece, type: 3}
   JukBox: {fileID: 830215002}
   StartGame: 0
 --- !u!4 &1818565577
