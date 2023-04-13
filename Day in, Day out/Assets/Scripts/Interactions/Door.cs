@@ -6,9 +6,10 @@ public class Door : MonoBehaviour, Iinteractable
 {
     
     [SerializeField] private string prompt;
-
+    public bool thebool;
     public string InteractionPrompt => prompt;
-
+    public AudioSource audioSource;
+    public AudioClip door;
     public Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -24,8 +25,14 @@ public class Door : MonoBehaviour, Iinteractable
 
     public bool Interact(Interactor interactor)
     {
-        //this is what happenes when you interact
-        animator.SetTrigger("Interact");
+        if(thebool == false)
+        {
+            audioSource.PlayOneShot(door, 0.7f);
+            //this is what happenes when you interact
+            animator.SetTrigger("Interact");
+            audioSource.PlayOneShot(door, 0.7f);
+            thebool = true;
+        }
         return true;
     }
 

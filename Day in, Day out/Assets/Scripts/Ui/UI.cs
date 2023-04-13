@@ -12,7 +12,8 @@ public class UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        john = false;
+        Debug.Log(john);
     }
 
     // Update is called once per frame
@@ -20,6 +21,7 @@ public class UI : MonoBehaviour
     {
         if(john == true)
         {
+            
             StartCoroutine(CameraMove());
         }
         
@@ -27,6 +29,7 @@ public class UI : MonoBehaviour
         {
             john = true;
             
+
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -47,7 +50,7 @@ public class UI : MonoBehaviour
 
     IEnumerator CameraMove()
     {
-        
+        Debug.Log("JOHN SWEEP");
         float step = speed * Time.deltaTime;
         Camera.transform.position = Vector3.MoveTowards(Camera.transform.position, target.position, step);
         yield return new WaitForSeconds(3.25f);
