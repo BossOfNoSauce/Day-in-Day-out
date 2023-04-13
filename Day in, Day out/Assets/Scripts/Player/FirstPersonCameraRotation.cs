@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 /// <summary>
 /// A simple FPP (First Person Perspective) camera rotation script.
@@ -9,25 +11,32 @@ public class FirstPersonCameraRotation : MonoBehaviour {
     public float _degreesPerSecond = 30f;
     public Vector3 _axis = Vector3.forward;
 
+	public bool David;
 
 	public GameObject target;
 	private float time;
 	public Transform CameraPos;
 	public GameObject Camera;
-    public bool noMovement = false;
+    
 	public bool FreezeMovement = false;
 
 	float smooth = 5.0f;
 	float tiltAngle = 60.0f;
 	public float variable;
 
-	private void Start()
+    private void Awake()
     {
-		
-			Cursor.lockState = CursorLockMode.Locked;
-			Cursor.visible = false;
-		
-		
+
+		David = true;
+
+	}
+
+	
+    private void Start()
+    {
+	    
+		Cursor.lockState = CursorLockMode.Locked;
+	    Cursor.visible = false;
 		
 	} 
     public float Sensitivity {
@@ -43,11 +52,21 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 	const string yAxis = "Mouse Y";
 
 	void Update(){
+
+		if(David == true)
+        {
+			StartCoroutine(Thing());
+			
+		}
+
+		Debug.Log(David);
+		
+
 		if (FreezeMovement == true)
 		{
 			Cursor.lockState = CursorLockMode.None;
 			Cursor.visible = false;
-			Debug.Log("poo");
+			
 		}
 
 
@@ -64,23 +83,21 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 
 		}
 
-		if (noMovement == true)
-		{
-			Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
-
-			Camera.transform.LookAt(target.transform.position, Vector3.up);
-
-
-
-
-
-			/* variable = variable + 1;
-			Quaternion target = Quaternion.Euler(0, variable, 0);
-			Camera.transform.rotation = Quaternion.Slerp(Camera.transform.rotation, target, Time.deltaTime * smooth);*/
-		}
+		
 	}
-        
-    }
+	IEnumerator Thing()
+	{
+		FreezeMovement = true;
+		Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+		Camera.transform.LookAt(target.transform.position, Vector3.up);
+		yield return new WaitForSeconds(1f);
+		FreezeMovement = false;
+		David = false;
+	}
+
+
+
+}
 
    
 

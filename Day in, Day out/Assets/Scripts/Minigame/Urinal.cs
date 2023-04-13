@@ -17,9 +17,9 @@ public class Urinal : MonoBehaviour, Iinteractable
     PlayerCam playerCam;
     public GameObject MainCam;
     FirstPersonCameraRotation firstPersonCameraRotation;
-
+    public GameObject target;
     //public GameObject target;
-
+    public bool noMovement = false;
     public AudioSource audioSource;
     public AudioClip[] audioClips;
 
@@ -71,13 +71,29 @@ public class Urinal : MonoBehaviour, Iinteractable
             targetMovement.GameIsActive = true;
             audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
             audioSource.Play();
-            firstPersonCameraRotation.noMovement = true;
+            noMovement = true;
             Player.transform.position = new Vector3(82, 7.5f, 27f);
             yield return new WaitForSeconds(21);
-            firstPersonCameraRotation.noMovement = false;
+            noMovement = false;
             playerController.InGame = false;
             targetMovement.GameOver = true;
         }
        
+    }
+
+    void Freeze()
+    {
+        if (noMovement == false)
+        {
+            Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+
+           MainCam.transform.LookAt(target.transform.position, Vector3.up);
+
+
+
+
+
+           
+        }
     }
 }

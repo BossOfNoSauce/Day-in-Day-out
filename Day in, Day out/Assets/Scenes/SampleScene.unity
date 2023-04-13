@@ -21443,13 +21443,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.000061035156, y: 1, z: -10.000069}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21464,10 +21464,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _degreesPerSecond: 30
   _axis: {x: 0, y: 0, z: 1}
-  target: {fileID: 1467735987}
+  David: 0
+  target: {fileID: 1085994023}
   CameraPos: {fileID: 963194228}
   Camera: {fileID: 963194225}
-  noMovement: 0
   FreezeMovement: 0
   variable: 0
   sensitivity: 2
@@ -24951,7 +24951,7 @@ GameObject:
   - component: {fileID: 1085994025}
   - component: {fileID: 1085994024}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: MoronCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24989,7 +24989,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d49a760291661354e9647c77ab0152df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25027,7 +25027,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085994023}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -53.14286, y: -10.064488, z: 1.0768766}
+  m_LocalPosition: {x: 77.5, y: -11.08, z: 84.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1765637751}
@@ -49822,6 +49822,8 @@ MonoBehaviour:
   Player: {fileID: 1926878008}
   dipshitCube: {fileID: 1467735987}
   MainCam: {fileID: 963194225}
+  target: {fileID: 1467735987}
+  noMovement: 0
   audioSource: {fileID: 2114999373}
   audioClips:
   - {fileID: 8300000, guid: f92103565838fe44aa1447cfebb67f81, type: 3}
