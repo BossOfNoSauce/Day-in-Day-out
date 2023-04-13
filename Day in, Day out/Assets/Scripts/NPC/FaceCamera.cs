@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class FaceCamera : MonoBehaviour
 {
-    public new GameObject target;
+    public GameObject target;
+
+    public FaceCamera(GameObject target)
+    {
+        this.target = target;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
