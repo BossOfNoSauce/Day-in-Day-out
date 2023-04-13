@@ -28,9 +28,7 @@ public class Door : MonoBehaviour, Iinteractable
         if(thebool == false)
         {
             audioSource.PlayOneShot(door, 0.7f);
-            //this is what happenes when you interact
             animator.SetTrigger("Interact");
-            audioSource.PlayOneShot(door, 0.7f);
             thebool = true;
         }
         return true;

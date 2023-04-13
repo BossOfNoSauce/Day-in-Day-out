@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip Dialogue;
     public Animator animator;
-
+    public AudioClip door;
     public bool TheBool;
 
     public GameObject JukBox;
@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(2);
             audioSource.PlayOneShot(Dialogue, 0.7F);
             yield return new WaitForSeconds(52);
+            audioSource.PlayOneShot(door, 0.7f);
             animator.SetTrigger("Open");
             jukebox.startMus = true;
             
