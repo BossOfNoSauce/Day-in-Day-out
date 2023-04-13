@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(2);
             audioSource.PlayOneShot(Dialogue, 0.7F);
             yield return new WaitForSeconds(52);
-            animator.SetTrigger("Interact");
+            animator.SetTrigger("Open");
             jukebox.startMus = true;
             
         }
