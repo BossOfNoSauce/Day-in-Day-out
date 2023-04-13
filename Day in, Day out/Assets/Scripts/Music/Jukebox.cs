@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Jukebox : MonoBehaviour
 {
+    public bool startMus;
     public AudioSource audioSource;
 
     public AudioClip[] audioClips;
@@ -20,10 +21,14 @@ public class Jukebox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!audioSource.isPlaying)
+        if(startMus == true)
         {
-            PlayRandom();
+            if (!audioSource.isPlaying)
+            {
+                PlayRandom();
+            }
         }
+       
 
     }
 

@@ -23,6 +23,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     public AudioSource audioSource;
     public AudioClip[] audioClips;
 
+    
     [SerializeField] private string prompt;
 
     public string InteractionPrompt => prompt;
@@ -52,7 +53,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
 
