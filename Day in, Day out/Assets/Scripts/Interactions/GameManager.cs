@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public AudioClip Dialogue;
     public Animator animator;
 
+    public bool TheBool;
+
     public GameObject JukBox;
     Jukebox jukebox;
 
@@ -28,11 +30,17 @@ public class GameManager : MonoBehaviour
     //Intro cutscene
     public IEnumerator Cutscene()
     {
-        yield return new WaitForSeconds(2);
-        audioSource.PlayOneShot(Dialogue);
-        yield return new WaitForSeconds(52);
-        animator.SetTrigger("Interact");
-        jukebox.startMus = true;
+        if(TheBool == false)
+        {
+            TheBool = true;
+            yield return new WaitForSeconds(2);
+            audioSource.PlayOneShot(Dialogue, 0.7F);
+            yield return new WaitForSeconds(52);
+            animator.SetTrigger("Interact");
+            jukebox.startMus = true;
+            
+        }
+        
 
     }
 
