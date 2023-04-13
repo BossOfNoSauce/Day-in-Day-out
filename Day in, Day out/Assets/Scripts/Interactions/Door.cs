@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Door : MonoBehaviour, Iinteractable
 {
-
-
+    
     [SerializeField] private string prompt;
 
     public string InteractionPrompt => prompt;
 
-    public Animation anim;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +25,7 @@ public class Door : MonoBehaviour, Iinteractable
     public bool Interact(Interactor interactor)
     {
         //this is what happenes when you interact
-        anim.Play("Door Open");
+        animator.SetTrigger("Interact");
         return true;
     }
 

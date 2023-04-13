@@ -21,6 +21,7 @@ public class PauseGame : MonoBehaviour
             Time.timeScale = 0f;
             firstPersonCameraRotation.FreezeMovement = true;
             pauseMenu.SetActive(true);
+            
         }
             
         
