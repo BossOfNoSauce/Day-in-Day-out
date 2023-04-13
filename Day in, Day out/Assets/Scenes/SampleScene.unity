@@ -5319,12 +5319,16 @@ PrefabInstance:
       value: 219.35458
       objectReference: {fileID: 0}
     - target: {fileID: 5418457073651457440, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 505.13193
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418457073651457440, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.43596047
+      value: -0.4581
       objectReference: {fileID: 0}
     - target: {fileID: 5418457073651457440, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.149048
+      value: 5.3479
       objectReference: {fileID: 0}
     - target: {fileID: 5418457073651457440, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14088,8 +14092,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627080676}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 12.536, y: -6.51, z: -19.56}
-  m_LocalScale: {x: 0.68090004, y: 24.00869, z: 0.54384065}
+  m_LocalPosition: {x: 12.536, y: -6.51, z: -19.8421}
+  m_LocalScale: {x: 0.68090004, y: 23.444485, z: 0.54384065}
   m_Children: []
   m_Father: {fileID: 1470904337}
   m_RootOrder: 40
@@ -33407,7 +33411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423548526}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 8.72, y: 5.47, z: 55.42}
+  m_LocalPosition: {x: 8.72, y: 4.89, z: 55.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 308495669}
@@ -43159,6 +43163,7 @@ MonoBehaviour:
   audioSource: {fileID: 1818565578}
   Dialogue: {fileID: 8300000, guid: cbe280c0f4f9e41488abfa0bb57f0192, type: 3}
   animator: {fileID: 756433541}
+  door: {fileID: 0}
   TheBool: 0
   JukBox: {fileID: 830215002}
   StartGame: 0
