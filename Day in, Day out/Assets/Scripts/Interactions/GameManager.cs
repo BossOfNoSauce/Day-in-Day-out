@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +12,9 @@ public class GameManager : MonoBehaviour
     public Animator animator;
     public AudioClip door;
     public bool TheBool;
+    public TMP_Text textBox;
+    public GameObject textobj;
+
 
     public GameObject JukBox;
     Jukebox jukebox;
@@ -20,6 +25,7 @@ public class GameManager : MonoBehaviour
     {
         audioSource = gameObject.GetComponent<AudioSource>();
         jukebox = JukBox.GetComponent<Jukebox>();
+        textBox = textobj.GetComponent<TMPro.TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -28,13 +34,16 @@ public class GameManager : MonoBehaviour
         
     }
     //Intro cutscene
-    public IEnumerator Cutscene()
+    public IEnumerator IntroCutscene()
     {
         if(TheBool == false)
         {
             TheBool = true;
             yield return new WaitForSeconds(2);
             audioSource.PlayOneShot(Dialogue, 0.7F);
+            yield return new WaitForSeconds(2);
+            //textBox.GetComponent<Text>().text = "Hey...";
+            textBox.text = "Hey ... ";
             yield return new WaitForSeconds(52);
             audioSource.PlayOneShot(door, 0.7f);
             animator.SetTrigger("Open");
@@ -47,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void dumb()
     {
-          StartCoroutine(Cutscene());
+          StartCoroutine(IntroCutscene());
         
     }
 
