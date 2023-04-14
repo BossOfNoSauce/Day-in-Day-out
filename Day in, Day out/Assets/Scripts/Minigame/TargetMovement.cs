@@ -15,7 +15,7 @@ public class TargetMovement : MonoBehaviour
     public Vector3 right;
     public Rigidbody m_rigidbody;
     public bool GameFail = false;
-    public float Power = 10f;
+    public float Power = 20f;
     public bool velocityActive = true;
     public bool GameOver = false;
     
