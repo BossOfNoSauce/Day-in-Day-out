@@ -62,6 +62,7 @@ public class Computer : MonoBehaviour, Iinteractable
             gameManager.gameActive = false;
             firstPersonCameraRotation.FreezeMovement = false;
             hand.SetActive(false);
+            Player.transform.position = new Vector3(135, 7.4f, 93.8f);
             Debug.Log("you are win");
         }
     }
@@ -71,7 +72,7 @@ public class Computer : MonoBehaviour, Iinteractable
         
         playerMovement.InGame = true;
         gameManager.gameActive = true;
-        Mcollider.enabled = !Mcollider.enabled;
+       // Mcollider.enabled = !Mcollider.enabled;
         yield return new WaitForSeconds(3);
         CallSpot();
         Player.transform.position = new Vector3(138, 5.5f, 93.8f);
