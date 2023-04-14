@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -33430,6 +33430,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: 
+  thebool: 0
+  audioSource: {fileID: 0}
+  door: {fileID: 0}
   animator: {fileID: 1423548529}
 --- !u!54 &1423548531
 Rigidbody:
@@ -43125,8 +43128,8 @@ MonoBehaviour:
   audioSource: {fileID: 1818565578}
   Dialogue: {fileID: 8300000, guid: cbe280c0f4f9e41488abfa0bb57f0192, type: 3}
   animator: {fileID: 756433541}
+  door: {fileID: 8300000, guid: 173f757791818af4c99b4c1532b4d044, type: 3}
   TheBool: 0
-  door: {fileID: 8300000, guid: 55d04f859acfb4842ae643b6e08e1ece, type: 3}
   JukBox: {fileID: 830215002}
   StartGame: 0
 --- !u!4 &1818565577
@@ -45497,7 +45500,7 @@ MonoBehaviour:
   prompt: 
   thebool: 0
   audioSource: {fileID: 1904140797}
-  door: {fileID: 8300000, guid: 55d04f859acfb4842ae643b6e08e1ece, type: 3}
+  door: {fileID: 8300000, guid: 173f757791818af4c99b4c1532b4d044, type: 3}
   animator: {fileID: 1904140792}
 --- !u!65 &1904140795
 BoxCollider:
