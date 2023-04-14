@@ -25,7 +25,7 @@ public class Computer : MonoBehaviour, Iinteractable
 
     public Collider Mcollider;
 
-    int score;
+    public  int score;
     int index;
     int index2;
 
@@ -56,18 +56,13 @@ public class Computer : MonoBehaviour, Iinteractable
     // Update is called once per frame
     void Update()
     {
-        if (score == 10)
+        if (score >= 10)
         {
-            playerMovement.InGame = false;
-            gameManager.gameActive = false;
-            firstPersonCameraRotation.FreezeMovement = false;
-            hand.SetActive(false);
-            Player.transform.position = new Vector3(135, 7.4f, 93.8f);
-            Debug.Log("you are win");
+            StartCoroutine(EndGame());
         }
     }
 
-    IEnumerator StartComputing()
+    public IEnumerator StartComputing()
     {
         
         playerMovement.InGame = true;
@@ -94,14 +89,18 @@ public class Computer : MonoBehaviour, Iinteractable
 
     public void CallSpot()
     {
-        index = Random.Range(0, Spots.Length);
-        CurrentSpot = Spots[index];
-        CurrentSpot.SetActive(true);
-        cooldown = false;
+        if(score < 10)
+        {
+            index = Random.Range(0, Spots.Length);
+            CurrentSpot = Spots[index];
+            CurrentSpot.SetActive(true);
+            cooldown = false;
+        }
+       
     }
 
 
-    IEnumerator Reset()
+    public IEnumerator Reset()
     {
 
         audioSource.PlayOneShot(type, 1.0f);
@@ -109,20 +108,7 @@ public class Computer : MonoBehaviour, Iinteractable
         CallSpot();
     }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Hand" && cooldown == false)
-        {
-            cooldown = true;
-            Debug.Log("tipe");
-            score = score + 1;
-            CurrentSpot.SetActive(false);
-            StartCoroutine(Reset());
-
-        }
-
-
-    }
+    
 
     IEnumerator EndGame()
     {
@@ -131,6 +117,18 @@ public class Computer : MonoBehaviour, Iinteractable
         gameManager.gameActive = false;
         firstPersonCameraRotation.FreezeMovement = false;
         hand.SetActive(false);
+        Player.transform.position = new Vector3(138, 7.5f, 93.8f);
         Debug.Log("you are win");
     }
+
+    public void DummyFunc()
+    {
+        cooldown = true;
+        Debug.Log("tipe");
+        score = score + 1;
+        CurrentSpot.SetActive(false);
+        StartCoroutine(Reset());
+    }
+
+   
 }
