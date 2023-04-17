@@ -51873,7 +51873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1926878008}
-  hand: {fileID: 4236191114706419201}
+  Arm: {fileID: 4236191114706419201}
 --- !u!1 &2114999370 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7718537545828519696, guid: d310345d3d345744ab35beb13e85acf8, type: 3}
@@ -53093,6 +53093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe41f5570e660634a8a18f1184019712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HandActive: 1
   offset: 3
 --- !u!1001 &8370357780189515094
 PrefabInstance:

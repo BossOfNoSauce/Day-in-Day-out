@@ -5,12 +5,14 @@ using UnityEngine;
 public class KitchenGame : MonoBehaviour
 {
     public GameObject Player;
-    public GameObject hand;
+    public GameObject Arm;
+
+    HAND Hand;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Hand = Arm.GetComponent<HAND>();  
     }
 
     // Update is called once per frame
@@ -23,7 +25,8 @@ public class KitchenGame : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            hand.SetActive(true);
+            Arm.SetActive(true);
+            Hand.HandActive = false;
 
         }
     }
