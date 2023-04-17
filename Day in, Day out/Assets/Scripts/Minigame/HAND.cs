@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HAND : MonoBehaviour
 {
+    public bool HandActive = true;
+
     Vector3 pos;
 
     public float offset = 3f;
@@ -17,11 +19,16 @@ public class HAND : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pos = Input.mousePosition;
+        if(HandActive == true)
+        {
+            pos = Input.mousePosition;
 
-        pos.z = offset;
+            pos.z = offset;
 
-        transform.position = Camera.main.ScreenToWorldPoint(pos);
+            transform.position = Camera.main.ScreenToWorldPoint(pos);
+        }
+
+        
 
     }
 }
