@@ -33,7 +33,8 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioSource footstepsSound;
 
-    public bool InGame = false;
+    public bool InGame = false; //sets the minigames to freeze movement. doesnt fuckin work
+
 
     private void Awake()
     {
@@ -50,8 +51,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        MovePlayer();
 
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        
         MyInput();
         SpeedControl();
         
@@ -85,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
+       
     }
 
     private void MyInput()

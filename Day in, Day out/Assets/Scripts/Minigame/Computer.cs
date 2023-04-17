@@ -36,6 +36,10 @@ public class Computer : MonoBehaviour, Iinteractable
     public AudioClip type;
 
     public bool cooldown;
+
+    public bool GameFail;
+    public bool GameWin;
+
     public bool Interact(Interactor interactor)
     {
         //this is what happenes when you interact
@@ -64,16 +68,19 @@ public class Computer : MonoBehaviour, Iinteractable
 
     public IEnumerator StartComputing()
     {
+        if(GameFail ==  true || GameWin == true)
+        {
+            playerMovement.InGame = true;
+            gameManager.gameActive = true;
+            // Mcollider.enabled = !Mcollider.enabled;
+            yield return new WaitForSeconds(3);
+            CallSpot();
+            Player.transform.position = new Vector3(138, 5.5f, 93.8f);
+            firstPersonCameraRotation.FreezeMovement = true;
+            hand.SetActive(true);
+            LookAt();
+        }
         
-        playerMovement.InGame = true;
-        gameManager.gameActive = true;
-       // Mcollider.enabled = !Mcollider.enabled;
-        yield return new WaitForSeconds(3);
-        CallSpot();
-        Player.transform.position = new Vector3(138, 5.5f, 93.8f);
-        firstPersonCameraRotation.FreezeMovement = true;
-        hand.SetActive(true);
-        LookAt();
         
     }
 
@@ -102,7 +109,6 @@ public class Computer : MonoBehaviour, Iinteractable
 
     public IEnumerator Reset()
     {
-
         audioSource.PlayOneShot(type, 1.0f);
         yield return new WaitForSeconds(1.0f);
         CallSpot();
@@ -113,12 +119,14 @@ public class Computer : MonoBehaviour, Iinteractable
     IEnumerator EndGame()
     {
         yield return new WaitForSeconds(1);
-        playerMovement.InGame = false;
-        gameManager.gameActive = false;
-        firstPersonCameraRotation.FreezeMovement = false;
+        Mcollider.enabled = false;
+        //WHY NO WORK
+        playerMovement.InGame = false; //is good
+        gameManager.gameActive = false; //is good
+        firstPersonCameraRotation.FreezeMovement = false; // si good
         hand.SetActive(false);
-        Player.transform.position = new Vector3(138, 7.5f, 93.8f);
-        Debug.Log("you are win");
+        Player.transform.position = new Vector3(136, 7.5f, 93.8f);
+        
     }
 
     public void DummyFunc()
