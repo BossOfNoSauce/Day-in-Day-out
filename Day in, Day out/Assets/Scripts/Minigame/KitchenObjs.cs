@@ -26,6 +26,9 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
     public bool Interact(Interactor interactor)
     {
         this.ObjectGrabPointTransform = ObjectGrabPointTransform;
+
+        //Set bool to enable the cup moving toward the orgin point
+        // man we use a lkot of bools
         return true;
     }
 
