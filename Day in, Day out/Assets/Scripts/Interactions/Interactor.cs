@@ -16,40 +16,48 @@ public class Interactor : MonoBehaviour
 
     private Iinteractable interactable;
 
+    public Transform objectGrabPointTransform;
+
+    public bool NoInteract; 
+
     private void Update()
     {
         numFound = Physics.OverlapSphereNonAlloc(interactionPoint.position, interactionPointRadius, colliders, interactableMask);
 
-        if(numFound > 0)
+        if (NoInteract == false)
         {
-            interactable = colliders[0].GetComponent<Iinteractable>();
 
-             if (interactable != null)
+            if (numFound > 0)
             {
-               /* if (!interactionPromptUI.IsDisplayed)
-                {
-                    interactionPromptUI.SetUp(interactable.InteractionPrompt);
-                } */
+                interactable = colliders[0].GetComponent<Iinteractable>();
 
-                if (Input.GetKeyDown("e"))
+                if (interactable != null)
                 {
-                    interactable.Interact(this);
+                    /* if (!interactionPromptUI.IsDisplayed)
+                     {
+                         interactionPromptUI.SetUp(interactable.InteractionPrompt);
+                     } */
+
+                    if (Input.GetKeyDown("e"))
+                    {
+                        interactable.Interact(this);
+                    }
                 }
-            } 
 
 
-        }
-        else
-        {
-            if (interactable != null)
-            {
-                interactable = null;
             }
-
-           /* if (interactionPromptUI.IsDisplayed)
+            else
             {
-                interactionPromptUI.Close();
-            }*/
+                if (interactable != null)
+                {
+                    interactable = null;
+                }
+
+                /* if (interactionPromptUI.IsDisplayed)
+                 {
+                     interactionPromptUI.Close();
+                 }*/
+            }
         }
     }
 
