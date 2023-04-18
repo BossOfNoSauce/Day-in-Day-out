@@ -35265,10 +35265,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f4323909ccbd2429fe44d088530b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.4
   swayTime: 1
   GameIsActive: 0
-  right: {x: 10, y: 0, z: 0}
+  right: {x: 16, y: 0, z: 0}
   m_rigidbody: {fileID: 1467735993}
   GameFail: 0
   Power: 10
@@ -53585,7 +53585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &4236191114706419202
 BoxCollider:
   m_ObjectHideFlags: 0
