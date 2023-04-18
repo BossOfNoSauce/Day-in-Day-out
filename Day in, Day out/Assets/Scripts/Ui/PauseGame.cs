@@ -9,7 +9,8 @@ public class PauseGame : MonoBehaviour
     public GameObject MainCam;
     public GameObject manager;
     GameManager gameManager;
-    
+
+    public bool AbleToPause = true;
     public bool menuActive = false;
     FirstPersonCameraRotation firstPersonCameraRotation;
     
@@ -17,7 +18,7 @@ public class PauseGame : MonoBehaviour
     public void Paused()
     {
         
-        if(gameManager.gameActive == false)
+        if(AbleToPause == true)
         {
             Time.timeScale = 0f;
             firstPersonCameraRotation.FreezeMovement = true;
@@ -31,7 +32,7 @@ public class PauseGame : MonoBehaviour
 
     public void Resume()
     {
-       if(gameManager.gameActive == false)
+       if(AbleToPause == true)
         {
             Time.timeScale = 1.0f;
             firstPersonCameraRotation.FreezeMovement = false;

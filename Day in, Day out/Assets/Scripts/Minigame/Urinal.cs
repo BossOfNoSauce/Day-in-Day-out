@@ -23,6 +23,9 @@ public class Urinal : MonoBehaviour, Iinteractable
     public AudioSource audioSource;
     public AudioClip[] audioClips;
 
+    public GameObject PauseMenu;
+    PauseGame pauseGame;
+
     
     [SerializeField] private string prompt;
 
@@ -40,6 +43,8 @@ public class Urinal : MonoBehaviour, Iinteractable
     // Awake is called before the first frame update
     void Awake()
     {
+        pauseGame = PauseMenu.GetComponent<PauseGame>();
+
         playerController = Player.GetComponent<PlayerMovement>();
 
         firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
@@ -72,6 +77,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     {
         if (targetMovement.GameOver == false || targetMovement.GameFail == false)
         {
+            pauseGame.AbleToPause = false;
             gameManager.gameActive = true;
             yield return new WaitForSeconds(3);
             targetMovement.GameIsActive = true;
@@ -83,6 +89,7 @@ public class Urinal : MonoBehaviour, Iinteractable
             noMovement = false;
             playerController.InGame = false;
             targetMovement.GameOver = true;
+            pauseGame.AbleToPause = true;
         }
        
     }
