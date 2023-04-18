@@ -8,7 +8,7 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
 
     public string InteractionPrompt => prompt;
 
-
+    
     // Start is called before the first frame update
     void Start()
     {
