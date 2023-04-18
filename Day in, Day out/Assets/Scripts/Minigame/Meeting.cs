@@ -17,6 +17,7 @@ public class Meeting : MonoBehaviour, Iinteractable
     PlayerMovement playerMovement;
     public GameObject Player;
     public GameObject MainCam;
+    Collider collider;
 
     public bool Interact(Interactor interactor)
     {
@@ -30,6 +31,7 @@ public class Meeting : MonoBehaviour, Iinteractable
     {
         playerMovement = Player.GetComponent<PlayerMovement>();
         gameManager = manager.GetComponent<GameManager>();
+        collider = GetComponent<Collider>();
     }
    
     public IEnumerator MeetingTime()
@@ -37,6 +39,7 @@ public class Meeting : MonoBehaviour, Iinteractable
         {
             playerMovement.InGame = true;
             gameManager.gameActive = true;
+            collider.enabled = false;
             yield return new WaitForSeconds(3);
             Player.transform.position = new Vector3(-18, 5.5f, -54);
         }
