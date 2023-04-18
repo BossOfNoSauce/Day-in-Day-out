@@ -27,6 +27,7 @@ public class KitchenGame : MonoBehaviour
         {
             Arm.SetActive(true);
             Hand.HandActive = false;
+            //Arm.transform.position = new Vector3(1f, 1f, 1f);
 
         }
     }
