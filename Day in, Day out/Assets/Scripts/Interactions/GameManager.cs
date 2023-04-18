@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(2.8f);
             textBox.GetComponent<Text>().text = "and it's supposedly because everyone hasn't been doing *like*";
             yield return new WaitForSeconds(3);
-            textBox.GetComponent<Text>().text = "anything";
+            textBox.GetComponent<Text>().text = "ANYTHING";
             yield return new WaitForSeconds(2);
             textBox.GetComponent<Text>().text = "so now the boss is pretty *uh* peeved off and has made some harsh polices to";
             yield return new WaitForSeconds(5.8f);
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(5.5f);
             textBox.GetComponent<Text>().text = "pretty inconvenient if you ask me ";
             yield return new WaitForSeconds(1.5f);
-            textBox.GetComponent<Text>().text = "I would file a complaint but I *uh* really don't wanna get on the big guy's bad side ";
+            textBox.GetComponent<Text>().text = "I would file a complaint but I *uh* REALLY don't wanna get on the big guy's bad side ";
             yield return new WaitForSeconds(5.5f);
             textBox.GetComponent<Text>().text = "Here... ";
             yield return new WaitForSeconds(3.5f);

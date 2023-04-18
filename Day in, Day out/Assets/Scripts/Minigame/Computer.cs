@@ -36,6 +36,7 @@ public class Computer : MonoBehaviour, Iinteractable
     public AudioClip type;
 
     public bool cooldown;
+    public bool cooldown2;
 
     public bool GameFail;
     public bool GameWin;
@@ -118,16 +119,20 @@ public class Computer : MonoBehaviour, Iinteractable
 
     IEnumerator EndGame()
     {
-        yield return new WaitForSeconds(1);
-        Mcollider.enabled = false;
-        //WHY NO WORK
-        playerMovement.InGame = false; //is good
-        gameManager.gameActive = false; //is good
-        firstPersonCameraRotation.FreezeMovement = false; // si good
-        hand.SetActive(false);
-        Player.transform.position = new Vector3(136, 8.5f, 93.8f);
-        yield return true;
-        //Fix... call function once
+        if(cooldown2 == false)
+        {
+            yield return new WaitForSeconds(1);
+            Mcollider.enabled = false;
+            //WHY NO WORK
+            playerMovement.InGame = false; //is good
+            gameManager.gameActive = false; //is good
+            firstPersonCameraRotation.FreezeMovement = false; // si good
+            hand.SetActive(false);
+            Player.transform.position = new Vector3(136, 8.5f, 93.8f);
+            cooldown2 = true;
+            //Fix... call function once
+        }
+
     }
 
     public void DummyFunc()
