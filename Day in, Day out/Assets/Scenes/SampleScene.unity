@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6329,6 +6329,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 958188744}
   MainCam: {fileID: 963194225}
   manager: {fileID: 1818565575}
+  AbleToPause: 1
   menuActive: 0
 --- !u!1 &269059053
 GameObject:
@@ -27736,6 +27737,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   MainCam: {fileID: 0}
   manager: {fileID: 0}
+  AbleToPause: 1
   menuActive: 0
 --- !u!1 &1153563551
 GameObject:
@@ -52347,6 +52349,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fb7e8c8f5b2a7b54c8d0b9d391f380ac, type: 3}
   - {fileID: 8300000, guid: 0dcdde0cea53aaf46a59e9c4fc19f6c8, type: 3}
   - {fileID: 8300000, guid: 90a86c217c4f2ad4b923797c3055df4d, type: 3}
+  PauseMenu: {fileID: 268373959}
   prompt: 
 --- !u!65 &2114999375
 BoxCollider:
