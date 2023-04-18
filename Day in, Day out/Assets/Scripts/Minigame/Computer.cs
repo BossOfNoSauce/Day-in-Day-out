@@ -68,7 +68,7 @@ public class Computer : MonoBehaviour, Iinteractable
 
     public IEnumerator StartComputing()
     {
-        if(GameFail ==  true || GameWin == true)
+        if(GameFail ==  false || GameWin == false)
         {
             playerMovement.InGame = true;
             gameManager.gameActive = true;
@@ -125,8 +125,9 @@ public class Computer : MonoBehaviour, Iinteractable
         gameManager.gameActive = false; //is good
         firstPersonCameraRotation.FreezeMovement = false; // si good
         hand.SetActive(false);
-        Player.transform.position = new Vector3(136, 7.5f, 93.8f);
-        
+        Player.transform.position = new Vector3(136, 8.5f, 93.8f);
+        yield return true;
+        //Fix... call function once
     }
 
     public void DummyFunc()
