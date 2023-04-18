@@ -8,7 +8,9 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
 
     public string InteractionPrompt => prompt;
 
-    
+    public Rigidbody RB;
+    public Transform ObjectGrabPointTransform;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,17 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
 
     public bool Interact(Interactor interactor)
     {
-       
+        this.ObjectGrabPointTransform = ObjectGrabPointTransform;
         return true;
+    }
+
+    public void FixedUpdate()
+    {
+        if(ObjectGrabPointTransform != null)
+        {
+            RB.MovePosition(ObjectGrabPointTransform.position);
+        }
+
+
     }
 }
