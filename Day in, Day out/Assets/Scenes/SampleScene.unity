@@ -48907,7 +48907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe416a5b1e902a4484c7b8c689dcaf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 50
   MainCam: {fileID: 963194225}
   Camera: {fileID: 963194225}
   groundDrag: 10
@@ -48919,6 +48919,12 @@ MonoBehaviour:
   orientation: {fileID: 1559906290}
   footstepsSound: {fileID: 1926878009}
   InGame: 0
+  stamina: 100
+  runSpeed: 75
+  walkSpeed: 50
+  drainRate: 1
+  reChargeRate: 1
+  fatigueTimer: 0
 --- !u!4 &1926878012
 Transform:
   m_ObjectHideFlags: 0
