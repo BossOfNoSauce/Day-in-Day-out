@@ -10,6 +10,12 @@ public class KitchenGame : MonoBehaviour
     PlayerRaycast playerRaycast;
     HAND Hand;
 
+    public int coffeeStage = 0;
+    public int noodleStage = 0;
+    public bool CoffeeIsDone;
+    public bool NoodlesIsDone;
+    //i know improper grammer, stfu
+
     // Start is called before the first frame update
     void Start()
     {

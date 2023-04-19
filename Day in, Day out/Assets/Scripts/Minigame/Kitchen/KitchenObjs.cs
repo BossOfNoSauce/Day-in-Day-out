@@ -11,7 +11,10 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
     public Rigidbody RB;
     public Transform ObjectGrabPointTransform;
 
+
     public bool GrabBool;
+
+   
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +30,17 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
 
     public bool Interact(Interactor interactor)
     {
-        ObjectGrabPointTransform = ObjectGrabPointTransform;
+       
+            ObjectGrabPointTransform = ObjectGrabPointTransform;
 
-        GrabBool = !GrabBool;
-        //Set bool to enable the cup moving toward the orgin point
-        // man we use a lkot of bools
+            GrabBool = !GrabBool;
+            
+            //Set bool to enable the cup moving toward the orgin point
+            // man we use a lkot of bools
+        
+
+
+
         return true;
     }
 
