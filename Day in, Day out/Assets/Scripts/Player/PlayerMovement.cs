@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
-    public AudioSource footstepsSound;
+    public AudioSource audioSource;
 
     public bool InGame = false; //sets the minigames to freeze movement. doesnt fuckin work
 
@@ -50,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
 
     bool isRunning;
 
+    
+    
 
     private void Awake()
     {
@@ -90,18 +92,21 @@ public class PlayerMovement : MonoBehaviour
 
         if (verticalInput > 0 || horizontalInput > 0)
         {
-            footstepsSound.enabled = true;
+            audioSource.enabled = true;
             
         }
         else
         {
-            footstepsSound.enabled = false;
+            audioSource.enabled = false;
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
             if (stamina > 0 && !isFatigued)
             {
+               // float newSpeed = 1.2f;
+               // audioSource.pitch = newSpeed;
+               // audioSource.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", 1f / newSpeed);
                 moveSpeed = runSpeed;
                 isRunning = true;
             }
