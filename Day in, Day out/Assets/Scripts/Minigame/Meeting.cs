@@ -18,8 +18,6 @@ public class Meeting : MonoBehaviour, Iinteractable
     public GameObject Player;
     public GameObject MainCam;
     Collider collider;
-    public Collider playerCollider;
-    private Rigidbody rigidbody;
 
     public bool Interact(Interactor interactor)
     {
@@ -34,8 +32,6 @@ public class Meeting : MonoBehaviour, Iinteractable
         playerMovement = Player.GetComponent<PlayerMovement>();
         gameManager = manager.GetComponent<GameManager>();
         collider = GetComponent<Collider>();
-        playerCollider = GetComponent<Collider>();
-        rigidbody = Player.GetComponent<Rigidbody>();
     }
    
     public IEnumerator MeetingTime()
@@ -45,9 +41,7 @@ public class Meeting : MonoBehaviour, Iinteractable
             gameManager.gameActive = true;
             collider.enabled = false;
             yield return new WaitForSeconds(3);
-            playerCollider.enabled = false;
             Player.transform.position = new Vector3(-19, 6.5f, -65);
-            rigidbody.constraints = RigidbodyConstraints.FreezePosition;
         }
 
 
