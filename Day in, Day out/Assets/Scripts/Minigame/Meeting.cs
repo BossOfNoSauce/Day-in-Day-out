@@ -41,7 +41,7 @@ public class Meeting : MonoBehaviour, Iinteractable
             gameManager.gameActive = true;
             collider.enabled = false;
             yield return new WaitForSeconds(3);
-            Player.transform.position = new Vector3(-18, 5.5f, -54);
+            Player.transform.position = new Vector3(-19, 6.5f, -65);
         }
 
 
