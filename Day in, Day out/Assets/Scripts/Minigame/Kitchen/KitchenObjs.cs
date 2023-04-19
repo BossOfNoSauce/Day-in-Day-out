@@ -43,6 +43,7 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
             {
                 RB.MovePosition(ObjectGrabPointTransform.position);
                 RB.freezeRotation = !RB.freezeRotation;
+                RB.useGravity = RB.useGravity;
             }
         }
         
