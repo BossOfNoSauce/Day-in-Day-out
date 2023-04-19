@@ -3992,7 +3992,7 @@ MonoBehaviour:
   prompt: 
   audioSource: {fileID: 178587956}
   audioClips:
-  - {fileID: 8300000, guid: 5222411521fa45b4a9ee49be52038c7d, type: 3}
+  - {fileID: 8300000, guid: 6589cb70a64f0a64c9129447c8811120, type: 3}
 --- !u!212 &178587953
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6612,9 +6612,9 @@ MonoBehaviour:
   prompt: 
   audioSource: {fileID: 269059061}
   audioClips:
-  - {fileID: 8300000, guid: 162d9cc946d7f8044bc64be90876e518, type: 3}
-  - {fileID: 8300000, guid: 9cd52e8959888af43abe05be257b757b, type: 3}
-  - {fileID: 8300000, guid: 7624ab7de8f9eda4bad76ec70aa56441, type: 3}
+  - {fileID: 8300000, guid: 78a2a618b85d93744a645fe3a1a1166d, type: 3}
+  - {fileID: 8300000, guid: f52d3721bbb8eac43b08ae77f90708ae, type: 3}
+  - {fileID: 8300000, guid: ee04a8769d0fbb44590489c8358cc3d7, type: 3}
 --- !u!54 &269059057
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6690,7 +6690,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.764
   m_Pitch: 1
   Loop: 0
   Mute: 0
