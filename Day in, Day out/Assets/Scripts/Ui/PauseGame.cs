@@ -10,6 +10,8 @@ public class PauseGame : MonoBehaviour
     public GameObject manager;
     GameManager gameManager;
 
+    public AudioSource audioSource;
+
     public bool AbleToPause = true;
     public bool menuActive = false;
     FirstPersonCameraRotation firstPersonCameraRotation;
@@ -23,7 +25,8 @@ public class PauseGame : MonoBehaviour
             Time.timeScale = 0f;
             firstPersonCameraRotation.FreezeMovement = true;
             pauseMenu.SetActive(true);
-            
+            audioSource.Pause();
+
         }
             
         
@@ -37,6 +40,7 @@ public class PauseGame : MonoBehaviour
             Time.timeScale = 1.0f;
             firstPersonCameraRotation.FreezeMovement = false;
             pauseMenu.SetActive(false);
+            audioSource.UnPause();
         }
             
         

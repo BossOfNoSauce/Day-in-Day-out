@@ -2,14 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoffeMachine : MonoBehaviour
+public class CoffeeMachine : MonoBehaviour, Iinteractable
 {
+    public GameObject Kitchen;
+    KitchenGame kitchenGame;
+    public AudioSource audioSource;
+
+    public AudioClip Grind;
+    public AudioClip Beans;
+    public AudioClip Pour;
+
+    public GameObject Drink;
+
+    [SerializeField] private string prompt;
+
+    public string InteractionPrompt => prompt;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        kitchenGame = Kitchen.GetComponent<KitchenGame>();
     }
 
     // Update is called once per frame
@@ -20,11 +33,41 @@ public class CoffeMachine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Mug" )
+        if (other.gameObject.tag == "Coffee" )
         {
-            
+            audioSource.PlayOneShot(Beans);
+            kitchenGame.coffeeStage = 1;
+            Debug.Log(kitchenGame.coffeeStage);
 
         }
 
+        if (other.gameObject.tag == "Mug" && kitchenGame.coffeeStage == 2)
+        {
+            kitchenGame.coffeeStage = 3;
+            audioSource.PlayOneShot(Pour);
+            Debug.Log(kitchenGame.coffeeStage);
+            kitchenGame.CoffeeIsDone = true;
+            Drink.SetActive(true);
+            Debug.Log("done");
+
+        }
+
+
+
     }
+
+    public bool Interact(Interactor interactor)
+    {
+        if(kitchenGame.coffeeStage == 1)
+        {
+            kitchenGame.coffeeStage = 2;
+            audioSource.PlayOneShot(Grind);
+            Debug.Log(kitchenGame.coffeeStage);
+
+        }
+        return true;
+    }
+
+
+
 }
