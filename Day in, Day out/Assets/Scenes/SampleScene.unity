@@ -48773,9 +48773,8 @@ GameObject:
   - component: {fileID: 1926878011}
   - component: {fileID: 1926878010}
   - component: {fileID: 1926878009}
-  - component: {fileID: 1926878013}
   - component: {fileID: 1926878014}
-  - component: {fileID: 1926878015}
+  - component: {fileID: 1926878013}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -48803,7 +48802,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.3014221
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -48959,8 +48958,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5127223, y: 1.243509, z: 1.1914033}
-  m_Center: {x: 0.013544989, y: -0.24739397, z: 0.21462654}
+  m_Size: {x: 1, y: 2.7985551, z: 1}
+  m_Center: {x: 0, y: -0.89927745, z: 0}
 --- !u!114 &1926878014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48980,26 +48979,8 @@ MonoBehaviour:
     m_Bits: 64
   interactionPromptUI: {fileID: 0}
   numFound: 0
-  objectGrabPointTransform: {fileID: 0}
+  objectGrabPointTransform: {fileID: 952766451}
   NoInteract: 0
---- !u!114 &1926878015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926878008}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca98a98cda297c74d8016f52adefc100, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1926878008}
-  CanInteract: 0
-  playerCameraTransform: {fileID: 963194228}
-  pickUpLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!1 &1932504993
 GameObject:
   m_ObjectHideFlags: 0
@@ -53391,7 +53372,7 @@ MonoBehaviour:
   Player: {fileID: 1926878008}
   hand: {fileID: 4236191114706419201}
   MainCam: {fileID: 963194225}
-  Mcollider: {fileID: 1926878013}
+  Mcollider: {fileID: 0}
   score: 0
   Spots:
   - {fileID: 1261353478}

@@ -50,8 +50,9 @@ public class PlayerMovement : MonoBehaviour
 
     bool isRunning;
 
-    
-    
+   
+
+
 
     private void Awake()
     {
@@ -113,59 +114,34 @@ public class PlayerMovement : MonoBehaviour
             else
 
             if (isRunning || isFatigued)
-            {
-                moveSpeed = walkSpeed;
-                isRunning = false;
-
-            }
+            { moveSpeed = walkSpeed; isRunning = false; }
         }
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            if (isRunning || isFatigued)
-            {
-                moveSpeed = walkSpeed;
-                isRunning = false;
-            }
-        }
+        { if (isRunning || isFatigued)
+            { moveSpeed = walkSpeed; isRunning = false; } }
 
         if (isRunning)
-        {
-            stamina -= Time.deltaTime * drainRate;
-        }
+        {stamina -= Time.deltaTime * drainRate; }
         else
-
         if (!isRunning && stamina > 0 && stamina < 100)
-        {
-            stamina += Time.deltaTime * reChargeRate;
-        }
-
-
+        { stamina += Time.deltaTime * reChargeRate; }
 
         if (stamina <= 0f && fatigueTimer <= 3)
-        {
-            fatigueTimer += Time.deltaTime;
-            isFatigued = true;
-        }
+        { fatigueTimer += Time.deltaTime;
+            isFatigued = true;}
         else
-
         if (fatigueTimer >= 3)
-        {
-            stamina += Time.deltaTime * reChargeRate;
+        { stamina += Time.deltaTime * reChargeRate;
             isFatigued = false;
-            fatigueTimer = 0;
-        }
+            fatigueTimer = 0;}
 
         if (stamina < 0f)
-        {
-            stamina = 0f;
-        }
-
+        { stamina = 0f;}
         if (stamina > 100f)
-        {
-            stamina = 100f;
-        }
+        { stamina = 100f; }
 
+       
 
 
     }
