@@ -31,7 +31,7 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
     public bool Interact(Interactor interactor)
     {
        
-            ObjectGrabPointTransform = ObjectGrabPointTransform;
+        this.ObjectGrabPointTransform = ObjectGrabPointTransform;
 
             GrabBool = !GrabBool;
             
@@ -52,7 +52,7 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
             {
                 RB.MovePosition(ObjectGrabPointTransform.position);
                 RB.freezeRotation = !RB.freezeRotation;
-                RB.useGravity = RB.useGravity;
+                RB.useGravity = !RB.useGravity;
             }
         }
         
