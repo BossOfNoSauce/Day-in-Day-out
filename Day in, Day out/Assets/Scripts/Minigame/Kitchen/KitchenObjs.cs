@@ -15,7 +15,7 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
     public bool GrabBool;
 
     public GameObject Kitchen;
-    public KitchenGame kitchenGame;
+     KitchenGame kitchenGame;
 
     public AudioSource audioSource;
     public AudioClip Drink;

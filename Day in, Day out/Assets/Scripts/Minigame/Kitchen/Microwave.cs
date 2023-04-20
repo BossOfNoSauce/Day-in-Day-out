@@ -5,7 +5,7 @@ using UnityEngine;
 public class Microwave : MonoBehaviour, Iinteractable
 {
     public GameObject Kitchen;
-    public KitchenGame kitchenGame;
+     KitchenGame kitchenGame;
 
     [SerializeField] private string prompt;
     public bool thebool;
@@ -13,11 +13,15 @@ public class Microwave : MonoBehaviour, Iinteractable
     public AudioSource audioSource;
     public AudioClip microwave;
     public Animator animator;
+
+    public GameObject noodles;
+    KitchenObjs kitchenObjs;
+
     
     void Start()
     {
         kitchenGame = Kitchen.GetComponent<KitchenGame>();
-
+        kitchenObjs = noodles.GetComponent<KitchenObjs>();
     }
 
 
@@ -43,7 +47,11 @@ public class Microwave : MonoBehaviour, Iinteractable
     {
         if (kitchenGame.noodleStage == 1)
         {
-
+            if(other.gameObject.tag == "Noodles")
+            {
+                kitchenGame.noodleStage = 2;
+                kitchenObjs.GrabBool = false;
+            }
         }
     }
 
