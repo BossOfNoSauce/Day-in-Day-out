@@ -4981,8 +4981,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.846265, y: 4.181922, z: 4.199082}
-  m_Center: {x: -0.029356048, y: -0.030622452, z: 0.06373114}
+  m_Size: {x: 3.7486982, y: 3.2950778, z: 1.0720721}
+  m_Center: {x: 0.3218244, y: -0.47404423, z: -0.39991036}
 --- !u!1 &213196793
 GameObject:
   m_ObjectHideFlags: 0
@@ -42139,6 +42139,14 @@ PrefabInstance:
       propertyPath: Kitchen
       value: 
       objectReference: {fileID: 1065320136}
+    - target: {fileID: 2849589460204738401, guid: 24fd24dc0a33946449b3d8704c67af98, type: 3}
+      propertyPath: noodles
+      value: 
+      objectReference: {fileID: 2091466400}
+    - target: {fileID: 2849589460204738401, guid: 24fd24dc0a33946449b3d8704c67af98, type: 3}
+      propertyPath: microwave
+      value: 
+      objectReference: {fileID: 8300000, guid: 28871bab1dfa9d343b6bbf84d5000a35, type: 3}
     - target: {fileID: 2849589460204738401, guid: 24fd24dc0a33946449b3d8704c67af98, type: 3}
       propertyPath: kitchenGame
       value: 
