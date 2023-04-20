@@ -62,14 +62,18 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
             }
         }
 
-        if ( GrabBool)
+        if (kitchenGame.coffeeStage == 3 && GrabBool)
         {
-            audioSource.PlayOneShot(Drink);
-            coffeeMachine.Drink.SetActive(false);
-            kitchenGame.CoffeeIsDone = true;
+            if (Input.GetMouseButtonDown(0))
+            {
+                audioSource.PlayOneShot(Drink);
+                coffeeMachine.Drink.SetActive(false);
+                kitchenGame.CoffeeIsDone = true;
+            }
+            
         }
 
-       //kitchenGame.coffeeStage == 3 &&
+     
 
     }
 }
