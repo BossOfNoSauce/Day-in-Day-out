@@ -50,7 +50,11 @@ public class PlayerMovement : MonoBehaviour
 
     bool isRunning;
 
-   
+    public float crouchSpeed;
+    public float crouchYScale;
+    public float startYScale;
+
+    public KeyCode crouchKey = KeyCode.LeftControl;
 
 
 
@@ -64,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        startYScale = transform.localScale.y;
 
     }
 
@@ -155,6 +160,19 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetKeyDown(crouchKey))
+        {
+            transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+            moveSpeed = 5;
+        }
+
+        if (Input.GetKeyUp(crouchKey))
+        {
+            transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+            moveSpeed = walkSpeed;
+        }
     }
 
     private void MovePlayer()

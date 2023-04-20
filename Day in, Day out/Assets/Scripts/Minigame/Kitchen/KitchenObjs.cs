@@ -14,12 +14,19 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
 
     public bool GrabBool;
 
-   
+    public GameObject Kitchen;
+    KitchenGame kitchenGame;
 
+    public AudioSource audioSource;
+    public AudioClip Drink;
+
+    public GameObject cMachine;
+    CoffeeMachine coffeeMachine;
     // Start is called before the first frame update
     void Start()
     {
-        
+        kitchenGame = Kitchen.GetComponent<KitchenGame>();
+        coffeeMachine = cMachine.GetComponent<CoffeeMachine>();
     }
 
     // Update is called once per frame
@@ -54,7 +61,13 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
                 RB.MovePosition(ObjectGrabPointTransform.position);
             }
         }
-        
+      
+        if(kitchenGame.coffeeStage == 3 && GrabBool == true)
+        {
+            audioSource.PlayOneShot(Drink);
+            coffeeMachine.Drink.SetActive(false);
+        }
+
 
 
     }
