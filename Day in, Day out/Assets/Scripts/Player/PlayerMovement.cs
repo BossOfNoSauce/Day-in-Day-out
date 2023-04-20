@@ -180,7 +180,7 @@ public class PlayerMovement : MonoBehaviour
         if(InGame == false)
         {
             moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * moveSpeed * Time.deltaTime * 200f, ForceMode.Force );
         }
        
 
