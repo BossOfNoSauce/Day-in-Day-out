@@ -15,7 +15,7 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
     public bool GrabBool;
 
     public GameObject Kitchen;
-    KitchenGame kitchenGame;
+    public KitchenGame kitchenGame;
 
     public AudioSource audioSource;
     public AudioClip Drink;
@@ -61,14 +61,15 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
                 RB.MovePosition(ObjectGrabPointTransform.position);
             }
         }
-      
-        if(kitchenGame.coffeeStage == 3 && GrabBool == true)
+
+        if ( GrabBool)
         {
             audioSource.PlayOneShot(Drink);
             coffeeMachine.Drink.SetActive(false);
+            kitchenGame.CoffeeIsDone = true;
         }
 
-
+       //kitchenGame.coffeeStage == 3 &&
 
     }
 }

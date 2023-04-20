@@ -46,7 +46,6 @@ public class CoffeeMachine : MonoBehaviour, Iinteractable
             kitchenGame.coffeeStage = 3;
             audioSource.PlayOneShot(Pour);
             Debug.Log(kitchenGame.coffeeStage);
-            kitchenGame.CoffeeIsDone = true;
             Drink.SetActive(true);
             Debug.Log("done");
 

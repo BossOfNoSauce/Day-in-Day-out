@@ -16004,7 +16004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756681681627984967, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4887653716004787798, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -22789,8 +22789,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 2fd0e641b3c738a45b2392e4058668ed, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -26084,7 +26084,7 @@ GameObject:
   - component: {fileID: 1065320138}
   - component: {fileID: 1065320139}
   m_Layer: 3
-  m_Name: GameTrigger
+  m_Name: KitchenManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37160,6 +37160,7 @@ MonoBehaviour:
   ObjectGrabPointTransform: {fileID: 952766451}
   GrabBool: 0
   Kitchen: {fileID: 0}
+  kitchenGame: {fileID: 0}
   audioSource: {fileID: 0}
   Drink: {fileID: 0}
   cMachine: {fileID: 0}
@@ -37868,7 +37869,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1b81127ef222f0a49ab46ff77b04604b, type: 3}
-    m_FontSize: 48
+    m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -55912,6 +55913,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2487616417058865712, guid: a219587f183a35645969874343e3441e, type: 3}
+      propertyPath: Drink
+      value: 
+      objectReference: {fileID: 8300000, guid: 2fd0e641b3c738a45b2392e4058668ed, type: 3}
+    - target: {fileID: 2487616417058865712, guid: a219587f183a35645969874343e3441e, type: 3}
       propertyPath: Kitchen
       value: 
       objectReference: {fileID: 1065320136}
@@ -55923,6 +55928,10 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 942235281}
+    - target: {fileID: 2487616417058865712, guid: a219587f183a35645969874343e3441e, type: 3}
+      propertyPath: kitchenGame
+      value: 
+      objectReference: {fileID: 1065320139}
     - target: {fileID: 2487616417058865712, guid: a219587f183a35645969874343e3441e, type: 3}
       propertyPath: ObjectGrabPointTransform
       value: 
