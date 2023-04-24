@@ -10,10 +10,8 @@ public class Urinal : MonoBehaviour, Iinteractable
     GameManager gameManager;
 
 
-    public GameObject Player;
-    //player is needed so it can get da script
+    public GameObject Player;//gets payer script
     TargetMovement targetMovement;
-    public GameObject dipshitCube;
     PlayerCam playerCam;
     public GameObject MainCam;
     FirstPersonCameraRotation firstPersonCameraRotation;
@@ -22,6 +20,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     public bool noMovement = false;
     public AudioSource audioSource;
     public AudioClip[] audioClips;
+    public GameObject menu;
 
     public GameObject PauseMenu;
     PauseGame pauseGame;
@@ -49,7 +48,7 @@ public class Urinal : MonoBehaviour, Iinteractable
 
         firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
 
-        targetMovement = dipshitCube.GetComponent<TargetMovement>();
+        targetMovement = target.GetComponent<TargetMovement>();
 
         gameManager = manager.GetComponent<GameManager>();
 
@@ -64,6 +63,17 @@ public class Urinal : MonoBehaviour, Iinteractable
 
             MainCam.transform.LookAt(target.transform.position, Vector3.up);
         }
+        if (targetMovement.GameOver || targetMovement.GameFail)//end game in here to check constantly
+        {
+            //these debugs fill the console
+            //if (targetMovement.GameOver) Debug.Log("game end");
+            //if (targetMovement.GameFail) Debug.Log("Game fail");
+            // disables all previous variables, allowing normal movement
+            noMovement = false;
+            playerController.InGame = false;
+            pauseGame.AbleToPause = true;
+            audioSource.Stop();
+        }
     }
 
 
@@ -72,32 +82,26 @@ public class Urinal : MonoBehaviour, Iinteractable
         playerController.InGame = true;
         //sets player to inGame, freezing them in place
         StartCoroutine(StartUrination());
+
+       
     }
 
     IEnumerator StartUrination()
     {
         if (targetMovement.GameOver == false || targetMovement.GameFail == false)
         {
-            pauseGame.AbleToPause = false; // disables pausing
-            gameManager.gameActive = true; 
-            yield return new WaitForSeconds(3); // tutorial time
+            pauseGame.AbleToPause = false; //dissables pause menu
+            pauseGame.Paused();
+            gameManager.gameActive = true;
+            //add menu popup here
+            menu.SetActive(true);
             targetMovement.GameIsActive = true; // this starts the target moving back and forth
             audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
             audioSource.Play();
             noMovement = true; // this locks camera on the target
             Player.transform.position = new Vector3(82, 7.5f, 27f); // sets player in proper pissing position
-            yield return new WaitForSeconds(21); // game timer
-           // disables all previous variables, allowing normal movement
-            noMovement = false; 
-            playerController.InGame = false;
+            yield return new WaitForSeconds(10); // game timer
             targetMovement.GameOver = true;
-            pauseGame.AbleToPause = true;
         }
-       
-    }
-
-    void Freeze()
-    {
-        
     }
 }
