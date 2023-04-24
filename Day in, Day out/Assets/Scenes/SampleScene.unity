@@ -3071,6 +3071,7 @@ MonoBehaviour:
   audioSource: {fileID: 86406504}
   Drink: {fileID: 8300000, guid: 2fd0e641b3c738a45b2392e4058668ed, type: 3}
   cMachine: {fileID: 1563438415}
+  coffeeDrink: 0
 --- !u!1 &88425827
 GameObject:
   m_ObjectHideFlags: 0
@@ -40379,6 +40380,7 @@ MonoBehaviour:
   Pour: {fileID: 8300000, guid: b980b018cae4e134eab7c8aa592b6dc9, type: 3}
   Drink: {fileID: 570863840}
   prompt: 
+  kitchenObjects: {fileID: 942235280}
 --- !u!1 &1563651228
 GameObject:
   m_ObjectHideFlags: 0
@@ -42554,6 +42556,14 @@ PrefabInstance:
       propertyPath: kitchenGame
       value: 
       objectReference: {fileID: 1065320139}
+    - target: {fileID: 2849589460204738401, guid: 24fd24dc0a33946449b3d8704c67af98, type: 3}
+      propertyPath: microwaveOpen
+      value: 
+      objectReference: {fileID: 8300000, guid: 28871bab1dfa9d343b6bbf84d5000a35, type: 3}
+    - target: {fileID: 2849589460204738401, guid: 24fd24dc0a33946449b3d8704c67af98, type: 3}
+      propertyPath: microwaveClosed
+      value: 
+      objectReference: {fileID: 8300000, guid: 04a40dbf79331ea43a038cd95bf99a3b, type: 3}
     - target: {fileID: 3321412469275387338, guid: 24fd24dc0a33946449b3d8704c67af98, type: 3}
       propertyPath: m_Name
       value: microwave
@@ -54450,6 +54460,7 @@ MonoBehaviour:
   audioSource: {fileID: 942235281}
   Drink: {fileID: 8300000, guid: 2fd0e641b3c738a45b2392e4058668ed, type: 3}
   cMachine: {fileID: 1563438415}
+  coffeeDrink: 0
 --- !u!54 &2091466404
 Rigidbody:
   m_ObjectHideFlags: 0
