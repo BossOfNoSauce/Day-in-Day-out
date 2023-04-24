@@ -44,6 +44,8 @@ public class Computer : MonoBehaviour, Iinteractable
     public bool GameFail;
     public bool GameWin;
 
+    public GameObject DayManager;
+    DaySystem daySystem;
     public bool Interact(Interactor interactor)
     {
         //this is what happenes when you interact
@@ -55,6 +57,7 @@ public class Computer : MonoBehaviour, Iinteractable
     // Start is called before the first frame update
     void Awake()
     {
+        daySystem = DayManager.GetComponent<DaySystem>();
         playerMovement = Player.GetComponent<PlayerMovement>();
         firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
         gameManager = manager.GetComponent<GameManager>();
@@ -133,6 +136,7 @@ public class Computer : MonoBehaviour, Iinteractable
             hand.SetActive(false);
             Player.transform.position = new Vector3(136, 8.5f, 93.8f);
             cooldown2 = true;
+            daySystem.ComputerIsDone = true;
             //Fix... call function once
         }
 

@@ -39,12 +39,18 @@ public class Meeting : MonoBehaviour, Iinteractable
 
     void Sleepy()
     {
-        float step = speed * Time.deltaTime;
-        TRB.MovePosition(topTarget.position);
-        BRB.MovePosition(bottomTarget.position);
+        //speed = speed * Time.fixedDeltaTime;
+        Vector3 topDirection = topTarget.transform.position - TRB.transform.position;
+        Vector3 bottomDirection = bottomTarget.transform.position - BRB.transform.position;
+      
+        Vector3 topVector = topDirection.normalized * speed;
+        Vector3 bottomVector = bottomDirection.normalized * speed;
+        TRB.velocity = topVector;
+        BRB.velocity = bottomVector;
+       
+        //TRB.MovePosition(topTarget.position);
+        //BRB.MovePosition(bottomTarget.position);
 
-       //Top.transform.position = Vector3.MoveTowards(Top.transform.position, topTarget.position, step);
-       // Bottom.transform.position = Vector3.MoveTowards(Bottom.transform.position, bottomTarget.position, step);
     }
 
     void Awake()
