@@ -49,10 +49,19 @@ public class Microwave : MonoBehaviour, Iinteractable
         {
             if(other.gameObject.tag == "Noodles")
             {
-                kitchenGame.noodleStage = 2;
-                kitchenObjs.GrabBool = false;
+                StartCoroutine(MicroWaveWait());
+                // close door
+
             }
         }
     }
 
+    IEnumerator MicroWaveWait()
+    {
+        kitchenGame.noodleStage = 2;
+        kitchenObjs.GrabBool = false;
+        yield return new WaitForSeconds(2);
+        animator.SetBool("Microwave Open", true);
+        kitchenGame.NoodlesIsDone = true;
+    }
 }

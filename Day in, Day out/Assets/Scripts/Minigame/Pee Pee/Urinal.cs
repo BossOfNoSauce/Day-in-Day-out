@@ -31,6 +31,9 @@ public class Urinal : MonoBehaviour, Iinteractable
 
     public string InteractionPrompt => prompt;
 
+    public GameObject DayManager;
+    DaySystem daySystem;
+
 
 
     public bool Interact(Interactor interactor)
@@ -43,6 +46,8 @@ public class Urinal : MonoBehaviour, Iinteractable
     // Awake is called before the first frame update
     void Awake()
     {
+        daySystem = DayManager.GetComponent<DaySystem>();
+
         pauseGame = PauseMenu.GetComponent<PauseGame>();
 
         playerController = Player.GetComponent<PlayerMovement>();
@@ -92,6 +97,7 @@ public class Urinal : MonoBehaviour, Iinteractable
             playerController.InGame = false;
             targetMovement.GameOver = true;
             pauseGame.AbleToPause = true;
+            daySystem.UrinalIsDone = true;
         }
        
     }
