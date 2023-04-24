@@ -11,8 +11,11 @@ public class Microwave : MonoBehaviour, Iinteractable
     public bool thebool;
     public string InteractionPrompt => prompt;
     public AudioSource audioSource;
-    public AudioClip microwave;
+    public AudioClip microwaveOpen;
+    public AudioClip microwaveClosed;
     public Animator animator;
+
+    public bool MikeIsOpen = false;
 
     public GameObject noodles;
     KitchenObjs kitchenObjs;
@@ -34,11 +37,19 @@ public class Microwave : MonoBehaviour, Iinteractable
 
     public bool Interact(Interactor interactor)
     {
-        if (thebool == false)
+        if (MikeIsOpen == false)
         {
-            audioSource.PlayOneShot(microwave, 0.7f);
+            audioSource.PlayOneShot(microwaveOpen, 0.7f);
             animator.SetBool("Microwave Open",true);
-            thebool = true;
+            MikeIsOpen = true;
+        }
+
+        if (MikeIsOpen == true)
+        {
+            audioSource.PlayOneShot(microwaveClosed, 0.7f);
+            //animator.SetBool("Microwave Open", true);
+            StartCoroutine(MicroWaveWait());
+            
         }
         return true;
     }
@@ -49,7 +60,7 @@ public class Microwave : MonoBehaviour, Iinteractable
         {
             if(other.gameObject.tag == "Noodles")
             {
-                StartCoroutine(MicroWaveWait());
+                thebool = true;
                 // close door
 
             }
@@ -58,10 +69,15 @@ public class Microwave : MonoBehaviour, Iinteractable
 
     IEnumerator MicroWaveWait()
     {
-        kitchenGame.noodleStage = 2;
-        kitchenObjs.GrabBool = false;
-        yield return new WaitForSeconds(2);
-        animator.SetBool("Microwave Open", true);
-        kitchenGame.NoodlesIsDone = true;
+        if(thebool == true)
+        {
+            kitchenGame.noodleStage = 2;
+            kitchenObjs.GrabBool = false;
+            yield return new WaitForSeconds(2);
+            animator.SetBool("Microwave Open", true);
+            MikeIsOpen = false;
+            kitchenGame.NoodlesIsDone = true;
+        }
+        
     }
 }
