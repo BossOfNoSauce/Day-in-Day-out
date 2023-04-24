@@ -40,14 +40,14 @@ public class Microwave : MonoBehaviour, Iinteractable
         if (MikeIsOpen == false)
         {
             audioSource.PlayOneShot(microwaveOpen, 0.7f);
-            animator.SetTrigger("Microwave Open");
+            animator.SetBool("Microwave Open",true);
             MikeIsOpen = true;
         }
 
         if (MikeIsOpen == true)
         {
             audioSource.PlayOneShot(microwaveClosed, 0.7f);
-            animator.SetTrigger("Microwave Close");
+            //animator.SetBool("Microwave Open", true);
             StartCoroutine(MicroWaveWait());
             
         }
