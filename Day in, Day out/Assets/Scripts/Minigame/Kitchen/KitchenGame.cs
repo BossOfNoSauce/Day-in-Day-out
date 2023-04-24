@@ -14,22 +14,33 @@ public class KitchenGame : MonoBehaviour
     public int noodleStage = 0;
     public bool CoffeeIsDone;
     public bool NoodlesIsDone;
+
     //i know improper grammer, stfu
+
+    public GameObject DayManager;
+    DaySystem daySystem;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        daySystem = DayManager.GetComponent<DaySystem>();
         Hand = Arm.GetComponent<HAND>();  
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(CoffeeIsDone == true && NoodlesIsDone == true)
+        {
+            Arm.SetActive(false);
+            Hand.HandActive = true;
+            daySystem.MeetingIsDone = true;
+
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {

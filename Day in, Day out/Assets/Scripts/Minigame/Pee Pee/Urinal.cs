@@ -31,6 +31,9 @@ public class Urinal : MonoBehaviour, Iinteractable
 
     public string InteractionPrompt => prompt;
 
+    public GameObject DayManager;
+    DaySystem daySystem;
+
 
 
     public bool Interact(Interactor interactor)
@@ -43,6 +46,8 @@ public class Urinal : MonoBehaviour, Iinteractable
     // Awake is called before the first frame update
     void Awake()
     {
+        daySystem = DayManager.GetComponent<DaySystem>();
+
         pauseGame = PauseMenu.GetComponent<PauseGame>();
 
         playerController = Player.GetComponent<PlayerMovement>();
@@ -70,6 +75,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     public void game()
     {
         playerController.InGame = true;
+        //sets player to inGame, freezing them in place
         StartCoroutine(StartUrination());
     }
 
@@ -77,19 +83,21 @@ public class Urinal : MonoBehaviour, Iinteractable
     {
         if (targetMovement.GameOver == false || targetMovement.GameFail == false)
         {
-            pauseGame.AbleToPause = false;
-            gameManager.gameActive = true;
-            yield return new WaitForSeconds(3);
-            targetMovement.GameIsActive = true;
+            pauseGame.AbleToPause = false; // disables pausing
+            gameManager.gameActive = true; 
+            yield return new WaitForSeconds(3); // tutorial time
+            targetMovement.GameIsActive = true; // this starts the target moving back and forth
             audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
             audioSource.Play();
-            noMovement = true;
-            Player.transform.position = new Vector3(82, 7.5f, 27f);
-            yield return new WaitForSeconds(21);
-            noMovement = false;
+            noMovement = true; // this locks camera on the target
+            Player.transform.position = new Vector3(82, 7.5f, 27f); // sets player in proper pissing position
+            yield return new WaitForSeconds(21); // game timer
+           // disables all previous variables, allowing normal movement
+            noMovement = false; 
             playerController.InGame = false;
             targetMovement.GameOver = true;
             pauseGame.AbleToPause = true;
+            daySystem.UrinalIsDone = true;
         }
        
     }
