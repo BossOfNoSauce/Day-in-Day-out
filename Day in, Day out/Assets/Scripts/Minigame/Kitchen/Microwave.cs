@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Microwave : MonoBehaviour, Iinteractable
 {
+   
     public GameObject Kitchen;
      KitchenGame kitchenGame;
 
@@ -13,6 +14,7 @@ public class Microwave : MonoBehaviour, Iinteractable
     public AudioSource audioSource;
     public AudioClip microwaveOpen;
     public AudioClip microwaveClosed;
+    public AudioClip cooking;
     public Animator animator;
 
     public bool MikeIsOpen = false;
@@ -64,7 +66,7 @@ public class Microwave : MonoBehaviour, Iinteractable
             if(other.gameObject.tag == "Noodles")
             {
                 thebool = true;
-                // close door
+                
 
             }
         }
@@ -77,9 +79,11 @@ public class Microwave : MonoBehaviour, Iinteractable
             kitchenGame.noodleStage = 2;
             kitchenObjs.GrabBool = false;
             yield return new WaitForSeconds(2);
-            animator.SetBool("Microwave Open", true);
+            audioSource.PlayOneShot(cooking, 0.7f);
+            animator.SetTrigger("Microwave Close");
             MikeIsOpen = false;
             kitchenGame.NoodlesIsDone = true;
+            thebool = false;
         }
         
     }
