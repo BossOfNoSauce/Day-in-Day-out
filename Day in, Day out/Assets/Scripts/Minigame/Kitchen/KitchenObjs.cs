@@ -24,9 +24,12 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
     CoffeeMachine coffeeMachine;
 
     public bool coffeeDrink;
+
+    public bool AbleToGrab = true;
     // Start is called before the first frame update
     void Start()
     {
+        AbleToGrab = true;
         kitchenGame = Kitchen.GetComponent<KitchenGame>();
         coffeeMachine = cMachine.GetComponent<CoffeeMachine>();
     }
@@ -56,6 +59,8 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
 
     public void FixedUpdate()
     {
+        
+
         if (GrabBool == true)
         {
             if (ObjectGrabPointTransform != null)
@@ -76,7 +81,17 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
             
         }
 
-     
+     if (AbleToGrab == true)
+     {
+            gameObject.layer = LayerMask.NameToLayer("Interact");
+            
+     }
+     if (AbleToGrab == false)
+     {
+
+            gameObject.layer = default;
+     }
+
 
     }
 }

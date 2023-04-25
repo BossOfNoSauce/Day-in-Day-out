@@ -8,7 +8,10 @@ public class Computer : MonoBehaviour, Iinteractable
 
     public string InteractionPrompt => prompt;
 
-    
+    //found bugs
+    //  []can open pause menu while playing
+    //  []game doesnt end
+    //  []no fail state in script
 
     public GameObject manager;
     GameManager gameManager;

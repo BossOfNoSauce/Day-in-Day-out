@@ -15,10 +15,9 @@ public class TargetMovement : MonoBehaviour
     public Vector3 right;
     public Rigidbody m_rigidbody;
     public bool GameFail = false;
-    public float Power = 20f;
+    public float Power = 10f;
     public bool velocityActive = true;
     public bool GameOver = false;
-    
 
     void Start()
     {
@@ -41,12 +40,7 @@ public class TargetMovement : MonoBehaviour
                 Dafunk();
             }
         }
-        if(GameOver== true)
-        {
-            m_rigidbody.velocity = Vector3.zero;
-        }
-
-        if (GameFail == true)
+        if(GameOver== true || GameFail == true)
         {
             m_rigidbody.velocity = Vector3.zero;
         }
@@ -54,12 +48,12 @@ public class TargetMovement : MonoBehaviour
 
         if(GameIsActive == true)
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
                 m_rigidbody.AddForce(Vector3.right * Power);
             }
 
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
                 m_rigidbody.AddForce(-Vector3.right * Power);
             }
@@ -71,7 +65,6 @@ public class TargetMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         GameFail = true;
-        Debug.Log(GameFail);
     }
 
     void Dafunk()

@@ -25,12 +25,14 @@ public class PauseGame : MonoBehaviour
             Time.timeScale = 0f;
             firstPersonCameraRotation.FreezeMovement = true;
             pauseMenu.SetActive(true);
+            Cursor.visible = true;
             audioSource.Pause();
-
         }
-            
-        
-       
+        else
+        {
+            Time.timeScale = 0f;
+            Cursor.visible = true;
+        }
     }
 
     public void Resume()
@@ -41,6 +43,12 @@ public class PauseGame : MonoBehaviour
             firstPersonCameraRotation.FreezeMovement = false;
             pauseMenu.SetActive(false);
             audioSource.UnPause();
+            Cursor.visible = false;
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+            Cursor.visible = false;
         }
             
         
