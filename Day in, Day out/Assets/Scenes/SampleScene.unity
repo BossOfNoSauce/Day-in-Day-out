@@ -55874,7 +55874,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fb7e8c8f5b2a7b54c8d0b9d391f380ac, type: 3}
   - {fileID: 8300000, guid: 0dcdde0cea53aaf46a59e9c4fc19f6c8, type: 3}
   - {fileID: 8300000, guid: 90a86c217c4f2ad4b923797c3055df4d, type: 3}
-  menu: {fileID: 0}
+  menu: {fileID: 912831577}
   PauseMenu: {fileID: 268373959}
   prompt: 
   DayManager: {fileID: 547298031}
