@@ -48,12 +48,12 @@ public class TargetMovement : MonoBehaviour
 
         if(GameIsActive == true)
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
                 m_rigidbody.AddForce(Vector3.right * Power);
             }
 
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
                 m_rigidbody.AddForce(-Vector3.right * Power);
             }
