@@ -37468,7 +37468,7 @@ GameObject:
   - component: {fileID: 1467735992}
   - component: {fileID: 1467735993}
   m_Layer: 0
-  m_Name: urinal cube
+  m_Name: DipshitCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43892,7 +43892,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 268373964}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
-        m_MethodName: Resume
+        m_MethodName: Paused
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -56011,7 +56011,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fb7e8c8f5b2a7b54c8d0b9d391f380ac, type: 3}
   - {fileID: 8300000, guid: 0dcdde0cea53aaf46a59e9c4fc19f6c8, type: 3}
   - {fileID: 8300000, guid: 90a86c217c4f2ad4b923797c3055df4d, type: 3}
-  menu: {fileID: 912831577}
+  menu: {fileID: 0}
   PauseMenu: {fileID: 268373959}
   prompt: 
   DayManager: {fileID: 547298031}
