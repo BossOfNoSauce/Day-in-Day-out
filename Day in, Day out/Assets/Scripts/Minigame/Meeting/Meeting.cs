@@ -23,7 +23,7 @@ public class Meeting : MonoBehaviour, Iinteractable
     public GameObject Bottom;
 
     public float speed;
-    public float Power = 1000f;
+    public float Power = 13000f;
     public Transform topTarget;
     public Transform bottomTarget;
 
@@ -40,6 +40,21 @@ public class Meeting : MonoBehaviour, Iinteractable
         return true;
     }
 
+
+    public void FixedUpdate()
+    {
+        if (GameIsActive == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                TRB.AddForce(Vector3.up * Power);
+                BRB.AddForce(-Vector3.up * Power);
+                Sleepy();
+            }
+        }
+
+    }
+
     void Sleepy()
     {
         //Makes the to black squares move over the camera
@@ -53,15 +68,7 @@ public class Meeting : MonoBehaviour, Iinteractable
 
         GameIsActive = true;
 
-        if (GameIsActive == true)
-        {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                TRB.AddForce(Vector3.up * Power);
-                BRB.AddForce(-Vector3.up * Power);
-            }
-        }
-
+        
     }
 
     void Awake()
