@@ -38,8 +38,16 @@ public class Urinal : MonoBehaviour, Iinteractable
     public bool Interact(Interactor interactor)
     {
         //this is what happenes when you interact
-        game();
-        return true;
+        if (targetMovement.GameOver || targetMovement.GameFail)//so that cant start game again
+        {
+            return false;
+        }
+        else
+        {
+            Debug.Log("stating game");
+            game();
+            return true;
+        }
     }
 
     // Awake is called before the first frame update
