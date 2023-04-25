@@ -23,11 +23,14 @@ public class Meeting : MonoBehaviour, Iinteractable
     public GameObject Bottom;
 
     public float speed;
+    public float Power = 1000f;
     public Transform topTarget;
     public Transform bottomTarget;
 
     public Rigidbody TRB;
     public Rigidbody BRB;
+
+    public bool GameIsActive = false;
     
     public bool Interact(Interactor interactor)
     {
@@ -39,7 +42,7 @@ public class Meeting : MonoBehaviour, Iinteractable
 
     void Sleepy()
     {
-        //speed = speed * Time.fixedDeltaTime;
+        //Makes the to black squares move over the camera
         Vector3 topDirection = topTarget.transform.position - TRB.transform.position;
         Vector3 bottomDirection = bottomTarget.transform.position - BRB.transform.position;
       
@@ -47,9 +50,17 @@ public class Meeting : MonoBehaviour, Iinteractable
         Vector3 bottomVector = bottomDirection.normalized * speed;
         TRB.velocity = topVector;
         BRB.velocity = bottomVector;
-       
-        //TRB.MovePosition(topTarget.position);
-        //BRB.MovePosition(bottomTarget.position);
+
+        GameIsActive = true;
+
+        if (GameIsActive == true)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                TRB.AddForce(Vector3.up * Power);
+                BRB.AddForce(-Vector3.up * Power);
+            }
+        }
 
     }
 
