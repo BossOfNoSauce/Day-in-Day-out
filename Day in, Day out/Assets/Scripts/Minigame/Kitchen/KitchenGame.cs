@@ -40,13 +40,25 @@ public class KitchenGame : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             
             Arm.SetActive(true);
             Hand.HandActive = false;
+            //Arm.transform.position = new Vector3(1f, 1f, 1f);
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+
+            Arm.SetActive(false);
+            Hand.HandActive = true;
             //Arm.transform.position = new Vector3(1f, 1f, 1f);
 
         }
