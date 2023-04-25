@@ -35,7 +35,7 @@ public class TargetMovement : MonoBehaviour
             Dafunk();
             if (time > swayTime)
             {
-                m_rigidbody.velocity = -1 * Mathf.Sign(m_rigidbody.velocity.x) * right;
+                m_rigidbody.velocity = -1 * Mathf.Sign(m_rigidbody.velocity.x) * (Random.Range(0, 1) > 0 ? right:-right);//added random left / right swing
                 time = 0f;
                 Dafunk();
             }
