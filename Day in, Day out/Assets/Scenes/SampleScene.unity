@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -42767,6 +42767,10 @@ PrefabInstance:
       propertyPath: noodles
       value: 
       objectReference: {fileID: 2091466400}
+    - target: {fileID: 2849589460204738401, guid: 24fd24dc0a33946449b3d8704c67af98, type: 3}
+      propertyPath: Mcollider
+      value: 
+      objectReference: {fileID: 209899227}
     - target: {fileID: 2849589460204738401, guid: 24fd24dc0a33946449b3d8704c67af98, type: 3}
       propertyPath: microwave
       value: 
