@@ -6,7 +6,9 @@ public class WaterDispenser : MonoBehaviour
 {
     public GameObject Kitchen;
     KitchenGame kitchenGame;
+   public AudioSource audioSource;
 
+    public AudioClip water;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class WaterDispenser : MonoBehaviour
         if(other.gameObject.tag == "Noodles")
         {
             kitchenGame.noodleStage = 1;
+            audioSource.PlayOneShot(water, 0.7f);
             Debug.Log(kitchenGame.noodleStage);
         }
     }

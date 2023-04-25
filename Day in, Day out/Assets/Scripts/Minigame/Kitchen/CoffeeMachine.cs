@@ -18,11 +18,13 @@ public class CoffeeMachine : MonoBehaviour, Iinteractable
 
     public string InteractionPrompt => prompt;
 
-
+    public GameObject kitchenObjects;
+    KitchenObjs kitchenObjs;
     // Start is called before the first frame update
     void Start()
     {
         kitchenGame = Kitchen.GetComponent<KitchenGame>();
+        kitchenObjs = kitchenObjects.GetComponent<KitchenObjs>();
     }
 
     // Update is called once per frame
@@ -47,7 +49,9 @@ public class CoffeeMachine : MonoBehaviour, Iinteractable
             audioSource.PlayOneShot(Pour);
             Debug.Log(kitchenGame.coffeeStage);
             Drink.SetActive(true);
+            kitchenObjs.coffeeDrink = false;
             Debug.Log("done");
+            
 
         }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Microwave : MonoBehaviour, Iinteractable
 {
+   
     public GameObject Kitchen;
      KitchenGame kitchenGame;
 
@@ -11,13 +12,17 @@ public class Microwave : MonoBehaviour, Iinteractable
     public bool thebool;
     public string InteractionPrompt => prompt;
     public AudioSource audioSource;
-    public AudioClip microwave;
+    public AudioClip microwaveOpen;
+    public AudioClip microwaveClosed;
+    public AudioClip cooking;
     public Animator animator;
+
+    public bool MikeIsOpen = false;
 
     public GameObject noodles;
     KitchenObjs kitchenObjs;
 
-    
+    public Collider Mcollider;
     void Start()
     {
         kitchenGame = Kitchen.GetComponent<KitchenGame>();
@@ -34,12 +39,25 @@ public class Microwave : MonoBehaviour, Iinteractable
 
     public bool Interact(Interactor interactor)
     {
-        if (thebool == false)
+        if (MikeIsOpen == false)
         {
-            audioSource.PlayOneShot(microwave, 0.7f);
-            animator.SetBool("Microwave Open",true);
-            thebool = true;
+            Mcollider.enabled = true;
+            
+            animator.SetTrigger("Microwave Open");
+            audioSource.PlayOneShot(microwaveOpen, 0.7f);
+           
         }
+
+        if (MikeIsOpen == true)
+        {
+            
+            audioSource.PlayOneShot(microwaveClosed, 0.7f);
+            animator.SetTrigger("Microwave Close");
+            
+            
+        }
+        MikeIsOpen = !MikeIsOpen;
+        
         return true;
     }
 
@@ -49,8 +67,29 @@ public class Microwave : MonoBehaviour, Iinteractable
         {
             if(other.gameObject.tag == "Noodles")
             {
+                MikeIsOpen = false;
+                gameObject.layer = default;
+                thebool = true;
+                kitchenObjs.GrabBool = false;
+                kitchenObjs.RB.useGravity = !kitchenObjs.RB.useGravity;
                 StartCoroutine(MicroWaveWait());
-                // close door
+
+            }
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (kitchenGame.noodleStage == 2)
+        {
+            if (other.gameObject.tag == "Noodles")
+            {
+                
+                
+                animator.SetTrigger("Microwave Closed");
+                Mcollider.enabled = true;
+                gameObject.layer = LayerMask.NameToLayer("Interact");
+               
 
             }
         }
@@ -58,10 +97,24 @@ public class Microwave : MonoBehaviour, Iinteractable
 
     IEnumerator MicroWaveWait()
     {
-        kitchenGame.noodleStage = 2;
-        kitchenObjs.GrabBool = false;
-        yield return new WaitForSeconds(2);
-        animator.SetBool("Microwave Open", true);
-        kitchenGame.NoodlesIsDone = true;
+        if(thebool == true)
+        {
+            kitchenObjs.AbleToGrab = false;
+            animator.SetTrigger("Microwave Close");
+            audioSource.PlayOneShot(microwaveClosed, 0.7f);
+            yield return new WaitForSeconds(1);
+            audioSource.PlayOneShot(cooking, 0.7f);
+            yield return new WaitForSeconds(13);
+            kitchenGame.noodleStage = 2;
+            animator.SetTrigger("Microwave Open");
+            MikeIsOpen = false;
+            kitchenGame.NoodlesIsDone = true;
+            thebool = false;
+            Mcollider.enabled = false;
+            kitchenObjs.AbleToGrab = true;
+            
+            
+        }
+        
     }
 }
