@@ -145,7 +145,7 @@ public class Computer : MonoBehaviour, Iinteractable
     public void DummyFunc()
     {
         cooldown = true;
-        Debug.Log("tipe");
+        
         score = score + 1;
         CurrentSpot.SetActive(false);
         StartCoroutine(Reset());

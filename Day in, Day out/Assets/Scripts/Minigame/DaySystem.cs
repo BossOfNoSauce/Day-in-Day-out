@@ -23,12 +23,16 @@ public class DaySystem : MonoBehaviour
     {
         if (Days == 1 )
         {
-            StartCoroutine(EndDay());
+            if(BossCheck == true)
+            {
+                StartCoroutine(EndDay());
+            }
+             
         }
 
         if (Days == 2 )
         {
-            StartCoroutine(EndDay());
+            //StartCoroutine(EndDay());
         }
     }
 
