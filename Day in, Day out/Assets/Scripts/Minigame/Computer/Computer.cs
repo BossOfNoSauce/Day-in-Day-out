@@ -12,6 +12,10 @@ public class Computer : MonoBehaviour, Iinteractable
     //  []can open pause menu while playing
     //  []game doesnt end
     //  []no fail state in script
+    //      [x]add bad buttons no press
+    //      []make new array for bad button & rename spots to good btn
+    //      []recode button logic
+    //          []
 
     public GameObject manager;
     GameManager gameManager;

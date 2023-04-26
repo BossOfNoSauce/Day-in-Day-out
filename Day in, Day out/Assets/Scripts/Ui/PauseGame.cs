@@ -28,13 +28,12 @@ public class PauseGame : MonoBehaviour
             Cursor.visible = true;
             audioSource.Pause();
         }
-        else
-        {
-            Time.timeScale = 0f;
-            Cursor.visible = true;
-        }
     }
-
+    public void simPaused()
+    {
+        Time.timeScale = 0f;
+        Cursor.visible = true;
+    }
     public void Resume()
     {
        if(AbleToPause == true)
@@ -45,16 +44,12 @@ public class PauseGame : MonoBehaviour
             audioSource.UnPause();
             Cursor.visible = false;
         }
-        else
-        {
-            Time.timeScale = 1.0f;
-            Cursor.visible = false;
-        }
-            
-        
-       
     }
-
+    public void simResume()
+    {
+        Time.timeScale = 1.0f;
+        Cursor.visible = false;
+    }
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
