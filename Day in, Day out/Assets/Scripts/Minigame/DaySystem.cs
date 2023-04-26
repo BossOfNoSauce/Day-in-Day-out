@@ -2,8 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DaySystem : MonoBehaviour
+public class DaySystem : MonoBehaviour, Iinteractable
 {
+    [SerializeField] private string prompt;
+    
+    public string InteractionPrompt => prompt;
+
+    public bool cooldown;
+
     public bool ComputerIsDone;
     public bool KitchenIsDone;
     public bool UrinalIsDone;
@@ -21,14 +27,7 @@ public class DaySystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Days == 1 )
-        {
-            if(BossCheck == true)
-            {
-                StartCoroutine(EndDay());
-            }
-             
-        }
+        
 
         if (Days == 2 )
         {
@@ -36,10 +35,31 @@ public class DaySystem : MonoBehaviour
         }
     }
 
+    public bool Interact(Interactor interactor)
+    {
+        if (Days == 1)
+        {
+            if (BossCheck == true)
+            {
+                StartCoroutine(EndDay());
+            }
+
+        }
+
+        return true;
+    }
+
+
     IEnumerator EndDay()
     {
-        //play day end sound
-        yield return new WaitForSeconds(3);
-        Days++;
+        if(cooldown == false)
+        {
+            //play day end sound
+            Debug.Log("day end");
+            yield return new WaitForSeconds(3);
+            Days++;
+            cooldown = true;
+        }
+        
     }
 }

@@ -691,7 +691,10 @@ GameObject:
   m_Component:
   - component: {fileID: 26645117}
   - component: {fileID: 26645116}
-  m_Layer: 0
+  - component: {fileID: 26645120}
+  - component: {fileID: 26645119}
+  - component: {fileID: 26645118}
+  m_Layer: 6
   m_Name: ElevatorButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,6 +766,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &26645118
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26645115}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &26645119
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26645115}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 1.6, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &26645120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26645115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6d8f30ba8972b40a6522a955ba88b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prompt: 
+  cooldown: 0
+  ComputerIsDone: 0
+  KitchenIsDone: 0
+  UrinalIsDone: 0
+  MeetingIsDone: 0
+  Days: 1
+  BossCheck: 0
 --- !u!1 &27494734
 GameObject:
   m_ObjectHideFlags: 0
@@ -12966,55 +13018,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545622752}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &547298031
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 547298032}
-  - component: {fileID: 547298033}
-  m_Layer: 0
-  m_Name: DAY MANAGER
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &547298032
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547298031}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.26625, y: 3.128375, z: 117.92325}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 23
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &547298033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547298031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6d8f30ba8972b40a6522a955ba88b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ComputerIsDone: 0
-  KitchenIsDone: 0
-  UrinalIsDone: 0
-  MeetingIsDone: 0
-  Days: 1
-  BossCheck: 0
 --- !u!1 &555028926
 GameObject:
   m_ObjectHideFlags: 0
@@ -26848,7 +26851,7 @@ MonoBehaviour:
   noodleStage: 0
   CoffeeIsDone: 0
   NoodlesIsDone: 0
-  DayManager: {fileID: 547298031}
+  DayManager: {fileID: 26645115}
 --- !u!1 &1067004775
 GameObject:
   m_ObjectHideFlags: 0
@@ -45806,7 +45809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: 
-  DayManager: {fileID: 547298031}
+  DayManager: {fileID: 26645115}
   audioSource: {fileID: 1743486951}
   day1monologue: {fileID: 8300000, guid: 3463b01736f8f74409f95ee924e1e323, type: 3}
   Buzzer: {fileID: 8300000, guid: 88c24d6144975524da68a673c6d2b51e, type: 3}
@@ -45885,7 +45888,7 @@ Transform:
   m_LocalScale: {x: 0.48615158, y: 1, z: 0.7688276}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!82 &1743486951
 AudioSource:
@@ -55252,7 +55255,7 @@ MonoBehaviour:
   cooldown2: 0
   GameFail: 0
   GameWin: 0
-  DayManager: {fileID: 547298031}
+  DayManager: {fileID: 26645115}
 --- !u!65 &2098371509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56092,7 +56095,7 @@ MonoBehaviour:
   menu: {fileID: 912831577}
   PauseMenu: {fileID: 268373959}
   prompt: 
-  DayManager: {fileID: 547298031}
+  DayManager: {fileID: 26645115}
 --- !u!65 &2114999375
 BoxCollider:
   m_ObjectHideFlags: 0
