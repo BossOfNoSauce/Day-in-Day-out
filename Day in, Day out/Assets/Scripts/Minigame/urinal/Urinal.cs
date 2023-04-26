@@ -104,7 +104,7 @@ public class Urinal : MonoBehaviour, Iinteractable
         if (targetMovement.GameOver == false || targetMovement.GameFail == false)
         {
             pauseGame.AbleToPause = false; //dissables pause menu
-            pauseGame.Paused();
+            pauseGame.simPaused();
             gameManager.gameActive = true;
             //add menu popup here
             menu.SetActive(true);
