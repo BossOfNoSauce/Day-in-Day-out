@@ -11,6 +11,7 @@ public class BossScript : MonoBehaviour, Iinteractable
     public GameObject DayManager;
     DaySystem daySystem;
 
+    public GameObject BossImage;
     public  AudioSource audioSource;
     public AudioClip day1monologue;
     public AudioClip Buzzer;
@@ -38,12 +39,13 @@ public class BossScript : MonoBehaviour, Iinteractable
         
         if (daySystem.ComputerIsDone == true && daySystem.Days == 1)
         {
-            
+            BossImage.SetActive(true);
             yield return new WaitForSeconds(1);
             audioSource.PlayOneShot(day1monologue, 1);
             yield return new WaitForSeconds(34);
             daySystem.BossCheck = true;
             Debug.Log(daySystem.BossCheck);
+            BossImage.SetActive(false);
         }
        // else
        // {
