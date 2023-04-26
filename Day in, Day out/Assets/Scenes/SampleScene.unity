@@ -38650,7 +38650,7 @@ MonoBehaviour:
   Top: {fileID: 316420981}
   Bottom: {fileID: 1456752735}
   speed: 250
-  Power: 1000
+  Power: 2500
   topTarget: {fileID: 990030142}
   bottomTarget: {fileID: 1377755354}
   TRB: {fileID: 316420985}
