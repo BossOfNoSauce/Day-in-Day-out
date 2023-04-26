@@ -70,7 +70,7 @@ public class Meeting : MonoBehaviour, Iinteractable
 
         GameIsActive = true;
 
-        
+        Debug.Log("bap");
     }
 
     void Awake()
