@@ -43,6 +43,8 @@ public class Meeting : MonoBehaviour, Iinteractable
 
     public void FixedUpdate()
     {
+        //topTarget = new Vector3(0, 0, 0);
+
         if (GameIsActive == true)
         {
             if (Input.GetKeyDown(KeyCode.Space))
