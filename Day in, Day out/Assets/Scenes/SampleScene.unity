@@ -12341,6 +12341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
+  isGood: 1
 --- !u!65 &494463258
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14283,6 +14284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
+  isGood: 1
 --- !u!65 &578434765
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34442,6 +34444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
+  isGood: 1
 --- !u!1 &1263368597
 GameObject:
   m_ObjectHideFlags: 0
@@ -36043,6 +36046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
+  isGood: 1
 --- !u!1 &1332390554
 GameObject:
   m_ObjectHideFlags: 0
@@ -40857,6 +40861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
+  isGood: 1
 --- !u!65 &1509986107
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42139,7 +42144,7 @@ Transform:
   m_GameObject: {fileID: 1549789881}
   m_LocalRotation: {x: -0.020066986, y: -0, z: -0, w: 0.99979866}
   m_LocalPosition: {x: 9.38, y: 3.1111, z: 0.7214}
-  m_LocalScale: {x: 1.4633, y: 0.2, z: 11.447764}
+  m_LocalScale: {x: 2.0022333, y: 0.27366, z: 15.663976}
   m_Children: []
   m_Father: {fileID: 1393081630}
   m_RootOrder: 3
@@ -42940,6 +42945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
+  isGood: 1
 --- !u!65 &1572247596
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46528,6 +46534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
+  isGood: 1
 --- !u!1 &1685637096
 GameObject:
   m_ObjectHideFlags: 0
@@ -52741,6 +52748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
+  isGood: 1
 --- !u!1 &1902613431
 GameObject:
   m_ObjectHideFlags: 0
@@ -58218,18 +58226,16 @@ MonoBehaviour:
   prompt: 
   manager: {fileID: 1818565575}
   target: {fileID: 373038658}
-  Camera: {fileID: 963194225}
   Player: {fileID: 1926878008}
   hand: {fileID: 4236191114706419201}
   MainCam: {fileID: 963194225}
   Mcollider: {fileID: 2098371509}
   score: 0
-  Spots:
-  - {fileID: 1261353478}
-  - {fileID: 1684517606}
-  - {fileID: 1888132056}
-  - {fileID: 1331459677}
-  CurrentSpot: {fileID: 0}
+  goodSpots: []
+  badSpots: []
+  tutUi: {fileID: 0}
+  gameUi: {fileID: 0}
+  pauseMenu: {fileID: 0}
   audioSource: {fileID: 2098371510}
   type: {fileID: 8300000, guid: e10b167335af1a24d972e28399ff9867, type: 3}
   cooldown: 0
