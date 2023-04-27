@@ -25,11 +25,12 @@ public class DaySystem : MonoBehaviour, Iinteractable
     
     public GameObject BlackScreen;
     ScreenFade screenFade;
+    public Animator animator;
     
     // Start is called before the first frame update
     void Start()
     {
-        screenFade = BlackScreen.GetComponent<ScreenFade>();
+
     }
 
     // Update is called once per frame
@@ -66,12 +67,12 @@ public class DaySystem : MonoBehaviour, Iinteractable
             player.transform.position = new Vector3(142, 7.4f, -43f);
             yield return new WaitForSeconds(2);
             //play door animation
-            screenFade.animator.SetTrigger("Ftb");
+            animator.SetTrigger("Ftb");
             //play day end sound
             audioSource.PlayOneShot(DaySound);
             yield return new WaitForSeconds(10);
             Days++;
-            screenFade.animator.SetTrigger("fob");
+            animator.SetTrigger("fob");
             cooldown = true;
         }
         
