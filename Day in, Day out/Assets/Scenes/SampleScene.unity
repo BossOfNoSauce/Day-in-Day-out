@@ -919,6 +919,9 @@ MonoBehaviour:
   animator: {fileID: 735071144}
 =======
   BlackScreen: {fileID: 0}
+<<<<<<< HEAD
+>>>>>>> parent of 0b2780e (computer fixed and additiuons)
+=======
 >>>>>>> parent of 0b2780e (computer fixed and additiuons)
 --- !u!82 &26645121
 AudioSource:
@@ -58229,18 +58232,24 @@ MonoBehaviour:
   Mcollider: {fileID: 2098371509}
   score: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   goodSpots: []
   badSpots: []
   tutUi: {fileID: 0}
   gameUi: {fileID: 0}
   pauseMenu: {fileID: 0}
 =======
+=======
+>>>>>>> parent of 0b2780e (computer fixed and additiuons)
   Spots:
   - {fileID: 1261353478}
   - {fileID: 1684517606}
   - {fileID: 1888132056}
   - {fileID: 1331459677}
   CurrentSpot: {fileID: 0}
+<<<<<<< HEAD
+>>>>>>> parent of 0b2780e (computer fixed and additiuons)
+=======
 >>>>>>> parent of 0b2780e (computer fixed and additiuons)
   audioSource: {fileID: 2098371510}
   type: {fileID: 8300000, guid: e10b167335af1a24d972e28399ff9867, type: 3}
