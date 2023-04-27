@@ -24,7 +24,7 @@ public class Meeting : MonoBehaviour, Iinteractable
 
     public float speed;
     public float Power = 13000f;
-    public Transform topTarget;
+    public Transform TopTarget;
     public Transform bottomTarget;
 
     public Rigidbody TRB;
@@ -41,7 +41,7 @@ public class Meeting : MonoBehaviour, Iinteractable
     }
 
 
-    public void FixedUpdate()
+    public void Update()
     {
         //topTarget = new Vector3(0, 0, 0);
 
@@ -55,13 +55,24 @@ public class Meeting : MonoBehaviour, Iinteractable
             }
         }
 
+        if(TRB.transform.position.y <= TopTarget.transform.position.y)
+        {
+            TRB.velocity = Vector3.zero;
+           
+        }
+
+        if (BRB.transform.position.y >= bottomTarget.transform.position.y)
+        {
+            BRB.velocity = Vector3.zero;
+
+        }
     }
 
     void Sleepy()
     {
         //Makes the to black squares move over the camera
-        Vector3 topDirection = topTarget.transform.position - TRB.transform.position;
-        Vector3 bottomDirection = bottomTarget.transform.position - BRB.transform.position;
+        Vector3 topDirection = Target.transform.position - TRB.transform.position;
+        Vector3 bottomDirection = Target.transform.position - BRB.transform.position;
       
         Vector3 topVector = topDirection.normalized * speed;
         Vector3 bottomVector = bottomDirection.normalized * speed;
@@ -70,7 +81,8 @@ public class Meeting : MonoBehaviour, Iinteractable
 
         GameIsActive = true;
 
-        Debug.Log("bap");
+        Debug.Log(topVector);
+        Debug.Log(bottomVector);
     }
 
     void Awake()
