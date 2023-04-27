@@ -9,20 +9,24 @@ public class Computer : MonoBehaviour, Iinteractable
     public string InteractionPrompt => prompt;
 
     //found bugs
-    //  []can open pause menu while playing
-    //  []game doesnt end
-    //  []no fail state in script
+    //  [X]can open pause menu while playing
+    //  [x]game doesnt end
+    //  [X]no fail state in script
     //      [x]add bad buttons no press
-    //      []make new array for bad button & rename spots to good btn
-    //      []recode button logic
-    //          []
+    //      [x]make new array for bad button & rename spots to good btn
+    //      [/]add ui elements
+    //          [x]tutorial screen
+    //          [x]in game ui
+    //              [/]score display
+    //              []
+    //      [x]recode button logic
+    //          [/]if hand collide with bad key, game end || a counter (like a hp bar) goes down and 0 == fail
 
     public GameObject manager;
     GameManager gameManager;
 
     
     public GameObject target;
-    public GameObject Camera;
     PlayerMovement playerMovement;
     public GameObject Player;
     public GameObject hand;
@@ -33,12 +37,17 @@ public class Computer : MonoBehaviour, Iinteractable
     public Collider Mcollider;
 
     public  int score;
-    int index;
-    int index2;
-
-    public GameObject[] Spots;
-    public GameObject CurrentSpot;
-
+    //spots
+    public GameObject[] goodSpots;
+    public GameObject[] badSpots;
+    GameObject goodCurrentSpot;
+    GameObject badCurrentSpot;
+    //ui
+    public GameObject tutUi;
+    public GameObject gameUi;
+    public GameObject pauseMenu;
+    PauseGame pause;
+    //audio
     public AudioSource audioSource;
     public AudioClip type;
 
@@ -54,6 +63,7 @@ public class Computer : MonoBehaviour, Iinteractable
     {
         //this is what happenes when you interact
         Debug.Log("Turning on computer");
+        
         StartCoroutine(StartComputing());
         return true;
     }
@@ -61,6 +71,7 @@ public class Computer : MonoBehaviour, Iinteractable
     // Start is called before the first frame update
     void Awake()
     {
+        pause = pauseMenu.GetComponent<PauseGame>();
         daySystem = DayManager.GetComponent<DaySystem>();
         playerMovement = Player.GetComponent<PlayerMovement>();
         firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
@@ -81,15 +92,19 @@ public class Computer : MonoBehaviour, Iinteractable
     {
         if(GameFail ==  false || GameWin == false)
         {
+            pause.AbleToPause = false;
             playerMovement.InGame = true;
             gameManager.gameActive = true;
-            // Mcollider.enabled = !Mcollider.enabled;
-            yield return new WaitForSeconds(3);
-            CallSpot();
             Player.transform.position = new Vector3(138, 5.5f, 93.8f);
             firstPersonCameraRotation.FreezeMovement = true;
-            hand.SetActive(true);
+            
+            pause.simPaused();
+            tutUi.SetActive(true);
             LookAt();
+            yield return new WaitForSeconds(1);
+            hand.SetActive(true);
+            CallSpot();
+            
         }
         
         
@@ -98,7 +113,7 @@ public class Computer : MonoBehaviour, Iinteractable
     void LookAt()
     {
         Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
-        Camera.transform.LookAt(target.transform.position, Vector3.up);
+        MainCam.transform.LookAt(target.transform.position, Vector3.up);
     }
     // code outline
 
@@ -109,10 +124,13 @@ public class Computer : MonoBehaviour, Iinteractable
     {
         if(score < 10)
         {
-            index = Random.Range(0, Spots.Length);
-            CurrentSpot = Spots[index];
-            CurrentSpot.SetActive(true);
-            cooldown = false;
+            int index = Random.Range(0, goodSpots.Length);
+            int index2 = Random.Range(0, badSpots.Length);
+            goodCurrentSpot = goodSpots[index];
+            goodCurrentSpot.SetActive(true);
+            badCurrentSpot = badSpots[index2];
+            badCurrentSpot.SetActive(true);
+            cooldown = false;           
         }
        
     }
@@ -132,26 +150,28 @@ public class Computer : MonoBehaviour, Iinteractable
         if(cooldown2 == false)
         {
             yield return new WaitForSeconds(1);
-            Mcollider.enabled = false;
-            //WHY NO WORK
             playerMovement.InGame = false; //is good
             gameManager.gameActive = false; //is good
             firstPersonCameraRotation.FreezeMovement = false; // si good
             hand.SetActive(false);
+            gameUi.SetActive(false);
+            pause.AbleToPause = true;
             Player.transform.position = new Vector3(136, 8.5f, 93.8f);
             cooldown2 = true;
             daySystem.ComputerIsDone = true;
-            //Fix... call function once
         }
 
     }
 
-    public void DummyFunc()
+    public void keyCollide(bool isGood)
     {
         cooldown = true;
-        
-        score = score + 1;
-        CurrentSpot.SetActive(false);
+        if (isGood)
+        {
+            score = score + 1;
+        }
+        goodCurrentSpot.SetActive(false);
+        badCurrentSpot.SetActive(false);
         StartCoroutine(Reset());
     }
 
