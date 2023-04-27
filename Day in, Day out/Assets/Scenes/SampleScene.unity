@@ -42913,7 +42913,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549789881}
   m_LocalRotation: {x: -0.020066986, y: -0, z: -0, w: 0.99979866}
-  m_LocalPosition: {x: 9.38, y: 3.5, z: 0.71}
+  m_LocalPosition: {x: 9.38, y: 3.37, z: 0.72}
   m_LocalScale: {x: 1.4633, y: 0.2, z: 11.447764}
   m_Children: []
   m_Father: {fileID: 1393081630}
@@ -49315,7 +49315,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prompt: 
   DayManager: {fileID: 26645115}
-  jukeBox: {fileID: 0}
   BossImage: {fileID: 1049754709}
   audioSource: {fileID: 1743486951}
   day1monologue: {fileID: 8300000, guid: 3463b01736f8f74409f95ee924e1e323, type: 3}
