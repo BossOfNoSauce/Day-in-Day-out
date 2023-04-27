@@ -915,7 +915,10 @@ MonoBehaviour:
   DaySound: {fileID: 0}
   BossCheck: 0
   BlackScreen: {fileID: 0}
+<<<<<<< Updated upstream
   animator: {fileID: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!82 &26645121
 AudioSource:
   m_ObjectHideFlags: 0
@@ -49315,7 +49318,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prompt: 
   DayManager: {fileID: 26645115}
+<<<<<<< Updated upstream
   jukeBox: {fileID: 0}
+=======
+>>>>>>> Stashed changes
   BossImage: {fileID: 1049754709}
   audioSource: {fileID: 1743486951}
   day1monologue: {fileID: 8300000, guid: 3463b01736f8f74409f95ee924e1e323, type: 3}

@@ -11,9 +11,6 @@ public class BossScript : MonoBehaviour, Iinteractable
     public GameObject DayManager;
     DaySystem daySystem;
 
-    public GameObject jukeBox;
-    Jukebox jukebox;
-
     public GameObject BossImage;
     public  AudioSource audioSource;
     public AudioClip day1monologue;
@@ -22,7 +19,6 @@ public class BossScript : MonoBehaviour, Iinteractable
     void Start()
     {
         daySystem = DayManager.GetComponent<DaySystem>();
-        jukebox = jukeBox.GetComponent<Jukebox>();
     }
 
     // Update is called once per frame
@@ -43,7 +39,6 @@ public class BossScript : MonoBehaviour, Iinteractable
         
         if (daySystem.ComputerIsDone == true && daySystem.Days == 1)
         {
-            jukebox.StopMusic();
             BossImage.SetActive(true);
             yield return new WaitForSeconds(1);
             audioSource.PlayOneShot(day1monologue, 1);
