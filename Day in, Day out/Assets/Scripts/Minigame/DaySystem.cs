@@ -5,7 +5,8 @@ using UnityEngine;
 public class DaySystem : MonoBehaviour, Iinteractable
 {
     [SerializeField] private string prompt;
-    
+
+    public GameObject player;
     public string InteractionPrompt => prompt;
 
     public bool cooldown;
@@ -16,12 +17,19 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public bool MeetingIsDone;
     public int Days = 1;
 
+    public AudioSource audioSource;
+    public AudioClip DaySound;
+
     public bool BossCheck;
-    // what we will do is have the boss check per day in his own script and look if bool is done, then it will enable a boss check bool which will allow sday transition;
+
+    
+    public GameObject BlackScreen;
+    ScreenFade screenFade;
+    
     // Start is called before the first frame update
     void Start()
     {
-        //i apologize to all who read this terrible code, its horribly inefficent, but it works. im sorry
+        screenFade = BlackScreen.GetComponent<ScreenFade>();
     }
 
     // Update is called once per frame
@@ -54,10 +62,16 @@ public class DaySystem : MonoBehaviour, Iinteractable
     {
         if(cooldown == false)
         {
-            //play day end sound
             Debug.Log("day end");
-            yield return new WaitForSeconds(3);
+            player.transform.position = new Vector3(142, 7.4f, -43f);
+            yield return new WaitForSeconds(2);
+            //play door animation
+            screenFade.animator.SetTrigger("Ftb");
+            //play day end sound
+            audioSource.PlayOneShot(DaySound);
+            yield return new WaitForSeconds(10);
             Days++;
+            screenFade.animator.SetTrigger("fob");
             cooldown = true;
         }
         
