@@ -24,7 +24,7 @@ public class Meeting : MonoBehaviour, Iinteractable
 
     public float speed;
     public float Power = 13000f;
-    public Transform TopTarget;
+    public Transform topTarget;
     public Transform bottomTarget;
 
     public Rigidbody TRB;
@@ -55,7 +55,7 @@ public class Meeting : MonoBehaviour, Iinteractable
             }
         }
 
-        if(TRB.transform.position.y <= TopTarget.transform.position.y)
+        if(TRB.transform.position.y <= topTarget.transform.position.y)
         {
             TRB.velocity = Vector3.zero;
            
@@ -71,8 +71,8 @@ public class Meeting : MonoBehaviour, Iinteractable
     void Sleepy()
     {
         //Makes the to black squares move over the camera
-        Vector3 topDirection = Target.transform.position - TRB.transform.position;
-        Vector3 bottomDirection = Target.transform.position - BRB.transform.position;
+        Vector3 topDirection = topTarget.transform.position - TRB.transform.position;
+        Vector3 bottomDirection = bottomTarget.transform.position - BRB.transform.position;
       
         Vector3 topVector = topDirection.normalized * speed;
         Vector3 bottomVector = bottomDirection.normalized * speed;
