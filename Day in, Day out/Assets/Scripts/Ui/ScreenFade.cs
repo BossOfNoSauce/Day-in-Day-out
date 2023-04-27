@@ -16,4 +16,14 @@ public class ScreenFade : MonoBehaviour
     {
         
     }
+
+    public void FadeOut()
+    {
+       animator.SetTrigger("Ftb");
+    }
+
+    public void FadeIn()
+    {
+        animator.SetTrigger("fob");
+    }
 }

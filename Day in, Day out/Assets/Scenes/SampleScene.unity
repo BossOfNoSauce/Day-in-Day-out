@@ -915,6 +915,7 @@ MonoBehaviour:
   DaySound: {fileID: 8300000, guid: b980b018cae4e134eab7c8aa592b6dc9, type: 3}
   BossCheck: 0
   BlackScreen: {fileID: 735071142}
+  animator: {fileID: 735071144}
 --- !u!82 &26645121
 AudioSource:
   m_ObjectHideFlags: 0
