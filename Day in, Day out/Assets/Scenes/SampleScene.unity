@@ -920,6 +920,9 @@ MonoBehaviour:
 =======
   BlackScreen: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 0b2780e (computer fixed and additiuons)
+=======
 >>>>>>> parent of 0b2780e (computer fixed and additiuons)
 =======
 >>>>>>> parent of 0b2780e (computer fixed and additiuons)
@@ -58233,12 +58236,15 @@ MonoBehaviour:
   score: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   goodSpots: []
   badSpots: []
   tutUi: {fileID: 0}
   gameUi: {fileID: 0}
   pauseMenu: {fileID: 0}
 =======
+=======
+>>>>>>> parent of 0b2780e (computer fixed and additiuons)
 =======
 >>>>>>> parent of 0b2780e (computer fixed and additiuons)
   Spots:
@@ -58248,6 +58254,9 @@ MonoBehaviour:
   - {fileID: 1331459677}
   CurrentSpot: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 0b2780e (computer fixed and additiuons)
+=======
 >>>>>>> parent of 0b2780e (computer fixed and additiuons)
 =======
 >>>>>>> parent of 0b2780e (computer fixed and additiuons)
