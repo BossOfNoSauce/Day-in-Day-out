@@ -22,17 +22,21 @@ public class PauseGame : MonoBehaviour
         
         if(AbleToPause == true)
         {
+            Cursor.visible = true;
             Time.timeScale = 0f;
             firstPersonCameraRotation.FreezeMovement = true;
             pauseMenu.SetActive(true);
-            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            
             audioSource.Pause();
         }
     }
     public void simPaused()
     {
-        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Time.timeScale = 0f;
+        
     }
     public void Resume()
     {
@@ -43,6 +47,7 @@ public class PauseGame : MonoBehaviour
             pauseMenu.SetActive(false);
             audioSource.UnPause();
             Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     public void simResume()
