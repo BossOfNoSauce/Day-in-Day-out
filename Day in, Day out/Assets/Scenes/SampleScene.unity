@@ -914,8 +914,12 @@ MonoBehaviour:
   audioSource: {fileID: 26645121}
   DaySound: {fileID: 8300000, guid: 3299737828a6bfa41be095f702cf0e77, type: 3}
   BossCheck: 0
+<<<<<<< HEAD
   BlackScreen: {fileID: 735071142}
   animator: {fileID: 735071144}
+=======
+  BlackScreen: {fileID: 0}
+>>>>>>> parent of 0b2780e (computer fixed and additiuons)
 --- !u!82 &26645121
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12341,7 +12345,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
-  isGood: 1
 --- !u!65 &494463258
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14284,7 +14287,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
-  isGood: 1
 --- !u!65 &578434765
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34444,7 +34446,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
-  isGood: 1
 --- !u!1 &1263368597
 GameObject:
   m_ObjectHideFlags: 0
@@ -36046,7 +36047,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
-  isGood: 1
 --- !u!1 &1332390554
 GameObject:
   m_ObjectHideFlags: 0
@@ -40861,7 +40861,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
-  isGood: 1
 --- !u!65 &1509986107
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42945,7 +42944,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
-  isGood: 1
 --- !u!65 &1572247596
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46534,7 +46532,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
-  isGood: 1
 --- !u!1 &1685637096
 GameObject:
   m_ObjectHideFlags: 0
@@ -52748,7 +52745,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
-  isGood: 1
 --- !u!1 &1902613431
 GameObject:
   m_ObjectHideFlags: 0
@@ -58226,16 +58222,26 @@ MonoBehaviour:
   prompt: 
   manager: {fileID: 1818565575}
   target: {fileID: 373038658}
+  Camera: {fileID: 963194225}
   Player: {fileID: 1926878008}
   hand: {fileID: 4236191114706419201}
   MainCam: {fileID: 963194225}
   Mcollider: {fileID: 2098371509}
   score: 0
+<<<<<<< HEAD
   goodSpots: []
   badSpots: []
   tutUi: {fileID: 0}
   gameUi: {fileID: 0}
   pauseMenu: {fileID: 0}
+=======
+  Spots:
+  - {fileID: 1261353478}
+  - {fileID: 1684517606}
+  - {fileID: 1888132056}
+  - {fileID: 1331459677}
+  CurrentSpot: {fileID: 0}
+>>>>>>> parent of 0b2780e (computer fixed and additiuons)
   audioSource: {fileID: 2098371510}
   type: {fileID: 8300000, guid: e10b167335af1a24d972e28399ff9867, type: 3}
   cooldown: 0
