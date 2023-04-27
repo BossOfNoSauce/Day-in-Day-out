@@ -70,7 +70,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             animator.SetTrigger("Ftb");
             //play day end sound
             audioSource.PlayOneShot(DaySound);
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(14);
             Days++;
             animator.SetTrigger("fob");
             cooldown = true;
