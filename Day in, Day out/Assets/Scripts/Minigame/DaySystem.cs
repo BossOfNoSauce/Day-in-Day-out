@@ -68,8 +68,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
             yield return new WaitForSeconds(2);
             //play door animation
             animator.SetTrigger("Ftb");
-            yield return new WaitForSeconds(1);
-            audioSource.PlayOneShot(DaySound, 2.0f);
+            //play day end sound
+            audioSource.PlayOneShot(DaySound);
             yield return new WaitForSeconds(14);
             Days++;
             animator.SetTrigger("fob");
