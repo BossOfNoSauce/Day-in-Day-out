@@ -25,19 +25,14 @@ public class KitchenGame : MonoBehaviour
     void Start()
     {
         daySystem = DayManager.GetComponent<DaySystem>();
-        Hand = Arm.GetComponent<HAND>();  
+        Hand = Arm.GetComponent<HAND>(); 
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(CoffeeIsDone == true && NoodlesIsDone == true)
-        {
-            Arm.SetActive(false);
-            Hand.HandActive = true;
-            daySystem.MeetingIsDone = true;
-
-        }
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,6 +41,7 @@ public class KitchenGame : MonoBehaviour
         {
             
             Arm.SetActive(true);
+            //Arm.transform.position = new Vector3(0.004f, 0.523f, 1.44f);
             Hand.HandActive = false;
             //Arm.transform.position = new Vector3(1f, 1f, 1f);
 
@@ -60,7 +56,13 @@ public class KitchenGame : MonoBehaviour
             Arm.SetActive(false);
             Hand.HandActive = true;
             //Arm.transform.position = new Vector3(1f, 1f, 1f);
+            if (CoffeeIsDone == true && NoodlesIsDone == true)
+            {
+                Arm.SetActive(false);
+                Hand.HandActive = true;
+                daySystem.MeetingIsDone = true;
 
+            }
         }
     }
 }
