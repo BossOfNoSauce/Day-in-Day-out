@@ -28,13 +28,13 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public GameObject BlackScreen;
     ScreenFade screenFade;
     public Animator animator;
-<<<<<<< Updated upstream
+
     public Animator elevator;
     
-=======
+
 
     public bool BossCooldown;
->>>>>>> Stashed changes
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,13 +75,13 @@ public class DaySystem : MonoBehaviour, Iinteractable
             Debug.Log("day end");
             player.transform.position = new Vector3(142, 7.4f, -43f);
             yield return new WaitForSeconds(2);
-<<<<<<< Updated upstream
+
             elevator.SetTrigger("Elevator Close");
             animator.SetTrigger("Ftb");
             //play day end sound
-=======
+
             //play door animation
->>>>>>> Stashed changes
+
             audioSource.PlayOneShot(DaySound);
             animator.SetTrigger("Ftb");
             yield return new WaitForSeconds(14);
