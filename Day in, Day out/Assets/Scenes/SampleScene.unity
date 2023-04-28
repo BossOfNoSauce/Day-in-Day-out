@@ -4802,7 +4802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &191246551
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7281,6 +7281,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 958188744}
   MainCam: {fileID: 963194225}
   manager: {fileID: 1818565575}
+  cursor: {fileID: 191246550}
   audioSource: {fileID: 1818565578}
   AbleToPause: 1
   menuActive: 0
@@ -30952,6 +30953,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   MainCam: {fileID: 0}
   manager: {fileID: 0}
+  cursor: {fileID: 0}
   audioSource: {fileID: 0}
   AbleToPause: 1
   menuActive: 0
