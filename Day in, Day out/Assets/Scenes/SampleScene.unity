@@ -4796,7 +4796,7 @@ GameObject:
   - component: {fileID: 191246553}
   - component: {fileID: 191246552}
   - component: {fileID: 191246554}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4819,7 +4819,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00012207031, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &191246552

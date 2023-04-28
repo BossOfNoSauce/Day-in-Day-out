@@ -107,16 +107,6 @@ public class Computer : MonoBehaviour, Iinteractable
             yield return new WaitForSeconds(1);
             hand.SetActive(true);
             CallSpot();
-            /*if (tutUi.active)
-            {
-                Debug.Log("dis is here");
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    
-                }
-            }*/
-
-
         }
         
         
@@ -136,11 +126,19 @@ public class Computer : MonoBehaviour, Iinteractable
     {
         if(score < 10)
         {
+            //rand spot 0-3 for each
             int index = Random.Range(0, goodSpots.Length);
             int index2 = Random.Range(0, badSpots.Length);
+            //Debug.Log("index 1 & 2, " + index + "/" + index2);//debug line
+            //overlap correction code
+            while(index == index2)
+            {
+                index2 = Random.Range(0, badSpots.Length);
+            }
+            //assighn spots and set active
             goodCurrentSpot = goodSpots[index];
-            goodCurrentSpot.SetActive(true);
             badCurrentSpot = badSpots[index2];
+            goodCurrentSpot.SetActive(true);
             badCurrentSpot.SetActive(true);
             cooldown = false;           
         }
