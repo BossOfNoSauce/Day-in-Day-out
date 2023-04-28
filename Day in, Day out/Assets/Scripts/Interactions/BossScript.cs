@@ -15,6 +15,9 @@ public class BossScript : MonoBehaviour, Iinteractable
     public  AudioSource audioSource;
     public AudioClip day1monologue;
     public AudioClip Buzzer;
+    //turn off music
+
+
     // Start is called before the first frame update
     void Start()
     {
