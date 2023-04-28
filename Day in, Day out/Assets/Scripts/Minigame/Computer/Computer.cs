@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class Computer : MonoBehaviour, Iinteractable
 {
     [SerializeField] private string prompt;
@@ -45,6 +46,8 @@ public class Computer : MonoBehaviour, Iinteractable
     //ui
     public GameObject tutUi;
     public GameObject gameUi;
+    public GameObject scoreText;
+    TextMeshProUGUI text;
     public GameObject pauseMenu;
     PauseGame pause;
     //audio
@@ -71,6 +74,7 @@ public class Computer : MonoBehaviour, Iinteractable
     // Start is called before the first frame update
     void Awake()
     {
+        text = scoreText.GetComponent<TextMeshProUGUI>();
         pause = pauseMenu.GetComponent<PauseGame>();
         daySystem = DayManager.GetComponent<DaySystem>();
         playerMovement = Player.GetComponent<PlayerMovement>();
@@ -180,6 +184,7 @@ public class Computer : MonoBehaviour, Iinteractable
         {
             score = score + 1;
         }
+        text.text = "score = " + score + " / 10";
         goodCurrentSpot.SetActive(false);
         badCurrentSpot.SetActive(false);
         StartCoroutine(Reset());

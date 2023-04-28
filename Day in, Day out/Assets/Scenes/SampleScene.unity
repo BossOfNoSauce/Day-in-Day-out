@@ -60159,6 +60159,7 @@ MonoBehaviour:
   - {fileID: 578434762}
   tutUi: {fileID: 197178064}
   gameUi: {fileID: 406975486}
+  scoreText: {fileID: 1643660728}
   pauseMenu: {fileID: 268373959}
   audioSource: {fileID: 2098371510}
   type: {fileID: 8300000, guid: e10b167335af1a24d972e28399ff9867, type: 3}
