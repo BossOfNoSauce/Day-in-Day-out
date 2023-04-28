@@ -8,6 +8,7 @@ public class PauseGame : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject MainCam;
     public GameObject manager;
+    public GameObject cursor;
     GameManager gameManager;
 
     public AudioSource audioSource;
@@ -26,7 +27,7 @@ public class PauseGame : MonoBehaviour
             firstPersonCameraRotation.FreezeMovement = true;
             pauseMenu.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
-            
+            cursor.SetActive(true);
             audioSource.Pause();
         }
     }
@@ -34,7 +35,7 @@ public class PauseGame : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
-        
+        cursor.SetActive(true);
     }
     public void Resume()
     {
@@ -44,12 +45,13 @@ public class PauseGame : MonoBehaviour
             firstPersonCameraRotation.FreezeMovement = false;
             pauseMenu.SetActive(false);
             audioSource.UnPause();
-            Cursor.visible = false;
+            cursor.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
     public void simResume()
     {
+        cursor.SetActive(false);
         Time.timeScale = 1.0f;
     }
     public void LoadMainMenu()
