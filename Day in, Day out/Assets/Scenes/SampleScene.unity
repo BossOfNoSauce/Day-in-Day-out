@@ -914,6 +914,7 @@ MonoBehaviour:
   audioSource: {fileID: 26645121}
   DaySound: {fileID: 8300000, guid: 3299737828a6bfa41be095f702cf0e77, type: 3}
   BossCheck: 0
+  JukeBoxObj: {fileID: 830215002}
   BlackScreen: {fileID: 735071142}
   animator: {fileID: 735071144}
   elevator: {fileID: 1806412101}
@@ -17800,7 +17801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756681681627984967, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4887653716004787798, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -50349,8 +50350,9 @@ MonoBehaviour:
   BossImage: {fileID: 1049754709}
   audioSource: {fileID: 1743486951}
   day1monologue: {fileID: 8300000, guid: 3463b01736f8f74409f95ee924e1e323, type: 3}
-  Buzzer: {fileID: 8300000, guid: 88c24d6144975524da68a673c6d2b51e, type: 3}
+  Buzzer: {fileID: 8300000, guid: 1481dce32aa33d14ca68baf78b99cf8a, type: 3}
   textBox: {fileID: 1489839664}
+  JukeBoxObj: {fileID: 830215002}
 --- !u!64 &1743486947
 MeshCollider:
   m_ObjectHideFlags: 0

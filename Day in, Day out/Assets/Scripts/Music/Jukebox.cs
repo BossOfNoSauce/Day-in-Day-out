@@ -39,4 +39,9 @@ public class Jukebox : MonoBehaviour
         audioSource.Play();
     }
 
+    public void StopMus()
+    {
+        audioSource.Stop();
+    }
+
 }

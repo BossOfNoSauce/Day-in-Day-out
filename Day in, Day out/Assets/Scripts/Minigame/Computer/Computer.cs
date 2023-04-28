@@ -64,16 +64,20 @@ public class Computer : MonoBehaviour, Iinteractable
     DaySystem daySystem;
     public bool Interact(Interactor interactor)
     {
+
         //this is what happenes when you interact
-        Debug.Log("Turning on computer");
+      
+            StartCoroutine(StartComputing());
         
-        StartCoroutine(StartComputing());
+        
+        
         return true;
     }
 
     // Start is called before the first frame update
     void Awake()
     {
+        
         text = scoreText.GetComponent<TextMeshProUGUI>();
         pause = pauseMenu.GetComponent<PauseGame>();
         daySystem = DayManager.GetComponent<DaySystem>();
@@ -90,10 +94,16 @@ public class Computer : MonoBehaviour, Iinteractable
         {
             StartCoroutine(EndGame());
         }
+
+        if(GameWin == true)
+        {
+            daySystem.ComputerIsDone = true;
+        }
     }
 
     public IEnumerator StartComputing()
     {
+        
         if(GameFail ==  false || GameWin == false)
         {
             pause.AbleToPause = false;
@@ -172,7 +182,11 @@ public class Computer : MonoBehaviour, Iinteractable
             pause.AbleToPause = true;
             Player.transform.position = new Vector3(136, 8.5f, 93.8f);
             cooldown2 = true;
-            daySystem.ComputerIsDone = true;
+          if(score >= 10)
+            {
+                GameWin = true;
+            }  
+
         }
 
     }
