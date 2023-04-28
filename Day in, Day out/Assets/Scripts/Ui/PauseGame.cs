@@ -15,7 +15,6 @@ public class PauseGame : MonoBehaviour
     public bool AbleToPause = true;
     public bool menuActive = false;
     FirstPersonCameraRotation firstPersonCameraRotation;
-    
 
     public void Paused()
     {
@@ -34,7 +33,6 @@ public class PauseGame : MonoBehaviour
     public void simPaused()
     {
         Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
         Time.timeScale = 0f;
         
     }
@@ -53,7 +51,6 @@ public class PauseGame : MonoBehaviour
     public void simResume()
     {
         Time.timeScale = 1.0f;
-        Cursor.visible = false;
     }
     public void LoadMainMenu()
     {
@@ -62,6 +59,7 @@ public class PauseGame : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
         gameManager = manager.GetComponent<GameManager>();
     }
