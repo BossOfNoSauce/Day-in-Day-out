@@ -12890,7 +12890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
-  isGood: 1
+  isGood: 0
 --- !u!65 &494463258
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14833,7 +14833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
-  isGood: 1
+  isGood: 0
 --- !u!65 &578434765
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42258,7 +42258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
-  isGood: 1
+  isGood: 0
 --- !u!65 &1509986107
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44442,7 +44442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Comput: {fileID: 3791236705315628249}
-  isGood: 1
+  isGood: 0
 --- !u!65 &1572247596
 BoxCollider:
   m_ObjectHideFlags: 0
