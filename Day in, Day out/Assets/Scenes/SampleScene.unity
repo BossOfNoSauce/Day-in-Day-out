@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -49305,6 +49305,7 @@ MonoBehaviour:
   audioSource: {fileID: 1743486951}
   day1monologue: {fileID: 8300000, guid: 3463b01736f8f74409f95ee924e1e323, type: 3}
   Buzzer: {fileID: 8300000, guid: 88c24d6144975524da68a673c6d2b51e, type: 3}
+  textBox: {fileID: 1489839664}
 --- !u!64 &1743486947
 MeshCollider:
   m_ObjectHideFlags: 0
