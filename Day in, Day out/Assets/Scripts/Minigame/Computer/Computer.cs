@@ -100,21 +100,23 @@ public class Computer : MonoBehaviour, Iinteractable
             
             pause.simPaused();
             tutUi.SetActive(true);
-            if (tutUi.active)
+
+            //tutUi.SetActive(false);
+            //pause.simResume();
+            LookAt();
+            yield return new WaitForSeconds(1);
+            hand.SetActive(true);
+            CallSpot();
+            /*if (tutUi.active)
             {
                 Debug.Log("dis is here");
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    tutUi.SetActive(false);
-                    pause.simResume();
-                    LookAt();
-                    yield return new WaitForSeconds(1);
-                    hand.SetActive(true);
-                    CallSpot();
+                    
                 }
-            }
-            
-            
+            }*/
+
+
         }
         
         
