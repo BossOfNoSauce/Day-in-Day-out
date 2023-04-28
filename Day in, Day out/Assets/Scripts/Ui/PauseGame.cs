@@ -22,18 +22,15 @@ public class PauseGame : MonoBehaviour
         
         if(AbleToPause == true)
         {
-            Cursor.visible = true;
             Time.timeScale = 0f;
             firstPersonCameraRotation.FreezeMovement = true;
             pauseMenu.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
             cursor.SetActive(true);
             audioSource.Pause();
         }
     }
     public void simPaused()
     {
-        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
         cursor.SetActive(true);
     }
@@ -46,7 +43,6 @@ public class PauseGame : MonoBehaviour
             pauseMenu.SetActive(false);
             audioSource.UnPause();
             cursor.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     public void simResume()
@@ -61,7 +57,7 @@ public class PauseGame : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        
         firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
         gameManager = manager.GetComponent<GameManager>();
     }
