@@ -904,18 +904,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: 
-  player: {fileID: 0}
+  player: {fileID: 1926878008}
   cooldown: 0
-  ComputerIsDone: 0
+  ComputerIsDone: 1
   KitchenIsDone: 0
   UrinalIsDone: 0
   MeetingIsDone: 0
   Days: 1
-  audioSource: {fileID: 0}
-  DaySound: {fileID: 0}
+  audioSource: {fileID: 26645121}
+  DaySound: {fileID: 8300000, guid: 3299737828a6bfa41be095f702cf0e77, type: 3}
   BossCheck: 0
-  BlackScreen: {fileID: 0}
-  animator: {fileID: 0}
+  BlackScreen: {fileID: 735071142}
+  animator: {fileID: 735071144}
 --- !u!82 &26645121
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17353,7 +17353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756681681627984967, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4887653716004787798, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_Materials.Array.data[0]
