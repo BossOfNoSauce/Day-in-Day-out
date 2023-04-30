@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject JukBox;
     Jukebox jukebox;
+    public Computer computer;
 
     public bool StartGame;
     // Start is called before the first frame update
@@ -34,7 +35,9 @@ public class GameManager : MonoBehaviour
     {
         if(TheBool == false)
         {
+            
             TheBool = true;
+            computer.canCompute = false;
             yield return new WaitForSeconds(2);
             audioSource.PlayOneShot(Dialogue, 0.7F);
             yield return new WaitForSeconds(4.5f);
@@ -71,6 +74,7 @@ public class GameManager : MonoBehaviour
             audioSource.PlayOneShot(door, 0.7f);
             animator.SetTrigger("Open");
             jukebox.startMus = true;
+            computer.canCompute = true;
             
         }
         

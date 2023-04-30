@@ -918,6 +918,7 @@ MonoBehaviour:
   BlackScreen: {fileID: 735071142}
   animator: {fileID: 735071144}
   elevator: {fileID: 1806412101}
+  BossCooldown: 0
 --- !u!82 &26645121
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10753,7 +10754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &406975487
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50350,6 +50351,9 @@ MonoBehaviour:
   BossImage: {fileID: 1049754709}
   audioSource: {fileID: 1743486951}
   day1monologue: {fileID: 8300000, guid: 3463b01736f8f74409f95ee924e1e323, type: 3}
+  day2monologue: {fileID: 0}
+  day3monologue: {fileID: 0}
+  day4monologue: {fileID: 0}
   Buzzer: {fileID: 8300000, guid: 1481dce32aa33d14ca68baf78b99cf8a, type: 3}
   textBox: {fileID: 1489839664}
   JukeBoxObj: {fileID: 830215002}
@@ -52752,6 +52756,7 @@ MonoBehaviour:
   TheBool: 0
   textBox: {fileID: 1489839664}
   JukBox: {fileID: 830215002}
+  computer: {fileID: 2098371508}
   StartGame: 0
 --- !u!4 &1818565577
 Transform:
@@ -60525,6 +60530,7 @@ MonoBehaviour:
   cooldown2: 0
   GameFail: 0
   GameWin: 0
+  canCompute: 0
   DayManager: {fileID: 26645115}
 --- !u!65 &2098371509
 BoxCollider:

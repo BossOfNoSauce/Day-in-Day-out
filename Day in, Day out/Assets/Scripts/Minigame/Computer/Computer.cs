@@ -60,6 +60,8 @@ public class Computer : MonoBehaviour, Iinteractable
     public bool GameFail;
     public bool GameWin;
 
+    public bool canCompute = false;
+
     public GameObject DayManager;
     DaySystem daySystem;
     public bool Interact(Interactor interactor)
@@ -103,25 +105,30 @@ public class Computer : MonoBehaviour, Iinteractable
 
     public IEnumerator StartComputing()
     {
-        
-        if(GameFail ==  false || GameWin == false)
+        if (canCompute == true)
         {
-            pause.AbleToPause = false;
-            playerMovement.InGame = true;
-            gameManager.gameActive = true;
-            Player.transform.position = new Vector3(138, 5.5f, 93.8f);
-            firstPersonCameraRotation.FreezeMovement = true;
-            
-            pause.simPaused();
-            tutUi.SetActive(true);
 
-            //tutUi.SetActive(false);
-            //pause.simResume();
-            LookAt();
-            yield return new WaitForSeconds(1);
-            hand.SetActive(true);
-            CallSpot();
+            if (GameFail == false || GameWin == false)
+            {
+                pause.AbleToPause = false;
+                playerMovement.InGame = true;
+                gameManager.gameActive = true;
+                Player.transform.position = new Vector3(138, 5.5f, 93.8f);
+                firstPersonCameraRotation.FreezeMovement = true;
+
+                pause.simPaused();
+                tutUi.SetActive(true);
+
+                //tutUi.SetActive(false);
+                //pause.simResume();
+                LookAt();
+                yield return new WaitForSeconds(1);
+                hand.SetActive(true);
+                CallSpot();
+            }
         }
+
+
         
         
     }
