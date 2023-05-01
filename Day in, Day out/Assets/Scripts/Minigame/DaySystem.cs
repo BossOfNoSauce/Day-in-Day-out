@@ -20,6 +20,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public AudioSource audioSource;
     public AudioClip DaySound;
 
+    public AudioClip OpeningElevator;
+
     public bool BossCheck;
 
     public GameObject JukeBoxObj;
@@ -77,19 +79,21 @@ public class DaySystem : MonoBehaviour, Iinteractable
             playerMovement.InGame = true;
             yield return new WaitForSeconds(3);
             elevator.SetTrigger("Elevator Close");
+            yield return new WaitForSeconds(2);
             animator.SetTrigger("Ftb");
             yield return new WaitForSeconds(1);
-            audioSource.PlayOneShot(DaySound);
-            animator.SetTrigger("Ftb");
-            yield return new WaitForSeconds(15);
+            audioSource.PlayOneShot(DaySound); 
+            yield return new WaitForSeconds(13);
             Days++;
             animator.SetTrigger("fob");
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(2);
             elevator.SetTrigger("Elevator Open");
+            audioSource.PlayOneShot(OpeningElevator);
             cooldown = true;
             jukebox.startMus = true;
             ComputerIsDone = false;
-            if(Days == 2)
+            playerMovement.InGame = false;
+            if (Days == 2)
             {
                 ComputerIsDone = false;
                 UrinalIsDone = false;
