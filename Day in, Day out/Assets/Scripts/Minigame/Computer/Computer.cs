@@ -35,9 +35,7 @@ public class Computer : MonoBehaviour, Iinteractable
     public GameObject MainCam;
     FirstPersonCameraRotation firstPersonCameraRotation;
 
-    public Collider Mcollider;
-
-    public  int score;
+    public int score;
     //spots
     public GameObject[] goodSpots;
     public GameObject[] badSpots;
@@ -50,6 +48,8 @@ public class Computer : MonoBehaviour, Iinteractable
     TextMeshProUGUI text;
     public GameObject pauseMenu;
     PauseGame pause;
+    public Image[] lifeCountUi;//should never be greater than 3
+    int life = 3;
     //audio
     public AudioSource audioSource;
     public AudioClip type;
@@ -176,7 +176,7 @@ public class Computer : MonoBehaviour, Iinteractable
 
     
 
-    IEnumerator EndGame()
+    IEnumerator EndGame()//add a fail think here
     {
         if(cooldown2 == false)
         {
@@ -204,6 +204,18 @@ public class Computer : MonoBehaviour, Iinteractable
         if (isGood)
         {
             score = score + 1;
+        }
+        else
+        {
+            life--;
+            lifeCountUi[life].color = new Color32(255, 0, 0, 100);
+            
+
+            //lifeDisplay[life-1].gameObject.c//change color to red here
+            if (life <= 0)
+            {
+                StartCoroutine(EndGame());
+            }
         }
         text.text = "score = " + score + " / 10";
         goodCurrentSpot.SetActive(false);
