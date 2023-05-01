@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         {
             
             TheBool = true;
-            computer.canCompute = false;
+            //computer.canCompute = false;
             yield return new WaitForSeconds(2);
             audioSource.PlayOneShot(Dialogue, 0.7F);
             yield return new WaitForSeconds(4.5f);
