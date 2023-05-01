@@ -29194,7 +29194,8 @@ MonoBehaviour:
   Camera: {fileID: 963194225}
   FreezeMovement: 0
   variable: 0
-  simpleCamPan: {fileID: 0}
+  simpleCamPan: {fileID: 1085994028}
+  playerMovement: {fileID: 1926878011}
   sensitivity: 2
   yRotationLimit: 88
 --- !u!114 &963194230
