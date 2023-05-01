@@ -10,14 +10,15 @@ public class SimpleCamPan : MonoBehaviour
     // The target (cylinder) position.
     public Transform target;
 
+    public bool steve;
     void Awake()
     {
-      
-       
+
+        StartCoroutine(Pan());
 
         
         
-        target.transform.position = new Vector3(0.8f, 0.0f, 0.8f);
+        //target.transform.position = new Vector3(51.42f, -13.2f, 107.19f);
 
         
 
@@ -27,14 +28,22 @@ public class SimpleCamPan : MonoBehaviour
     void Update()
     {
         // Move our position a step closer to the target.
-        //var step = speed * Time.deltaTime; // calculate distance to move
-        transform.position = Vector3.MoveTowards(transform.position, target.position);
+        if(steve == true)
+        {
+            var step = speed * Time.deltaTime; // calculate distance to move
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        }
+        
 
-        // Check if the position of the cube and sphere are approximately equal.
-       // if (Vector3.Distance(transform.position, target.position) < 0.001f)
-       // {
-            // Swap the position of the cylinder.
-       //     target.position *= -1.0f;
-      // }
+
+
+    }
+
+    IEnumerator Pan()
+    {
+        yield return new WaitForSeconds(3f);
+        steve = true;
+        Debug.Log("hhhhhhh");
+
     }
 }

@@ -27,6 +27,7 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 	float tiltAngle = 60.0f;
 	public float variable;
 
+	public SimpleCamPan simpleCamPan;
     private void Awake()
     {
 
@@ -92,10 +93,12 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 	}
 	IEnumerator Thing()
 	{
+		
 		FreezeMovement = true;
+		//yield return new WaitForSeconds(3f);
 		Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
 		Camera.transform.LookAt(target.transform.position, Vector3.up);
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(7f);
 		FreezeMovement = false;
 		David = false;
 		

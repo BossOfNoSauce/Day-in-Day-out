@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
             
             TheBool = true;
             //computer.canCompute = false;
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(8);
             audioSource.PlayOneShot(Dialogue, 0.7F);
             yield return new WaitForSeconds(4.5f);
             textBox.GetComponent<Text>().text = "Hey... *uh* Bad news mate ";
