@@ -30,8 +30,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public Animator animator;
 
     public Animator elevator;
-    
 
+    public PlayerMovement playerMovement;
 
     public bool BossCooldown;
 
@@ -74,17 +74,14 @@ public class DaySystem : MonoBehaviour, Iinteractable
             
             Debug.Log("day end");
             player.transform.position = new Vector3(142, 7.4f, -43f);
-            yield return new WaitForSeconds(2);
-
+            playerMovement.InGame = true;
+            yield return new WaitForSeconds(3);
             elevator.SetTrigger("Elevator Close");
             animator.SetTrigger("Ftb");
-            //play day end sound
-
-            //play door animation
-
+            yield return new WaitForSeconds(1);
             audioSource.PlayOneShot(DaySound);
             animator.SetTrigger("Ftb");
-            yield return new WaitForSeconds(14);
+            yield return new WaitForSeconds(15);
             Days++;
             animator.SetTrigger("fob");
             yield return new WaitForSeconds(3);
