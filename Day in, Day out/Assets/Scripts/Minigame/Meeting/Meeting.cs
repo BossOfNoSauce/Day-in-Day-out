@@ -55,7 +55,7 @@ public class Meeting : MonoBehaviour, Iinteractable
             }
         }
 
-        if(TRB.transform.position.y <= topTarget.transform.position.y)
+        if (TRB.transform.position.y <= topTarget.transform.position.y)
         {
             TRB.velocity = Vector3.zero;
            

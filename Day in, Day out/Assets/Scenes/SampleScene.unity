@@ -906,7 +906,7 @@ MonoBehaviour:
   prompt: 
   player: {fileID: 1926878008}
   cooldown: 0
-  ComputerIsDone: 1
+  ComputerIsDone: 0
   KitchenIsDone: 0
   UrinalIsDone: 0
   MeetingIsDone: 0
@@ -2903,6 +2903,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63361601}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &73423607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73423608}
+  m_Layer: 0
+  m_Name: target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73423608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73423607}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 54.72, y: 0.92448807, z: 94.53}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1467735991}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &86056248
 GameObject:
   m_ObjectHideFlags: 0
@@ -9963,7 +9993,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a9f9a915c92a01e4abcb4b406ef69675, type: 2}
+  - {fileID: 2100000, guid: 8b2da0bc2a3e24a4f834e4a79f705679, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18946,7 +18976,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8e31323754996e64b8444b7bd07a1344, type: 2}
+  - {fileID: 2100000, guid: 8b2da0bc2a3e24a4f834e4a79f705679, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29596,6 +29626,7 @@ GameObject:
   - component: {fileID: 1085994026}
   - component: {fileID: 1085994025}
   - component: {fileID: 1085994024}
+  - component: {fileID: 1085994028}
   m_Layer: 0
   m_Name: MoronCube
   m_TagString: Untagged
@@ -29673,12 +29704,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085994023}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 77.5, y: -11.08, z: 84.62}
+  m_LocalPosition: {x: 76.59, y: -11.08, z: 84.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1765637751}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1085994028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085994023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2f5af71adb2f748b69df7367b87a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  target: {fileID: 73423608}
 --- !u!1 &1086996653
 GameObject:
   m_ObjectHideFlags: 0
@@ -29744,7 +29789,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8e31323754996e64b8444b7bd07a1344, type: 2}
+  - {fileID: 2100000, guid: 8b2da0bc2a3e24a4f834e4a79f705679, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -40971,7 +41016,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.32, y: -12.004488, z: 3.5668774}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 73423608}
   m_Father: {fileID: 1765637751}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42049,7 +42095,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a9f9a915c92a01e4abcb4b406ef69675, type: 2}
+  - {fileID: 2100000, guid: 8b2da0bc2a3e24a4f834e4a79f705679, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -42137,7 +42183,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1b81127ef222f0a49ab46ff77b04604b, type: 3}
+    m_Font: {fileID: 12800000, guid: 581e38308aae65546943117037a94833, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -51054,7 +51100,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a9f9a915c92a01e4abcb4b406ef69675, type: 2}
+  - {fileID: 2100000, guid: 8b2da0bc2a3e24a4f834e4a79f705679, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -51858,7 +51904,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 03a1208e74bb6d14d844a25a0c3056f6, type: 2}
+  - {fileID: 2100000, guid: 8b2da0bc2a3e24a4f834e4a79f705679, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
