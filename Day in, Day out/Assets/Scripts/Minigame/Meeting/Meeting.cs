@@ -8,6 +8,8 @@ public class Meeting : MonoBehaviour, Iinteractable
 
     public string InteractionPrompt => prompt;
 
+    public DaySystem daySystem;
+
     public GameObject manager;
     GameManager gameManager;
 
@@ -24,6 +26,7 @@ public class Meeting : MonoBehaviour, Iinteractable
 
     public float speed;
     public float Power = 13000f;
+
     public Transform topTarget;
     public Transform bottomTarget;
 
@@ -31,7 +34,7 @@ public class Meeting : MonoBehaviour, Iinteractable
     public Rigidbody BRB;
 
     public bool GameIsActive = false;
-    
+
     public bool Interact(Interactor interactor)
     {
         //this is what happenes when you interact
@@ -52,6 +55,7 @@ public class Meeting : MonoBehaviour, Iinteractable
                 TRB.AddForce(Vector3.up * Power);
                 BRB.AddForce(-Vector3.up * Power);
                 Sleepy();
+               
             }
         }
 
@@ -78,11 +82,11 @@ public class Meeting : MonoBehaviour, Iinteractable
         Vector3 bottomVector = bottomDirection.normalized * speed;
         TRB.velocity = topVector;
         BRB.velocity = bottomVector;
-
+        
+        // after eyelids go up past certain threshold above eyes, make space key add force not work until it goes back down again
         GameIsActive = true;
-
-        Debug.Log(topVector);
-        Debug.Log(bottomVector);
+        
+        
     }
 
     void Awake()
@@ -102,8 +106,16 @@ public class Meeting : MonoBehaviour, Iinteractable
             Player.transform.position = new Vector3(-19, 6.5f, -65);
             yield return new WaitForSeconds(3.25f);
             Sleepy();
+            yield return new WaitForSeconds(20f);
+            playerMovement.InGame = false;
+            gameManager.gameActive = false;
+            Player.transform.position = new Vector3(-15, 7.4f, -60.9f);
+            collider.enabled = false;
+            daySystem.MeetingIsDone = true;
         }
 
 
     }
+
+   
 }

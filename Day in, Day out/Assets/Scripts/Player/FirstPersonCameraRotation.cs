@@ -28,6 +28,7 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 	public float variable;
 
 	public SimpleCamPan simpleCamPan;
+	public PlayerMovement playerMovement;
     private void Awake()
     {
 
@@ -93,15 +94,16 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 	}
 	IEnumerator Thing()
 	{
-		
+		playerMovement.InGame = true;
 		FreezeMovement = true;
 		//yield return new WaitForSeconds(3f);
 		Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
 		Camera.transform.LookAt(target.transform.position, Vector3.up);
-		yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(7f);
 		FreezeMovement = false;
 		David = false;
-		
+		playerMovement.InGame = false;
+
 	}
 
 

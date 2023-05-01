@@ -43,7 +43,7 @@ public class SimpleCamPan : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         steve = true;
-        Debug.Log("hhhhhhh");
+        
 
     }
 }
