@@ -55,7 +55,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 jukebox.startMus = false;
                 BossImage.SetActive(true);
                 yield return new WaitForSeconds(1);
-                audioSource.PlayOneShot(day1monologue, 1);
+                audioSource.PlayOneShot(day1monologue, 2);
                 yield return new WaitForSeconds(1);
                 textBox.GetComponent<Text>().text = "Well, well, well, look who we got here";
                 yield return new WaitForSeconds(3);
