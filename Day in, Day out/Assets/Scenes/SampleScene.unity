@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1106,6 +1106,11 @@ MonoBehaviour:
   computer: {fileID: 2098371508}
   kitchenObjs: {fileID: 86406507}
   BossCooldown: 0
+  ComputerTaskUi: {fileID: 0}
+  UrinalTaskUi: {fileID: 0}
+  KitchenTaskUi: {fileID: 0}
+  MeetingTaskUi: {fileID: 0}
+  BossTaskUi: {fileID: 0}
 --- !u!82 &26645121
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19030,7 +19035,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 35593a72ea445954a8dd06057ccf87bc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -61643,7 +61648,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c0e96527737ef2a44a05482b4e935e38, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -70137,7 +70142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 35593a72ea445954a8dd06057ccf87bc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -71158,7 +71163,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c0e96527737ef2a44a05482b4e935e38, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
