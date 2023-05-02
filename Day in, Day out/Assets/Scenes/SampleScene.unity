@@ -918,7 +918,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b5aa4c6ee40c71b4ea70fe0db1d21cd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2, y: 4}
@@ -1179,6 +1179,7 @@ MonoBehaviour:
   DaySound: {fileID: 8300000, guid: 3299737828a6bfa41be095f702cf0e77, type: 3}
   OpeningElevator: {fileID: 0}
   BossCheck: 1
+  AbleToChase: 0
   JukeBoxObj: {fileID: 830215002}
   BlackScreen: {fileID: 735071142}
   animator: {fileID: 735071144}
@@ -7960,7 +7961,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9db27fa8b5d9fca47b110175d1f2e9ec, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -31938,6 +31939,7 @@ MonoBehaviour:
   _degreesPerSecond: 30
   _axis: {x: 0, y: 0, z: 1}
   David: 0
+  Boss: {fileID: 0}
   target: {fileID: 1085994023}
   CameraPos: {fileID: 0}
   Camera: {fileID: 963194225}
@@ -61614,6 +61616,7 @@ MonoBehaviour:
   day2monologue: {fileID: 0}
   day3monologue: {fileID: 0}
   day4monologue: {fileID: 0}
+  Finalmonologue: {fileID: 0}
   Buzzer: {fileID: 8300000, guid: 1481dce32aa33d14ca68baf78b99cf8a, type: 3}
   textBox: {fileID: 1489839664}
   JukeBoxObj: {fileID: 830215002}
