@@ -2097,7 +2097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &50045297
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18995,7 +18995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &600919175
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30136,7 +30136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893085370}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 142.715, y: 0.09, z: 85.51}
+  m_LocalPosition: {x: 142.715, y: 0.09, z: 87.28}
   m_LocalScale: {x: 1.4100665, y: 1.4100667, z: 1.4100667}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63254,6 +63254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prompt: 
   DayManager: {fileID: 26645115}
+  ToDoUi: {fileID: 0}
   BossImage: {fileID: 1049754709}
   audioSource: {fileID: 1743486951}
   day1monologue: {fileID: 8300000, guid: 3463b01736f8f74409f95ee924e1e323, type: 3}
@@ -70164,7 +70165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1938780380
 RectTransform:
   m_ObjectHideFlags: 0
@@ -71185,7 +71186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1963583633
 RectTransform:
   m_ObjectHideFlags: 0

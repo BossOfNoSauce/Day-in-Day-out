@@ -12,6 +12,8 @@ public class BossScript : MonoBehaviour, Iinteractable
     public GameObject DayManager;
     DaySystem daySystem;
 
+    public GameObject ToDoUi;
+
     public GameObject BossImage;
     public  AudioSource audioSource;
     public AudioClip day1monologue;
@@ -52,6 +54,7 @@ public class BossScript : MonoBehaviour, Iinteractable
         {
             if (daySystem.ComputerIsDone == true && daySystem.BossCooldown == false)
             {
+                ToDoUi.SetActive(false);
                 jukebox.StopMus();
                 jukebox.startMus = false;
                 BossImage.SetActive(true);
@@ -89,6 +92,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
+                ToDoUi.SetActive(true);
             }
             else
             {
