@@ -9,6 +9,9 @@ public class BossChase : MonoBehaviour
 
     public GameObject Boss;
     public GameObject Camera;
+
+    public AudioSource audioSource;
+    public AudioClip BigMonologue;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +26,8 @@ public class BossChase : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-       
 
+        StartCoroutine(Stare());
     }
 
     IEnumerator Stare()
@@ -32,7 +35,7 @@ public class BossChase : MonoBehaviour
         playerMovement.InGame = true;
         firstPersonCamera.FreezeMovement = true;
         Camera.transform.LookAt(Boss.transform.position, Vector3.up);
-
+        audioSource.PlayOneShot(BigMonologue, 1f);
         yield return new WaitForSeconds(10);
 
     }
