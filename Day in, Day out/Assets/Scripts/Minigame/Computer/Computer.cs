@@ -187,7 +187,7 @@ public class Computer : MonoBehaviour, Iinteractable
             hand.SetActive(false);
             gameUi.SetActive(false);
             pause.AbleToPause = true;
-            Player.transform.position = new Vector3(136, 8.5f, 93.8f);
+            Player.transform.position = new Vector3(136, 7.41f, 93.8f);
             cooldown2 = true;
           if(score >= 10)
             {
