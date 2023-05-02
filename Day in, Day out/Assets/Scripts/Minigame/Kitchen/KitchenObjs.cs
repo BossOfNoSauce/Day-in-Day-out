@@ -11,6 +11,9 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
     public Rigidbody RB;
     public Transform ObjectGrabPointTransform;
 
+    public GameObject Noodles;
+    public GameObject Mug;
+    public GameObject Bag;
 
     public bool GrabBool;
 
@@ -32,6 +35,16 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
         AbleToGrab = true;
         kitchenGame = Kitchen.GetComponent<KitchenGame>();
         coffeeMachine = cMachine.GetComponent<CoffeeMachine>();
+    }
+
+    public void ResetObjs()
+    {
+        kitchenGame.coffeeStage = 0;
+        kitchenGame.noodleStage = 0;
+        Noodles.transform.position = new Vector3(35, 4.5f, -68);
+        Mug.transform.position = new Vector3(34, 1.5f, -61);
+        Bag.transform.position = new Vector3(34, 1, -66);
+
     }
 
     // Update is called once per frame
@@ -92,6 +105,7 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
             gameObject.layer = default;
      }
 
+       
 
-    }
+}
 }

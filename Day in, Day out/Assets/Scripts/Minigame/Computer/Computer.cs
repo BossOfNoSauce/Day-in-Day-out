@@ -235,5 +235,7 @@ public class Computer : MonoBehaviour, Iinteractable
         StartCoroutine(Reset());
     }
 
+    
+
    
 }

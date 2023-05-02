@@ -41,6 +41,10 @@ public class DaySystem : MonoBehaviour, Iinteractable
 
     public PlayerMovement playerMovement;
 
+    public Computer computer;
+
+    public KitchenObjs kitchenObjs;
+
     public bool BossCooldown;
 
     // Start is called before the first frame update
@@ -102,12 +106,14 @@ public class DaySystem : MonoBehaviour, Iinteractable
             if (Days == 2)
             {
                 ComputerIsDone = false;
+                computer.score = 0;
                 UrinalIsDone = false;
             }
             if(Days == 3)
             {
                 ComputerIsDone = false;
                 KitchenIsDone = false;
+                kitchenObjs.ResetObjs();
             }
             if(Days == 4)
             {
