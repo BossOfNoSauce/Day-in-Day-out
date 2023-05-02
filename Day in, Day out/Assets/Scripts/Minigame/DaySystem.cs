@@ -10,13 +10,19 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public string InteractionPrompt => prompt;
 
     public bool cooldown;
-
+    //minigame bools, IsWin for fail / win state
     public bool ComputerIsDone;
+    public bool computerIsWin;
     public bool KitchenIsDone;
+    public bool kitchenIsWin;
     public bool UrinalIsDone;
+    public bool urinalIsWin;
     public bool MeetingIsDone;
-    public int Days = 1;
+    public bool meetingIsWin;
 
+    //day count
+    public int Days = 1;
+    //audio
     public AudioSource audioSource;
     public AudioClip DaySound;
 

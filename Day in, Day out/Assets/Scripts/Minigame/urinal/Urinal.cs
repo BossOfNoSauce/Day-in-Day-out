@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Urinal : MonoBehaviour, Iinteractable
 {
+    //to-do:
+    //[]put some comments to describe stuff
+    //[]
     PlayerMovement playerController;
 
     public GameObject manager;
@@ -118,6 +121,7 @@ public class Urinal : MonoBehaviour, Iinteractable
                 yield return new WaitForSeconds(10); // game timer
                 targetMovement.GameOver = true;
                 daySystem.UrinalIsDone = true;
+                Debug.Log("done pissing");
             }
             
         }
