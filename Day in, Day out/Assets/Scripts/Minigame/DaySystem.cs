@@ -47,6 +47,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
 
     public bool BossCooldown;
 
+    public GameObject ToDoList;
+
     public GameObject ComputerTaskUi;
     public GameObject UrinalTaskUi;
     public GameObject KitchenTaskUi;
@@ -73,6 +75,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
 
     public bool Interact(Interactor interactor)
     {
+        ToDoList.SetActive(false);
         if (Days != 4)
         {
             if (BossCheck == true)
@@ -112,12 +115,13 @@ public class DaySystem : MonoBehaviour, Iinteractable
             playerMovement.InGame = false;
             if (Days == 2)
             {
-                
+               
                 computerIsWin = false;
                 ComputerIsDone = false;
                 computer.score = 0;
                 UrinalIsDone = false;
                 BossCooldown = false;
+                ToDoList.SetActive(true);
                 UrinalTaskUi.SetActive(true);
             }
             if(Days == 3)
@@ -127,7 +131,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 KitchenIsDone = false;
                 kitchenObjs.ResetObjs();
                 BossCooldown = false;
-               KitchenTaskUi.SetActive(true);
+                ToDoList.SetActive(true);
+                KitchenTaskUi.SetActive(true);
             }
             if(Days == 4)
             {
@@ -137,10 +142,12 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 kitchenObjs.ResetObjs();
                 UrinalIsDone = false;
                 BossCooldown = false;
+                ToDoList.SetActive(true);
                 MeetingTaskUi.SetActive(true);
             }
             if (Days == 5)
             {
+                ToDoList.SetActive(true);
                 AbleToChase = true;
                 jukebox.StopMus();
                 jukebox.startMus = false;
