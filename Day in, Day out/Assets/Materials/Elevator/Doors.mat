@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Elevator
+  m_Name: Doors
   m_Shader: {fileID: 4800000, guid: e4952fd04a2d7f04fa0d3aa7c014b9f3, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -74,6 +74,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.4919455, g: 0.50961334, b: 0.5188679, a: 1}
+    - _Color: {r: 0.5987451, g: 0.6090755, b: 0.6132076, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
