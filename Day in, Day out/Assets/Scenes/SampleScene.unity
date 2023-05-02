@@ -1103,6 +1103,7 @@ MonoBehaviour:
   elevator: {fileID: 1806412101}
   playerMovement: {fileID: 1926878011}
   computer: {fileID: 2098371508}
+  kitchenObjs: {fileID: 0}
   BossCooldown: 0
 --- !u!82 &26645121
 AudioSource:
@@ -73232,7 +73233,7 @@ MonoBehaviour:
   - {fileID: 1538190191}
   - {fileID: 908317286}
   - {fileID: 114132315}
-  computerCheck: {fileID: 0}
+  computerCheck: {fileID: 1707859798}
   audioSource: {fileID: 2098371510}
   type: {fileID: 8300000, guid: e10b167335af1a24d972e28399ff9867, type: 3}
   cooldown: 0

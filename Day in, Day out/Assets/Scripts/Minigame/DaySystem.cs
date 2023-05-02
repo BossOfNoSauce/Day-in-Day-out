@@ -111,6 +111,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if(Days == 3)
             {
+                UrinalIsDone = false;
                 ComputerIsDone = false;
                 KitchenIsDone = false;
                 kitchenObjs.ResetObjs();
@@ -119,6 +120,9 @@ public class DaySystem : MonoBehaviour, Iinteractable
             {
                 ComputerIsDone = false;
                 MeetingIsDone = false;
+                KitchenIsDone = false;
+                kitchenObjs.ResetObjs();
+                UrinalIsDone = false;
             }
         }
         

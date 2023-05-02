@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Meeting : MonoBehaviour, Iinteractable 
 {
     [SerializeField] private string prompt;
@@ -14,27 +14,28 @@ public class Meeting : MonoBehaviour, Iinteractable
     GameManager gameManager;
 
     public Vector3 playerPosition;
-
+    //player / cam stuff
     public GameObject Camera;
     PlayerMovement playerMovement;
     public GameObject Player;
     public GameObject MainCam;
     Collider collider;
-
+    //eyelids
     public GameObject Top;
     public GameObject Bottom;
-
+    //speed of the lids / power of forceing them open
     public float speed;
-    public float Power = 13000f;
-
-    public Transform topTarget;
-    public Transform bottomTarget;
-
-    public Rigidbody TRB;
-    public Rigidbody BRB;
-
+    public float Power;
+    //eyelid rigidbodys
+    Rigidbody TRB;
+    Rigidbody BRB;
+    RectTransform TRT;
+    RectTransform BRT;
+    //UI
+    public GameObject meetingCheck;
+    //game staTREW BOOLS
     public bool GameIsActive = false;
-
+    bool isGameWin;
     public bool Interact(Interactor interactor)
     {
         //this is what happenes when you interact
@@ -43,7 +44,18 @@ public class Meeting : MonoBehaviour, Iinteractable
         return true;
     }
 
-
+    public void Start()
+    {
+        //rigidbody stuff
+        TRB = Top.GetComponent<Rigidbody>();
+        BRB = Bottom.GetComponent<Rigidbody>();
+        TRT = Top.GetComponent<RectTransform>();
+        BRT = Bottom.GetComponent<RectTransform>();
+        //player stuff
+        playerMovement = Player.GetComponent<PlayerMovement>();
+        gameManager = manager.GetComponent<GameManager>();
+        collider = GetComponent<Collider>();
+    }
     public void Update()
     {
         //topTarget = new Vector3(0, 0, 0);
@@ -52,70 +64,69 @@ public class Meeting : MonoBehaviour, Iinteractable
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                //TRB.transform.position.Set(0.0f, TRB.transform.position.y + 500.0f, 0.0f);//use if current one isnt that fun
                 TRB.AddForce(Vector3.up * Power);
                 BRB.AddForce(-Vector3.up * Power);
+                
+            }
+            //checking just one lid bc they are mirrored objects
+            if(TRT.anchoredPosition.y > 1200)
+            {
                 Sleepy();
-               
+            }
+            //game end when lid closes pass 540, doing 500 for some leaway
+            if(TRT.anchoredPosition.y < 500)
+            {
+                Debug.Log("failed meeting, ending game");
+                isGameWin = false;
+                endGame();
             }
         }
-
-        if (TRB.transform.position.y <= topTarget.transform.position.y)
-        {
-            TRB.velocity = Vector3.zero;
-           
-        }
-
-        if (BRB.transform.position.y >= bottomTarget.transform.position.y)
-        {
-            BRB.velocity = Vector3.zero;
-
-        }
     }
-
-    void Sleepy()
+    void endGame()//ends the game by resetting and setting bools
+    {
+        //set in game to false
+        playerMovement.InGame = false;
+        gameManager.gameActive = false;
+        GameIsActive = false;
+        daySystem.meetingIsWin = isGameWin;
+        //reset player posiotion
+        Player.transform.position = new Vector3(-15, 7.4f, -60.9f);
+        collider.enabled = false;
+        daySystem.MeetingIsDone = true;
+        //RESET EYELIDS TO ORIGINAL POSIOTIONs and velocitys
+        TRB.velocity = Vector3.zero;
+        BRB.velocity = Vector3.zero;
+        TRT.anchoredPosition = new Vector3(0.0f, 1200.0f, 0.0f);
+        BRT.anchoredPosition = new Vector3(0.0f, -1200.0f, 0.0f);
+        //set ui checklist / todo list
+        Image temp = meetingCheck.GetComponent<Image>();
+        temp.color = (isGameWin ? new Color32(0, 255, 0, 100) : new Color32(255, 0, 0, 100));//if game is win, set image to green, else red
+    }
+    void Sleepy()//reset eyelid speeds
     {
         //Makes the to black squares move over the camera
-        Vector3 topDirection = topTarget.transform.position - TRB.transform.position;
-        Vector3 bottomDirection = bottomTarget.transform.position - BRB.transform.position;
-      
-        Vector3 topVector = topDirection.normalized * speed;
-        Vector3 bottomVector = bottomDirection.normalized * speed;
-        TRB.velocity = topVector;
-        BRB.velocity = bottomVector;
-        
-        // after eyelids go up past certain threshold above eyes, make space key add force not work until it goes back down again
-        GameIsActive = true;
-        
-        
+        TRB.velocity = new Vector3(0.0f, -speed, 0.0f);
+        BRB.velocity = new Vector3(0.0f, speed, 0.0f);
     }
-
-    void Awake()
-    {
-        playerMovement = Player.GetComponent<PlayerMovement>();
-        gameManager = manager.GetComponent<GameManager>();
-        collider = GetComponent<Collider>();
-    }
-   
-    public IEnumerator MeetingTime()
+    public IEnumerator MeetingTime()//start game
     {
         {
             playerMovement.InGame = true;
             gameManager.gameActive = true;
+            GameIsActive = true;
             collider.enabled = false;
             yield return new WaitForSeconds(3);
             Player.transform.position = new Vector3(-19, 6.5f, -65);
             yield return new WaitForSeconds(3.25f);
             Sleepy();
             yield return new WaitForSeconds(20f);
-            playerMovement.InGame = false;
-            gameManager.gameActive = false;
-            Player.transform.position = new Vector3(-15, 7.4f, -60.9f);
-            collider.enabled = false;
-            daySystem.MeetingIsDone = true;
+            if (GameIsActive)
+            {//just in case somehow game ends and this is still running
+                Debug.Log("meeting win, ending game");
+                isGameWin = true;
+                endGame();
+            }
         }
-
-
     }
-
-   
 }
