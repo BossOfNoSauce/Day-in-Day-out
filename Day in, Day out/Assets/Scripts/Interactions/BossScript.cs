@@ -18,6 +18,7 @@ public class BossScript : MonoBehaviour, Iinteractable
     public AudioClip day2monologue;
     public AudioClip day3monologue;
     public AudioClip day4monologue;
+    public AudioClip Finalmonologue;
 
     public AudioClip Buzzer;
     public GameObject textBox;
@@ -154,6 +155,19 @@ public class BossScript : MonoBehaviour, Iinteractable
             else
             {
                 audioSource.PlayOneShot(Buzzer);
+            }
+        }
+
+        if(daySystem.Days == 5)
+        {
+            if (daySystem.AbleToChase == true)
+            {
+                BossImage.SetActive(true);
+                yield return new WaitForSeconds(1);
+                audioSource.PlayOneShot(Finalmonologue, 1);
+                yield return new WaitForSeconds(20); // Number is not confirmed, dependant on sound file
+                BossImage.SetActive(false);
+                // swing open door
             }
         }
 

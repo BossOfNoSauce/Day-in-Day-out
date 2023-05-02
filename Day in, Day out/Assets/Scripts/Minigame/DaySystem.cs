@@ -29,7 +29,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public AudioClip OpeningElevator;
 
     public bool BossCheck;
-
+    public bool AbleToChase;
     public GameObject JukeBoxObj;
     Jukebox jukebox;
 
@@ -124,6 +124,19 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 kitchenObjs.ResetObjs();
                 UrinalIsDone = false;
             }
+            if (Days == 5)
+            {
+                AbleToChase = true;
+                jukebox.StopMus();
+                jukebox.startMus = false;
+                ComputerIsDone = true;
+                MeetingIsDone = true;
+                KitchenIsDone = true;
+                kitchenObjs.ResetObjs();
+                UrinalIsDone = true;
+
+            }
+
         }
         
     }

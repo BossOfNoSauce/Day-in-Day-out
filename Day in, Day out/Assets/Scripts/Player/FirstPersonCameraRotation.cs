@@ -15,6 +15,7 @@ public class FirstPersonCameraRotation : MonoBehaviour {
     public Vector3 _axis = Vector3.forward;
 
 	public bool David;
+	public GameObject Boss;
 
 	public GameObject target;
 	private float time;
@@ -105,6 +106,15 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 		playerMovement.InGame = false;
 
 	}
+
+	IEnumerator Stare()
+    {
+		playerMovement.InGame = true;
+		FreezeMovement = true;
+		Camera.transform.LookAt(Boss.transform.position, Vector3.up);
+		yield return new WaitForSeconds(10);
+		
+    }
 
 
 
