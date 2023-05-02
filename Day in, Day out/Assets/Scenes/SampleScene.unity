@@ -1094,8 +1094,8 @@ MonoBehaviour:
   meetingIsWin: 0
   Days: 1
   audioSource: {fileID: 26645121}
-  DaySound: {fileID: 8300000, guid: 3299737828a6bfa41be095f702cf0e77, type: 3}
-  OpeningElevator: {fileID: 0}
+  DaySound: {fileID: 8300000, guid: 59eebf1817b5a084486f09ea833de533, type: 3}
+  OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
   BossCheck: 0
   AbleToChase: 0
   JukeBoxObj: {fileID: 830215002}
