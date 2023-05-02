@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject JukBox;
     Jukebox jukebox;
     public Computer computer;
-
+    public LittleBookScript bookScript;
     public bool StartGame;
     // Start is called before the first frame update
     void Start()
@@ -62,7 +62,9 @@ public class GameManager : MonoBehaviour
             textBox.GetComponent<Text>().text = "I would file a complaint but I *uh* REALLY don't wanna get on the big guy's bad side ";
             yield return new WaitForSeconds(5.5f);
             textBox.GetComponent<Text>().text = "Here... ";
-            yield return new WaitForSeconds(3.5f);
+            yield return new WaitForSeconds(1.5f);
+            bookScript.Slide();
+            yield return new WaitForSeconds(2f);
             textBox.GetComponent<Text>().text = "Just *uh* write your junk in that and turn it in at the end of the day ";
             yield return new WaitForSeconds(4);
             textBox.GetComponent<Text>().text = "Just trying to make sure you don't get in trouble, I'll let you get back to your... *uh* ";
