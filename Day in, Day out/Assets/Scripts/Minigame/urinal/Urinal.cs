@@ -73,6 +73,11 @@ public class Urinal : MonoBehaviour, Iinteractable
     // Update is called once per frame
     void Update()
     {
+        if(targetMovement.GameFail == true)
+        {
+            daySystem.UrinalIsDone = true;
+        }
+
         if (noMovement == true)
         {
             Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
@@ -117,10 +122,11 @@ public class Urinal : MonoBehaviour, Iinteractable
                 audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
                 audioSource.Play();
                 noMovement = true; // this locks camera on the target
+                yield return new WaitForSeconds(3); // brief pause before the game
                 Player.transform.position = new Vector3(82, 7.5f, 27f); // sets player in proper pissing position
-                yield return new WaitForSeconds(10); // game timer
+                yield return new WaitForSeconds(20); // game timer
                 targetMovement.GameOver = true;
-                daySystem.UrinalIsDone = true;
+                daySystem.urinalIsWin = true;
                 Debug.Log("done pissing");
             }
             

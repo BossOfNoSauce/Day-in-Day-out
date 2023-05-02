@@ -1092,12 +1092,12 @@ MonoBehaviour:
   urinalIsWin: 0
   MeetingIsDone: 0
   meetingIsWin: 0
-  Days: 5
+  Days: 1
   audioSource: {fileID: 26645121}
   DaySound: {fileID: 8300000, guid: 3299737828a6bfa41be095f702cf0e77, type: 3}
   OpeningElevator: {fileID: 0}
   BossCheck: 0
-  AbleToChase: 1
+  AbleToChase: 0
   JukeBoxObj: {fileID: 830215002}
   BlackScreen: {fileID: 735071142}
   animator: {fileID: 735071144}
@@ -30705,6 +30705,7 @@ MonoBehaviour:
   Camera: {fileID: 963194225}
   audioSource: {fileID: 913893881}
   BigMonologue: {fileID: 8300000, guid: 6589cb70a64f0a64c9129447c8811120, type: 3}
+  startChase: 0
 --- !u!64 &913893885
 MeshCollider:
   m_ObjectHideFlags: 0

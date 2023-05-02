@@ -99,7 +99,7 @@ public class BossScript : MonoBehaviour, Iinteractable
 
         if (daySystem.Days == 2)
         {
-            if (daySystem.ComputerIsDone == true && daySystem.UrinalIsDone == true && daySystem.BossCooldown == false)
+            if (daySystem.computerIsWin == true && daySystem.urinalIsWin == true && daySystem.BossCooldown == false)
             {
                 jukebox.StopMus();
                 jukebox.startMus = false;
