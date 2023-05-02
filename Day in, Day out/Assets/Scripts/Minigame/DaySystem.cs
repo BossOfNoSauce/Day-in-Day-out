@@ -10,13 +10,19 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public string InteractionPrompt => prompt;
 
     public bool cooldown;
-
+    //minigame bools, IsWin for fail / win state
     public bool ComputerIsDone;
+    public bool computerIsWin;
     public bool KitchenIsDone;
+    public bool kitchenIsWin;
     public bool UrinalIsDone;
+    public bool urinalIsWin;
     public bool MeetingIsDone;
-    public int Days = 1;
+    public bool meetingIsWin;
 
+    //day count
+    public int Days = 1;
+    //audio
     public AudioSource audioSource;
     public AudioClip DaySound;
 
@@ -34,6 +40,10 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public Animator elevator;
 
     public PlayerMovement playerMovement;
+
+    public Computer computer;
+
+    public KitchenObjs kitchenObjs;
 
     public bool BossCooldown;
 
@@ -96,17 +106,23 @@ public class DaySystem : MonoBehaviour, Iinteractable
             if (Days == 2)
             {
                 ComputerIsDone = false;
+                computer.score = 0;
                 UrinalIsDone = false;
             }
             if(Days == 3)
             {
+                UrinalIsDone = false;
                 ComputerIsDone = false;
                 KitchenIsDone = false;
+                kitchenObjs.ResetObjs();
             }
             if(Days == 4)
             {
                 ComputerIsDone = false;
                 MeetingIsDone = false;
+                KitchenIsDone = false;
+                kitchenObjs.ResetObjs();
+                UrinalIsDone = false;
             }
         }
         

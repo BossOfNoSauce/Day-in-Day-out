@@ -9,22 +9,31 @@ public class Computer : MonoBehaviour, Iinteractable
 
     public string InteractionPrompt => prompt;
 
-    //found bugs
+    //found bugs, bugs are squished now
     //  [X]can open pause menu while playing
     //  [x]game doesnt end
     //  [X]no fail state in script
     //      [x]add bad buttons no press
     //      [x]make new array for bad button & rename spots to good btn
-    //      [/]add ui elements
+    //      [x]add ui elements
     //          [x]tutorial screen
     //          [x]in game ui
-    //              [/]score display
-    //              []
+    //              [x]score display
+    //              [x]life counter
     //      [x]recode button logic
-    //          [/]if hand collide with bad key, game end || a counter (like a hp bar) goes down and 0 == fail
-
+    //          [x]if hand collide with bad key, game end || a counter (like a hp bar) goes down and 0 == fail
+    //rewrite-outline
+    //[x]find where daysystem script is called
+    //  [-]add if not found
+    //[x]call corrisponding bools wihtin the daySystem script
+    //  [x]make dayWin/Fail into one bool
+    //[]get ToDo script
+    //  []change corrisponding bools
     public GameObject manager;
     GameManager gameManager;
+    public ToDo toDoScript;
+
+
 
     
     public GameObject target;
@@ -41,7 +50,7 @@ public class Computer : MonoBehaviour, Iinteractable
     public GameObject[] badSpots;
     GameObject goodCurrentSpot;
     GameObject badCurrentSpot;
-    //ui
+    //--===UI===--//
     public GameObject tutUi;
     public GameObject gameUi;
     public GameObject scoreText;
@@ -50,16 +59,17 @@ public class Computer : MonoBehaviour, Iinteractable
     PauseGame pause;
     public Image[] lifeCountUi;//should never be greater than 3
     int life = 3;
+    public GameObject computerCheck;//for todo list
     //audio
     public AudioSource audioSource;
     public AudioClip type;
-
+    //timeing
     public bool cooldown;
     public bool cooldown2;
-
-    public bool GameFail;
-    public bool GameWin;
-
+    //game win states
+    bool isGameWin;
+    bool isGameFinished = false;
+    //so that you cant use computer while cutscene plays
     public bool canCompute = false;
 
     public GameObject DayManager;
@@ -96,11 +106,6 @@ public class Computer : MonoBehaviour, Iinteractable
         {
             StartCoroutine(EndGame());
         }
-
-        if(GameWin == true)
-        {
-            daySystem.ComputerIsDone = true;
-        }
     }
 
     public IEnumerator StartComputing()
@@ -108,7 +113,7 @@ public class Computer : MonoBehaviour, Iinteractable
         if (canCompute == true)
         {
 
-            if (GameFail == false || GameWin == false)
+            if (isGameFinished == false)
             {
                 pause.AbleToPause = false;
                 playerMovement.InGame = true;
@@ -119,8 +124,6 @@ public class Computer : MonoBehaviour, Iinteractable
                 pause.simPaused();
                 tutUi.SetActive(true);
 
-                //tutUi.SetActive(false);
-                //pause.simResume();
                 LookAt();
                 yield return new WaitForSeconds(1);
                 hand.SetActive(true);
@@ -189,11 +192,20 @@ public class Computer : MonoBehaviour, Iinteractable
             pause.AbleToPause = true;
             Player.transform.position = new Vector3(136, 7.41f, 93.8f);
             cooldown2 = true;
-          if(score >= 10)
+            if(score >= 10)
             {
-                GameWin = true;
-            }  
-
+                isGameWin = true;
+            }
+            else
+            {
+                isGameWin = false;
+            }
+            isGameFinished = true;
+            daySystem.ComputerIsDone = true;
+            daySystem.computerIsWin = isGameWin;
+            //set check list, rewrite when todo sprites come in
+            Image temp = computerCheck.GetComponent<Image>();
+            temp.color = (isGameWin ?  new Color32(0, 255, 0, 100) : new Color32(255, 0, 0, 100));//if game is win, set image to green, else red
         }
 
     }
@@ -222,6 +234,8 @@ public class Computer : MonoBehaviour, Iinteractable
         badCurrentSpot.SetActive(false);
         StartCoroutine(Reset());
     }
+
+    
 
    
 }
