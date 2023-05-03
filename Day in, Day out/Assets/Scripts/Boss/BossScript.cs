@@ -109,7 +109,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 jukebox.StopMus();
                 jukebox.startMus = false;
                 BossImage.SetActive(true);
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(40);
                 audioSource.PlayOneShot(day2monologue, 1);
                 daySystem.BossCheck = true;
                 Debug.Log(daySystem.BossCheck);
@@ -130,7 +130,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 jukebox.StopMus();
                 jukebox.startMus = false;
                 BossImage.SetActive(true);
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(25);
                 audioSource.PlayOneShot(day2monologue, 1);
                 daySystem.BossCheck = true;
                 Debug.Log(daySystem.BossCheck);
@@ -152,7 +152,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 jukebox.StopMus();
                 jukebox.startMus = false;
                 BossImage.SetActive(true);
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(31);
                 audioSource.PlayOneShot(day2monologue, 1);
                 daySystem.BossCheck = true;
                 Debug.Log(daySystem.BossCheck);
@@ -171,7 +171,7 @@ public class BossScript : MonoBehaviour, Iinteractable
             if (daySystem.AbleToChase == true)
             {
                 BossImage.SetActive(true);
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(20);
                 audioSource.PlayOneShot(Finalmonologue, 1);
                 yield return new WaitForSeconds(20); // Number is not confirmed, dependant on sound file
                 BossImage.SetActive(false);

@@ -13,6 +13,7 @@ public class BossChase : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip BigMonologue;
     public bool startChase;
+    public AudioClip Roar;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,9 +42,10 @@ public class BossChase : MonoBehaviour
         firstPersonCamera.FreezeMovement = true;
         Camera.transform.LookAt(Boss.transform.position, Vector3.up);
         audioSource.PlayOneShot(BigMonologue, 1f);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(38);
         playerMovement.InGame = false;
         firstPersonCamera.FreezeMovement = false;
+        audioSource.PlayOneShot(Roar);
         yield return new WaitForSeconds(5);
         startChase = true;
 
