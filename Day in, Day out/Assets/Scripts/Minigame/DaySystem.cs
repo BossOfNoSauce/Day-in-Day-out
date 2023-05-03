@@ -40,15 +40,18 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public Animator elevator;
 
     public PlayerMovement playerMovement;
-
+    //game scripts, for reseting purpuses
     public Computer computer;
+
+
 
     public KitchenObjs kitchenObjs;
 
     public bool BossCooldown;
 
     public GameObject ToDoList;
-
+    
+    //todo list ui elements
     public GameObject ComputerTaskUi;
     public GameObject UrinalTaskUi;
     public GameObject KitchenTaskUi;
@@ -75,9 +78,9 @@ public class DaySystem : MonoBehaviour, Iinteractable
 
     public bool Interact(Interactor interactor)
     {
-        ToDoList.SetActive(false);
         if (Days != 4)
         {
+            ToDoList.SetActive(false);
             if (BossCheck == true)
             {
                 StartCoroutine(EndDay());
@@ -115,7 +118,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             playerMovement.InGame = false;
             if (Days == 2)
             {
-               
+                computer.resetGame();
                 computerIsWin = false;
                 ComputerIsDone = false;
                 computer.score = 0;
@@ -126,6 +129,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if(Days == 3)
             {
+                computer.resetGame();
                 UrinalIsDone = false;
                 ComputerIsDone = false;
                 KitchenIsDone = false;
@@ -136,6 +140,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if(Days == 4)
             {
+                computer.resetGame();
                 ComputerIsDone = false;
                 MeetingIsDone = false;
                 KitchenIsDone = false;
@@ -147,6 +152,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if (Days == 5)
             {
+                computer.resetGame();
                 ToDoList.SetActive(true);
                 AbleToChase = true;
                 jukebox.StopMus();

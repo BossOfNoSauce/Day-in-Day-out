@@ -27,15 +27,8 @@ public class Computer : MonoBehaviour, Iinteractable
     //  [-]add if not found
     //[x]call corrisponding bools wihtin the daySystem script
     //  [x]make dayWin/Fail into one bool
-    //[]get ToDo script
-    //  []change corrisponding bools
     public GameObject manager;
     GameManager gameManager;
-    public ToDo toDoScript;
-
-
-
-    
     public GameObject target;
     PlayerMovement playerMovement;
     public GameObject Player;
@@ -65,7 +58,6 @@ public class Computer : MonoBehaviour, Iinteractable
     public AudioClip type;
     //timeing
     public bool cooldown;
-    public bool cooldown2;
     //game win states
     bool isGameWin;
     bool isGameFinished = false;
@@ -163,12 +155,12 @@ public class Computer : MonoBehaviour, Iinteractable
 
     public void CallSpot()
     {
-        if(score < 10)
+        if(score < 10 && life > 0)
         {
             //rand spot 0-3 for each
             int index = Random.Range(0, goodSpots.Length);
             int index2 = Random.Range(0, badSpots.Length);
-            //Debug.Log("index 1 & 2, " + index + "/" + index2);//debug line
+            //Debug.Log("computer spot index 1 / 2, " + index + "/" + index2);//debug line
             //overlap correction code
             while(index == index2)
             {
@@ -194,9 +186,9 @@ public class Computer : MonoBehaviour, Iinteractable
 
     
 
-    IEnumerator EndGame()//add a fail think here
+    IEnumerator EndGame()
     {
-        if(cooldown2 == false)
+        if(isGameFinished == false)
         {
             yield return new WaitForSeconds(1);
             playerMovement.InGame = false; 
@@ -206,7 +198,7 @@ public class Computer : MonoBehaviour, Iinteractable
             gameUi.SetActive(false);
             pause.AbleToPause = true;
             Player.transform.position = new Vector3(136, 7.41f, 93.8f);
-            cooldown2 = true;
+            //check and reset score
             if(score >= 10)
             {
                 isGameWin = true;
@@ -215,9 +207,14 @@ public class Computer : MonoBehaviour, Iinteractable
             {
                 isGameWin = false;
             }
+            score = 0;
+            //set game bools and dayscript bools
             isGameFinished = true;
             daySystem.ComputerIsDone = true;
             daySystem.computerIsWin = isGameWin;
+            //hile current spots
+            badCurrentSpot.SetActive(false);
+            goodCurrentSpot.SetActive(false);
             //set check list, rewrite when todo sprites come in
             Image temp = computerCheck.GetComponent<Image>();
             temp.color = (isGameWin ?  new Color32(0, 255, 0, 100) : new Color32(255, 0, 0, 100));//if game is win, set image to green, else red
@@ -236,9 +233,6 @@ public class Computer : MonoBehaviour, Iinteractable
         {
             life--;
             lifeCountUi[life].color = new Color32(255, 0, 0, 100);
-            
-
-            //lifeDisplay[life-1].gameObject.c//change color to red here
             if (life <= 0)
             {
                 StartCoroutine(EndGame());
@@ -248,6 +242,15 @@ public class Computer : MonoBehaviour, Iinteractable
         goodCurrentSpot.SetActive(false);
         badCurrentSpot.SetActive(false);
         StartCoroutine(Reset());
+    }
+    public void resetGame()
+    {
+        isGameFinished = false;
+        for(int i = 0; i < 3; i++)
+        {
+            lifeCountUi[i].color = new Color32(0, 255, 0, 100);
+        }
+
     }
 
     public void DisableUI()
