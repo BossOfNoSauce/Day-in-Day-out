@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11831,7 +11831,7 @@ GameObject:
   - component: {fileID: 373038660}
   - component: {fileID: 373038659}
   m_Layer: 0
-  m_Name: Dumbass cube
+  m_Name: Idiotcube(Computer)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52322,7 +52322,7 @@ GameObject:
   - component: {fileID: 1467735992}
   - component: {fileID: 1467735993}
   m_Layer: 0
-  m_Name: DipshitCube
+  m_Name: DummyCube(urinal)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75911,6 +75911,11 @@ MonoBehaviour:
   cooldown2: 0
   canCompute: 0
   DayManager: {fileID: 26645115}
+  ToDoUI: {fileID: 0}
+  ComUI: {fileID: 0}
+  PeeUI: {fileID: 0}
+  KitUI: {fileID: 0}
+  MetUI: {fileID: 0}
 --- !u!65 &2098371509
 BoxCollider:
   m_ObjectHideFlags: 0
