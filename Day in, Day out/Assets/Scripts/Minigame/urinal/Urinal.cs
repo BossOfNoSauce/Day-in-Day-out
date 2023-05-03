@@ -24,6 +24,9 @@ public class Urinal : MonoBehaviour, Iinteractable
     public AudioSource audioSource;
     public AudioClip[] audioClips;
     public GameObject menu;
+    //ui
+    public GameObject urinalUI;
+
 
     public GameObject PauseMenu;
     PauseGame pauseGame;
@@ -84,7 +87,7 @@ public class Urinal : MonoBehaviour, Iinteractable
 
             MainCam.transform.LookAt(target.transform.position, Vector3.up);
         }
-        if (targetMovement.GameOver || targetMovement.GameFail)//end game in here to check constantly
+        if (targetMovement.GameOver || targetMovement.GameFail)//end game in here, reset stuff here
         {
             //these debugs fill the console
             //if (targetMovement.GameOver) Debug.Log("game end");
@@ -113,6 +116,7 @@ public class Urinal : MonoBehaviour, Iinteractable
         {
             if(daySystem.UrinalIsDone == false)
             {
+                //urinalUI.SetActive(true);
                 pauseGame.AbleToPause = false; //dissables pause menu
                 pauseGame.simPaused();
                 gameManager.gameActive = true;
