@@ -76,22 +76,21 @@ public class Urinal : MonoBehaviour, Iinteractable
     // Update is called once per frame
     void Update()
     {
-        if(targetMovement.GameFail == true)
-        {
-            daySystem.UrinalIsDone = true;
-        }
-
         if (noMovement == true)
         {
             Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
 
             MainCam.transform.LookAt(target.transform.position, Vector3.up);
         }
-        if (targetMovement.GameOver || targetMovement.GameFail)//end game in here, reset stuff here
+        if (targetMovement.GameOver)//end game in here, reset stuff here
         {
             //these debugs fill the console
             //if (targetMovement.GameOver) Debug.Log("game end");
             //if (targetMovement.GameFail) Debug.Log("Game fail");
+            //setting bools
+            daySystem.UrinalIsDone = true;
+            daySystem.urinalIsWin = !targetMovement.GameFail;
+
             // disables all previous variables, allowing normal movement
             noMovement = false;
             playerController.InGame = false;
@@ -112,7 +111,7 @@ public class Urinal : MonoBehaviour, Iinteractable
 
     IEnumerator StartUrination()
     {
-        if (targetMovement.GameOver == false || targetMovement.GameFail == false)
+        if (targetMovement.GameOver == false)
         {
             if(daySystem.UrinalIsDone == false)
             {

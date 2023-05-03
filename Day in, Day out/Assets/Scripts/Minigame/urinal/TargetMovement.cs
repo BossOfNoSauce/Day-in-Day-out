@@ -53,7 +53,7 @@ public class TargetMovement : MonoBehaviour
                 Dafunk();
             }
         }
-        if(GameOver== true || GameFail == true)
+        if(GameOver== true)
         {
             m_rigidbody.velocity = Vector3.zero;
         }
