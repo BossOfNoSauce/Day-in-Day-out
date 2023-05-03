@@ -76445,6 +76445,7 @@ MonoBehaviour:
   PeeUI: {fileID: 0}
   KitUI: {fileID: 0}
   MetUI: {fileID: 0}
+  TheFunnyBool: 0
 --- !u!65 &2098371509
 BoxCollider:
   m_ObjectHideFlags: 0

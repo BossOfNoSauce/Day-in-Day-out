@@ -118,6 +118,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             playerMovement.InGame = false;
             if (Days == 2)
             {
+                
                 BossCheck = false;
                 computer.resetGame();
                 computerIsWin = false;
@@ -130,6 +131,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if(Days == 3)
             {
+                computer.score = 0;
                 BossCheck = false;
                 computer.resetGame();
                 UrinalIsDone = false;
@@ -142,6 +144,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if(Days == 4)
             {
+                computer.score = 0;
                 BossCheck = false;
                 computer.resetGame();
                 ComputerIsDone = false;

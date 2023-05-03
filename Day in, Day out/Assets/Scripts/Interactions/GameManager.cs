@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
             audioSource.PlayOneShot(door, 0.7f);
             animator.SetTrigger("Open");
             jukebox.startMus = true;
-            computer.canCompute = true;
+            computer.TheFunnyBool = true;
             
         }
         

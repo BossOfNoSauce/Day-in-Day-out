@@ -72,6 +72,8 @@ public class Computer : MonoBehaviour, Iinteractable
     public GameObject PeeUI;
     public GameObject KitUI;
     public GameObject MetUI;
+
+    public bool TheFunnyBool = false;
     public bool Interact(Interactor interactor)
     {
         Debug.Log(canCompute);
@@ -106,7 +108,7 @@ public class Computer : MonoBehaviour, Iinteractable
             StartCoroutine(EndGame());
         }
 
-        if(daySystem.ComputerIsDone == false)
+        if(daySystem.ComputerIsDone == false && TheFunnyBool == true)
         {
             canCompute = true;
         }
