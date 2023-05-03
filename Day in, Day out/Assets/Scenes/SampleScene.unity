@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -75880,7 +75880,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prompt: 
   manager: {fileID: 1818565575}
-  toDoScript: {fileID: 0}
   target: {fileID: 373038658}
   Player: {fileID: 1926878008}
   hand: {fileID: 4236191114706419201}
@@ -75908,7 +75907,6 @@ MonoBehaviour:
   audioSource: {fileID: 2098371510}
   type: {fileID: 8300000, guid: e10b167335af1a24d972e28399ff9867, type: 3}
   cooldown: 0
-  cooldown2: 0
   canCompute: 0
   DayManager: {fileID: 26645115}
 --- !u!65 &2098371509
