@@ -66,6 +66,12 @@ public class Computer : MonoBehaviour, Iinteractable
 
     public GameObject DayManager;
     DaySystem daySystem;
+
+    public GameObject ToDoUI;
+    public GameObject ComUI;
+    public GameObject PeeUI;
+    public GameObject KitUI;
+    public GameObject MetUI;
     public bool Interact(Interactor interactor)
     {
         Debug.Log(canCompute);
@@ -243,6 +249,16 @@ public class Computer : MonoBehaviour, Iinteractable
         for(int i = 0; i < 3; i++)
         {
             lifeCountUi[i].color = new Color32(0, 255, 0, 100);
+        }
+
+    }
+
+    public void DisableUI()
+    {
+        //im so sorry, this is fucking atrocious code
+        if(daySystem.Days == 1)
+        {
+
         }
 
     }
