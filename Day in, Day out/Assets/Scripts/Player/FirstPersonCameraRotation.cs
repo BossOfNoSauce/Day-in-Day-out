@@ -107,14 +107,7 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 
 	}
 
-	IEnumerator Stare()
-    {
-		playerMovement.InGame = true;
-		FreezeMovement = true;
-		Camera.transform.LookAt(Boss.transform.position, Vector3.up);
-		yield return new WaitForSeconds(10);
-		
-    }
+	
 
 
 
