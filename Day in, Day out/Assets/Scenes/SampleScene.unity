@@ -25134,7 +25134,7 @@ Transform:
   m_GameObject: {fileID: 752315387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 88.39, y: 5.24, z: 24.76}
-  m_LocalScale: {x: 3.1295898, y: 3.1295898, z: 3.1295898}
+  m_LocalScale: {x: -3.12959, y: 3.1295898, z: 3.1295898}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 24
@@ -51182,14 +51182,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426351664}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 742949852}
   m_Father: {fileID: 983800171}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -52880,6 +52880,7 @@ MonoBehaviour:
   Power: 7
   velocityActive: 1
   GameOver: 0
+  urinalArrow: {fileID: 1426351664}
 --- !u!54 &1467735993
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77376,6 +77377,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0dcdde0cea53aaf46a59e9c4fc19f6c8, type: 3}
   - {fileID: 8300000, guid: 90a86c217c4f2ad4b923797c3055df4d, type: 3}
   menu: {fileID: 912831577}
+  urinalUI: {fileID: 676283122}
   PauseMenu: {fileID: 268373959}
   prompt: 
   DayManager: {fileID: 26645115}
