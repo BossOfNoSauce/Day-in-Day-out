@@ -16,6 +16,8 @@ public class LittleBookScript : MonoBehaviour, Iinteractable
     public GameObject MetUI;
 
     public Transform target;
+
+    public bool startSlide;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,10 @@ public class LittleBookScript : MonoBehaviour, Iinteractable
     // Update is called once per frame
     void Update()
     {
-        
+        if (startSlide)
+        {
+            Slide();
+        }
     }
 
     public bool Interact(Interactor interactor)

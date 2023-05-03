@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(5.5f);
             textBox.GetComponent<Text>().text = "Here... ";
             yield return new WaitForSeconds(1.5f);
-            bookScript.Slide();
+            bookScript.startSlide = true;
             yield return new WaitForSeconds(2f);
             textBox.GetComponent<Text>().text = "Just *uh* write your junk in that and turn it in at the end of the day ";
             yield return new WaitForSeconds(4);

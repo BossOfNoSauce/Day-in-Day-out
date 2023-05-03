@@ -1092,12 +1092,12 @@ MonoBehaviour:
   urinalIsWin: 0
   MeetingIsDone: 0
   meetingIsWin: 0
-  Days: 1
+  Days: 5
   audioSource: {fileID: 26645121}
   DaySound: {fileID: 8300000, guid: 59eebf1817b5a084486f09ea833de533, type: 3}
   OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
   BossCheck: 0
-  AbleToChase: 0
+  AbleToChase: 1
   JukeBoxObj: {fileID: 830215002}
   BlackScreen: {fileID: 735071142}
   animator: {fileID: 735071144}
@@ -27578,13 +27578,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: 
-  speed: 10
+  speed: 7
   ToDoUI: {fileID: 50045296}
   ComUI: {fileID: 1707859798}
   PeeUI: {fileID: 1938780379}
   KitUI: {fileID: 1963583632}
   MetUI: {fileID: 600919174}
   target: {fileID: 893085371}
+  startSlide: 0
 --- !u!65 &817218332
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32050,8 +32051,9 @@ MonoBehaviour:
   Boss: {fileID: 913893879}
   Camera: {fileID: 963194225}
   audioSource: {fileID: 913893881}
-  BigMonologue: {fileID: 8300000, guid: 6589cb70a64f0a64c9129447c8811120, type: 3}
+  BigMonologue: {fileID: 8300000, guid: c1f8b30f8e4f39647af58797d135ae3c, type: 3}
   startChase: 0
+  Roar: {fileID: 8300000, guid: d0a6b61703da7b843986120e13574adc, type: 3}
 --- !u!64 &913893885
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64160,10 +64162,10 @@ MonoBehaviour:
   BossImage: {fileID: 1049754709}
   audioSource: {fileID: 1743486951}
   day1monologue: {fileID: 8300000, guid: 3463b01736f8f74409f95ee924e1e323, type: 3}
-  day2monologue: {fileID: 0}
-  day3monologue: {fileID: 0}
-  day4monologue: {fileID: 0}
-  Finalmonologue: {fileID: 8300000, guid: 78a2a618b85d93744a645fe3a1a1166d, type: 3}
+  day2monologue: {fileID: 8300000, guid: 11baa68bdd1a33f48b56ced0b7850619, type: 3}
+  day3monologue: {fileID: 8300000, guid: ffce34930f6eabc49a4d95a4d5d4e3a6, type: 3}
+  day4monologue: {fileID: 8300000, guid: cb9c2e09c5f084c41af0d2973ced61f6, type: 3}
+  Finalmonologue: {fileID: 8300000, guid: a42fce03bc7efbd4b9eae17978735e8a, type: 3}
   Buzzer: {fileID: 8300000, guid: 1481dce32aa33d14ca68baf78b99cf8a, type: 3}
   textBox: {fileID: 1489839664}
   JukeBoxObj: {fileID: 830215002}
