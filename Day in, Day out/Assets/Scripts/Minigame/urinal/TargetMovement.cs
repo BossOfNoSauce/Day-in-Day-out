@@ -62,9 +62,11 @@ public class TargetMovement : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)//fail game
     {
+        Debug.Log("game fail in urinal, attemting end game");
         GameFail = true;
+        GameOver = true;
     }
 
     void Dafunk()
