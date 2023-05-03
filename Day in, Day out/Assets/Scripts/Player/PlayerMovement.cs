@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if (verticalInput > 0 || horizontalInput > 0 || verticalInput < 0)
+        if (verticalInput != 0 || horizontalInput != 0 )
         {
             audioSource.enabled = true;
             
