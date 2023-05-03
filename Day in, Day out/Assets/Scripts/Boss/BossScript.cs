@@ -125,7 +125,7 @@ public class BossScript : MonoBehaviour, Iinteractable
         if (daySystem.Days == 3)
         {
             daySystem.BossCooldown = false;
-            if (daySystem.ComputerIsDone == true && daySystem.UrinalIsDone == true && daySystem.KitchenIsDone == true && daySystem.BossCooldown == false)
+            if (daySystem.computerIsWin == true && daySystem.urinalIsWin == true && daySystem.kitchenIsWin == true && daySystem.BossCooldown == false)
             {
                 jukebox.StopMus();
                 jukebox.startMus = false;
@@ -147,7 +147,7 @@ public class BossScript : MonoBehaviour, Iinteractable
         if (daySystem.Days == 4)
         {
             daySystem.BossCooldown = false;
-            if (daySystem.ComputerIsDone == true && daySystem.UrinalIsDone == true && daySystem.KitchenIsDone == true && daySystem.MeetingIsDone == true && daySystem.BossCooldown == false)
+            if (daySystem.computerIsWin == true && daySystem.urinalIsWin == true && daySystem.KitchenIsDone == true && daySystem.meetingIsWin == true && daySystem.BossCooldown == false)
             {
                 jukebox.StopMus();
                 jukebox.startMus = false;

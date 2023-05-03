@@ -118,6 +118,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             playerMovement.InGame = false;
             if (Days == 2)
             {
+                BossCheck = false;
                 computer.resetGame();
                 computerIsWin = false;
                 ComputerIsDone = false;
@@ -129,6 +130,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if(Days == 3)
             {
+                BossCheck = false;
                 computer.resetGame();
                 UrinalIsDone = false;
                 ComputerIsDone = false;
@@ -140,6 +142,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if(Days == 4)
             {
+                BossCheck = false;
                 computer.resetGame();
                 ComputerIsDone = false;
                 MeetingIsDone = false;
@@ -152,6 +155,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if (Days == 5)
             {
+                BossCheck = false;
                 computer.resetGame();
                 ToDoList.SetActive(true);
                 AbleToChase = true;
