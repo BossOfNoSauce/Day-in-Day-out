@@ -12,6 +12,8 @@ public class BossScript : MonoBehaviour, Iinteractable
     public GameObject DayManager;
     DaySystem daySystem;
 
+    public GameObject ToDoUi;
+
     public GameObject BossImage;
     public  AudioSource audioSource;
     public AudioClip day1monologue;
@@ -52,6 +54,7 @@ public class BossScript : MonoBehaviour, Iinteractable
         {
             if (daySystem.ComputerIsDone == true && daySystem.BossCooldown == false)
             {
+                ToDoUi.SetActive(false);
                 jukebox.StopMus();
                 jukebox.startMus = false;
                 BossImage.SetActive(true);
@@ -89,6 +92,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
+                ToDoUi.SetActive(true);
             }
             else
             {
@@ -99,6 +103,7 @@ public class BossScript : MonoBehaviour, Iinteractable
 
         if (daySystem.Days == 2)
         {
+            daySystem.BossCooldown = false;
             if (daySystem.computerIsWin == true && daySystem.urinalIsWin == true && daySystem.BossCooldown == false)
             {
                 jukebox.StopMus();
@@ -119,6 +124,7 @@ public class BossScript : MonoBehaviour, Iinteractable
 
         if (daySystem.Days == 3)
         {
+            daySystem.BossCooldown = false;
             if (daySystem.ComputerIsDone == true && daySystem.UrinalIsDone == true && daySystem.KitchenIsDone == true && daySystem.BossCooldown == false)
             {
                 jukebox.StopMus();
@@ -140,6 +146,7 @@ public class BossScript : MonoBehaviour, Iinteractable
 
         if (daySystem.Days == 4)
         {
+            daySystem.BossCooldown = false;
             if (daySystem.ComputerIsDone == true && daySystem.UrinalIsDone == true && daySystem.KitchenIsDone == true && daySystem.MeetingIsDone == true && daySystem.BossCooldown == false)
             {
                 jukebox.StopMus();
@@ -160,6 +167,7 @@ public class BossScript : MonoBehaviour, Iinteractable
 
         if(daySystem.Days == 5)
         {
+            daySystem.BossCooldown = false;
             if (daySystem.AbleToChase == true)
             {
                 BossImage.SetActive(true);

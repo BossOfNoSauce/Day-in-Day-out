@@ -76,10 +76,11 @@ public class Computer : MonoBehaviour, Iinteractable
     DaySystem daySystem;
     public bool Interact(Interactor interactor)
     {
-
+        Debug.Log(canCompute);
+        Debug.Log(isGameFinished);
         //this is what happenes when you interact
-      
-            StartCoroutine(StartComputing());
+
+        StartCoroutine(StartComputing());
         
         
         
@@ -106,6 +107,13 @@ public class Computer : MonoBehaviour, Iinteractable
         {
             StartCoroutine(EndGame());
         }
+
+        if(daySystem.ComputerIsDone == false)
+        {
+            canCompute = true;
+        }
+
+       
     }
 
     public IEnumerator StartComputing()
@@ -113,8 +121,9 @@ public class Computer : MonoBehaviour, Iinteractable
         if (canCompute == true)
         {
 
-            if (isGameFinished == false)
+            if (daySystem.ComputerIsDone == false)
             {
+                life = 3;
                 pause.AbleToPause = false;
                 playerMovement.InGame = true;
                 gameManager.gameActive = true;
@@ -184,9 +193,9 @@ public class Computer : MonoBehaviour, Iinteractable
         if(cooldown2 == false)
         {
             yield return new WaitForSeconds(1);
-            playerMovement.InGame = false; //is good
-            gameManager.gameActive = false; //is good
-            firstPersonCameraRotation.FreezeMovement = false; // si good
+            playerMovement.InGame = false; 
+            gameManager.gameActive = false; 
+            firstPersonCameraRotation.FreezeMovement = false; 
             hand.SetActive(false);
             gameUi.SetActive(false);
             pause.AbleToPause = true;

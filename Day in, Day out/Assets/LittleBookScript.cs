@@ -10,6 +10,11 @@ public class LittleBookScript : MonoBehaviour, Iinteractable
 
     public float speed = 10f;
     public GameObject ToDoUI;
+    public GameObject ComUI;
+    public GameObject PeeUI;
+    public GameObject KitUI;
+    public GameObject MetUI;
+
     public Transform target;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +31,10 @@ public class LittleBookScript : MonoBehaviour, Iinteractable
     public bool Interact(Interactor interactor)
     {
         ToDoUI.SetActive(true);
+        ComUI.SetActive(true);
+        PeeUI.SetActive(false);
+        KitUI.SetActive(false);
+        MetUI.SetActive(false);
         gameObject.SetActive(false);
         
 
