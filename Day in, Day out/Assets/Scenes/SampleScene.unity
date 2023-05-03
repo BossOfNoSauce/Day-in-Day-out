@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2097,7 +2097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &50045297
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2114,7 +2114,7 @@ RectTransform:
   - {fileID: 1963583633}
   - {fileID: 600919175}
   m_Father: {fileID: 268373960}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8227,7 +8227,7 @@ RectTransform:
   - {fileID: 316420982}
   - {fileID: 1456752736}
   m_Father: {fileID: 268373960}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9078,11 +9078,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 50045297}
   - {fileID: 735071143}
   - {fileID: 235828834}
   - {fileID: 975285407}
   - {fileID: 1489839665}
-  - {fileID: 50045297}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24187,7 +24187,7 @@ RectTransform:
   m_LocalScale: {x: 19.232492, y: 10.889847, z: 10.752218}
   m_Children: []
   m_Father: {fileID: 268373960}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -27181,6 +27181,10 @@ MonoBehaviour:
   prompt: 
   speed: 10
   ToDoUI: {fileID: 50045296}
+  ComUI: {fileID: 1707859798}
+  PeeUI: {fileID: 1938780379}
+  KitUI: {fileID: 1963583632}
+  MetUI: {fileID: 600919174}
   target: {fileID: 893085371}
 --- !u!65 &817218332
 BoxCollider:
@@ -33449,7 +33453,7 @@ RectTransform:
   - {fileID: 406975487}
   - {fileID: 191246551}
   m_Father: {fileID: 268373960}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -41364,10 +41368,10 @@ BoxCollider:
   m_GameObject: {fileID: 1181487157}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.039046075, y: 0.021837827, z: 0.019999998}
-  m_Center: {x: 0.00000023841858, y: 0.00091891596, z: -1.3058575e-17}
+  m_Size: {x: 0.06407929, y: 0.017050505, z: 0.019999998}
+  m_Center: {x: 0.02865309, y: 0.0002577569, z: 1.3069218e-11}
 --- !u!1 &1183072633
 GameObject:
   m_ObjectHideFlags: 0
@@ -52028,7 +52032,7 @@ MonoBehaviour:
   right: {x: 16, y: 0, z: 0}
   m_rigidbody: {fileID: 1467735993}
   GameFail: 0
-  Power: 10
+  Power: 7
   velocityActive: 1
   GameOver: 0
 --- !u!54 &1467735993
@@ -53145,7 +53149,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 268373960}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -63254,7 +63258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prompt: 
   DayManager: {fileID: 26645115}
-  ToDoUi: {fileID: 0}
+  ToDoUi: {fileID: 50045296}
   BossImage: {fileID: 1049754709}
   audioSource: {fileID: 1743486951}
   day1monologue: {fileID: 8300000, guid: 3463b01736f8f74409f95ee924e1e323, type: 3}

@@ -103,6 +103,7 @@ public class BossScript : MonoBehaviour, Iinteractable
 
         if (daySystem.Days == 2)
         {
+            daySystem.BossCooldown = false;
             if (daySystem.computerIsWin == true && daySystem.urinalIsWin == true && daySystem.BossCooldown == false)
             {
                 jukebox.StopMus();
@@ -123,6 +124,7 @@ public class BossScript : MonoBehaviour, Iinteractable
 
         if (daySystem.Days == 3)
         {
+            daySystem.BossCooldown = false;
             if (daySystem.ComputerIsDone == true && daySystem.UrinalIsDone == true && daySystem.KitchenIsDone == true && daySystem.BossCooldown == false)
             {
                 jukebox.StopMus();
@@ -144,6 +146,7 @@ public class BossScript : MonoBehaviour, Iinteractable
 
         if (daySystem.Days == 4)
         {
+            daySystem.BossCooldown = false;
             if (daySystem.ComputerIsDone == true && daySystem.UrinalIsDone == true && daySystem.KitchenIsDone == true && daySystem.MeetingIsDone == true && daySystem.BossCooldown == false)
             {
                 jukebox.StopMus();
@@ -164,6 +167,7 @@ public class BossScript : MonoBehaviour, Iinteractable
 
         if(daySystem.Days == 5)
         {
+            daySystem.BossCooldown = false;
             if (daySystem.AbleToChase == true)
             {
                 BossImage.SetActive(true);
