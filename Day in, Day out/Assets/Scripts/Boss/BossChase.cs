@@ -32,11 +32,16 @@ public class BossChase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+        if(startChase == false)
+        {
+            Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
 
-        transform.LookAt(targetPosition);
+            transform.LookAt(targetPosition);
 
-        transform.rotation.Set(0.0f, transform.rotation.y, 0.0f, transform.rotation.w);
+            transform.rotation.Set(0.0f, transform.rotation.y, 0.0f, transform.rotation.w);
+        }
+
+
 
 
 
@@ -77,10 +82,12 @@ public class BossChase : MonoBehaviour
     public IEnumerator MoveTowards()
     {
 
-    
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
         yield return new WaitForSeconds(3);
-      
+        transform.Translate(-Vector3.right * Time.deltaTime * speed);
 
 
     }
+
+    
 }
