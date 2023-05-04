@@ -10,6 +10,8 @@ public class UI : MonoBehaviour
     public Transform target;
     public bool john;
     public Animator animator;
+    public AudioSource audioSource;
+    public AudioClip Music;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,15 +21,11 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(john = false)
-        {
-            
-            StartCoroutine(CameraMove());
-        }
         
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            animator.SetBool("john", false);
+            StartCoroutine(CameraMove());
+            
             
 
         }
@@ -53,14 +51,18 @@ public class UI : MonoBehaviour
         yield return new WaitForSeconds(4);
         animator.SetTrigger("CameraMove");
         yield return new WaitForSeconds(4);
-        animator.SetBool("john", true);
+        audioSource.PlayOneShot(Music);
+        john = true;
     }
 
     IEnumerator CameraMove()
     {
-        Debug.Log("JOHN SWEEP");
-        animator.SetTrigger("CameraPan");
-        yield return new WaitForSeconds(3.25f);
-        StartGame();
+        if(john == true)
+        {
+            animator.SetTrigger("CameraPan");
+            yield return new WaitForSeconds(3.25f);
+            StartGame();
+        }
+        
     }
 }
