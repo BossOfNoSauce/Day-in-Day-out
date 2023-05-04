@@ -49284,7 +49284,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.622
+  m_Value: 0.408
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -59661,7 +59661,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: af5ea22a8f0cd1949b3a35dd98028479, type: 2}
+  - {fileID: 2100000, guid: e096a1929d32f3641896cc520231227d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
