@@ -60,7 +60,7 @@ public class KitchenGame : MonoBehaviour
             {
                 Arm.SetActive(false);
                 Hand.HandActive = true;
-                daySystem.KitchenIsDone = true;
+                daySystem.MeetingIsDone = true;
 
             }
         }

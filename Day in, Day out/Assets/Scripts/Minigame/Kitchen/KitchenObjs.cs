@@ -55,23 +55,15 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
 
     public bool Interact(Interactor interactor)
     {
-        if (kitchenGame.coffeeStage == 3 && GrabBool && coffeeDrink == false)//coffee stage only goes to 3 when mug in hand, so this is fine
-        {//drink coffee when in hand
-            audioSource.PlayOneShot(Drink);
-            coffeeMachine.Drink.SetActive(false);
-            kitchenGame.CoffeeIsDone = true;
-            coffeeDrink = true;
-        }
-        else
-        {
-            this.ObjectGrabPointTransform = ObjectGrabPointTransform;
+       
+        this.ObjectGrabPointTransform = ObjectGrabPointTransform;
 
             GrabBool = !GrabBool;
-            RB.freezeRotation = !RB.freezeRotation;
-            RB.useGravity = !RB.useGravity;
-            //Set bool to enable the cup moving toward the orgin point
-            // man we use a lkot of bools
-        }
+        RB.freezeRotation = !RB.freezeRotation;
+        RB.useGravity = !RB.useGravity;
+        //Set bool to enable the cup moving toward the orgin point
+        // man we use a lkot of bools
+
 
 
 
@@ -92,7 +84,13 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
 
         if (Input.GetMouseButtonDown(0))
         {
-            
+            if (kitchenGame.coffeeStage == 3 && GrabBool && coffeeDrink == false)
+            {
+                audioSource.PlayOneShot(Drink);
+                coffeeMachine.Drink.SetActive(false);
+                kitchenGame.CoffeeIsDone = true;
+                coffeeDrink = true;
+            }
             
         }
 
