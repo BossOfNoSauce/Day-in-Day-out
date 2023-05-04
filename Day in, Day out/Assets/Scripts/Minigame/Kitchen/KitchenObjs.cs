@@ -25,8 +25,9 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
 
     public GameObject cMachine;
     CoffeeMachine coffeeMachine;
-
+    //has consumed yet?
     public bool coffeeDrink;
+    public bool noodleEat = false;
 
     public bool AbleToGrab = true;
     // Start is called before the first frame update
@@ -57,13 +58,22 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
     {
         if (kitchenGame.coffeeStage == 3 && GrabBool && coffeeDrink == false)//coffee stage only goes to 3 when mug in hand, so this is fine
         {//drink coffee when in hand
+            Debug.Log("drinkiung coffee");
             audioSource.PlayOneShot(Drink);
             coffeeMachine.Drink.SetActive(false);
             kitchenGame.CoffeeIsDone = true;
             coffeeDrink = true;
         }
+        else if (kitchenGame.noodleStage == 2 && GrabBool && noodleEat == false)//coffee stage only goes to 3 when mug in hand, so this is fine
+        {//drink coffee when in hand
+            Debug.Log("eating noodles");
+            audioSource.PlayOneShot(Drink);
+            kitchenGame.NoodlesIsDone = true;
+            noodleEat = true;
+        }
         else
         {
+            Debug.Log("dropping / grabbing item");
             this.ObjectGrabPointTransform = ObjectGrabPointTransform;
 
             GrabBool = !GrabBool;
@@ -77,7 +87,15 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
 
         return true;
     }
+    public void simDrop()
+    {
+        Debug.Log("simulating dropping / grabbing item");
+        this.ObjectGrabPointTransform = ObjectGrabPointTransform;
 
+        GrabBool = !GrabBool;
+        RB.freezeRotation = !RB.freezeRotation;
+        RB.useGravity = !RB.useGravity;
+    }
     public void FixedUpdate()
     {
         
@@ -106,8 +124,5 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
 
             gameObject.layer = default;
      }
-
-       
-
-}
+    }
 }
