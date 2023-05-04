@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -33456,6 +33456,8 @@ MonoBehaviour:
   - {fileID: 1372105883}
   numberOfPoints: 26
   moveSpeed: 20
+  elevator: {fileID: 1806412101}
+  OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
   debris: {fileID: 277786392}
 --- !u!212 &913893885
 SpriteRenderer:
@@ -66717,6 +66719,8 @@ MonoBehaviour:
   Buzzer: {fileID: 8300000, guid: 1481dce32aa33d14ca68baf78b99cf8a, type: 3}
   textBox: {fileID: 1489839664}
   JukeBoxObj: {fileID: 830215002}
+  elevator: {fileID: 1806412101}
+  OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
 --- !u!64 &1743486947
 MeshCollider:
   m_ObjectHideFlags: 0

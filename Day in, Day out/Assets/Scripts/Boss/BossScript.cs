@@ -29,6 +29,8 @@ public class BossScript : MonoBehaviour, Iinteractable
     Jukebox jukebox;
 
     public Animator elevator;
+    public AudioClip OpeningElevator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,6 +98,8 @@ public class BossScript : MonoBehaviour, Iinteractable
                 daySystem.BossCooldown = true;
                 ToDoUi.SetActive(true);
                 daySystem.cooldown = false;
+                elevator.SetTrigger("Elevator Open");
+                audioSource.PlayOneShot(OpeningElevator);
             }
             else
             {
@@ -119,6 +123,8 @@ public class BossScript : MonoBehaviour, Iinteractable
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
                 daySystem.cooldown = false;
+                elevator.SetTrigger("Elevator Open");
+                audioSource.PlayOneShot(OpeningElevator);
 
             }
             else
@@ -142,6 +148,8 @@ public class BossScript : MonoBehaviour, Iinteractable
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
                 daySystem.cooldown = false;
+                elevator.SetTrigger("Elevator Open");
+                audioSource.PlayOneShot(OpeningElevator);
             }
             else
             {
@@ -165,6 +173,8 @@ public class BossScript : MonoBehaviour, Iinteractable
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
                 daySystem.cooldown = false;
+                elevator.SetTrigger("Elevator Open");
+                audioSource.PlayOneShot(OpeningElevator);
             }
             else
             {

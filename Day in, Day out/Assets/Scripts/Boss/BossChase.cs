@@ -38,7 +38,8 @@ public class BossChase : MonoBehaviour
     private int pointsIndex;
     private Vector3 position;
 
-
+    public Animator elevator;
+    public AudioClip OpeningElevator;
 
 
     //map objects
@@ -113,6 +114,8 @@ public class BossChase : MonoBehaviour
         firstPersonCamera.FreezeMovement = false;
         audioSource.PlayOneShot(Roar);
         yield return new WaitForSeconds(5);
+        elevator.SetTrigger("Elevator Open");
+        audioSource.PlayOneShot(OpeningElevator);
         audioSource.PlayOneShot(ChaseMusic);
         startChase = true;
 
