@@ -93,6 +93,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
                 ToDoUi.SetActive(true);
+                daySystem.cooldown = false;
             }
             else
             {
@@ -115,6 +116,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
+                daySystem.cooldown = false;
             }
             else
             {
@@ -136,6 +138,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
+                daySystem.cooldown = false;
             }
             else
             {
@@ -158,6 +161,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
+                daySystem.cooldown = false;
             }
             else
             {

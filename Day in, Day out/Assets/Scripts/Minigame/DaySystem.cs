@@ -118,12 +118,13 @@ public class DaySystem : MonoBehaviour, Iinteractable
             playerMovement.InGame = false;
             if (Days == 2)
             {
-                
+                computer.score = 0;
                 BossCheck = false;
                 computer.resetGame();
                 computerIsWin = false;
                 ComputerIsDone = false;
                 computer.score = 0;
+                urinalIsWin = false;
                 UrinalIsDone = false;
                 BossCooldown = false;
                 ToDoList.SetActive(true);
@@ -134,8 +135,11 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 computer.score = 0;
                 BossCheck = false;
                 computer.resetGame();
+                urinalIsWin = false;
                 UrinalIsDone = false;
+                computerIsWin = false;
                 ComputerIsDone = false;
+                kitchenIsWin = false;
                 KitchenIsDone = false;
                 kitchenObjs.ResetObjs();
                 BossCooldown = false;
@@ -147,10 +151,14 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 computer.score = 0;
                 BossCheck = false;
                 computer.resetGame();
+                computerIsWin = false;
                 ComputerIsDone = false;
+                meetingIsWin = false;
                 MeetingIsDone = false;
+                kitchenIsWin = false;
                 KitchenIsDone = false;
                 kitchenObjs.ResetObjs();
+                urinalIsWin = false;
                 UrinalIsDone = false;
                 BossCooldown = false;
                 ToDoList.SetActive(true);

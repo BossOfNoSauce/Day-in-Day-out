@@ -105,6 +105,7 @@ public class Computer : MonoBehaviour, Iinteractable
     {
         if (score >= 10)
         {
+            daySystem.computerIsWin = true;
             StartCoroutine(EndGame());
         }
 
