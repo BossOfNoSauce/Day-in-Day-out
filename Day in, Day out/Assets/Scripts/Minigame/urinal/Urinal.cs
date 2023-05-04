@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Urinal : MonoBehaviour, Iinteractable
 {
@@ -26,7 +27,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     public GameObject menu;
     //ui
     public GameObject urinalUI;
-
+    public GameObject urinalCheck;
 
     public GameObject PauseMenu;
     PauseGame pauseGame;
@@ -82,21 +83,6 @@ public class Urinal : MonoBehaviour, Iinteractable
 
             MainCam.transform.LookAt(target.transform.position, Vector3.up);
         }
-        if (targetMovement.GameOver)//end game in here, reset stuff here
-        {
-            //these debugs fill the console
-            //if (targetMovement.GameOver) Debug.Log("game end");
-            //if (targetMovement.GameFail) Debug.Log("Game fail");
-            //setting bools
-            daySystem.UrinalIsDone = true;
-            daySystem.urinalIsWin = !targetMovement.GameFail;
-
-            // disables all previous variables, allowing normal movement
-            noMovement = false;
-            playerController.InGame = false;
-            pauseGame.AbleToPause = true;
-            audioSource.Stop();
-        }
     }
 
 
@@ -108,6 +94,24 @@ public class Urinal : MonoBehaviour, Iinteractable
 
        
     }
+    public void endGame()
+    {
+        if (targetMovement.GameOver)//end game in here, constantly called
+        {
+            //setting bools
+            daySystem.UrinalIsDone = true;
+            daySystem.urinalIsWin = !targetMovement.GameFail;
+            Image temp = urinalCheck.GetComponent<Image>();//from todo list, to set the check
+            temp.color = (!targetMovement.GameFail ? new Color32(0, 255, 0, 100) : new Color32(255, 0, 0, 100));//if game is win, set image to green, else red
+
+            // disables all previous variables, allowing normal movement
+            firstPersonCameraRotation.FreezeMovement = false;
+            noMovement = false;
+            playerController.InGame = false;
+            pauseGame.AbleToPause = true;
+            audioSource.Stop();
+        }
+    }
 
     IEnumerator StartUrination()
     {
@@ -116,21 +120,20 @@ public class Urinal : MonoBehaviour, Iinteractable
             if(daySystem.UrinalIsDone == false)
             {
                 //urinalUI.SetActive(true);
+                firstPersonCameraRotation.FreezeMovement = true;
                 pauseGame.AbleToPause = false; //dissables pause menu
                 pauseGame.simPaused();
-                gameManager.gameActive = true;
-                //add menu popup here
-                menu.SetActive(true);
+                menu.SetActive(true);//tutorial menu
+                Player.transform.position = new Vector3(82, 7.5f, 27f); // sets player in proper pissing position
                 targetMovement.GameIsActive = true; // this starts the target moving back and forth
                 audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
                 audioSource.Play();
                 noMovement = true; // this locks camera on the target
-                yield return new WaitForSeconds(3); // brief pause before the game
-                Player.transform.position = new Vector3(82, 7.5f, 27f); // sets player in proper pissing position
                 yield return new WaitForSeconds(20); // game timer
                 targetMovement.GameOver = true;
                 daySystem.urinalIsWin = true;
                 Debug.Log("done pissing");
+                endGame();
             }
             
         }

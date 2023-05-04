@@ -19,7 +19,9 @@ public class TargetMovement : MonoBehaviour
     public bool velocityActive = true;
     public bool GameOver = false;
     //ui thing
-    public GameObject urinalArrow;
+    public GameObject urinalArrow;//work on this later
+
+    public Urinal urinal;
     void Start()
     {
         time = swayTime / 2;
@@ -37,16 +39,7 @@ public class TargetMovement : MonoBehaviour
             if (time > swayTime)
             {
                 int temp = Random.Range(0, 1);
-                int temp2;
-                if(temp > 0)
-                {
-                    temp2 = 1;
-                }
-                else
-                {
-                    temp2 = -1;
-                }
-                //m_rigidbody.velocity = -1 * Mathf.Sign(m_rigidbody.velocity.x) * (temp > 0 ? right:-right);//added random left / right swing
+                m_rigidbody.velocity = -1 * Mathf.Sign(m_rigidbody.velocity.x) * (temp > 0 ? right:-right);//added random left / right swing
                 //urinalArrow.transform.rotation.Set(0.0f, 180.0f * temp2, 0.0f, urinalArrow.transform.rotation.w);
                 //Debug.Log(urinalArrow.transform.rotation.y);
                 time = 0f;
@@ -80,6 +73,7 @@ public class TargetMovement : MonoBehaviour
         Debug.Log("game fail in urinal, attemting end game");
         GameFail = true;
         GameOver = true;
+        urinal.endGame();
     }
 
     void Dafunk()
