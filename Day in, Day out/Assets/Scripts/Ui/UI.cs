@@ -9,17 +9,17 @@ public class UI : MonoBehaviour
     public float speed;
     public Transform target;
     public bool john;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        john = false;
-        Debug.Log(john);
+        StartCoroutine(Title());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(john == true)
+        if(john = false)
         {
             
             StartCoroutine(CameraMove());
@@ -27,7 +27,7 @@ public class UI : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            john = true;
+            animator.SetBool("john", false);
             
 
         }
@@ -48,11 +48,18 @@ public class UI : MonoBehaviour
         Application.Quit();
     }
 
+    IEnumerator Title()
+    {
+        yield return new WaitForSeconds(4);
+        animator.SetTrigger("CameraMove");
+        yield return new WaitForSeconds(4);
+        animator.SetBool("john", true);
+    }
+
     IEnumerator CameraMove()
     {
         Debug.Log("JOHN SWEEP");
-        float step = speed * Time.deltaTime;
-        Camera.transform.position = Vector3.MoveTowards(Camera.transform.position, target.position, step);
+        animator.SetTrigger("CameraPan");
         yield return new WaitForSeconds(3.25f);
         StartGame();
     }
