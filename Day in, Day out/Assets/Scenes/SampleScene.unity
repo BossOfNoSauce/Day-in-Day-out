@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3998,6 +3998,7 @@ MonoBehaviour:
   Drink: {fileID: 8300000, guid: 2fd0e641b3c738a45b2392e4058668ed, type: 3}
   cMachine: {fileID: 1563438415}
   coffeeDrink: 0
+  noodleEat: 0
   AbleToGrab: 1
 --- !u!1 &87184352
 GameObject:
@@ -33066,7 +33067,7 @@ MonoBehaviour:
   xAngle: 0
   yAngle: 0
   zAngle: 0
-  rb: {fileID: 0}
+  rb: {fileID: 913893888}
   Power: 0
   speed: 0
   trigger: {fileID: 913893882}
@@ -33079,34 +33080,34 @@ MonoBehaviour:
   player: {fileID: 1926878012}
   turnCooldown: 0
   Points:
-  - {fileID: 944780108}
-  - {fileID: 157904963}
-  - {fileID: 2012047919}
-  - {fileID: 368163298}
-  - {fileID: 589953798}
-  - {fileID: 1892846222}
-  - {fileID: 1249523675}
-  - {fileID: 190657705}
-  - {fileID: 508008808}
-  - {fileID: 187149325}
-  - {fileID: 647090846}
-  - {fileID: 2045908124}
-  - {fileID: 865716219}
-  - {fileID: 497425190}
-  - {fileID: 1133608706}
-  - {fileID: 712147883}
-  - {fileID: 1272159096}
-  - {fileID: 1711491945}
-  - {fileID: 450653436}
-  - {fileID: 1083785685}
-  - {fileID: 1058454291}
-  - {fileID: 850184614}
-  - {fileID: 1617714873}
-  - {fileID: 2039325321}
-  - {fileID: 1335836616}
-  - {fileID: 1372105884}
+  - {fileID: 944780107}
+  - {fileID: 157904962}
+  - {fileID: 2012047918}
+  - {fileID: 368163297}
+  - {fileID: 589953797}
+  - {fileID: 1892846221}
+  - {fileID: 1249523674}
+  - {fileID: 190657704}
+  - {fileID: 508008807}
+  - {fileID: 187149324}
+  - {fileID: 647090845}
+  - {fileID: 2045908123}
+  - {fileID: 865716218}
+  - {fileID: 497425189}
+  - {fileID: 1133608705}
+  - {fileID: 712147882}
+  - {fileID: 1272159095}
+  - {fileID: 1711491944}
+  - {fileID: 450653435}
+  - {fileID: 1083785684}
+  - {fileID: 1058454290}
+  - {fileID: 850184613}
+  - {fileID: 1617714872}
+  - {fileID: 2039325320}
+  - {fileID: 1335836615}
+  - {fileID: 1372105883}
+  numberOfPoints: 26
   moveSpeed: 20
-  pointsIndex: 0
   debris: {fileID: 0}
 --- !u!212 &913893885
 SpriteRenderer:
@@ -78563,6 +78564,7 @@ MonoBehaviour:
   Drink: {fileID: 8300000, guid: 2fd0e641b3c738a45b2392e4058668ed, type: 3}
   cMachine: {fileID: 1563438415}
   coffeeDrink: 0
+  noodleEat: 0
   AbleToGrab: 1
 --- !u!54 &2091466404
 Rigidbody:

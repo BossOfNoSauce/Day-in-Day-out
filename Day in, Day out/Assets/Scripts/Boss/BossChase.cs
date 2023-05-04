@@ -31,10 +31,12 @@ public class BossChase : MonoBehaviour
     public bool turnCooldown;
 
 
-    public Transform[] Points;
+    public GameObject[] Points;
+    public int numberOfPoints;
     public float moveSpeed;
-    public int pointsIndex;
 
+    private int pointsIndex;
+    private Vector3 position;
 
 
 
@@ -43,7 +45,8 @@ public class BossChase : MonoBehaviour
     public GameObject debris;
     void Start()
     {
-        transform.position = Points[pointsIndex].transform.position;
+        //transform.position = Points[pointsIndex].transform.position;
+        pointsIndex = 1;
     }
 
     // Update is called once per frame
@@ -66,14 +69,24 @@ public class BossChase : MonoBehaviour
 
         if (startChase == true)
         {
-            if (pointsIndex <= Points.Length - 1)
+            position = Boss.transform.position;
+            Boss.transform.position = Vector3.MoveTowards(position, Points[pointsIndex].transform.position, moveSpeed * Time.deltaTime);
+
+            if(position == Points[pointsIndex].transform.position && pointsIndex != numberOfPoints - 1)
+            {
+                pointsIndex++;
+            }
+
+            
+            
+            /*if (pointsIndex <= Points.Length - 1)
             {
                 transform.position = Vector2.MoveTowards(transform.position, Points[pointsIndex].transform.position, moveSpeed * Time.deltaTime);
                 if (transform.position == Points[pointsIndex].transform.position)
                 {
                     pointsIndex += 1;
                 }
-            }
+            }*/
             //StartCoroutine(MoveTowards());
         }
     }
