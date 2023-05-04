@@ -32127,7 +32127,7 @@ GameObject:
   - component: {fileID: 912831580}
   - component: {fileID: 912831579}
   m_Layer: 5
-  m_Name: urinal
+  m_Name: urinalTutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32368,14 +32368,14 @@ MonoBehaviour:
   Camera: {fileID: 963194225}
   rb: {fileID: 0}
   Power: 0
-  speed: 10
-  trigger: {fileID: 913893882}
+  speed: 0
+  trigger: {fileID: 0}
   audioSource: {fileID: 913893881}
   BigMonologue: {fileID: 8300000, guid: c1f8b30f8e4f39647af58797d135ae3c, type: 3}
   startChase: 0
   Roar: {fileID: 8300000, guid: d0a6b61703da7b843986120e13574adc, type: 3}
-  target: {fileID: 1926878008}
-  player: {fileID: 1926878012}
+  target: {fileID: 0}
+  player: {fileID: 0}
 --- !u!212 &913893885
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53312,13 +53312,14 @@ MonoBehaviour:
   speed: 0.4
   swayTime: 1
   GameIsActive: 0
-  right: {x: 16, y: 0, z: 0}
+  right: {x: 12, y: 0, z: 0}
   m_rigidbody: {fileID: 1467735993}
   GameFail: 0
   Power: 7
   velocityActive: 1
   GameOver: 0
   urinalArrow: {fileID: 1426351664}
+  urinal: {fileID: 2114999374}
 --- !u!54 &1467735993
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -78029,6 +78030,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 90a86c217c4f2ad4b923797c3055df4d, type: 3}
   menu: {fileID: 912831577}
   urinalUI: {fileID: 676283122}
+  urinalCheck: {fileID: 1938780379}
   PauseMenu: {fileID: 268373959}
   prompt: 
   DayManager: {fileID: 26645115}

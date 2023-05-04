@@ -199,6 +199,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    
+    public void playerRot(bool temp)//turns onn/off player rotation
+    {
+        firstPersonCameraRotation.FreezeMovement = temp;
+    }
 
 }
