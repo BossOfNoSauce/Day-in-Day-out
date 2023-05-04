@@ -96,11 +96,7 @@ public class BossChase : MonoBehaviour
         Camera.transform.LookAt(Boss.transform.position, Vector3.up);
         audioSource.PlayOneShot(BigMonologue, 1f);
         debris.SetActive(true);
-<<<<<<< Updated upstream
-       // yield return new WaitForSeconds(38);
-=======
         // yield return new WaitForSeconds(38);
->>>>>>> Stashed changes
         playerMovement.InGame = false;
         firstPersonCamera.FreezeMovement = false;
         audioSource.PlayOneShot(Roar);
@@ -121,19 +117,6 @@ public class BossChase : MonoBehaviour
 
 
 
-<<<<<<< Updated upstream
-       /* transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        yield return new WaitForSeconds(3);
-        transform.Translate(0, 0, 0);
-        transform.Rotate(xAngle, yAngle, zAngle, Space.Self);
-        transform.Translate(Vector3.forward * Time.deltaTime * speed); // first turn
-        yield return new WaitForSeconds(4);
-        
-        transform.Translate(0, 0, 0);
-       
-        
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);// second turn */
-=======
         /* transform.Translate(Vector3.forward * Time.deltaTime * speed);
          yield return new WaitForSeconds(3);
          transform.Translate(0, 0, 0);
@@ -145,7 +128,6 @@ public class BossChase : MonoBehaviour
 
 
          transform.Translate(Vector3.forward * Time.deltaTime * speed);// second turn */
->>>>>>> Stashed changes
 
 
 
