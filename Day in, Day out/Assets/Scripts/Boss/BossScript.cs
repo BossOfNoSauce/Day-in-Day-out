@@ -133,7 +133,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 jukebox.startMus = false;
                 BossImage.SetActive(true);
                 yield return new WaitForSeconds(25);
-                audioSource.PlayOneShot(day2monologue, 1);
+                audioSource.PlayOneShot(day3monologue, 1);
                 daySystem.BossCheck = true;
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
@@ -156,7 +156,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 jukebox.startMus = false;
                 BossImage.SetActive(true);
                 yield return new WaitForSeconds(31);
-                audioSource.PlayOneShot(day2monologue, 1);
+                audioSource.PlayOneShot(day4monologue, 1);
                 daySystem.BossCheck = true;
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
