@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     public float stamina = 100f;
-
+    public float Maxstamina = 100f;
     
     public float runSpeed = 10f;
     public float walkSpeed = 5f;
@@ -56,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
     public KeyCode crouchKey = KeyCode.LeftControl;
 
-
+    public Slider staminaBar;
 
     private void Awake()
     {
@@ -69,12 +70,15 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         startYScale = transform.localScale.y;
-
+        staminaBar.maxValue = Maxstamina;
+        staminaBar.value = stamina;
     }
 
     private void Update()
     {
         MovePlayer();
+
+        staminaBar.value = stamina;
 
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         
