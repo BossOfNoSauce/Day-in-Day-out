@@ -27,6 +27,8 @@ public class BossScript : MonoBehaviour, Iinteractable
 
     public GameObject JukeBoxObj;
     Jukebox jukebox;
+
+    public Animator elevator;
     // Start is called before the first frame update
     void Start()
     {
@@ -117,6 +119,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
                 daySystem.cooldown = false;
+
             }
             else
             {
