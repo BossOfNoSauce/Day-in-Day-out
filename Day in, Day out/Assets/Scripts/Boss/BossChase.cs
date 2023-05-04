@@ -95,7 +95,7 @@ public class BossChase : MonoBehaviour
         firstPersonCamera.FreezeMovement = true;
         Camera.transform.LookAt(Boss.transform.position, Vector3.up);
         audioSource.PlayOneShot(BigMonologue, 1f);
-        debris.SetActive(true);
+        //debris.SetActive(true);
         // yield return new WaitForSeconds(38);
         playerMovement.InGame = false;
         firstPersonCamera.FreezeMovement = false;
