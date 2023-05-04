@@ -205,23 +205,23 @@ public class Computer : MonoBehaviour, Iinteractable
             //check and reset score
             if(score >= 10)
             {
-                isGameWin = true;
+                daySystem.ComputerIsDone = true;
             }
             else
             {
-                isGameWin = false;
+                daySystem.computerIsWin = true;
             }
             score = 0;
             //set game bools and dayscript bools
             isGameFinished = true;
             daySystem.ComputerIsDone = true;
-            daySystem.computerIsWin = isGameWin;
+            
             //hile current spots
             badCurrentSpot.SetActive(false);
             goodCurrentSpot.SetActive(false);
             //set check list, rewrite when todo sprites come in
             Image temp = computerCheck.GetComponent<Image>();
-            temp.color = (isGameWin ?  new Color32(0, 255, 0, 100) : new Color32(255, 0, 0, 100));//if game is win, set image to green, else red
+            temp.color = (daySystem.computerIsWin ?  new Color32(0, 255, 0, 100) : new Color32(255, 0, 0, 100));//if game is win, set image to green, else red
         }
 
     }
