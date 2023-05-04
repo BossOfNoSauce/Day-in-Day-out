@@ -43,7 +43,7 @@ public class CoffeeMachine : MonoBehaviour, Iinteractable
 
         }
 
-        if (other.gameObject.tag == "Mug" && kitchenGame.coffeeStage == 2 && kitchenObjs.GrabBool)//will only progress coffee stage when mug in hand 
+        if (other.gameObject.tag == "Mug" && kitchenGame.coffeeStage == 2)
         {
             kitchenGame.coffeeStage = 3;
             audioSource.PlayOneShot(Pour);

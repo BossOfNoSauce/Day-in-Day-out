@@ -10,6 +10,8 @@ public class BossChase : MonoBehaviour
     public GameObject Boss;
     public GameObject Camera;
 
+    public float xAngle, yAngle, zAngle;
+
     public Rigidbody rb;
     public float Power;
 
@@ -21,18 +23,33 @@ public class BossChase : MonoBehaviour
     public bool startChase;
     public AudioClip Roar;
 
+    public AudioClip ChaseMusic;
+
     public GameObject target;
     public Transform player;
-    // Start is called before the first frame update
+
+    public bool turnCooldown;
+
+
+    public Transform[] Points;
+    public float moveSpeed;
+    public int pointsIndex;
+
+
+
+
+
+    //map objects
+    public GameObject debris;
     void Start()
     {
-        
+        transform.position = Points[pointsIndex].transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(startChase == false)
+        if (startChase == false)
         {
             Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
 
@@ -49,19 +66,27 @@ public class BossChase : MonoBehaviour
 
         if (startChase == true)
         {
-            StartCoroutine(MoveTowards());
+            if (pointsIndex <= Points.Length - 1)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, Points[pointsIndex].transform.position, moveSpeed * Time.deltaTime);
+                if (transform.position == Points[pointsIndex].transform.position)
+                {
+                    pointsIndex += 1;
+                }
+            }
+            //StartCoroutine(MoveTowards());
         }
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             trigger.enabled = false;
             StartCoroutine(Stare());
         }
-        
-       
+
+
     }
 
     IEnumerator Stare()
@@ -70,11 +95,13 @@ public class BossChase : MonoBehaviour
         firstPersonCamera.FreezeMovement = true;
         Camera.transform.LookAt(Boss.transform.position, Vector3.up);
         audioSource.PlayOneShot(BigMonologue, 1f);
-       // yield return new WaitForSeconds(38);
+        debris.SetActive(true);
+        // yield return new WaitForSeconds(38);
         playerMovement.InGame = false;
         firstPersonCamera.FreezeMovement = false;
         audioSource.PlayOneShot(Roar);
         yield return new WaitForSeconds(5);
+        audioSource.PlayOneShot(ChaseMusic);
         startChase = true;
 
     }
@@ -82,12 +109,30 @@ public class BossChase : MonoBehaviour
     public IEnumerator MoveTowards()
     {
 
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        yield return new WaitForSeconds(3);
-        transform.Translate(-Vector3.right * Time.deltaTime * speed);
+        yield return new WaitForSeconds(1);
+
+
+
+
+
+
+
+        /* transform.Translate(Vector3.forward * Time.deltaTime * speed);
+         yield return new WaitForSeconds(3);
+         transform.Translate(0, 0, 0);
+         transform.Rotate(xAngle, yAngle, zAngle, Space.Self);
+         transform.Translate(Vector3.forward * Time.deltaTime * speed); // first turn
+         yield return new WaitForSeconds(4);
+
+         transform.Translate(0, 0, 0);
+
+
+         transform.Translate(Vector3.forward * Time.deltaTime * speed);// second turn */
+
+
 
 
     }
 
-    
+
 }

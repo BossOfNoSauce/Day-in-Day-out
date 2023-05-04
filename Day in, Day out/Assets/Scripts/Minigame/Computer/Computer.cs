@@ -173,6 +173,7 @@ public class Computer : MonoBehaviour, Iinteractable
             badCurrentSpot = badSpots[index2];
             goodCurrentSpot.SetActive(true);
             badCurrentSpot.SetActive(true);
+            daySystem.computerIsWin = true;
             cooldown = false;           
         }
        
