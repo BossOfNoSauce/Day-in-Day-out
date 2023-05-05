@@ -80,7 +80,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
 
     public bool Interact(Interactor interactor)
     {
-        if (Days != 4)
+        if (Days != 5)
         {
             ToDoList.SetActive(false);
             if (BossCheck == true)
