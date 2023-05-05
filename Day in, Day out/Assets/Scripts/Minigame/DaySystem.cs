@@ -57,6 +57,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public GameObject KitchenTaskUi;
     public GameObject MeetingTaskUi;
     public GameObject BossTaskUi;
+    public GameObject ElevatorTaskUi;
 
     public Collider CloseTrigger;
 
@@ -141,6 +142,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 UrinalIsDone = false;
                 BossCooldown = false;
                 ToDoList.SetActive(true);
+                ElevatorTaskUi.SetActive(false);
+                ComputerTaskUi.SetActive(true);
                 UrinalTaskUi.SetActive(true);
                 CloseTrigger.enabled = true;
                
