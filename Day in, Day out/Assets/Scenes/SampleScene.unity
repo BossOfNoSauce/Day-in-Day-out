@@ -72240,13 +72240,13 @@ MonoBehaviour:
   OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
   Mcollider: {fileID: 309795728}
   AnimTrigger: {fileID: 1622590460}
-  BossDoor: {fileID: 0}
-  computerui: {fileID: 0}
-  urinalui: {fileID: 0}
-  breakroomui: {fileID: 0}
-  meetingui: {fileID: 0}
-  bossui: {fileID: 0}
-  elevatorui: {fileID: 0}
+  BossDoor: {fileID: 1546175150}
+  computerui: {fileID: 1707859798}
+  urinalui: {fileID: 1938780379}
+  breakroomui: {fileID: 1963583632}
+  meetingui: {fileID: 600919174}
+  bossui: {fileID: 136793434}
+  elevatorui: {fileID: 1846320552}
 --- !u!64 &1743486947
 MeshCollider:
   m_ObjectHideFlags: 0
