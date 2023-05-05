@@ -42,6 +42,8 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
     {
         kitchenGame.coffeeStage = 0;
         kitchenGame.noodleStage = 0;
+        kitchenGame.CoffeeIsDone = false;
+        kitchenGame.NoodlesIsDone = false;
         Noodles.transform.localPosition = new Vector3(35, 4.5f, -68);
         Mug.transform.localPosition = new Vector3(34, 1.5f, -61);
         Bag.transform.localPosition = new Vector3(34, 1, -66);

@@ -26,13 +26,6 @@ public class CoffeeMachine : MonoBehaviour, Iinteractable
         kitchenGame = Kitchen.GetComponent<KitchenGame>();
         kitchenObjs = kitchenObjects.GetComponent<KitchenObjs>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Coffee" && kitchenGame.coffeeStage == 0)
