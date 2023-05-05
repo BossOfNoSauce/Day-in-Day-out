@@ -58,6 +58,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public GameObject MeetingTaskUi;
     public GameObject BossTaskUi;
 
+    public Collider CloseTrigger;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -116,6 +118,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             jukebox.startMus = true;
             ComputerIsDone = false;
             playerMovement.InGame = false;
+            CloseTrigger.enabled = true;
             if (Days == 2)
             {
                 computer.score = 0;
@@ -129,6 +132,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 BossCooldown = false;
                 ToDoList.SetActive(true);
                 UrinalTaskUi.SetActive(true);
+                CloseTrigger.enabled = true;
             }
             if(Days == 3)
             {
@@ -145,6 +149,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 BossCooldown = false;
                 ToDoList.SetActive(true);
                 KitchenTaskUi.SetActive(true);
+                CloseTrigger.enabled = true;
             }
             if(Days == 4)
             {
@@ -163,6 +168,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 BossCooldown = false;
                 ToDoList.SetActive(true);
                 MeetingTaskUi.SetActive(true);
+                CloseTrigger.enabled = true;
             }
             if (Days == 5)
             {
@@ -177,7 +183,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 KitchenIsDone = true;
                 kitchenObjs.ResetObjs();
                 UrinalIsDone = true;
-                
+                CloseTrigger.enabled = true;
+
 
             }
 

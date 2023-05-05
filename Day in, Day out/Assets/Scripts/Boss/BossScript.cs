@@ -31,6 +31,8 @@ public class BossScript : MonoBehaviour, Iinteractable
     public Animator elevator;
     public AudioClip OpeningElevator;
 
+    public Collider Mcollider;
+    public Collider AnimTrigger;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +60,8 @@ public class BossScript : MonoBehaviour, Iinteractable
         {
             if (daySystem.ComputerIsDone == true && daySystem.BossCooldown == false)
             {
+                AnimTrigger.enabled = false;
+                Mcollider.enabled = true;
                 ToDoUi.SetActive(false);
                 jukebox.StopMus();
                 jukebox.startMus = false;
@@ -100,6 +104,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 daySystem.cooldown = false;
                 elevator.SetTrigger("Elevator Open");
                 audioSource.PlayOneShot(OpeningElevator);
+                Mcollider.enabled = false;
             }
             else
             {
@@ -113,12 +118,13 @@ public class BossScript : MonoBehaviour, Iinteractable
             daySystem.BossCooldown = false;
             if (daySystem.computerIsWin == true && daySystem.urinalIsWin == true && daySystem.BossCooldown == false)
             {
+                AnimTrigger.enabled = false;
+                Mcollider.enabled = true;
                 jukebox.StopMus();
                 jukebox.startMus = false;
                 BossImage.SetActive(true);
                 audioSource.PlayOneShot(day2monologue, 1);
                 yield return new WaitForSeconds(40);
-                
                 daySystem.BossCheck = true;
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
@@ -126,7 +132,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 daySystem.cooldown = false;
                 elevator.SetTrigger("Elevator Open");
                 audioSource.PlayOneShot(OpeningElevator);
-
+                Mcollider.enabled = false;
             }
             else
             {
@@ -139,12 +145,13 @@ public class BossScript : MonoBehaviour, Iinteractable
             daySystem.BossCooldown = false;
             if (daySystem.computerIsWin == true && daySystem.urinalIsWin == true && daySystem.kitchenIsWin == true && daySystem.BossCooldown == false)
             {
+                AnimTrigger.enabled = false;
+                Mcollider.enabled = true;
                 jukebox.StopMus();
                 jukebox.startMus = false;
                 BossImage.SetActive(true);
                 audioSource.PlayOneShot(day3monologue, 1);
                 yield return new WaitForSeconds(25);
-                
                 daySystem.BossCheck = true;
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
@@ -152,6 +159,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 daySystem.cooldown = false;
                 elevator.SetTrigger("Elevator Open");
                 audioSource.PlayOneShot(OpeningElevator);
+                Mcollider.enabled = false;
             }
             else
             {
@@ -165,12 +173,13 @@ public class BossScript : MonoBehaviour, Iinteractable
             daySystem.BossCooldown = false;
             if (daySystem.computerIsWin == true && daySystem.urinalIsWin == true && daySystem.KitchenIsDone == true && daySystem.meetingIsWin == true && daySystem.BossCooldown == false)
             {
+                AnimTrigger.enabled = false;
+                Mcollider.enabled = true;
                 jukebox.StopMus();
                 jukebox.startMus = false;
                 BossImage.SetActive(true);
                 audioSource.PlayOneShot(day4monologue, 1);
                 yield return new WaitForSeconds(31);
-                
                 daySystem.BossCheck = true;
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
@@ -178,6 +187,8 @@ public class BossScript : MonoBehaviour, Iinteractable
                 daySystem.cooldown = false;
                 elevator.SetTrigger("Elevator Open");
                 audioSource.PlayOneShot(OpeningElevator);
+                daySystem.BossCooldown = true;
+                Mcollider.enabled = false;
             }
             else
             {
@@ -190,6 +201,7 @@ public class BossScript : MonoBehaviour, Iinteractable
             daySystem.BossCooldown = false;
             if (daySystem.AbleToChase == true)
             {
+                Mcollider.enabled = true;
                 BossImage.SetActive(true);
 
                 audioSource.PlayOneShot(Finalmonologue, 1);
