@@ -59,6 +59,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Slider staminaBar;
 
+    public BossChase bossChase;
+
     private void Awake()
     {
         playerCam = Camera.GetComponent<FirstPersonCameraRotation>();
@@ -206,6 +208,14 @@ public class PlayerMovement : MonoBehaviour
     public void playerRot(bool temp)//turns onn/off player rotation
     {
         firstPersonCameraRotation.FreezeMovement = temp;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "cutscene" || bossChase.startChase == true)
+        {
+            //do animation for camera
+        }
     }
 
 }

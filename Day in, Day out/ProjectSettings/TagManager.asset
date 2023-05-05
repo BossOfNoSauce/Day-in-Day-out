@@ -8,6 +8,7 @@ TagManager:
   - Mug
   - Coffee
   - Noodles
+  - cutscene
   layers:
   - Default
   - TransparentFX
