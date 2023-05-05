@@ -35,6 +35,14 @@ public class BossScript : MonoBehaviour, Iinteractable
     public Collider AnimTrigger;
 
     public GameObject BossDoor;
+
+    public GameObject computerui;
+    public GameObject urinalui;
+    public GameObject breakroomui;
+    public GameObject meetingui;
+    public GameObject bossui;
+    public GameObject elevatorui;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +53,11 @@ public class BossScript : MonoBehaviour, Iinteractable
     // Update is called once per frame
     void Update()
     {
-        
+        if (daySystem.ComputerIsDone == true && daySystem.BossCooldown == false)
+        {
+            computer.SetActive(false);
+            boss.SetActive(true);
+        }
     }
 
     public bool Interact(Interactor interactor)
