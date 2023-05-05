@@ -12,12 +12,17 @@ public class UI : MonoBehaviour
     public Animator animator;
     public AudioSource audioSource;
     public AudioClip Music;
+    public PauseGame pause;
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1.0f;
         StartCoroutine(Title());
     }
-
+    public void Awake()
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {
