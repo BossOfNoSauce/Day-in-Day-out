@@ -1145,6 +1145,7 @@ MonoBehaviour:
   KitchenTaskUi: {fileID: 1963583632}
   MeetingTaskUi: {fileID: 600919174}
   BossTaskUi: {fileID: 0}
+  ElevatorTaskUi: {fileID: 0}
   CloseTrigger: {fileID: 1622590460}
   NPC1: {fileID: 269059053}
   NPC2: {fileID: 178587948}
@@ -2305,6 +2306,8 @@ GameObject:
   - component: {fileID: 50045297}
   - component: {fileID: 50045299}
   - component: {fileID: 50045298}
+  - component: {fileID: 50045301}
+  - component: {fileID: 50045300}
   m_Layer: 5
   m_Name: todo
   m_TagString: Untagged
@@ -2373,6 +2376,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50045296}
   m_CullTransparentMesh: 1
+--- !u!114 &50045300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50045296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca56cd05e7dfc354685e32203defd7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canOpen: 1
+  revealPos: -50
+  hiddenPos: -550
+  speed: 250
+--- !u!54 &50045301
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50045296}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &51617637
 GameObject:
   m_ObjectHideFlags: 0
@@ -4212,8 +4247,6 @@ MonoBehaviour:
   audioSource: {fileID: 86406504}
   Drink: {fileID: 8300000, guid: 2fd0e641b3c738a45b2392e4058668ed, type: 3}
   cMachine: {fileID: 1563438415}
-  coffeeDrink: 0
-  noodleEat: 0
   AbleToGrab: 1
 --- !u!1 &87184352
 GameObject:
@@ -36891,6 +36924,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabbing: 0
+  coffeeDrink: 0
+  noodleEat: 0
 --- !u!114 &952766453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36904,6 +36939,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabbing: 0
+  coffeeDrink: 0
+  noodleEat: 0
 --- !u!1 &952807764
 GameObject:
   m_ObjectHideFlags: 0
@@ -86020,8 +86057,6 @@ MonoBehaviour:
   audioSource: {fileID: 942235281}
   Drink: {fileID: 8300000, guid: 2fd0e641b3c738a45b2392e4058668ed, type: 3}
   cMachine: {fileID: 1563438415}
-  coffeeDrink: 0
-  noodleEat: 0
   AbleToGrab: 1
 --- !u!54 &2091466404
 Rigidbody:
