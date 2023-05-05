@@ -33,6 +33,8 @@ public class BossScript : MonoBehaviour, Iinteractable
 
     public Collider Mcollider;
     public Collider AnimTrigger;
+
+    public GameObject BossDoor;
     // Start is called before the first frame update
     void Start()
     {
@@ -207,6 +209,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 audioSource.PlayOneShot(Finalmonologue, 1);
                 yield return new WaitForSeconds(20); // Number is not confirmed, dependant on sound file
                 BossImage.SetActive(false);
+                BossDoor.SetActive(false);
                 // swing open door
             }
         }

@@ -47,6 +47,12 @@ public class BossChase : MonoBehaviour
 
     public GameObject desks;
     public GameObject StrewnDesks;
+    public GameObject Sofa;
+    public GameObject SofaDeeznuts;
+    public GameObject Benches;
+    public GameObject StrewnBenches;
+
+
     void Start()
     {
         //transform.position = Points[pointsIndex].transform.position;
@@ -115,6 +121,10 @@ public class BossChase : MonoBehaviour
         debris.SetActive(true);
         desks.SetActive(false);
         StrewnDesks.SetActive(true);
+        Sofa.SetActive(false);
+        SofaDeeznuts.SetActive(true);
+        Benches.SetActive(false);
+        StrewnBenches.SetActive(true);
         // yield return new WaitForSeconds(38);
         playerMovement.InGame = false;
         firstPersonCamera.FreezeMovement = false;

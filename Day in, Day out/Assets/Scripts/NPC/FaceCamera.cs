@@ -12,6 +12,8 @@ public class FaceCamera : MonoBehaviour, Iinteractable
     public AudioSource audioSource;
 
     public AudioClip[] audioClips;
+
+    
     public FaceCamera(GameObject target)
     {
         this.target = target;
@@ -31,6 +33,8 @@ public class FaceCamera : MonoBehaviour, Iinteractable
         transform.LookAt(targetPosition);
 
         transform.rotation.Set(0.0f, transform.rotation.y, 0.0f, transform.rotation.w);//rotation correcting, the x and z rot shouldnt be modified so set to 0
+
+        
     }
 
     public bool Interact(Interactor interactor)

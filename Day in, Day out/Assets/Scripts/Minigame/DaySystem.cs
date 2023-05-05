@@ -60,6 +60,9 @@ public class DaySystem : MonoBehaviour, Iinteractable
 
     public Collider CloseTrigger;
 
+    public GameObject NPC1;
+    public GameObject NPC2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -189,6 +192,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 kitchenObjs.ResetObjs();
                 UrinalIsDone = true;
                 CloseTrigger.enabled = true;
+                NPC1.SetActive(false);
+                NPC2.SetActive(false);
 
 
             }
