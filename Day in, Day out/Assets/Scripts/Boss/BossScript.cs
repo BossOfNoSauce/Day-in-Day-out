@@ -55,8 +55,8 @@ public class BossScript : MonoBehaviour, Iinteractable
     {
         if (daySystem.ComputerIsDone == true && daySystem.BossCooldown == false)
         {
-            computer.SetActive(false);
-            boss.SetActive(true);
+            computerui.SetActive(false);
+            bossui.SetActive(true);
         }
     }
 
