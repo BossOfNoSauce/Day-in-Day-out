@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25435,7 +25435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756681681627984967, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4887653716004787798, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -50112,6 +50112,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6379544883804724528, guid: 0c358e7ae5e69334f96fdab7255a0485, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 265ab409ccd067e408521bbf9cd670b4, type: 2}
     - target: {fileID: 7783506987237783963, guid: 0c358e7ae5e69334f96fdab7255a0485, type: 3}
       propertyPath: m_Name
       value: small-desk
@@ -52592,7 +52596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2962208341065340470, guid: 32080c30baa286e4da3e91f9b76bd078, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8118227
+      value: 2.7699997
       objectReference: {fileID: 0}
     - target: {fileID: 2962208341065340470, guid: 32080c30baa286e4da3e91f9b76bd078, type: 3}
       propertyPath: m_LocalPosition.z
@@ -68176,7 +68180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2689730517230042992, guid: 24fd24dc0a33946449b3d8704c67af98, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6018226
+      value: 2.56
       objectReference: {fileID: 0}
     - target: {fileID: 2689730517230042992, guid: 24fd24dc0a33946449b3d8704c67af98, type: 3}
       propertyPath: m_LocalPosition.z
@@ -78350,8 +78354,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874118764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.62, y: -0.64999974, z: -74.17}
-  m_LocalScale: {x: 13.081822, y: 2.5622597, z: 3.3534}
+  m_LocalPosition: {x: 18.62, y: -0.1762, z: -74.17}
+  m_LocalScale: {x: 13.081822, y: 3.5097833, z: 3.3534}
   m_Children: []
   m_Father: {fileID: 1201836265}
   m_RootOrder: 5
@@ -78388,7 +78392,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 369cdc5030a009248bb4e11d49984357, type: 2}
+  - {fileID: 2100000, guid: 265ab409ccd067e408521bbf9cd670b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
