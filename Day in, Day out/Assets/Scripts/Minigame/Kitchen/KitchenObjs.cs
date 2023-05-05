@@ -19,10 +19,9 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
 
     public GameObject Kitchen;
      KitchenGame kitchenGame;
-
     public AudioSource audioSource;
     public AudioClip Drink;
-
+    //mug coffee layer
     public GameObject cMachine;
     CoffeeMachine coffeeMachine;
     //has consumed yet?
@@ -42,19 +41,19 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
     {
         kitchenGame.coffeeStage = 0;
         kitchenGame.noodleStage = 0;
-        Noodles.transform.position = new Vector3(35, 4.5f, -68);
-        Mug.transform.position = new Vector3(34, 1.5f, -61);
-        Bag.transform.position = new Vector3(34, 1, -66);
+        Noodles.transform.localPosition = new Vector3(35, 4.5f, -68);
+        Mug.transform.localPosition = new Vector3(34, 1.5f, -61);
+        Bag.transform.localPosition = new Vector3(34, 1, -66);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public bool Interact(Interactor interactor)
+    public bool Interact(Interactor interactor)//i belive this needs to be moved into a single script
     {
         if (kitchenGame.coffeeStage == 3 && GrabBool && coffeeDrink == false)//coffee stage only goes to 3 when mug in hand, so this is fine
         {//drink coffee when in hand

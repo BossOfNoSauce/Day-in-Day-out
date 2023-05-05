@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5791,7 +5791,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'how 2 hand:
 
-    1. look at waht you want to grab
+    1. look at what you want to grab
 
     2. press E
 
@@ -65852,6 +65852,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 209899227}
     - target: {fileID: 2849589460204738401, guid: 24fd24dc0a33946449b3d8704c67af98, type: 3}
+      propertyPath: microOpen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849589460204738401, guid: 24fd24dc0a33946449b3d8704c67af98, type: 3}
       propertyPath: microwave
       value: 
       objectReference: {fileID: 8300000, guid: 28871bab1dfa9d343b6bbf84d5000a35, type: 3}
@@ -83832,7 +83836,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &2091466405
 BoxCollider:
