@@ -1147,6 +1147,9 @@ MonoBehaviour:
   BossTaskUi: {fileID: 136793434}
   ElevatorTaskUi: {fileID: 1846320552}
   CloseTrigger: {fileID: 1622590460}
+  NPC1: {fileID: 0}
+  NPC2: {fileID: 0}
+  kitchDoor: {fileID: 0}
 --- !u!82 &26645121
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4212,8 +4215,6 @@ MonoBehaviour:
   audioSource: {fileID: 86406504}
   Drink: {fileID: 8300000, guid: 2fd0e641b3c738a45b2392e4058668ed, type: 3}
   cMachine: {fileID: 1563438415}
-  coffeeDrink: 0
-  noodleEat: 0
   AbleToGrab: 1
 --- !u!1 &87184352
 GameObject:
@@ -36230,6 +36231,11 @@ MonoBehaviour:
   debris: {fileID: 277786392}
   desks: {fileID: 1473150981}
   StrewnDesks: {fileID: 357882035}
+  Sofa: {fileID: 0}
+  SofaDeeznuts: {fileID: 0}
+  Benches: {fileID: 0}
+  StrewnBenches: {fileID: 0}
+  ChaseDoor: {fileID: 0}
 --- !u!212 &913893885
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37121,6 +37127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabbing: 0
+  coffeeDrink: 0
+  noodleEat: 0
 --- !u!114 &952766453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37134,6 +37142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabbing: 0
+  coffeeDrink: 0
+  noodleEat: 0
 --- !u!1 &952807764
 GameObject:
   m_ObjectHideFlags: 0
@@ -72230,12 +72240,13 @@ MonoBehaviour:
   OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
   Mcollider: {fileID: 309795728}
   AnimTrigger: {fileID: 1622590460}
-  computerUI: {fileID: 1707859798}
-  urinalUI: {fileID: 1938780379}
-  foodUI: {fileID: 1963583632}
-  meetingUI: {fileID: 600919174}
-  bossUI: {fileID: 136793434}
-  elevatorUI: {fileID: 1846320552}
+  BossDoor: {fileID: 0}
+  computerui: {fileID: 0}
+  urinalui: {fileID: 0}
+  breakroomui: {fileID: 0}
+  meetingui: {fileID: 0}
+  bossui: {fileID: 0}
+  elevatorui: {fileID: 0}
 --- !u!64 &1743486947
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -86219,8 +86230,6 @@ MonoBehaviour:
   audioSource: {fileID: 942235281}
   Drink: {fileID: 8300000, guid: 2fd0e641b3c738a45b2392e4058668ed, type: 3}
   cMachine: {fileID: 1563438415}
-  coffeeDrink: 0
-  noodleEat: 0
   AbleToGrab: 1
 --- !u!54 &2091466404
 Rigidbody:
@@ -92880,7 +92889,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2342922113157989936}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 2.35608, z: 0}
+  m_LocalPosition: {x: -0.02, y: 2.35608, z: -0}
   m_LocalScale: {x: 100, y: 100, z: 235.608}
   m_Children:
   - {fileID: 425902318241299527}
