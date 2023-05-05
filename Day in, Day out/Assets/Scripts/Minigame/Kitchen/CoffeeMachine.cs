@@ -42,7 +42,7 @@ public class CoffeeMachine : MonoBehaviour, Iinteractable
             audioSource.PlayOneShot(Pour);
             Debug.Log(kitchenGame.coffeeStage);
             Drink.SetActive(true);
-            kitchenObjs.coffeeDrink = false;
+            kitchenObjs.grab.coffeeDrink = false;
             Debug.Log("done");
             
 
