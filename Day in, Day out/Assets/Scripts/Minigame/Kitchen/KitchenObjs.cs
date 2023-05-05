@@ -16,6 +16,7 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
     public GameObject Bag;
 
     public bool GrabBool;
+    public grabObj grab;
 
     public GameObject Kitchen;
      KitchenGame kitchenGame;
@@ -72,14 +73,20 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
         }
         else
         {
-            Debug.Log("dropping / grabbing item");
-            this.ObjectGrabPointTransform = ObjectGrabPointTransform;
-
-            GrabBool = !GrabBool;
-            RB.freezeRotation = !RB.freezeRotation;
-            RB.useGravity = !RB.useGravity;
-            //Set bool to enable the cup moving toward the orgin point
-            // man we use a lkot of bools
+            if (grab.grabbing && GrabBool || !grab.grabbing && ! GrabBool)//if this object is held or no objects are held
+            {
+                Debug.Log("dropping / grabbing item");
+                this.ObjectGrabPointTransform = ObjectGrabPointTransform;
+                grab.grabbing = !grab.grabbing;
+                GrabBool = !GrabBool;//grab bool moves transform to grab point
+                //sp trhat it dont fall / rotate away
+                RB.freezeRotation = !RB.freezeRotation;
+                RB.useGravity = !RB.useGravity;
+            }
+            else
+            {
+                Debug.Log("cant grab obj, hand full");
+            }
         }
 
 
@@ -90,7 +97,7 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
     {
         Debug.Log("simulating dropping / grabbing item");
         this.ObjectGrabPointTransform = ObjectGrabPointTransform;
-
+        grab.grabbing = !grab.grabbing;
         GrabBool = !GrabBool;
         RB.freezeRotation = !RB.freezeRotation;
         RB.useGravity = !RB.useGravity;

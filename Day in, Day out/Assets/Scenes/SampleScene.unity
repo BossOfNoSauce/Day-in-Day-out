@@ -4204,6 +4204,7 @@ MonoBehaviour:
   Mug: {fileID: 942235280}
   Bag: {fileID: 86406503}
   GrabBool: 0
+  grab: {fileID: 952766453}
   Kitchen: {fileID: 1065320136}
   audioSource: {fileID: 86406504}
   Drink: {fileID: 8300000, guid: 2fd0e641b3c738a45b2392e4058668ed, type: 3}
@@ -35818,6 +35819,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 952766451}
+  - component: {fileID: 952766453}
+  - component: {fileID: 952766452}
   m_Layer: 0
   m_Name: ObjectGrabPoint
   m_TagString: Untagged
@@ -35839,6 +35842,32 @@ Transform:
   m_Father: {fileID: 1926878012}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &952766452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952766450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981ac34d58d337441b982412f0686471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabbing: 0
+--- !u!114 &952766453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952766450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981ac34d58d337441b982412f0686471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabbing: 0
 --- !u!1 &952807764
 GameObject:
   m_ObjectHideFlags: 0
@@ -83815,6 +83844,7 @@ MonoBehaviour:
   Mug: {fileID: 942235280}
   Bag: {fileID: 86406503}
   GrabBool: 0
+  grab: {fileID: 952766453}
   Kitchen: {fileID: 1065320136}
   audioSource: {fileID: 942235281}
   Drink: {fileID: 8300000, guid: 2fd0e641b3c738a45b2392e4058668ed, type: 3}
@@ -87910,6 +87940,10 @@ PrefabInstance:
       propertyPath: Mug
       value: 
       objectReference: {fileID: 942235280}
+    - target: {fileID: 2487616417058865712, guid: a219587f183a35645969874343e3441e, type: 3}
+      propertyPath: grab
+      value: 
+      objectReference: {fileID: 952766453}
     - target: {fileID: 2487616417058865712, guid: a219587f183a35645969874343e3441e, type: 3}
       propertyPath: Drink
       value: 

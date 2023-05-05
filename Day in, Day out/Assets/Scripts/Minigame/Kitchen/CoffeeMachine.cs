@@ -35,7 +35,7 @@ public class CoffeeMachine : MonoBehaviour, Iinteractable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Coffee" )
+        if (other.gameObject.tag == "Coffee" && kitchenGame.coffeeStage == 0)
         {
             audioSource.PlayOneShot(Beans);
             kitchenGame.coffeeStage = 1;
