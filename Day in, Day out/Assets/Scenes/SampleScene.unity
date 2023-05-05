@@ -36190,9 +36190,9 @@ MonoBehaviour:
   speed: 0
   trigger: {fileID: 913893882}
   audioSource: {fileID: 913893881}
-  BigMonologue: {fileID: 8300000, guid: c1f8b30f8e4f39647af58797d135ae3c, type: 3}
+  BigMonologue: {fileID: 8300000, guid: 3a154d3581e6df04a904788d2cc27184, type: 3}
   startChase: 0
-  Roar: {fileID: 8300000, guid: d0a6b61703da7b843986120e13574adc, type: 3}
+  Roar: {fileID: 8300000, guid: 3207f1a94c6a3d64398495922a731fb3, type: 3}
   ChaseMusic: {fileID: 8300000, guid: 1776bd2657f9bbf43b2831b3ebf7fc80, type: 3}
   target: {fileID: 1926878008}
   player: {fileID: 1926878012}
@@ -36231,11 +36231,11 @@ MonoBehaviour:
   debris: {fileID: 277786392}
   desks: {fileID: 1473150981}
   StrewnDesks: {fileID: 357882035}
-  Sofa: {fileID: 0}
-  SofaDeeznuts: {fileID: 0}
-  Benches: {fileID: 0}
-  StrewnBenches: {fileID: 0}
-  ChaseDoor: {fileID: 0}
+  Sofa: {fileID: 286241259}
+  SofaDeeznuts: {fileID: 677294971}
+  Benches: {fileID: 677294971}
+  StrewnBenches: {fileID: 1665084712}
+  ChaseDoor: {fileID: 1543974250}
 --- !u!212 &913893885
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -63292,6 +63292,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5418457073651457440, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
   m_PrefabInstance: {fileID: 1543974248}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1543974250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4756681681627984967, guid: 20025322bac9994408db7d125dfa80d8, type: 3}
+  m_PrefabInstance: {fileID: 1543974248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1544774583
 GameObject:
   m_ObjectHideFlags: 0
@@ -72228,10 +72233,10 @@ MonoBehaviour:
   ToDoUi: {fileID: 50045296}
   BossImage: {fileID: 1049754709}
   audioSource: {fileID: 1743486951}
-  day1monologue: {fileID: 8300000, guid: 3463b01736f8f74409f95ee924e1e323, type: 3}
-  day2monologue: {fileID: 8300000, guid: 11baa68bdd1a33f48b56ced0b7850619, type: 3}
-  day3monologue: {fileID: 8300000, guid: ffce34930f6eabc49a4d95a4d5d4e3a6, type: 3}
-  day4monologue: {fileID: 8300000, guid: cb9c2e09c5f084c41af0d2973ced61f6, type: 3}
+  day1monologue: {fileID: 8300000, guid: 367376afbfd3b9f4381324e9fe4ec144, type: 3}
+  day2monologue: {fileID: 8300000, guid: 46e4f95a069c5eb4a8ef943b5818daef, type: 3}
+  day3monologue: {fileID: 8300000, guid: 0a2366583eea70b41bc1b644f64b8bc1, type: 3}
+  day4monologue: {fileID: 8300000, guid: cc6bf2681efc5634e851f8c627ab9d71, type: 3}
   Finalmonologue: {fileID: 8300000, guid: a42fce03bc7efbd4b9eae17978735e8a, type: 3}
   Buzzer: {fileID: 8300000, guid: 1481dce32aa33d14ca68baf78b99cf8a, type: 3}
   textBox: {fileID: 1489839664}
