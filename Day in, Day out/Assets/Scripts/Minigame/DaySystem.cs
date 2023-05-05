@@ -63,6 +63,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public GameObject NPC1;
     public GameObject NPC2;
 
+    public Door kitchDoor;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -71,6 +73,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
         UrinalIsDone = true;
         KitchenIsDone = true;
         MeetingIsDone = true;
+        kitchDoor.enabled = false;
     }
 
     // Update is called once per frame
@@ -144,6 +147,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if(Days == 3)
             {
+                kitchDoor.enabled = true;
                 computer.score = 0;
                 BossCheck = false;
                 computer.resetGame();

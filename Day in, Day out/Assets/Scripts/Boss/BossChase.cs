@@ -125,7 +125,7 @@ public class BossChase : MonoBehaviour
         SofaDeeznuts.SetActive(true);
         Benches.SetActive(false);
         StrewnBenches.SetActive(true);
-        // yield return new WaitForSeconds(38);
+        yield return new WaitForSeconds(38);
         playerMovement.InGame = false;
         firstPersonCamera.FreezeMovement = false;
         audioSource.PlayOneShot(Roar);
