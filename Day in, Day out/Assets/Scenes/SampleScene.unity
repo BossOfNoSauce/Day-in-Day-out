@@ -1145,6 +1145,7 @@ MonoBehaviour:
   KitchenTaskUi: {fileID: 1963583632}
   MeetingTaskUi: {fileID: 600919174}
   BossTaskUi: {fileID: 0}
+  CloseTrigger: {fileID: 1622590460}
 --- !u!82 &26645121
 AudioSource:
   m_ObjectHideFlags: 0
