@@ -42,8 +42,7 @@ public class FirstPersonCameraRotation : MonoBehaviour {
     private void Start()
     {
 	    
-		Cursor.lockState = CursorLockMode.Locked;
-	    Cursor.visible = false;
+		
 		
 	} 
     public float Sensitivity {
@@ -60,7 +59,10 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 
 	void Update(){
 
-		if(David == true)
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        if (David == true)
         {
 			StartCoroutine(Thing());
 			gameManager.dumb();
@@ -72,8 +74,8 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 
 		if (FreezeMovement == true)
 		{
-			Cursor.lockState = CursorLockMode.None;
-			Cursor.visible = false;
+			Cursor.lockState = CursorLockMode.Confined;
+			Cursor.visible = true;
 			
 		}
 

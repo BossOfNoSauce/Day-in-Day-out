@@ -39,11 +39,10 @@ public class KitchenGame : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            
-            Arm.SetActive(true);
-            //Arm.transform.position = new Vector3(0.004f, 0.523f, 1.44f);
-            Hand.HandActive = false;
-            //Arm.transform.position = new Vector3(1f, 1f, 1f);
+
+            StartCoroutine(GameTimer());
+
+       
 
         }
     }
@@ -63,6 +62,22 @@ public class KitchenGame : MonoBehaviour
                 daySystem.MeetingIsDone = true;
 
             }
+        }
+    }
+
+    IEnumerator GameTimer()
+    {
+
+        Arm.SetActive(true);
+        Arm.transform.localPosition = new Vector3(0.004f, 0.523f, 1.44f);
+        Hand.HandActive = false;
+        //game timer enabled
+        yield return new WaitForSeconds(45);
+        if(CoffeeIsDone == false && NoodlesIsDone == false)
+        {
+            daySystem.KitchenIsDone = true;
+            //YOU FAIL
+
         }
     }
 }

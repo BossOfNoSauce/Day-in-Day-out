@@ -10,7 +10,10 @@ public class Door : MonoBehaviour, Iinteractable
     public string InteractionPrompt => prompt;
     public AudioSource audioSource;
     public AudioClip door;
+    public AudioClip locked;
     public Animator animator;
+
+    public bool canOpen;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +32,15 @@ public class Door : MonoBehaviour, Iinteractable
         {
             
             animator.SetTrigger("Interact");
-            audioSource.PlayOneShot(door, 0.7f);
+            if (canOpen)
+            {
+                audioSource.PlayOneShot(door, 0.7f);
+            }
+            else
+            {
+                audioSource.PlayOneShot(locked, 0.7f);
+            }
+            
             thebool = true;
         }
         return true;

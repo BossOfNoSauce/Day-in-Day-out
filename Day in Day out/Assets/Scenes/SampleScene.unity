@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1147,9 +1147,12 @@ MonoBehaviour:
   BossTaskUi: {fileID: 136793434}
   ElevatorTaskUi: {fileID: 1846320552}
   CloseTrigger: {fileID: 1622590460}
-  NPC1: {fileID: 0}
-  NPC2: {fileID: 0}
-  kitchDoor: {fileID: 0}
+  NPC1: {fileID: 269059053}
+  NPC2: {fileID: 178587948}
+  kitchDoor: {fileID: 1769158078}
+  KitchenAnimator: {fileID: 1769158079}
+  PeeDoor: {fileID: 1904140794}
+  PeeAnimator: {fileID: 1904140792}
 --- !u!82 &26645121
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10053,7 +10056,9 @@ MonoBehaviour:
   thebool: 0
   audioSource: {fileID: 0}
   door: {fileID: 0}
+  locked: {fileID: 0}
   animator: {fileID: 0}
+  canOpen: 0
 --- !u!111 &262774586
 Animation:
   m_ObjectHideFlags: 0
@@ -58267,7 +58272,9 @@ MonoBehaviour:
   thebool: 0
   audioSource: {fileID: 1423548533}
   door: {fileID: 8300000, guid: 173f757791818af4c99b4c1532b4d044, type: 3}
+  locked: {fileID: 8300000, guid: e06607c6c0510c44185e079c529f14b8, type: 3}
   animator: {fileID: 1423548529}
+  canOpen: 0
 --- !u!54 &1423548531
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -74589,7 +74596,9 @@ MonoBehaviour:
   thebool: 0
   audioSource: {fileID: 1769158077}
   door: {fileID: 8300000, guid: 173f757791818af4c99b4c1532b4d044, type: 3}
+  locked: {fileID: 8300000, guid: e06607c6c0510c44185e079c529f14b8, type: 3}
   animator: {fileID: 1769158079}
+  canOpen: 0
 --- !u!95 &1769158079
 Animator:
   serializedVersion: 3
@@ -79853,7 +79862,9 @@ MonoBehaviour:
   thebool: 0
   audioSource: {fileID: 1904140797}
   door: {fileID: 8300000, guid: 173f757791818af4c99b4c1532b4d044, type: 3}
+  locked: {fileID: 8300000, guid: e06607c6c0510c44185e079c529f14b8, type: 3}
   animator: {fileID: 1904140792}
+  canOpen: 0
 --- !u!65 &1904140795
 BoxCollider:
   m_ObjectHideFlags: 0

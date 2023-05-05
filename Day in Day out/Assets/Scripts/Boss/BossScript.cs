@@ -74,6 +74,7 @@ public class BossScript : MonoBehaviour, Iinteractable
         {
             if (daySystem.ComputerIsDone == true && daySystem.BossCooldown == false)
             {
+                daySystem.BossCooldown = true;
                 AnimTrigger.enabled = false;
                 Mcollider.enabled = true;
                 ToDoUi.SetActive(false);
@@ -129,9 +130,10 @@ public class BossScript : MonoBehaviour, Iinteractable
 
         if (daySystem.Days == 2)
         {
-            daySystem.BossCooldown = false;
+            
             if (daySystem.computerIsWin == true && daySystem.urinalIsWin == true && daySystem.BossCooldown == false)
             {
+                daySystem.BossCooldown = true;
                 AnimTrigger.enabled = false;
                 Mcollider.enabled = true;
                 jukebox.StopMus();
@@ -156,9 +158,10 @@ public class BossScript : MonoBehaviour, Iinteractable
 
         if (daySystem.Days == 3)
         {
-            daySystem.BossCooldown = false;
+            
             if (daySystem.computerIsWin == true && daySystem.urinalIsWin == true && daySystem.kitchenIsWin == true && daySystem.BossCooldown == false)
             {
+                daySystem.BossCooldown = true;
                 AnimTrigger.enabled = false;
                 Mcollider.enabled = true;
                 jukebox.StopMus();
@@ -184,9 +187,10 @@ public class BossScript : MonoBehaviour, Iinteractable
 
         if (daySystem.Days == 4)
         {
-            daySystem.BossCooldown = false;
+            
             if (daySystem.computerIsWin == true && daySystem.urinalIsWin == true && daySystem.KitchenIsDone == true && daySystem.meetingIsWin == true && daySystem.BossCooldown == false)
             {
+                daySystem.BossCooldown = true;
                 AnimTrigger.enabled = false;
                 Mcollider.enabled = true;
                 jukebox.StopMus();
@@ -212,7 +216,7 @@ public class BossScript : MonoBehaviour, Iinteractable
 
         if(daySystem.Days == 5)
         {
-            daySystem.BossCooldown = false;
+           
             if (daySystem.AbleToChase == true)
             {
                 Mcollider.enabled = true;

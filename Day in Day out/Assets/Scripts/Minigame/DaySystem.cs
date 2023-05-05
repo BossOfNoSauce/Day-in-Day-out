@@ -65,7 +65,10 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public GameObject NPC2;
 
     public Door kitchDoor;
-    
+    public Animator KitchenAnimator;
+
+    public Door PeeDoor;
+    public Animator PeeAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -74,7 +77,10 @@ public class DaySystem : MonoBehaviour, Iinteractable
         UrinalIsDone = true;
         KitchenIsDone = true;
         MeetingIsDone = true;
-        kitchDoor.enabled = false;
+        //kitchDoor.enabled = false;
+        KitchenAnimator.enabled = false;
+       // PeeDoor.enabled = false;
+        PeeAnimator.enabled = false;
     }
 
     // Update is called once per frame
@@ -82,10 +88,10 @@ public class DaySystem : MonoBehaviour, Iinteractable
     {
         //ENABLED URINALS
 
-        if (Days == 2 )
-        {
-            //StartCoroutine(EndDay());
-        }
+        PeeAnimator.enabled = PeeDoor.canOpen;
+        KitchenAnimator.enabled = kitchDoor.canOpen;
+
+        
     }
 
     public bool Interact(Interactor interactor)
@@ -108,7 +114,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
     {
         if(cooldown == false)
         {
-            
+            BossCooldown = false;
             Debug.Log("day end");
             player.transform.position = new Vector3(142, 7.4f, -43f);
             playerMovement.InGame = true;
@@ -151,6 +157,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             if(Days == 3)
             {
                 kitchDoor.enabled = true;
+                KitchenAnimator.enabled = true;
                 computer.score = 0;
                 BossCheck = false;
                 computer.resetGame();

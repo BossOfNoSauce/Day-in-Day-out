@@ -27,6 +27,10 @@ public class PauseGame : MonoBehaviour
             pauseMenu.SetActive(true);
             cursor.SetActive(true);
             audioSource.Pause();
+
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+
         }
     }
     public void simPaused()
@@ -43,6 +47,11 @@ public class PauseGame : MonoBehaviour
             pauseMenu.SetActive(false);
             audioSource.UnPause();
             cursor.SetActive(false);
+
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
         }
     }
     public void simResume()
@@ -64,7 +73,7 @@ public class PauseGame : MonoBehaviour
     //Pauses and unpauses game on escape key
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             menuActive = !menuActive;
             if (menuActive == true)
