@@ -25,9 +25,6 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
     //mug coffee layer
     public GameObject cMachine;
     CoffeeMachine coffeeMachine;
-    //has consumed yet?
-    public bool coffeeDrink;
-    public bool noodleEat = false;
 
     public bool AbleToGrab = true;
     // Start is called before the first frame update
@@ -58,20 +55,20 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
 
     public bool Interact(Interactor interactor)//i belive this needs to be moved into a single script
     {
-        if (kitchenGame.coffeeStage == 3 && GrabBool && coffeeDrink == false)//coffee stage only goes to 3 when mug in hand, so this is fine
+        if (kitchenGame.coffeeStage == 3 && GrabBool && grab.coffeeDrink == false)//coffee stage only goes to 3 when mug in hand, so this is fine
         {//drink coffee when in hand
             Debug.Log("drinkiung coffee");
             audioSource.PlayOneShot(Drink);
             coffeeMachine.Drink.SetActive(false);
             kitchenGame.CoffeeIsDone = true;
-            coffeeDrink = true;
+            grab.coffeeDrink = true;
         }
-        else if (kitchenGame.noodleStage == 2 && GrabBool && noodleEat == false)//coffee stage only goes to 3 when mug in hand, so this is fine
+        else if (kitchenGame.noodleStage == 2 && GrabBool && grab.noodleEat == false)//coffee stage only goes to 3 when mug in hand, so this is fine
         {//drink coffee when in hand
             Debug.Log("eating noodles");
             audioSource.PlayOneShot(Drink);
             kitchenGame.NoodlesIsDone = true;
-            noodleEat = true;
+            grab.noodleEat = true;
         }
         else
         {
