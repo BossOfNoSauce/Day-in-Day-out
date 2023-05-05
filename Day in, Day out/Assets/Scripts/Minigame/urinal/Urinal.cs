@@ -77,6 +77,10 @@ public class Urinal : MonoBehaviour, Iinteractable
     // Update is called once per frame
     void Update()
     {
+       // these two lines of code sent the target all the way through the wall. i dont know why. god is dead and this fucked up code killed him
+       // targetMovement.GameFail = daySystem.UrinalIsDone;
+       // targetMovement.GameOver = daySystem.urinalIsWin;
+
         if (noMovement == true)
         {
             Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);

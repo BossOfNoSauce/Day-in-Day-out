@@ -65,6 +65,9 @@ public class DaySystem : MonoBehaviour, Iinteractable
     {
         ComputerTaskUi.SetActive(true);
         jukebox = JukeBoxObj.GetComponent<Jukebox>();
+        UrinalIsDone = true;
+        KitchenIsDone = true;
+        MeetingIsDone = true;
     }
 
     // Update is called once per frame
@@ -119,6 +122,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             ComputerIsDone = false;
             playerMovement.InGame = false;
             CloseTrigger.enabled = true;
+            
             if (Days == 2)
             {
                 computer.score = 0;
@@ -133,6 +137,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 ToDoList.SetActive(true);
                 UrinalTaskUi.SetActive(true);
                 CloseTrigger.enabled = true;
+               
             }
             if(Days == 3)
             {

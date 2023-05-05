@@ -1130,7 +1130,7 @@ MonoBehaviour:
   DaySound: {fileID: 8300000, guid: 59eebf1817b5a084486f09ea833de533, type: 3}
   OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
   BossCheck: 0
-  AbleToChase: 0
+  AbleToChase: 1
   JukeBoxObj: {fileID: 830215002}
   BlackScreen: {fileID: 735071142}
   animator: {fileID: 735071144}
@@ -35038,8 +35038,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 19.812983, y: 8.823071, z: 10.253737}
-  m_Center: {x: 0.038498256, y: -3.6237566, z: 50.54804}
+  m_Size: {x: 19.812983, y: 8.823071, z: 6.8801455}
+  m_Center: {x: 0.038498256, y: -3.6237566, z: 40.999607}
 --- !u!65 &913893883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35117,7 +35117,7 @@ MonoBehaviour:
   OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
   debris: {fileID: 277786392}
   desks: {fileID: 1473150981}
-  StrewnDesks: {fileID: 0}
+  StrewnDesks: {fileID: 357882035}
 --- !u!212 &913893885
 SpriteRenderer:
   m_ObjectHideFlags: 0
