@@ -80,7 +80,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
     // Update is called once per frame
     void Update()
     {
-        
+        //ENABLED URINALS
 
         if (Days == 2 )
         {
@@ -138,7 +138,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 computerIsWin = false;
                 ComputerIsDone = false;
                 computer.score = 0;
-                urinalIsWin = false;
+                //urinalIsWin = false;
                 UrinalIsDone = false;
                 BossCooldown = false;
                 ToDoList.SetActive(true);
@@ -154,7 +154,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 computer.score = 0;
                 BossCheck = false;
                 computer.resetGame();
-                urinalIsWin = false;
+               // urinalIsWin = false;
                 UrinalIsDone = false;
                 computerIsWin = false;
                 ComputerIsDone = false;
@@ -178,7 +178,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 kitchenIsWin = false;
                 KitchenIsDone = false;
                 kitchenObjs.ResetObjs();
-                urinalIsWin = false;
+               // urinalIsWin = false;
                 UrinalIsDone = false;
                 BossCooldown = false;
                 ToDoList.SetActive(true);
