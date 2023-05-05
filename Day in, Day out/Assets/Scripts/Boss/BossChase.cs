@@ -52,6 +52,8 @@ public class BossChase : MonoBehaviour
     public GameObject Benches;
     public GameObject StrewnBenches;
 
+    public GameObject ChaseDoor;
+
 
     void Start()
     {
@@ -125,6 +127,7 @@ public class BossChase : MonoBehaviour
         SofaDeeznuts.SetActive(true);
         Benches.SetActive(false);
         StrewnBenches.SetActive(true);
+        ChaseDoor.SetActive(false);
         yield return new WaitForSeconds(38);
         playerMovement.InGame = false;
         firstPersonCamera.FreezeMovement = false;
