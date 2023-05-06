@@ -131,7 +131,9 @@ public class Computer : MonoBehaviour, Iinteractable
                 Player.transform.position = new Vector3(138, 5.5f, 93.8f);
                 firstPersonCameraRotation.FreezeMovement = true;
 
+
                 pause.simPaused();
+                ToDoUI.SetActive(false);
                 tutUi.SetActive(true);
 
                 LookAt();
@@ -200,6 +202,7 @@ public class Computer : MonoBehaviour, Iinteractable
             firstPersonCameraRotation.FreezeMovement = false; 
             hand.SetActive(false);
             gameUi.SetActive(false);
+            ToDoUI.SetActive(true);
             pause.AbleToPause = true;
             Player.transform.position = new Vector3(136, 7.41f, 93.8f);
             //check and reset score
