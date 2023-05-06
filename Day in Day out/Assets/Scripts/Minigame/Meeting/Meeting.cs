@@ -36,10 +36,13 @@ public class Meeting : MonoBehaviour, Iinteractable
     //game staTREW BOOLS
     public bool GameIsActive = false;
     bool isGameWin;
+
+    public GameObject tutUi;
     public bool Interact(Interactor interactor)
     {
         //this is what happenes when you interact
         Debug.Log("Meeting Time");
+       // tutUi.SetActive(true);
         StartCoroutine(MeetingTime());
         return true;
     }

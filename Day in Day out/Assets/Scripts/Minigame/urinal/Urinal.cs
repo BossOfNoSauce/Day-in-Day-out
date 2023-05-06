@@ -45,7 +45,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     public bool Interact(Interactor interactor)
     {
         //this is what happenes when you interact
-        if (targetMovement.GameOver || targetMovement.GameFail)//so that cant start game again
+        if (daySystem.urinalIsWin || daySystem.UrinalIsDone)//so that cant start game again
         {
             return false;
         }
@@ -100,13 +100,13 @@ public class Urinal : MonoBehaviour, Iinteractable
     }
     public void endGame()
     {
-        if (targetMovement.GameOver)//end game in here, constantly called
+        if (daySystem.urinalIsWin)//end game in here, constantly called
         {
             //setting bools
             daySystem.UrinalIsDone = true;
-            daySystem.urinalIsWin = !targetMovement.GameFail;
+            //daySystem.urinalIsWin = !targetMovement.GameFail;
             Image temp = urinalCheck.GetComponent<Image>();//from todo list, to set the check
-            temp.color = (!targetMovement.GameFail ? new Color32(0, 255, 0, 100) : new Color32(255, 0, 0, 100));//if game is win, set image to green, else red
+            temp.color = (!daySystem.UrinalIsDone ? new Color32(0, 255, 0, 100) : new Color32(255, 0, 0, 100));//if game is win, set image to green, else red
 
             // disables all previous variables, allowing normal movement
             firstPersonCameraRotation.FreezeMovement = false;
@@ -119,8 +119,7 @@ public class Urinal : MonoBehaviour, Iinteractable
 
     IEnumerator StartUrination()
     {
-        if (targetMovement.GameOver == false)
-        {
+        
             if(daySystem.UrinalIsDone == false)
             {
                 //urinalUI.SetActive(true);
@@ -134,12 +133,12 @@ public class Urinal : MonoBehaviour, Iinteractable
                 audioSource.Play();
                 noMovement = true; // this locks camera on the target
                 yield return new WaitForSeconds(20); // game timer
-                targetMovement.GameOver = true;
+                
                 daySystem.urinalIsWin = true;
                 Debug.Log("done pissing");
                 endGame();
             }
             
-        }
+        
     }
 }

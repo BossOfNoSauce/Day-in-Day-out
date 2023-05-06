@@ -14,14 +14,16 @@ public class TargetMovement : MonoBehaviour
     public bool GameIsActive = false;
     public Vector3 right;
     public Rigidbody m_rigidbody;
-    public bool GameFail = false;
+    
     public float Power;
     public bool velocityActive = true;
-    public bool GameOver = false;
+    
     //ui thing
     public GameObject urinalArrow;//work on this later
 
     public Urinal urinal;
+
+    public DaySystem daySystem;
     void Start()
     {
         time = swayTime / 2;
@@ -46,7 +48,7 @@ public class TargetMovement : MonoBehaviour
                 Dafunk();
             }
         }
-        if(GameOver== true)
+        if(daySystem.UrinalIsDone == true || daySystem.urinalIsWin == true)
         {
             m_rigidbody.velocity = Vector3.zero;
         }
@@ -71,8 +73,7 @@ public class TargetMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)//fail game
     {
         Debug.Log("game fail in urinal, attemting end game");
-        GameFail = true;
-        GameOver = true;
+        daySystem.UrinalIsDone = true;
         urinal.endGame();
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -61809,12 +61809,11 @@ MonoBehaviour:
   GameIsActive: 0
   right: {x: 12, y: 0, z: 0}
   m_rigidbody: {fileID: 1467735993}
-  GameFail: 0
   Power: 7
   velocityActive: 1
-  GameOver: 0
   urinalArrow: {fileID: 1426351664}
   urinal: {fileID: 2114999374}
+  daySystem: {fileID: 26645120}
 --- !u!54 &1467735993
 Rigidbody:
   m_ObjectHideFlags: 0
