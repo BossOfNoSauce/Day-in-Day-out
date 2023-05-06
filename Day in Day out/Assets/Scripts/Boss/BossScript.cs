@@ -55,8 +55,11 @@ public class BossScript : MonoBehaviour, Iinteractable
     {
         if (daySystem.ComputerIsDone == true && daySystem.BossCooldown == false)
         {
-            computerui.SetActive(false);
-            bossui.SetActive(true);
+            if (daySystem.Days == 1)
+            {
+                computerui.SetActive(false);
+                bossui.SetActive(true);
+            }    
         }
     }
 
@@ -115,6 +118,8 @@ public class BossScript : MonoBehaviour, Iinteractable
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
+                bossui.SetActive(false);
+                elevatorui.SetActive(true);
                 ToDoUi.SetActive(true);
                 daySystem.cooldown = false;
                 elevator.SetTrigger("Elevator Open");

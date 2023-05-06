@@ -149,6 +149,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 BossCooldown = false;
                 ToDoList.SetActive(true);
                 ElevatorTaskUi.SetActive(false);
+                BossTaskUi.SetActive(false);
                 ComputerTaskUi.SetActive(true);
                 UrinalTaskUi.SetActive(true);
                 CloseTrigger.enabled = true;
