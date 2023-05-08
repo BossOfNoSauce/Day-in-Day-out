@@ -75,7 +75,7 @@ public class BossScript : MonoBehaviour, Iinteractable
         
         if (daySystem.Days == 1)
         {
-            if (daySystem.ComputerIsDone == true && daySystem.BossCooldown == false)
+            if ( daySystem.BossCooldown == false)
             {
                 daySystem.BossCooldown = true;
                 AnimTrigger.enabled = false;
@@ -158,6 +158,7 @@ public class BossScript : MonoBehaviour, Iinteractable
             else
             {
                 audioSource.PlayOneShot(Buzzer);
+
             }
         }
 
