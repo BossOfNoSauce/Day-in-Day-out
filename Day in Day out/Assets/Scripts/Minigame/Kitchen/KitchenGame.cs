@@ -79,14 +79,14 @@ public class KitchenGame : MonoBehaviour
         Arm.transform.localPosition = new Vector3(0.004f, 0.523f, 1.44f);
         Hand.HandActive = false;
         //game timer enabled
-        yield return new WaitForSeconds(25);
+        yield return new WaitForSeconds(45);
         audioSource.PlayOneShot(urgency);
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(45);
         if(CoffeeIsDone == false && NoodlesIsDone == false)
         {
             daySystem.KitchenIsDone = true;
             timer.SetActive(false);
-            //YOU FAIL
+            Debug.Log("you fucked up");
 
         }
     }
