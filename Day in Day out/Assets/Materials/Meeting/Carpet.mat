@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Floopr
+  m_Name: Carpet
   m_Shader: {fileID: 4800000, guid: e4952fd04a2d7f04fa0d3aa7c014b9f3, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -40,8 +40,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: cc602d8635cd05a4b8d97878ffaba183, type: 3}
-        m_Scale: {x: 11, y: 9}
+        m_Texture: {fileID: 2800000, guid: 4ac2f6e7a4efff648abe0c2289ab046f, type: 3}
+        m_Scale: {x: 3, y: 12}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -74,6 +74,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.8301887, g: 0.7282729, b: 0.5991456, a: 1}
+    - _Color: {r: 0.33962262, g: 0.2975703, b: 0.23869704, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
