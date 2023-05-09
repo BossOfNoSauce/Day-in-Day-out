@@ -27,6 +27,8 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
     CoffeeMachine coffeeMachine;
 
     public bool AbleToGrab = true;
+
+    public GameObject button;
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +78,9 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
             {
                 Debug.Log("dropping / grabbing item");
                 this.ObjectGrabPointTransform = ObjectGrabPointTransform;
+
+                button.SetActive(!button);
+
                 grab.grabbing = !grab.grabbing;
                 GrabBool = !GrabBool;//grab bool moves transform to grab point
                 //sp trhat it dont fall / rotate away

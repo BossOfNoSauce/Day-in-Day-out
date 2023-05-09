@@ -107,12 +107,12 @@ public class BossScript : MonoBehaviour, Iinteractable
                 yield return new WaitForSeconds(1);
                 textBox.GetComponent<Text>().text = "GOOD FOR NOTHING";
                 yield return new WaitForSeconds(1);
-                textBox.GetComponent<Text>().text = "MALINGERERS";
+                textBox.GetComponent<Text>().text = "FREELOADERS";
                 yield return new WaitForSeconds(1.5F);
                 textBox.GetComponent<Text>().text = "I gotta do what I gotta do, for the greater good of this company";
                 yield return new WaitForSeconds(3.5f);
                 textBox.GetComponent<Text>().text = "So, you keep up the good work kid, and don't dissappoint me";
-                yield return new WaitForSeconds(4);
+                yield return new WaitForSeconds(6);
                 textBox.GetComponent<Text>().text = " ";
                 daySystem.BossCheck = true;
                 Debug.Log(daySystem.BossCheck);

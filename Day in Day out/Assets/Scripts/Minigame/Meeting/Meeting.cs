@@ -76,6 +76,7 @@ public class Meeting : MonoBehaviour, Iinteractable
 
         if (GameIsActive == true)
         {
+            button.SetActive(false);
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 //TRB.transform.position.Set(0.0f, TRB.transform.position.y + 500.0f, 0.0f);//use if current one isnt that fun

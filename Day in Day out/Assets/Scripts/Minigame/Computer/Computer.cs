@@ -99,7 +99,7 @@ public class Computer : MonoBehaviour, Iinteractable
         playerMovement = Player.GetComponent<PlayerMovement>();
         firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
         gameManager = manager.GetComponent<GameManager>();
-        button.SetActive(true);
+        button.SetActive(false);
        
     }
 
@@ -130,9 +130,11 @@ public class Computer : MonoBehaviour, Iinteractable
     {
         if (canCompute == true)
         {
-
+            
             if (daySystem.ComputerIsDone == false)
             {
+                canCompute = false;
+                button.SetActive(false);
                 life = 3;
                 pause.AbleToPause = false;
                 playerMovement.InGame = true;
@@ -205,6 +207,7 @@ public class Computer : MonoBehaviour, Iinteractable
     {
         if(isGameFinished == false)
         {
+            
             yield return new WaitForSeconds(1);
             playerMovement.InGame = false; 
             gameManager.gameActive = false; 
