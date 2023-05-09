@@ -42,7 +42,6 @@ public class BossScript : MonoBehaviour, Iinteractable
     public GameObject meetingui;
     public GameObject bossui;
     public GameObject elevatorui;
-
     // Start is called before the first frame update
     void Start()
     {
