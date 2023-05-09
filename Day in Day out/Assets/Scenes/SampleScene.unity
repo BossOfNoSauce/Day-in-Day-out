@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -40186,8 +40186,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.448907, y: 4.202289, z: 6.880149}
-  m_Center: {x: -0.30212432, y: -1.7840791, z: 40.999657}
+  m_Size: {x: 11.448907, y: 4.202289, z: 5.4284177}
+  m_Center: {x: -0.30212432, y: -1.7840792, z: -44.604748}
 --- !u!95 &913893883
 Animator:
   serializedVersion: 3
@@ -40277,6 +40277,7 @@ MonoBehaviour:
   Benches: {fileID: 677294971}
   StrewnBenches: {fileID: 1665084712}
   ChaseDoor: {fileID: 1543974250}
+  BossAnim: {fileID: 913893883}
 --- !u!212 &913893885
 SpriteRenderer:
   m_ObjectHideFlags: 0

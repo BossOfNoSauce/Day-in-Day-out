@@ -61,6 +61,7 @@ public class BossChase : MonoBehaviour
     {
         //transform.position = Points[pointsIndex].transform.position;
         pointsIndex = 1;
+        BossAnim.SetTrigger("Back");
     }
 
     // Update is called once per frame
@@ -82,6 +83,7 @@ public class BossChase : MonoBehaviour
 
         if (startChase == true)
         {
+            BossAnim.SetTrigger("Run");
             position = Boss.transform.position;
             Boss.transform.position = Vector3.MoveTowards(position, Points[pointsIndex].transform.position, moveSpeed * Time.deltaTime);
 
@@ -123,6 +125,9 @@ public class BossChase : MonoBehaviour
         Camera.transform.LookAt(Boss.transform.position, Vector3.up);
         audioSource.PlayOneShot(BigMonologue, 1f);
         yield return new WaitForSeconds(3);
+        BossAnim.SetTrigger("Turn");
+        
+
         debris.SetActive(true);
         desks.SetActive(false);
         StrewnDesks.SetActive(true);
@@ -135,6 +140,7 @@ public class BossChase : MonoBehaviour
         playerMovement.InGame = false;
         firstPersonCamera.FreezeMovement = false;
         audioSource.PlayOneShot(Roar);
+        BossAnim.SetTrigger("Roar");
         yield return new WaitForSeconds(5);
         elevator.SetTrigger("Elevator Open");
         audioSource.PlayOneShot(OpeningElevator);
