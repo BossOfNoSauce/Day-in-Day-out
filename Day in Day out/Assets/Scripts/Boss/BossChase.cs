@@ -54,6 +54,8 @@ public class BossChase : MonoBehaviour
 
     public GameObject ChaseDoor;
 
+    public Animator BossAnim;
+
 
     void Start()
     {
