@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -40057,6 +40057,7 @@ GameObject:
   - component: {fileID: 913893888}
   - component: {fileID: 913893885}
   - component: {fileID: 913893883}
+  - component: {fileID: 913893886}
   m_Layer: 10
   m_Name: Boss
   m_TagString: Untagged
@@ -40186,8 +40187,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.448907, y: 4.202289, z: 5.4284177}
-  m_Center: {x: -0.30212432, y: -1.7840792, z: -44.604748}
+  m_Size: {x: 11.448907, y: 4.202289, z: 8.844603}
+  m_Center: {x: -0.3021243, y: -1.7840792, z: 44.087845}
 --- !u!95 &913893883
 Animator:
   serializedVersion: 3
@@ -40329,6 +40330,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &913893886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913893879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6747649f4754964eb548e6f29562354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1926878008}
+  prompt: 
+  audioSource: {fileID: 0}
+  audioClips: []
 --- !u!54 &913893888
 Rigidbody:
   m_ObjectHideFlags: 0
