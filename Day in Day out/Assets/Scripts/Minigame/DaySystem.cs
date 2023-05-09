@@ -141,6 +141,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             if (Days == 2)
             {
                 PeeDoor.canOpen = true;
+                PeeAnimator.enabled = true;
                 computer.score = 0;
                 BossCheck = false;
                 computer.resetGame();
