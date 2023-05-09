@@ -66,6 +66,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
 
     public Door kitchDoor;
     public Animator KitchenAnimator;
+    public Animator MeetingAnimator;
 
     public Door PeeDoor;
     public Animator PeeAnimator;
@@ -81,6 +82,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
         KitchenAnimator.enabled = false;
        // PeeDoor.enabled = false;
         PeeAnimator.enabled = false;
+
+
     }
 
     // Update is called once per frame
@@ -88,10 +91,11 @@ public class DaySystem : MonoBehaviour, Iinteractable
     {
         //ENABLED URINALS
 
-        PeeAnimator.enabled = PeeDoor.canOpen;
-        KitchenAnimator.enabled = kitchDoor.canOpen;
+        //PeeDoor.canOpen = PeeAnimator.enabled;
+       // kitchDoor.canOpen = KitchenAnimator.enabled;
 
-        
+
+
     }
 
     public bool Interact(Interactor interactor)
@@ -179,6 +183,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if(Days == 4)
             {
+                MeetingAnimator.enabled = true;
                 computer.score = 0;
                 BossCheck = false;
                 computer.resetGame();

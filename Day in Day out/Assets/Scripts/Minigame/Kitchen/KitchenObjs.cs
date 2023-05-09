@@ -80,7 +80,7 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
                 this.ObjectGrabPointTransform = ObjectGrabPointTransform;
 
                 //this sets the button to the opposite of its current active state. theoretically
-               // button.SetActive(!button);
+                button.SetActive(!button);
 
                 grab.grabbing = !grab.grabbing;
                 GrabBool = !GrabBool;//grab bool moves transform to grab point

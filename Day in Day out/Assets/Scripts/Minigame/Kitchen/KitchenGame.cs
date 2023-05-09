@@ -59,14 +59,20 @@ public class KitchenGame : MonoBehaviour
 
             Arm.SetActive(false);
             Hand.HandActive = true;
-            //Arm.transform.position = new Vector3(1f, 1f, 1f);
+            
             if (CoffeeIsDone == true && NoodlesIsDone == true)
             {
+                timer.SetActive(false);
                 Arm.SetActive(false);
                 Hand.HandActive = true;
                 daySystem.kitchenIsWin = true;
                 StopCoroutine(GameTimer());
 
+            }
+
+            if(daySystem.kitchenIsWin || daySystem.KitchenIsDone)
+            {
+                //slam the door behind him
             }
         }
     }
