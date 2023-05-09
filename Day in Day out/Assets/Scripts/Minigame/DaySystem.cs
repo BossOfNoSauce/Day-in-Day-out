@@ -70,6 +70,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
 
     public Door PeeDoor;
     public Animator PeeAnimator;
+
+    public AudioClip B;
     // Start is called before the first frame update
     void Start()
     {
@@ -203,6 +205,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if (Days == 5)
             {
+                audioSource.PlayOneShot(B, 0.4f);
                 BossCheck = false;
                 computer.resetGame();
                 ToDoList.SetActive(true);
