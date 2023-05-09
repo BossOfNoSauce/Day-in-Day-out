@@ -7,7 +7,7 @@ public class Meeting : MonoBehaviour, Iinteractable
     [SerializeField] private string prompt;
 
     public string InteractionPrompt => prompt;
-
+    public PauseGame pause;
     public DaySystem daySystem;
 
     public GameObject manager;
@@ -36,7 +36,7 @@ public class Meeting : MonoBehaviour, Iinteractable
     //game staTREW BOOLS
     public bool GameIsActive = false;
     bool isGameWin;
-
+    
     public GameObject tutUi;
 
     public GameObject button;
@@ -127,11 +127,13 @@ public class Meeting : MonoBehaviour, Iinteractable
     public IEnumerator MeetingTime()//start game
     {
         {
+            pause.simPaused();
+            tutUi.SetActive(true);//tutorial ui
             playerMovement.InGame = true;
             gameManager.gameActive = true;
             GameIsActive = true;
             collider.enabled = false;
-            yield return new WaitForSeconds(3);
+            
             Player.transform.position = new Vector3(-19, 6.5f, -65);
             yield return new WaitForSeconds(3.25f);
             Sleepy();
