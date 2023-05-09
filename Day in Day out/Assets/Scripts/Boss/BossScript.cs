@@ -42,6 +42,8 @@ public class BossScript : MonoBehaviour, Iinteractable
     public GameObject meetingui;
     public GameObject bossui;
     public GameObject elevatorui;
+
+    public GameObject button;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,12 +62,15 @@ public class BossScript : MonoBehaviour, Iinteractable
                 bossui.SetActive(true);
             }    
         }
+
+        
     }
 
     public bool Interact(Interactor interactor)
     {
         Debug.Log("interacted");
         StartCoroutine(Boss());
+
         return true;
     }
 
@@ -76,6 +81,7 @@ public class BossScript : MonoBehaviour, Iinteractable
         {
             if ( daySystem.BossCooldown == false)
             {
+                
                 daySystem.BossCooldown = true;
                 AnimTrigger.enabled = false;
                 Mcollider.enabled = true;
