@@ -75,9 +75,6 @@ public class DaySystem : MonoBehaviour, Iinteractable
     {
         ComputerTaskUi.SetActive(true);
         jukebox = JukeBoxObj.GetComponent<Jukebox>();
-        UrinalIsDone = true;
-        KitchenIsDone = true;
-        MeetingIsDone = true;
         //kitchDoor.enabled = false;
         KitchenAnimator.enabled = false;
        // PeeDoor.enabled = false;

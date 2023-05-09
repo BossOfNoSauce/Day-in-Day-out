@@ -13,7 +13,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     public GameObject manager;
     GameManager gameManager;
 
-
+    bool inGame = false;//so that cant press e on urinal while in game
     public GameObject Player;//gets payer script
     TargetMovement targetMovement;
     PlayerCam playerCam;
@@ -46,15 +46,20 @@ public class Urinal : MonoBehaviour, Iinteractable
     {
         button.SetActive(false);
         //this is what happenes when you interact
-        if (daySystem.urinalIsWin || daySystem.UrinalIsDone)//so that cant start game again
+        if (daySystem.UrinalIsDone)//so that cant start game again
         {
             return false;
         }
-        else
+        else if(!inGame && !daySystem.UrinalIsDone)//not in game and urinal isnt done
         {
             Debug.Log("stating game");
+            inGame = true;
             game();
             return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
@@ -103,6 +108,7 @@ public class Urinal : MonoBehaviour, Iinteractable
 
     public void game()
     {
+        targetMovement.transform.localPosition.Set(-3.32f, -12.00449f, 3.566877f);//reset lookat target
         playerController.InGame = true;
         //sets player to inGame, freezing them in place
         StartCoroutine(StartUrination());
@@ -111,10 +117,12 @@ public class Urinal : MonoBehaviour, Iinteractable
     }
     public void endGame()
     {
-        if (daySystem.urinalIsWin)//end game in here, constantly called
+        if (daySystem.UrinalIsDone)//end game in here, constantly called
         {
             //setting bools
+            targetMovement.GameIsActive = false;
             daySystem.UrinalIsDone = true;
+            inGame = false;
             //daySystem.urinalIsWin = !targetMovement.GameFail;
             Image temp = urinalCheck.GetComponent<Image>();//from todo list, to set the check
             temp.color = (!daySystem.UrinalIsDone ? new Color32(0, 255, 0, 100) : new Color32(255, 0, 0, 100));//if game is win, set image to green, else red
@@ -130,26 +138,23 @@ public class Urinal : MonoBehaviour, Iinteractable
 
     IEnumerator StartUrination()
     {
-        
-            if(daySystem.UrinalIsDone == false)
-            {
-                //urinalUI.SetActive(true);
-                firstPersonCameraRotation.FreezeMovement = true;
-                pauseGame.AbleToPause = false; //dissables pause menu
-                pauseGame.simPaused();
-                menu.SetActive(true);//tutorial menu
-                Player.transform.position = new Vector3(82, 7.5f, 27f); // sets player in proper pissing position
-                targetMovement.GameIsActive = true; // this starts the target moving back and forth
-                audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
-                audioSource.Play();
-                noMovement = true; // this locks camera on the target
-                yield return new WaitForSeconds(20); // game timer
-                
-                daySystem.urinalIsWin = true;
-                Debug.Log("done pissing");
-                endGame();
-            }
-            
-        
+        //urinalUI.SetActive(true);
+        firstPersonCameraRotation.FreezeMovement = true;
+        pauseGame.AbleToPause = false; //dissables pause menu
+        pauseGame.simPaused();
+        menu.SetActive(true);//tutorial menu
+        Player.transform.position = new Vector3(82, 7.5f, 27f); // sets player in proper pissing position
+        targetMovement.GameIsActive = true; // this starts the target moving back and forth
+        audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
+        audioSource.Play();
+        noMovement = true; // this locks camera on the target
+        yield return new WaitForSeconds(20); // game timer
+        if (!daySystem.UrinalIsDone)
+        {//so that if game fail, wont make it win
+            daySystem.UrinalIsDone = true;
+            daySystem.urinalIsWin = true;
+            Debug.Log("done pissing");
+            endGame();
+        }
     }
 }
