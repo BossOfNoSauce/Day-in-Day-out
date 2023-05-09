@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
             audioSource.enabled = false;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && verticalInput != 0 || horizontalInput != 0)
         {
             if (stamina > 0 && !isFatigued)
             {
