@@ -18,6 +18,7 @@ public class LittleBookScript : MonoBehaviour, Iinteractable
     public Transform target;
 
     public bool startSlide;
+    bool canGrab = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,21 +36,29 @@ public class LittleBookScript : MonoBehaviour, Iinteractable
 
     public bool Interact(Interactor interactor)
     {
-        ToDoUI.SetActive(true);
-        ComUI.SetActive(true);
-        PeeUI.SetActive(false);
-        KitUI.SetActive(false);
-        MetUI.SetActive(false);
-        gameObject.SetActive(false);
+        if (canGrab)
+        {
+            ToDoUI.SetActive(true);
+            ComUI.SetActive(true);
+            PeeUI.SetActive(false);
+            KitUI.SetActive(false);
+            MetUI.SetActive(false);
+            gameObject.SetActive(false);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+
         
-
-
-        return true;
     }
 
     public void Slide()
     {
         var step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        canGrab = true;
     }
 }

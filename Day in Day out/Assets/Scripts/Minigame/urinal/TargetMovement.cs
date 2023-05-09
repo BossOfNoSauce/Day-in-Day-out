@@ -48,7 +48,7 @@ public class TargetMovement : MonoBehaviour
                 Dafunk();
             }
         }
-        if(daySystem.UrinalIsDone == true || daySystem.urinalIsWin == true)
+        if(daySystem.UrinalIsDone == true)
         {
             m_rigidbody.velocity = Vector3.zero;
         }
@@ -73,6 +73,7 @@ public class TargetMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)//fail game
     {
         Debug.Log("game fail in urinal, attemting end game");
+        GameIsActive = false;
         daySystem.UrinalIsDone = true;
         urinal.endGame();
     }

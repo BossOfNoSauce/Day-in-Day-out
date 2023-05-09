@@ -77,9 +77,6 @@ public class DaySystem : MonoBehaviour, Iinteractable
     {
         ComputerTaskUi.SetActive(true);
         jukebox = JukeBoxObj.GetComponent<Jukebox>();
-        UrinalIsDone = true;
-        KitchenIsDone = true;
-        MeetingIsDone = true;
         //kitchDoor.enabled = false;
         KitchenAnimator.enabled = false;
        // PeeDoor.enabled = false;
@@ -146,6 +143,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             if (Days == 2)
             {
                 PeeDoor.canOpen = true;
+                PeeAnimator.enabled = true;
                 computer.score = 0;
                 BossCheck = false;
                 computer.resetGame();
