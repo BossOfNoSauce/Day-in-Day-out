@@ -120,6 +120,7 @@ public class BossChase : MonoBehaviour
         firstPersonCamera.FreezeMovement = true;
         Camera.transform.LookAt(Boss.transform.position, Vector3.up);
         audioSource.PlayOneShot(BigMonologue, 1f);
+        yield return new WaitForSeconds(3);
         debris.SetActive(true);
         desks.SetActive(false);
         StrewnDesks.SetActive(true);
@@ -128,7 +129,7 @@ public class BossChase : MonoBehaviour
         Benches.SetActive(false);
         StrewnBenches.SetActive(true);
         ChaseDoor.SetActive(false);
-        yield return new WaitForSeconds(38);
+        yield return new WaitForSeconds(35);
         playerMovement.InGame = false;
         firstPersonCamera.FreezeMovement = false;
         audioSource.PlayOneShot(Roar);
