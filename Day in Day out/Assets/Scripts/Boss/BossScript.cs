@@ -126,7 +126,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 audioSource.PlayOneShot(OpeningElevator);
                 Mcollider.enabled = false;
             }
-            else
+            else if (daySystem.BossCooldown == true)
             {
                 audioSource.PlayOneShot(Buzzer);
             }
@@ -155,7 +155,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 audioSource.PlayOneShot(OpeningElevator);
                 Mcollider.enabled = false;
             }
-            else
+            else if (daySystem.BossCooldown == true)
             {
                 audioSource.PlayOneShot(Buzzer);
 
@@ -184,7 +184,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 audioSource.PlayOneShot(OpeningElevator);
                 Mcollider.enabled = false;
             }
-            else
+            else if (daySystem.BossCooldown == true)
             {
                 audioSource.PlayOneShot(Buzzer);
             }
@@ -214,7 +214,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 daySystem.BossCooldown = true;
                 Mcollider.enabled = false;
             }
-            else
+            else if (daySystem.BossCooldown == true)
             {
                 audioSource.PlayOneShot(Buzzer);
             }

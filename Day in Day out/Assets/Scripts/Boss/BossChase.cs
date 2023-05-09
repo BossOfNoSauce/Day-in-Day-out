@@ -168,5 +168,7 @@ public class BossChase : MonoBehaviour
 
     }
 
+    
+
 
 }
