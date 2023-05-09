@@ -55,3 +55,6 @@ TagManager:
   - name: Plant
     uniqueID: 906231029
     locked: 0
+  - name: Interaction
+    uniqueID: 2140484975
+    locked: 0
