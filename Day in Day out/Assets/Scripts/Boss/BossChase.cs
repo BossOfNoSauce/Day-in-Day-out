@@ -83,7 +83,9 @@ public class BossChase : MonoBehaviour
 
         if (startChase == true)
         {
-            BossAnim.SetTrigger("Run");
+            
+
+
             position = Boss.transform.position;
             Boss.transform.position = Vector3.MoveTowards(position, Points[pointsIndex].transform.position, moveSpeed * Time.deltaTime);
 
@@ -145,6 +147,7 @@ public class BossChase : MonoBehaviour
         elevator.SetTrigger("Elevator Open");
         audioSource.PlayOneShot(OpeningElevator);
         audioSource.PlayOneShot(ChaseMusic);
+        BossAnim.SetTrigger("Run");
         startChase = true;
 
     }
