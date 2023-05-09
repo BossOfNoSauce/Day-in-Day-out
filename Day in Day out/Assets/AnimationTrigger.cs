@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AnimationTrigger : MonoBehaviour
 {
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,14 @@ public class AnimationTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //do thing
+        
+
+        if (other.gameObject.tag == "Player")
+        {
+            //do thing
+            anim.SetTrigger("Ending");
+            Debug.Log("Hi");
+        }
+
     }
 }
