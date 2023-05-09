@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AnimationTrigger : MonoBehaviour
 {
@@ -24,8 +25,7 @@ public class AnimationTrigger : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             //do thing
-            anim.SetTrigger("Ending");
-            Debug.Log("Hi");
+            SceneManager.LoadScene("Ending");
         }
 
     }
