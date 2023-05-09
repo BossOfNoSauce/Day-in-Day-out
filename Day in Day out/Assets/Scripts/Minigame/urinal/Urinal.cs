@@ -32,7 +32,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     public GameObject PauseMenu;
     PauseGame pauseGame;
 
-    
+    public GameObject button;
     [SerializeField] private string prompt;
 
     public string InteractionPrompt => prompt;
@@ -44,6 +44,7 @@ public class Urinal : MonoBehaviour, Iinteractable
 
     public bool Interact(Interactor interactor)
     {
+        button.SetActive(false);
         //this is what happenes when you interact
         if (daySystem.urinalIsWin || daySystem.UrinalIsDone)//so that cant start game again
         {
@@ -72,6 +73,8 @@ public class Urinal : MonoBehaviour, Iinteractable
 
         gameManager = manager.GetComponent<GameManager>();
 
+        button.SetActive(true);
+
     }
 
     // Update is called once per frame
@@ -86,6 +89,14 @@ public class Urinal : MonoBehaviour, Iinteractable
             Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
 
             MainCam.transform.LookAt(target.transform.position, Vector3.up);
+        }
+
+        if(daySystem.Days >= 2)
+        {
+            if(daySystem.UrinalIsDone == false)
+            {
+                button.SetActive(true);
+            }
         }
     }
 

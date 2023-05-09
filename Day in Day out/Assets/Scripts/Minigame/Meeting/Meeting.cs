@@ -38,6 +38,8 @@ public class Meeting : MonoBehaviour, Iinteractable
     bool isGameWin;
 
     public GameObject tutUi;
+
+    public GameObject button;
     public bool Interact(Interactor interactor)
     {
         //this is what happenes when you interact
@@ -58,10 +60,19 @@ public class Meeting : MonoBehaviour, Iinteractable
         playerMovement = Player.GetComponent<PlayerMovement>();
         gameManager = manager.GetComponent<GameManager>();
         collider = GetComponent<Collider>();
+        button.SetActive(true);
     }
     public void Update()
     {
         //topTarget = new Vector3(0, 0, 0);
+        if (daySystem.Days >= 4)
+        {
+            if (daySystem.MeetingIsDone == false)
+            {
+                button.SetActive(true);
+            }
+        }
+
 
         if (GameIsActive == true)
         {

@@ -74,6 +74,8 @@ public class Computer : MonoBehaviour, Iinteractable
     public GameObject MetUI;
 
     public bool TheFunnyBool = false;
+
+    public GameObject button;
     public bool Interact(Interactor interactor)
     {
         Debug.Log(canCompute);
@@ -97,6 +99,7 @@ public class Computer : MonoBehaviour, Iinteractable
         playerMovement = Player.GetComponent<PlayerMovement>();
         firstPersonCameraRotation = MainCam.GetComponent<FirstPersonCameraRotation>();
         gameManager = manager.GetComponent<GameManager>();
+        button.SetActive(true);
        
     }
 
@@ -112,6 +115,12 @@ public class Computer : MonoBehaviour, Iinteractable
         if(daySystem.ComputerIsDone == false && TheFunnyBool == true)
         {
             canCompute = true;
+            
+        }
+
+        if(canCompute == true)
+        {
+            button.SetActive(true);
         }
 
        
