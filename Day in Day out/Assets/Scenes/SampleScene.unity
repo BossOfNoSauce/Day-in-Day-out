@@ -1238,7 +1238,7 @@ MonoBehaviour:
   urinalIsWin: 0
   MeetingIsDone: 0
   meetingIsWin: 0
-  Days: 1
+  Days: 3
   audioSource: {fileID: 26645121}
   DaySound: {fileID: 8300000, guid: 59eebf1817b5a084486f09ea833de533, type: 3}
   OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
@@ -18097,7 +18097,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453036762}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3da5aef7bcf51da4aba27643da63ec4f, type: 3}
   m_Name: 
@@ -18115,7 +18115,7 @@ BoxCollider:
   m_GameObject: {fileID: 453036762}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 9.999998, y: 2.7397614, z: 12.372166}
   m_Center: {x: 0.0000043417904, y: -1.3698807, z: 0.24885103}
@@ -24705,7 +24705,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601317640}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3da5aef7bcf51da4aba27643da63ec4f, type: 3}
   m_Name: 
@@ -24723,7 +24723,7 @@ BoxCollider:
   m_GameObject: {fileID: 601317640}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 9.999998, y: 2.844864, z: 12.167917}
   m_Center: {x: 0.0000043417904, y: -1.422432, z: 0.2244787}
@@ -66845,8 +66845,6 @@ GameObject:
   - component: {fileID: 1479680930}
   - component: {fileID: 1479680929}
   - component: {fileID: 1479680928}
-  - component: {fileID: 1479680931}
-  - component: {fileID: 1479680932}
   - component: {fileID: 1479680933}
   m_Layer: 0
   m_Name: Plane
@@ -66932,35 +66930,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1479680926}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1479680931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479680926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3da5aef7bcf51da4aba27643da63ec4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Coffee: {fileID: 7175000834096490009}
-  Noodles: {fileID: 2091466400}
-  Mug: {fileID: 919132148666838556}
-  kitchenObjs: {fileID: 2091466403}
---- !u!65 &1479680932
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479680926}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10.000002, y: 3.1446888, z: 12.0100155}
-  m_Center: {x: -0.000002702836, y: -1.5723448, z: -0.0544148}
 --- !u!65 &1479680933
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66972,8 +66941,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.000002, y: 2.2204466e-16, z: 9.999999}
-  m_Center: {x: -0.000002861023, y: 0, z: 0}
+  m_Size: {x: 10.000002, y: 1.0409985, z: 9.999999}
+  m_Center: {x: -0.000002702836, y: -0.52049935, z: 0}
 --- !u!1 &1480929133
 GameObject:
   m_ObjectHideFlags: 0
@@ -96019,8 +95988,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.000002, y: 1.854222, z: 10.000002}
-  m_Center: {x: 0, y: 0.20194948, z: 0}
+  m_Size: {x: 14.356277, y: 1.854222, z: 14.87246}
+  m_Center: {x: -1.3541418, y: 0.20194948, z: 1.3283577}
 --- !u!114 &2106136685
 MonoBehaviour:
   m_ObjectHideFlags: 0
