@@ -7,8 +7,11 @@ using TMPro;
 public class DaySystem : MonoBehaviour, Iinteractable
 {
     [SerializeField] private string prompt;
-
+    //player stuff
+    public PlayerMovement playerMovement;
     public GameObject player;
+
+    public PauseGame pause;
     public string InteractionPrompt => prompt;
 
     public bool cooldown;
@@ -27,32 +30,22 @@ public class DaySystem : MonoBehaviour, Iinteractable
     //audio
     public AudioSource audioSource;
     public AudioClip DaySound;
-
     public AudioClip OpeningElevator;
-
+    //boss stuff
     public bool BossCheck;
     public bool AbleToChase;
+    public bool BossCooldown;
     public GameObject JukeBoxObj;
     Jukebox jukebox;
-
+    //animations
     public GameObject BlackScreen;
-    ScreenFade screenFade;
-    public Animator animator;
-
+    public Animator animator;//screen fade
     public Animator elevator;
-
-    public PlayerMovement playerMovement;
     //game scripts, for reseting purpuses
     public Computer computer;
-
-
-
     public KitchenObjs kitchenObjs;
-
-    public bool BossCooldown;
-
+    //todo list
     public GameObject ToDoList;
-    
     //todo list ui elements
     public GameObject ComputerTaskUi;
     public GameObject UrinalTaskUi;
@@ -60,6 +53,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public GameObject MeetingTaskUi;
     public GameObject BossTaskUi;
     public GameObject ElevatorTaskUi;
+    //fail screen ui
+    public GameObject failScreen;
 
     public Collider CloseTrigger;
 
@@ -77,10 +72,15 @@ public class DaySystem : MonoBehaviour, Iinteractable
 
     public KitchenGame kitchenGame;
 
+<<<<<<< Updated upstream
     public GameObject Tint;
    Image image;
 
     
+=======
+
+    public bool temp = false;
+>>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {
@@ -98,12 +98,11 @@ public class DaySystem : MonoBehaviour, Iinteractable
     // Update is called once per frame
     void Update()
     {
-        //ENABLED URINALS
-
-        //PeeDoor.canOpen = PeeAnimator.enabled;
-       // kitchDoor.canOpen = KitchenAnimator.enabled;
-
-
+        if (temp)
+        {
+            resetDay();
+            temp = false;
+        }
 
     }
 
@@ -134,13 +133,13 @@ public class DaySystem : MonoBehaviour, Iinteractable
             yield return new WaitForSeconds(3);
             elevator.SetTrigger("Elevator Close");
             yield return new WaitForSeconds(2);
-            animator.SetTrigger("Ftb");
+            animator.SetTrigger("Ftb");//fade out
             yield return new WaitForSeconds(1);
             audioSource.PlayOneShot(DaySound); 
             yield return new WaitForSeconds(13);
             
             Days++;
-            animator.SetTrigger("fob");
+            animator.SetTrigger("fob");//fade in
             yield return new WaitForSeconds(2);
             elevator.SetTrigger("Elevator Open");
             audioSource.PlayOneShot(OpeningElevator);
@@ -239,5 +238,73 @@ public class DaySystem : MonoBehaviour, Iinteractable
 
         }
         
+    }
+    public void resetDay()
+    {
+        Debug.Log("reseting day");
+        StartCoroutine(reset());
+    }
+    IEnumerator reset()
+    {
+        Debug.Log("fade out");
+        //fade out and reveal text "YOUR FIRED" w/ a reset button
+        animator.SetTrigger("Ftb");//fade out
+        yield return new WaitForSeconds(2);
+        Debug.Log("showing fail screen & simPause");
+        pause.AbleToPause = false;
+        pause.simPaused();
+        failScreen.SetActive(true);
+        yield return new WaitForSeconds(0.01f);
+        BossCooldown = false;
+        //set player to inside elevator
+        Debug.Log("putting player into elevator");
+        player.transform.position = new Vector3(142, 7.4f, -43f);
+        playerMovement.InGame = true;
+        Debug.Log("fade in");
+        animator.SetTrigger("fob");//fade in
+        yield return new WaitForSeconds(2);
+        elevator.SetTrigger("Elevator Open");
+        audioSource.PlayOneShot(OpeningElevator);
+        cooldown = true;
+        jukebox.startMus = true;
+        playerMovement.InGame = false;
+        CloseTrigger.enabled = true;
+        //reset games
+        BossCooldown = false;
+        BossCheck = false;
+        //reset computer
+        computer.score = 0;
+        computer.resetGame();
+        //reset kitchen
+        kitchenGame.ResetObState();
+        kitchenObjs.ResetObjs();
+        kitchenGame.cooldown = false;
+        //urinal and meeting dont need a reset
+        //reset all game bools
+        computerIsWin = false;
+        ComputerIsDone = false;
+        urinalIsWin = false;
+        UrinalIsDone = false;
+        MeetingIsDone = false;
+        kitchenIsWin = false;
+        KitchenIsDone = false;
+        meetingIsWin = false;
+        MeetingIsDone = false;
+        //show todo lsit
+        ToDoList.SetActive(true);
+        ComputerTaskUi.SetActive(true);
+        if(Days > 1)
+        {
+            UrinalTaskUi.SetActive(true);
+        }
+        if(Days > 2)
+        {
+            KitchenTaskUi.SetActive(true);
+        }
+        if(Days > 3)
+        {
+            MeetingTaskUi.SetActive(true);
+        }
+        CloseTrigger.enabled = true;
     }
 }
