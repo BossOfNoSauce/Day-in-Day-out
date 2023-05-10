@@ -72,15 +72,12 @@ public class DaySystem : MonoBehaviour, Iinteractable
 
     public KitchenGame kitchenGame;
 
-<<<<<<< Updated upstream
     public GameObject Tint;
    Image image;
 
     
-=======
 
     public bool temp = false;
->>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {
