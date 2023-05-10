@@ -38,7 +38,15 @@ public class KitchenGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (CoffeeIsDone == true && NoodlesIsDone == true)
+        {
+            timer.SetActive(false);
+            Arm.SetActive(false);
+            Hand.HandActive = true;
+            daySystem.kitchenIsWin = true;
+            StopCoroutine(GameTimer());
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,6 +55,7 @@ public class KitchenGame : MonoBehaviour
         {
             if(cooldown == false)
             {
+                Arm.SetActive(true);
                 StartCoroutine(GameTimer());
                 cooldown = true;
             }
@@ -65,15 +74,7 @@ public class KitchenGame : MonoBehaviour
             Arm.SetActive(false);
             Hand.HandActive = true;
             
-            if (CoffeeIsDone == true && NoodlesIsDone == true)
-            {
-                timer.SetActive(false);
-                Arm.SetActive(false);
-                Hand.HandActive = true;
-                daySystem.kitchenIsWin = true;
-                StopCoroutine(GameTimer());
-
-            }
+            
 
             if(daySystem.kitchenIsWin || daySystem.KitchenIsDone)
             {
@@ -86,7 +87,6 @@ public class KitchenGame : MonoBehaviour
     {
         timer.SetActive(true);
         audioSource.PlayOneShot(ticking);
-        Arm.SetActive(true);
         Arm.transform.localPosition = new Vector3(0.004f, 0.523f, 1.44f);
         Hand.HandActive = false;
         //game timer enabled
@@ -96,6 +96,7 @@ public class KitchenGame : MonoBehaviour
         if(CoffeeIsDone == false && NoodlesIsDone == false)
         {
             daySystem.KitchenIsDone = true;
+            daySystem.kitchenIsWin = false;
             timer.SetActive(false);
             Debug.Log("you fucked up");
 

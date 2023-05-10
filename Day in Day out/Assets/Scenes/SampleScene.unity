@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -99231,7 +99231,7 @@ MonoBehaviour:
   grab: {fileID: 952766453}
   Kitchen: {fileID: 1065320136}
   audioSource: {fileID: 942235281}
-  Drink: {fileID: 8300000, guid: 2fd0e641b3c738a45b2392e4058668ed, type: 3}
+  Drink: {fileID: 8300000, guid: 265f8e3f33458874bb9879f365d19b3c, type: 3}
   cMachine: {fileID: 1563438415}
   AbleToGrab: 1
   button: {fileID: 241155854}
