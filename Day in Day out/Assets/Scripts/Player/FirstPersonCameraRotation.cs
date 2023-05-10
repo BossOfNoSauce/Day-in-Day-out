@@ -58,10 +58,6 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 	const string yAxis = "Mouse Y";
 
 	void Update(){
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
         if (David == true)
         {
 			StartCoroutine(Thing());
@@ -106,10 +102,11 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 		FreezeMovement = false;
 		David = false;
 		playerMovement.InGame = false;
-
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 	}
 
-	
+
 
 
 

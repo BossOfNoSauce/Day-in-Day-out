@@ -7,7 +7,8 @@ public class Meeting : MonoBehaviour, Iinteractable
     [SerializeField] private string prompt;
 
     public string InteractionPrompt => prompt;
-    public PauseGame pause;
+    public GameObject pauseUi;
+    PauseGame pause;
     public DaySystem daySystem;
 
     public GameObject manager;
@@ -51,6 +52,7 @@ public class Meeting : MonoBehaviour, Iinteractable
 
     public void Start()
     {
+        pause = pauseUi.GetComponent<PauseGame>();
         //rigidbody stuff
         TRB = Top.GetComponent<Rigidbody>();
         BRB = Bottom.GetComponent<Rigidbody>();
@@ -101,6 +103,7 @@ public class Meeting : MonoBehaviour, Iinteractable
     void endGame()//ends the game by resetting and setting bools
     {
         //set in game to false
+        pause.AbleToPause = true;
         playerMovement.InGame = false;
         gameManager.gameActive = false;
         GameIsActive = false;
@@ -127,14 +130,15 @@ public class Meeting : MonoBehaviour, Iinteractable
     public IEnumerator MeetingTime()//start game
     {
         {
-            pause.simPaused();
-            tutUi.SetActive(true);//tutorial ui
+            
             playerMovement.InGame = true;
             gameManager.gameActive = true;
             GameIsActive = true;
             collider.enabled = false;
-            
             Player.transform.position = new Vector3(-19, 6.5f, -65);
+            pause.AbleToPause = false;
+            pause.simPaused();
+            tutUi.SetActive(true);//tutorial ui
             yield return new WaitForSeconds(3.25f);
             Sleepy();
             yield return new WaitForSeconds(20f);
