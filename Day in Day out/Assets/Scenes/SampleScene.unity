@@ -82950,7 +82950,7 @@ MonoBehaviour:
   day2monologue: {fileID: 8300000, guid: 46e4f95a069c5eb4a8ef943b5818daef, type: 3}
   day3monologue: {fileID: 8300000, guid: 0a2366583eea70b41bc1b644f64b8bc1, type: 3}
   day4monologue: {fileID: 8300000, guid: cc6bf2681efc5634e851f8c627ab9d71, type: 3}
-  Finalmonologue: {fileID: 8300000, guid: a42fce03bc7efbd4b9eae17978735e8a, type: 3}
+  Finalmonologue: {fileID: 8300000, guid: e02717a2b69d73342b1f2052a93d90ba, type: 3}
   Buzzer: {fileID: 8300000, guid: 1481dce32aa33d14ca68baf78b99cf8a, type: 3}
   textBox: {fileID: 1489839664}
   JukeBoxObj: {fileID: 830215002}
@@ -84823,13 +84823,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781619327}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0.022904748, z: -0, w: 0.99973774}
   m_LocalPosition: {x: 0.33, y: -0.0356, z: 0.375}
   m_LocalScale: {x: 0.8716061, y: 0.068773754, z: 0.1244306}
   m_Children: []
   m_Father: {fileID: 1546175151}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -2.625, z: 0}
 --- !u!135 &1781619329
 SphereCollider:
   m_ObjectHideFlags: 0

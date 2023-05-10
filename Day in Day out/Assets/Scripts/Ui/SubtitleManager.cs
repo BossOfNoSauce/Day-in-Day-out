@@ -193,7 +193,7 @@ public class SubtitleManager : MonoBehaviour
 
     public IEnumerator Boss5()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         textBox.GetComponent<Text>().text = "Hey uh kid, whatcha doin here.";
         yield return new WaitForSeconds(2.5f);
         textBox.GetComponent<Text>().text = "You don’t need to be here today ";
