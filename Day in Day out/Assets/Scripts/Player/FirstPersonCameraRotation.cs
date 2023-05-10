@@ -41,9 +41,10 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 	
     private void Start()
     {
-	    
-		
-		
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+
+
 	} 
     public float Sensitivity {
 		get { return sensitivity; }

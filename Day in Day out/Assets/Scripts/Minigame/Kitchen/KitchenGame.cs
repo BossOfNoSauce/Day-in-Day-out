@@ -44,6 +44,7 @@ public class KitchenGame : MonoBehaviour
             Arm.SetActive(false);
             Hand.HandActive = true;
             daySystem.kitchenIsWin = true;
+            daySystem.KitchenIsDone = true;
             StopCoroutine(GameTimer());
 
         }

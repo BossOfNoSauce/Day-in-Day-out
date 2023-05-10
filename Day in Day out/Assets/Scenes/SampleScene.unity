@@ -1438,7 +1438,7 @@ MonoBehaviour:
   urinalIsWin: 0
   MeetingIsDone: 0
   meetingIsWin: 0
-  Days: 4
+  Days: 1
   audioSource: {fileID: 26645121}
   DaySound: {fileID: 8300000, guid: 59eebf1817b5a084486f09ea833de533, type: 3}
   OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
@@ -11955,6 +11955,8 @@ MonoBehaviour:
   manager: {fileID: 1818565575}
   cursor: {fileID: 191246550}
   audioSource: {fileID: 1818565578}
+  BossaudioSource: {fileID: 1743486951}
+  Music: {fileID: 830215006}
   AbleToPause: 1
   menuActive: 0
 --- !u!1 &268380486
@@ -19998,8 +20000,6 @@ GameObject:
   - component: {fileID: 465126590}
   - component: {fileID: 465126589}
   - component: {fileID: 465126588}
-  - component: {fileID: 465126587}
-  - component: {fileID: 465126586}
   m_Layer: 6
   m_Name: ShadowMan (3)
   m_TagString: Untagged
@@ -20021,40 +20021,6 @@ Transform:
   m_Father: {fileID: 225808831}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &465126586
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465126584}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 7e1f483b996cbc54c93cb5fd3be581db, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!95 &465126587
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465126584}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6915eb52e9bf1d64fadaff9f8ebc64ce, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &465126588
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -53161,6 +53127,8 @@ MonoBehaviour:
   manager: {fileID: 0}
   cursor: {fileID: 0}
   audioSource: {fileID: 0}
+  BossaudioSource: {fileID: 0}
+  Music: {fileID: 0}
   AbleToPause: 1
   menuActive: 0
 --- !u!1 &1156496566 stripped
