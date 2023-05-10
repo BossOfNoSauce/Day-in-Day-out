@@ -19,7 +19,7 @@ public class PauseGame : MonoBehaviour
 
     public void Paused()
     {
-        
+        Debug.Log("pauseing");
         if(AbleToPause == true)
         {
             Time.timeScale = 0f;
@@ -35,11 +35,15 @@ public class PauseGame : MonoBehaviour
     }
     public void simPaused()
     {
+        Debug.Log("simple pause");
         Time.timeScale = 0f;
         cursor.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
     public void Resume()
     {
+        Debug.Log("resuming");
        if(AbleToPause == true)
         {
             Time.timeScale = 1.0f;
@@ -56,8 +60,11 @@ public class PauseGame : MonoBehaviour
     }
     public void simResume()
     {
+        Debug.Log("simple resume");
         cursor.SetActive(false);
         Time.timeScale = 1.0f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     public void LoadMainMenu()
     {
