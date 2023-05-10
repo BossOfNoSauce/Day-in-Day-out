@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class DaySystem : MonoBehaviour, Iinteractable
 {
@@ -74,6 +76,11 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public AudioClip B;
 
     public KitchenGame kitchenGame;
+
+    public GameObject Tint;
+   Image image;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +90,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
         KitchenAnimator.enabled = false;
        // PeeDoor.enabled = false;
         PeeAnimator.enabled = false;
+        image = gameObject.GetComponent<Image>();
 
 
     }
@@ -209,7 +217,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if (Days == 5)
             {
-                audioSource.PlayOneShot(B, 0.4f);
+                Tint.GetComponent<Image>().color = new Color32(255, 0, 15, 26);
+                audioSource.Play();
                 BossCheck = false;
                 computer.resetGame();
                 ToDoList.SetActive(true);

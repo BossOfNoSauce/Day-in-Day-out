@@ -26,7 +26,7 @@ public class KitchenGame : MonoBehaviour
     public GameObject DayManager;
     DaySystem daySystem;
 
-
+    public Microwave microwave;
     // Start is called before the first frame update
     void Start()
     {
@@ -109,5 +109,6 @@ public class KitchenGame : MonoBehaviour
         CoffeeIsDone = false;
         noodleStage = 0;
         coffeeStage = 0;
+        microwave.thebool = true;
     }
 }
