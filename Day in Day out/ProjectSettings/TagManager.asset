@@ -58,3 +58,6 @@ TagManager:
   - name: Interaction
     uniqueID: 2140484975
     locked: 0
+  - name: Boss
+    uniqueID: 4187586295
+    locked: 0
