@@ -9,6 +9,8 @@ public class ReturnPos : MonoBehaviour
     public GameObject Mug;
 
     public KitchenObjs kitchenObjs;
+
+    public bool wall;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,21 +29,45 @@ public class ReturnPos : MonoBehaviour
         {
             Coffee.transform.localPosition = new Vector3(34, 1, -66);
             kitchenObjs.GrabBool = false;
-            kitchenObjs.simDrop();
+           // kitchenObjs.simDrop();
         }
 
         if (other.gameObject.tag == "Noodles")
         {
             Noodles.transform.localPosition = new Vector3(35, 4.5f, -68);
             kitchenObjs.GrabBool = false;
-            kitchenObjs.simDrop();
+           // kitchenObjs.simDrop();
         }
 
         if (other.gameObject.tag == "Mug")
         {
             Mug.transform.localPosition = new Vector3(34, 1.5f, -61);
             kitchenObjs.GrabBool = false;
-            kitchenObjs.simDrop();
+           // kitchenObjs.simDrop();
+        }
+
+        if(wall == true)
+        {
+            if (other.gameObject.tag == "Coffee")
+            {
+                Coffee.transform.localPosition = new Vector3(34, 1, -66);
+                kitchenObjs.GrabBool = false;
+                kitchenObjs.simDrop();
+            }
+
+            if (other.gameObject.tag == "Noodles")
+            {
+                Noodles.transform.localPosition = new Vector3(35, 4.5f, -68);
+                kitchenObjs.GrabBool = false;
+                kitchenObjs.simDrop();
+            }
+
+            if (other.gameObject.tag == "Mug")
+            {
+                Mug.transform.localPosition = new Vector3(34, 1.5f, -61);
+                kitchenObjs.GrabBool = false;
+                kitchenObjs.simDrop();
+            }
         }
     }
 }

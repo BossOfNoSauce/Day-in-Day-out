@@ -60,6 +60,14 @@ public class BossChase : MonoBehaviour
 
     public GameObject Crash1;
     public GameObject Crash2;
+
+    public GameObject Barrier;
+    public GameObject Barrier2;
+    public GameObject Barrier3;
+
+    public GameObject Door;
+
+
     void Start()
     {
         //transform.position = Points[pointsIndex].transform.position;
@@ -136,7 +144,10 @@ public class BossChase : MonoBehaviour
         audioSource.PlayOneShot(BigMonologue, 1f);
         yield return new WaitForSeconds(3);
         BossAnim.SetTrigger("Turn");
-
+        Barrier.SetActive(true);
+        Door.SetActive(true);
+        Barrier2.SetActive(true);
+        Barrier3.SetActive(true);
         debrisTrigger.SetActive(true);
         debris.SetActive(true);
         desks.SetActive(false);
@@ -154,9 +165,11 @@ public class BossChase : MonoBehaviour
         yield return new WaitForSeconds(5);
         elevator.SetTrigger("Elevator Open");
         audioSource.PlayOneShot(OpeningElevator);
-        audioSource.PlayOneShot(ChaseMusic);
         BossAnim.SetTrigger("Run");
         startChase = true;
+        audioSource.PlayOneShot(ChaseMusic);
+        yield return new WaitForSeconds(4.75f);
+        audioSource.Play();
 
     }
 

@@ -167,6 +167,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             if(Days == 3)
             {
                 kitchenGame.ResetObState();
+                kitchenGame.cooldown = false;
                 kitchDoor.enabled = true;
                 KitchenAnimator.enabled = true;
                 computer.score = 0;
@@ -187,6 +188,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             if(Days == 4)
             {
                 kitchenGame.ResetObState();
+                kitchenGame.cooldown = false;
                 MeetingAnimator.enabled = true;
                 computer.score = 0;
                 BossCheck = false;

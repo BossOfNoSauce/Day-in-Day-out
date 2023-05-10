@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(8);
             audioSource.PlayOneShot(Dialogue, 0.7F);
             StartCoroutine(subtitle.intro());
-            yield return new WaitForSeconds(51);
+            yield return new WaitForSeconds(53);
             audioSource.PlayOneShot(door, 0.7f);
             animator.SetTrigger("Open");
             jukebox.startMus = true;

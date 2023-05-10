@@ -7,6 +7,7 @@ public class KitchenGame : MonoBehaviour
     public GameObject Player;
     public GameObject Arm;
 
+    public bool cooldown;
    
     HAND Hand;
 
@@ -44,8 +45,12 @@ public class KitchenGame : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-
-            StartCoroutine(GameTimer());
+            if(cooldown == false)
+            {
+                StartCoroutine(GameTimer());
+                cooldown = true;
+            }
+            
 
        
 
@@ -72,7 +77,7 @@ public class KitchenGame : MonoBehaviour
 
             if(daySystem.kitchenIsWin || daySystem.KitchenIsDone)
             {
-                //slam the door behind him
+                StopCoroutine(GameTimer());
             }
         }
     }

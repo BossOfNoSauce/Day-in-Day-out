@@ -21,6 +21,10 @@ public class YouFuckingDie : MonoBehaviour
     public GameObject Teeny;
 
     public BossChase bossChase;
+
+    public AudioSource BossSource;
+
+    public Collider bossTrigger;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,5 +66,11 @@ public class YouFuckingDie : MonoBehaviour
         animator.SetTrigger("fob");
         elevator.SetTrigger("Elevator Open");
         audioSource.PlayOneShot(OpeningElevator);
+        bossChase.startChase = false;
+        BossSource.Stop();
+        bossTrigger.enabled = true;
+        
+
+
     }
 }
