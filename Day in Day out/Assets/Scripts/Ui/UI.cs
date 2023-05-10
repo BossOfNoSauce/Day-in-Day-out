@@ -10,6 +10,8 @@ public class UI : MonoBehaviour
     public Transform target;
     public bool john;
     public Animator animator;
+    public Animator anim;
+    public Animator animater;
     public AudioSource audioSource;
     public AudioClip Music;
     public PauseGame pause;
@@ -55,8 +57,10 @@ public class UI : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
         animator.SetTrigger("CameraMove");
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
         audioSource.PlayOneShot(Music);
+        yield return new WaitForSeconds(3);
+        anim.SetTrigger("Enter");
         john = true;
     }
 
@@ -65,6 +69,8 @@ public class UI : MonoBehaviour
         if(john == true)
         {
             animator.SetTrigger("CameraPan");
+            anim.SetTrigger("End");
+            animater.SetTrigger("IntroThing");
             yield return new WaitForSeconds(3.25f);
             StartGame();
         }
