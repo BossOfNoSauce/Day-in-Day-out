@@ -81407,6 +81407,7 @@ MonoBehaviour:
   bossui: {fileID: 136793434}
   elevatorui: {fileID: 1846320552}
   button: {fileID: 8465163}
+  subtitle: {fileID: 1818565579}
 --- !u!64 &1743486947
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -84414,6 +84415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1818565577}
+  - component: {fileID: 1818565579}
   - component: {fileID: 1818565576}
   - component: {fileID: 1818565578}
   m_Layer: 0
@@ -84441,11 +84443,11 @@ MonoBehaviour:
   animator: {fileID: 756433541}
   door: {fileID: 8300000, guid: 173f757791818af4c99b4c1532b4d044, type: 3}
   TheBool: 0
-  textBox: {fileID: 1489839664}
+  textBox: {fileID: 0}
   JukBox: {fileID: 830215002}
   computer: {fileID: 2098371508}
-  bookScript: {fileID: 817218331}
   StartGame: 0
+  subtitle: {fileID: 1818565579}
 --- !u!4 &1818565577
 Transform:
   m_ObjectHideFlags: 0
@@ -84556,6 +84558,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1818565579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818565575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbec521827be97748808a6c2358aee65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBox: {fileID: 1489839664}
+  bookScript: {fileID: 817218331}
 --- !u!1 &1819408619
 GameObject:
   m_ObjectHideFlags: 0
