@@ -58,7 +58,8 @@ public class BossChase : MonoBehaviour
 
     public Animator BossAnim;
 
-
+    public GameObject Crash1;
+    public GameObject Crash2;
     void Start()
     {
         //transform.position = Points[pointsIndex].transform.position;
@@ -106,7 +107,7 @@ public class BossChase : MonoBehaviour
                     pointsIndex += 1;
                 }
             }*/
-            //StartCoroutine(MoveTowards());
+            StartCoroutine(MoveTowards());
         }
     }
 
@@ -157,8 +158,10 @@ public class BossChase : MonoBehaviour
     public IEnumerator MoveTowards()
     {
 
-        yield return new WaitForSeconds(1);
-
+        yield return new WaitForSeconds(3);
+        Crash1.SetActive(true);
+        yield return new WaitForSeconds(76);
+        Crash2.SetActive(true);
 
 
 

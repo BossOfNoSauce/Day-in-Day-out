@@ -72,6 +72,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public Animator PeeAnimator;
 
     public AudioClip B;
+
+    public KitchenGame kitchenGame;
     // Start is called before the first frame update
     void Start()
     {
@@ -164,6 +166,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if(Days == 3)
             {
+                kitchenGame.ResetObState();
                 kitchDoor.enabled = true;
                 KitchenAnimator.enabled = true;
                 computer.score = 0;
@@ -183,6 +186,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if(Days == 4)
             {
+                kitchenGame.ResetObState();
                 MeetingAnimator.enabled = true;
                 computer.score = 0;
                 BossCheck = false;

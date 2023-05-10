@@ -96,4 +96,12 @@ public class KitchenGame : MonoBehaviour
 
         }
     }
+
+    public void ResetObState()
+    {
+        NoodlesIsDone = false;
+        CoffeeIsDone = false;
+        noodleStage = 0;
+        coffeeStage = 0;
+    }
 }

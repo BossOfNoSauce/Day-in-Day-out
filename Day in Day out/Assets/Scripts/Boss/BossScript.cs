@@ -149,6 +149,7 @@ public class BossScript : MonoBehaviour, Iinteractable
             
             if (daySystem.computerIsWin == true && daySystem.urinalIsWin == true && daySystem.kitchenIsWin == true && daySystem.BossCooldown == false)
             {
+
                 daySystem.BossCooldown = true;
                 AnimTrigger.enabled = false;
                 Mcollider.enabled = true;
