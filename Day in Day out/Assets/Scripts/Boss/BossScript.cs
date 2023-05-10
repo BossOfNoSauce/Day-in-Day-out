@@ -103,6 +103,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 elevatorui.SetActive(true);
                 ToDoUi.SetActive(true);
                 daySystem.cooldown = false;
+
                 elevator.SetTrigger("Elevator Open");
                 audioSource.PlayOneShot(OpeningElevator);
                 Mcollider.enabled = false;
@@ -132,6 +133,9 @@ public class BossScript : MonoBehaviour, Iinteractable
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
+                bossui.SetActive(false);
+                elevatorui.SetActive(true);
+                ToDoUi.SetActive(true);
                 daySystem.cooldown = false;
                 elevator.SetTrigger("Elevator Open");
                 audioSource.PlayOneShot(OpeningElevator);
@@ -163,6 +167,9 @@ public class BossScript : MonoBehaviour, Iinteractable
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
+                bossui.SetActive(false);
+                elevatorui.SetActive(true);
+                ToDoUi.SetActive(true);
                 daySystem.cooldown = false;
                 elevator.SetTrigger("Elevator Open");
                 audioSource.PlayOneShot(OpeningElevator);
@@ -193,6 +200,9 @@ public class BossScript : MonoBehaviour, Iinteractable
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
+                bossui.SetActive(false);
+                elevatorui.SetActive(true);
+                ToDoUi.SetActive(true);
                 daySystem.cooldown = false;
                 elevator.SetTrigger("Elevator Open");
                 audioSource.PlayOneShot(OpeningElevator);
