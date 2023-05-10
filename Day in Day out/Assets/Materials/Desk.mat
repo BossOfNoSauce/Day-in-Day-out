@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Boss' Hallway
+  m_Name: Desk
   m_Shader: {fileID: 4800000, guid: e4952fd04a2d7f04fa0d3aa7c014b9f3, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -74,6 +74,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.6132076, g: 0.3168574, b: 0.19379672, a: 1}
+    - _Color: {r: 0.5471698, g: 0.38517642, b: 0.16776434, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

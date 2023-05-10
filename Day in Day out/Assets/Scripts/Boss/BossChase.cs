@@ -179,7 +179,7 @@ public class BossChase : MonoBehaviour
 
         yield return new WaitForSeconds(3);
         Crash1.SetActive(true);
-        yield return new WaitForSeconds(70);
+        yield return new WaitForSeconds(72);
         Crash2.SetActive(true);
 
 
