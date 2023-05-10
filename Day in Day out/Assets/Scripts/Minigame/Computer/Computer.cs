@@ -8,25 +8,11 @@ public class Computer : MonoBehaviour, Iinteractable
     [SerializeField] private string prompt;
 
     public string InteractionPrompt => prompt;
-
-    //found bugs, bugs are squished now
-    //  [X]can open pause menu while playing
-    //  [x]game doesnt end
-    //  [X]no fail state in script
-    //      [x]add bad buttons no press
-    //      [x]make new array for bad button & rename spots to good btn
-    //      [x]add ui elements
-    //          [x]tutorial screen
-    //          [x]in game ui
-    //              [x]score display
-    //              [x]life counter
-    //      [x]recode button logic
-    //          [x]if hand collide with bad key, game end || a counter (like a hp bar) goes down and 0 == fail
     //rewrite-outline
-    //[x]find where daysystem script is called
-    //  [-]add if not found
-    //[x]call corrisponding bools wihtin the daySystem script
-    //  [x]make dayWin/Fail into one bool
+    //[]find the color setter
+    //[]add two public gameobjects for the check and cross
+    //  []reveal proper check / cross by replacing the color thing
+    //[]delet unecissary vars
     public GameObject manager;
     GameManager gameManager;
     public GameObject target;
@@ -52,7 +38,9 @@ public class Computer : MonoBehaviour, Iinteractable
     PauseGame pause;
     public Image[] lifeCountUi;//should never be greater than 3
     int life = 3;
-    public GameObject computerCheck;//for todo list
+    //todo lsit check / cross
+    public GameObject computerCheck;
+    public GameObject computerCross;
     //audio
     public AudioSource audioSource;
     public AudioClip type;
@@ -235,8 +223,10 @@ public class Computer : MonoBehaviour, Iinteractable
             badCurrentSpot.SetActive(false);
             goodCurrentSpot.SetActive(false);
             //set check list, rewrite when todo sprites come in
-            Image temp = computerCheck.GetComponent<Image>();
-            temp.color = (daySystem.computerIsWin ?  new Color32(0, 255, 0, 100) : new Color32(255, 0, 0, 100));//if game is win, set image to green, else red
+            if (daySystem.computerIsWin)
+                computerCheck.SetActive(true);
+            else
+                computerCross.SetActive(true);
         }
 
     }
@@ -264,8 +254,11 @@ public class Computer : MonoBehaviour, Iinteractable
     }
     public void resetGame()
     {
+        computerCheck.SetActive(false);
+        computerCross.SetActive(false);
         isGameFinished = false;
-        for(int i = 0; i < 3; i++)
+        text.text = "score = " + score + " / 10";
+        for (int i = 0; i < 3; i++)
         {
             lifeCountUi[i].color = new Color32(0, 255, 0, 100);
         }

@@ -99669,7 +99669,8 @@ MonoBehaviour:
   - {fileID: 1538190191}
   - {fileID: 908317286}
   - {fileID: 114132315}
-  computerCheck: {fileID: 1707859798}
+  computerCheck: {fileID: 1061922989}
+  computerCross: {fileID: 0}
   audioSource: {fileID: 2098371510}
   type: {fileID: 8300000, guid: e10b167335af1a24d972e28399ff9867, type: 3}
   cooldown: 0
