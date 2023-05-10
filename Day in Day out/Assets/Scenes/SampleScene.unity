@@ -69909,7 +69909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: 
-  pause: {fileID: 268373964}
+  pauseUi: {fileID: 268373959}
   daySystem: {fileID: 26645120}
   manager: {fileID: 1818565575}
   playerPosition: {x: 0, y: 0, z: 0}
