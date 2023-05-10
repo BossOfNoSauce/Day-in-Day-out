@@ -151,7 +151,7 @@ public class SubtitleManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         textBox.GetComponent<Text>().text = "Uh.. he-hey, there ya are kid.";
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2f);
         textBox.GetComponent<Text>().text = "Another stellar day of work.";
         yield return new WaitForSeconds(2.5f);
         textBox.GetComponent<Text>().text = "I would give you another raise,";

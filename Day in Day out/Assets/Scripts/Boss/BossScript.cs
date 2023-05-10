@@ -81,7 +81,7 @@ public class BossScript : MonoBehaviour, Iinteractable
         
         if (daySystem.Days == 1)
         {
-            if ( daySystem.BossCooldown == false)
+            if ( daySystem.BossCooldown == false && daySystem.computerIsWin == true)
             {
                 
                 daySystem.BossCooldown = true;

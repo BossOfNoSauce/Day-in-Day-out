@@ -115,8 +115,13 @@ public class BossChase : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            trigger.enabled = false;
-            StartCoroutine(Stare());
+            if(startChase == false)
+            {
+                Debug.Log("im triggering the big one");
+                trigger.enabled = false;
+                StartCoroutine(Stare());
+            }
+           
         }
 
 
@@ -160,7 +165,7 @@ public class BossChase : MonoBehaviour
 
         yield return new WaitForSeconds(3);
         Crash1.SetActive(true);
-        yield return new WaitForSeconds(76);
+        yield return new WaitForSeconds(70);
         Crash2.SetActive(true);
 
 

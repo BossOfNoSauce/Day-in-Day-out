@@ -19,6 +19,8 @@ public class YouFuckingDie : MonoBehaviour
     public AudioClip OpeningElevator;
 
     public GameObject Teeny;
+
+    public BossChase bossChase;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +39,12 @@ public class YouFuckingDie : MonoBehaviour
         {
             if(gameObject.tag == "SubBoss")
             {
-                StartCoroutine(Death());
-                //death stuff
+                if(bossChase.startChase == true)
+                {
+                    StartCoroutine(Death());
+                    //death stuff
+                }
+
             }
 
         }

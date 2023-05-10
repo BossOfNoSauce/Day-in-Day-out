@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -32667,6 +32667,7 @@ MonoBehaviour:
   audioSource: {fileID: 741036051}
   OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
   Teeny: {fileID: 741036048}
+  bossChase: {fileID: 913893884}
 --- !u!1 &742949851
 GameObject:
   m_ObjectHideFlags: 0
@@ -92417,6 +92418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1968663614}
+  - component: {fileID: 1968663615}
   m_Layer: 0
   m_Name: Sofadeeznuts
   m_TagString: Untagged
@@ -92440,6 +92442,19 @@ Transform:
   m_Father: {fileID: 1400841116}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1968663615
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968663613}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.54467, y: 10.728367, z: 5.2590795}
+  m_Center: {x: -4.5102196, y: 2.8183508, z: -0.2032148}
 --- !u!1 &1971361628
 GameObject:
   m_ObjectHideFlags: 0
