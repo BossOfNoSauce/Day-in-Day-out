@@ -190,24 +190,24 @@ public class SubtitleManager : MonoBehaviour
     }
 
     
-
+    //done
     public IEnumerator Boss5()
     {
-        yield return new WaitForSeconds(1f);
-        textBox.GetComponent<Text>().text = "Hey uh kid, whatcha doin here.";
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(0.4f);
+        textBox.GetComponent<Text>().text = "Hey uh kid, wha-whatcha doin here";
+        yield return new WaitForSeconds(4f);
         textBox.GetComponent<Text>().text = "You don’t need to be here today ";
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(0.9f);
         textBox.GetComponent<Text>().text = "I’m uh a little busy with something…  ";
-        yield return new WaitForSeconds(6);
-        textBox.GetComponent<Text>().text = "Huh? You wondering where everyone is? ";
+        yield return new WaitForSeconds(2);
+        textBox.GetComponent<Text>().text = "Huh? You're wondering where everyone is? ";
         yield return new WaitForSeconds(3.5f);
         textBox.GetComponent<Text>().text = "Well…";
-        yield return new WaitForSeconds(2.25f);
+        yield return new WaitForSeconds(1.3f);
         textBox.GetComponent<Text>().text = "It’s national be lazy and don’t come to work day…";
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(2.5f);
         textBox.GetComponent<Text>().text = "yeah…";
-        yield return new WaitForSeconds(1.4f);
+        yield return new WaitForSeconds(1.1f);
         textBox.GetComponent<Text>().text = "So uh... go home...";
         yield return new WaitForSeconds(2.25f);
         textBox.GetComponent<Text>().text = " ";
@@ -215,31 +215,31 @@ public class SubtitleManager : MonoBehaviour
 
     public IEnumerator BossEnd()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(.6f);
         textBox.GetComponent<Text>().text = "I told you I’m busy, kid…";
-        yield return new WaitForSeconds(2.5f);
-        textBox.GetComponent<Text>().text = "You’re supposed to do exactly what I say,";
-        yield return new WaitForSeconds(2.5f);
-        textBox.GetComponent<Text>().text = "but no. You just ahd to disobey me...";
-        yield return new WaitForSeconds(6);
-        textBox.GetComponent<Text>().text = "You’re just like the rest of those incompetent slackers.";
+        yield return new WaitForSeconds(2.8f);
+        textBox.GetComponent<Text>().text = "You’re supposed to do exactly what I say";
+        yield return new WaitForSeconds(3f);
+        textBox.GetComponent<Text>().text = "but no. You just had to disobey me...";
         yield return new WaitForSeconds(3.5f);
-        textBox.GetComponent<Text>().text = "Never listening till it’s too late.";
+        textBox.GetComponent<Text>().text = "You’re just like the rest of those incompetent slackers";
+        yield return new WaitForSeconds(3.5f);
+        textBox.GetComponent<Text>().text = "Never listening until it’s too late";
         yield return new WaitForSeconds(2.25f);
-        textBox.GetComponent<Text>().text = "This company will skyrocket now that all those";
-        yield return new WaitForSeconds(3.5f);
-        textBox.GetComponent<Text>().text = "worthless employees are now top of the line machines.";
-        yield return new WaitForSeconds(1.4f);
-        textBox.GetComponent<Text>().text = "Finally listening to my commands and doing it,";
+        textBox.GetComponent<Text>().text = "This company will skyrocket now that these";
+        yield return new WaitForSeconds(2.3f);
+        textBox.GetComponent<Text>().text = "worthless employees are top of the line machines";
+        yield return new WaitForSeconds(3.4f);
+        textBox.GetComponent<Text>().text = "Finally listening to my commands and doing it";
         yield return new WaitForSeconds(3);
-        textBox.GetComponent<Text>().text = "rather than wasting every single day ";
+        textBox.GetComponent<Text>().text = "rather than wasting every single day";
         yield return new WaitForSeconds(2);
-        textBox.GetComponent<Text>().text = "slowly withing this company to death!";
+        textBox.GetComponent<Text>().text = "slowly withering this company to death!";
         yield return new WaitForSeconds(3.25f);
-        textBox.GetComponent<Text>().text = "I gave you a chance to leave, kid,";
-        yield return new WaitForSeconds(2.75f);
+        textBox.GetComponent<Text>().text = "I gave you a chance to leave, kid";
+        yield return new WaitForSeconds(2.5f);
         textBox.GetComponent<Text>().text = "but now you’ve seen too much…";
-        yield return new WaitForSeconds(2.25f);
+        yield return new WaitForSeconds(2.4f);
         textBox.GetComponent<Text>().text = "YOU'RE FIRED";
         yield return new WaitForSeconds(2.25f);
         textBox.GetComponent<Text>().text = " ";

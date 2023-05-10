@@ -67,7 +67,7 @@ public class BossChase : MonoBehaviour
 
     public GameObject Door;
 
-
+    public SubtitleManager subtitle;
     void Start()
     {
         //transform.position = Points[pointsIndex].transform.position;
@@ -142,6 +142,7 @@ public class BossChase : MonoBehaviour
         firstPersonCamera.FreezeMovement = true;
         Camera.transform.LookAt(Boss.transform.position, Vector3.up);
         audioSource.PlayOneShot(BigMonologue, 1f);
+        StartCoroutine(subtitle.BossEnd());
         yield return new WaitForSeconds(3);
         BossAnim.SetTrigger("Turn");
         Barrier.SetActive(true);

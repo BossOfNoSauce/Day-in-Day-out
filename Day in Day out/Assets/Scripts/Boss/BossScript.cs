@@ -46,6 +46,7 @@ public class BossScript : MonoBehaviour, Iinteractable
     public GameObject button;
 
     public SubtitleManager subtitle;
+    public Animator BossDoorAnim;
     // Start is called before the first frame update
     void Start()
     {
@@ -227,7 +228,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 StartCoroutine(subtitle.Boss5());
                 yield return new WaitForSeconds(20); // Number is not confirmed, dependant on sound file
                 BossImage.SetActive(false);
-                BossDoor.SetActive(false);
+                BossDoorAnim.SetTrigger("BossOpen");
                 // swing open door
             }
         }
