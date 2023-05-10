@@ -52,6 +52,8 @@ public class BossChase : MonoBehaviour
     public GameObject Benches;
     public GameObject StrewnBenches;
 
+    public GameObject debrisTrigger;
+
     public GameObject ChaseDoor;
 
     public Animator BossAnim;
@@ -128,8 +130,8 @@ public class BossChase : MonoBehaviour
         audioSource.PlayOneShot(BigMonologue, 1f);
         yield return new WaitForSeconds(3);
         BossAnim.SetTrigger("Turn");
-        
 
+        debrisTrigger.SetActive(true);
         debris.SetActive(true);
         desks.SetActive(false);
         StrewnDesks.SetActive(true);

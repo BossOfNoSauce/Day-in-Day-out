@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -32200,7 +32200,7 @@ GameObject:
   - component: {fileID: 741036051}
   m_Layer: 10
   m_Name: BossCollision
-  m_TagString: Untagged
+  m_TagString: SubBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32348,6 +32348,7 @@ MonoBehaviour:
   elevator: {fileID: 1806412101}
   audioSource: {fileID: 741036051}
   OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
+  Teeny: {fileID: 741036048}
 --- !u!1 &742949851
 GameObject:
   m_ObjectHideFlags: 0
@@ -40994,6 +40995,7 @@ MonoBehaviour:
   SofaDeeznuts: {fileID: 1968663613}
   Benches: {fileID: 677294971}
   StrewnBenches: {fileID: 1665084712}
+  debrisTrigger: {fileID: 1183836323}
   ChaseDoor: {fileID: 1543974250}
   BossAnim: {fileID: 913893883}
 --- !u!212 &913893885
@@ -53725,7 +53727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1183836324
 Transform:
   m_ObjectHideFlags: 0

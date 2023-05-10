@@ -70,8 +70,8 @@ public class SubtitleManager : MonoBehaviour
         yield return new WaitForSeconds(4);
         textBox.GetComponent<Text>().text = "Don't worry about turnin' in your book";
         yield return new WaitForSeconds(1.7f);
-        textBox.GetComponent<Text>().text = "I trust ya enough that you're not gonna toss it or somethin'";
-        yield return new WaitForSeconds(3);
+        textBox.GetComponent<Text>().text = "I trust ya enough that you're not gonna toss it or burn it or somethin'";
+        yield return new WaitForSeconds(3.5f);
         textBox.GetComponent<Text>().text = "But, I must say, I apologize for pushing these new rules on ya kid";
         yield return new WaitForSeconds(4);
         textBox.GetComponent<Text>().text = "Our business, is frankly in disarray";
@@ -129,7 +129,7 @@ public class SubtitleManager : MonoBehaviour
         textBox.GetComponent<Text>().text = "Another day well done kid. ";
         yield return new WaitForSeconds(2.5f);
         textBox.GetComponent<Text>().text = "You're the prime example of a good worker ant.";
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(3);
         textBox.GetComponent<Text>().text = "Actually gets the job done, nothing more, nothing less.";
         yield return new WaitForSeconds(3.5f);
         textBox.GetComponent<Text>().text = "If I could make every employee like you,";

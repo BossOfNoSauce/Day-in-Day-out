@@ -9,6 +9,7 @@ TagManager:
   - Coffee
   - Noodles
   - cutscene
+  - SubBoss
   layers:
   - Default
   - TransparentFX
