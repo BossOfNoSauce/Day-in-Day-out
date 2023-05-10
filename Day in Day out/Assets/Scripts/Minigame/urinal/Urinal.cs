@@ -139,7 +139,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     IEnumerator StartUrination()
     {
         //urinalUI.SetActive(true);
-        target.transform.position = new Vector3(-3.32f, -12, 3.5f);
+        target.transform.localPosition = new Vector3(-3.32f, -12, 3.5f);
         firstPersonCameraRotation.FreezeMovement = true;
         pauseGame.AbleToPause = false; //dissables pause menu
         pauseGame.simPaused();

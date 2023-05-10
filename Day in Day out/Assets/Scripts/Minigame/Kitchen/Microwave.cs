@@ -94,7 +94,7 @@ public class Microwave : MonoBehaviour, Iinteractable
             yield return new WaitForSeconds(13);
             microOpen = true;
             kitchenGame.noodleStage = 2;
-            kitchenGame.NoodlesIsDone = true;
+            
             thebool = false;
             Mcollider.enabled = false;
             kitchenObjs.AbleToGrab = true;
