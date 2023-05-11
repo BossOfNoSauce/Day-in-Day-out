@@ -77,7 +77,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public GameObject Tint;
    Image image;
 
-    
+    public FirstPersonCameraRotation playerscript;
 
     public bool temp = false;
     // Start is called before the first frame update
@@ -264,8 +264,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
         Debug.Log("showing fail screen & simPause");
         pause.AbleToPause = false;
         pause.simPaused();
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
+        playerscript.FreezeMovement = true;
         failScreen.SetActive(true);
         yield return new WaitForSeconds(0.01f);
         BossCooldown = false;
@@ -278,8 +277,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
         yield return new WaitForSeconds(2);
         elevator.SetTrigger("Elevator Open");
         audioSource.PlayOneShot(OpeningElevator);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
+        playerscript.FreezeMovement = false;
         cooldown = true;
         jukebox.startMus = true;
         playerMovement.InGame = false;

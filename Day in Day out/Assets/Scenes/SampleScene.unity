@@ -1438,7 +1438,7 @@ MonoBehaviour:
   urinalIsWin: 0
   MeetingIsDone: 0
   meetingIsWin: 0
-  Days: 1
+  Days: 2
   audioSource: {fileID: 26645121}
   DaySound: {fileID: 8300000, guid: 59eebf1817b5a084486f09ea833de533, type: 3}
   OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
@@ -1471,6 +1471,7 @@ MonoBehaviour:
   B: {fileID: 8300000, guid: 6d26c126d6f4bdf4dac7efd45080e536, type: 3}
   kitchenGame: {fileID: 1065320139}
   Tint: {fileID: 975285406}
+  playerscript: {fileID: 963194229}
   temp: 0
 --- !u!82 &26645121
 AudioSource:
@@ -13032,7 +13033,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.764
+  m_Volume: 0.314
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -71376,7 +71377,7 @@ MonoBehaviour:
   speed: 0.4
   swayTime: 1
   GameIsActive: 0
-  right: {x: 12, y: 0, z: 0}
+  right: {x: 10, y: 0, z: 0}
   m_rigidbody: {fileID: 1467735993}
   Power: 7
   velocityActive: 1
