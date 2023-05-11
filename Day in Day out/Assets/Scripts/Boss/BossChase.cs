@@ -42,17 +42,14 @@ public class BossChase : MonoBehaviour
     public AudioClip OpeningElevator;
 
 
-    //map objects
+    //debrie and stuff
     public GameObject debris;
-
-    public GameObject desks;
-    public GameObject StrewnDesks;
-    public GameObject Sofa;
-    public GameObject SofaDeeznuts;
-    public GameObject Benches;
-    public GameObject StrewnBenches;
-
+    public GameObject barrir;
     public GameObject debrisTrigger;
+    //stuff to dissable
+    public GameObject desks;
+    public GameObject Sofa;
+    public GameObject Benches;
 
     public GameObject ChaseDoor;
 
@@ -131,6 +128,7 @@ public class BossChase : MonoBehaviour
             {
                 Debug.Log("im triggering the big one");
                 trigger.enabled = false;
+                barrir.SetActive(true);
                 StartCoroutine(Stare());
             }
            
@@ -154,13 +152,12 @@ public class BossChase : MonoBehaviour
         Barrier2.SetActive(true);
         Barrier3.SetActive(true);
         debrisTrigger.SetActive(true);
+        //show debris
         debris.SetActive(true);
+        //hide normal stuff
         desks.SetActive(false);
-        StrewnDesks.SetActive(true);
         Sofa.SetActive(false);
-        SofaDeeznuts.SetActive(true);
         Benches.SetActive(false);
-        StrewnBenches.SetActive(true);
         ChaseDoor.SetActive(false);
         Barrys.SetActive(true);
         yield return new WaitForSeconds(35);
