@@ -29,9 +29,12 @@ public class KitchenGame : MonoBehaviour
 
     public GameObject DayManager;
     DaySystem daySystem;
+    bool runOnce = true;
 
     public Microwave microwave;
-    // Start is called before the first frame update
+    //todo ui stuff
+    public GameObject kitchenCheck;
+    public GameObject kitchenCross;
     void Start()
     {
         daySystem = DayManager.GetComponent<DaySystem>();
@@ -42,15 +45,16 @@ public class KitchenGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CoffeeIsDone == true && NoodlesIsDone == true)
+        if (CoffeeIsDone == true && NoodlesIsDone == true && runOnce)
         {
+            runOnce = false;
             timer.SetActive(false);
             Arm.SetActive(false);
             Hand.HandActive = true;
             daySystem.kitchenIsWin = true;
             daySystem.KitchenIsDone = true;
             StopCoroutine(GameTimer());
-
+            kitchenCheck.SetActive(true);
         }
     }
 
@@ -105,12 +109,14 @@ public class KitchenGame : MonoBehaviour
             timer.SetActive(false);
             daySystem.temp = true;
             Debug.Log("you fucked up");
-
+            kitchenCross.SetActive(true);
         }
     }
 
     public void ResetObState()
     {
+        kitchenCheck.SetActive(false);
+        kitchenCross.SetActive(false);
         NoodlesIsDone = false;
         CoffeeIsDone = false;
         noodleStage = 0;
