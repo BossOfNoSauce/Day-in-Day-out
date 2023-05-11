@@ -48,6 +48,8 @@ public class BossScript : MonoBehaviour, Iinteractable
 
     public SubtitleManager subtitle;
     public Animator BossDoorAnim;
+
+    public AudioClip Fail;
     // Start is called before the first frame update
     void Start()
     {
@@ -182,6 +184,7 @@ public class BossScript : MonoBehaviour, Iinteractable
             {
                 StopCoroutine(Boss());
                 daySystem.temp = true;
+                audioSource.PlayOneShot(Fail);
             }
 
             else if (daySystem.BossCooldown == true)
@@ -221,6 +224,7 @@ public class BossScript : MonoBehaviour, Iinteractable
             {
                 StopCoroutine(Boss());
                 daySystem.temp = true;
+                audioSource.PlayOneShot(Fail);
             }
             else if (daySystem.BossCooldown == true)
             {
@@ -262,6 +266,7 @@ public class BossScript : MonoBehaviour, Iinteractable
             {
                 StopCoroutine(Boss());
                 daySystem.temp = true;
+                audioSource.PlayOneShot(Fail);
             }
             else if (daySystem.BossCooldown == true)
             {
