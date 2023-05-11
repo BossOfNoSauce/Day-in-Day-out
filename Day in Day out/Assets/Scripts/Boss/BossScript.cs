@@ -133,6 +133,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 jukebox.StopMus();
                 jukebox.startMus = false;
                 BossImage.SetActive(true);
+                ToDoUi.SetActive(false);
                 audioSource.PlayOneShot(day2monologue, 1);
                 StartCoroutine(subtitle.Boss2());
                 yield return new WaitForSeconds(40);
@@ -171,6 +172,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 jukebox.StopMus();
                 jukebox.startMus = false;
                 BossImage.SetActive(true);
+                ToDoUi.SetActive(false);
                 audioSource.PlayOneShot(day3monologue, 1);
                 StartCoroutine(subtitle.Boss3());
                 yield return new WaitForSeconds(25);
@@ -207,6 +209,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 jukebox.StopMus();
                 jukebox.startMus = false;
                 BossImage.SetActive(true);
+                ToDoUi.SetActive(false);
                 audioSource.PlayOneShot(day4monologue, 1);
                 StartCoroutine(subtitle.Boss4());
                 yield return new WaitForSeconds(31);
@@ -242,10 +245,11 @@ public class BossScript : MonoBehaviour, Iinteractable
             {
                 Mcollider.enabled = true;
                 BossImage.SetActive(true);
-
+                ToDoUi.SetActive(false);
                 audioSource.PlayOneShot(Finalmonologue, 1);
                 StartCoroutine(subtitle.Boss5());
                 yield return new WaitForSeconds(20); // Number is not confirmed, dependant on sound file
+                ToDoUi.SetActive(true);
                 BossImage.SetActive(false);
                 BossDoorAnim.SetTrigger("BossOpen");
                 // swing open door
