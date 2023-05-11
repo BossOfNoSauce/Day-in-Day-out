@@ -23,8 +23,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     public GameObject target;
     //public GameObject target;
     public bool noMovement = false;
-    public AudioSource audioSource;
-    public AudioClip[] audioClips;
+   
     public GameObject menu;
     //ui
     public GameObject urinalUI;
@@ -140,7 +139,7 @@ public class Urinal : MonoBehaviour, Iinteractable
             noMovement = false;
             playerController.InGame = false;
             pauseGame.AbleToPause = true;
-            audioSource.Stop();
+            
         }
     }
 
@@ -154,8 +153,7 @@ public class Urinal : MonoBehaviour, Iinteractable
         menu.SetActive(true);//tutorial menu
         Player.transform.position = new Vector3(82, 7.5f, 27f); // sets player in proper pissing position
         targetMovement.GameIsActive = true; // this starts the target moving back and forth
-        audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
-        audioSource.Play();
+        
         noMovement = true; // this locks camera on the target
         yield return new WaitForSeconds(20); // game timer
         if (!daySystem.UrinalIsDone)

@@ -2957,6 +2957,7 @@ MonoBehaviour:
   prompt: 
   audioSource: {fileID: 0}
   audioClips: []
+  toilet: 0
 --- !u!212 &366155252
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7875,6 +7876,7 @@ GameObject:
   - component: {fileID: 984708831}
   - component: {fileID: 984708830}
   - component: {fileID: 984708829}
+  - component: {fileID: 984708832}
   m_Layer: 6
   m_Name: ElevatorButtons
   m_TagString: Untagged
@@ -8007,6 +8009,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 1.6, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &984708832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984708828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4865e3175194f54f9d882c87294da6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &984708833
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9047,6 +9061,7 @@ MonoBehaviour:
   prompt: 
   audioSource: {fileID: 0}
   audioClips: []
+  toilet: 0
 --- !u!212 &1165770141
 SpriteRenderer:
   m_ObjectHideFlags: 0
