@@ -180,6 +180,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 Calender2.SetActive(true);
                 urinalIsWin = false;
                 UrinalIsDone = false;
+                urinal.resetUrinal();
                 BossCooldown = false;
                 CloseTrigger.enabled = true;
                
@@ -198,6 +199,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 Calender3.SetActive(true);
                 urinalIsWin = false;
                 UrinalIsDone = false;
+                urinal.resetUrinal();
                 computerIsWin = false;
                 ComputerIsDone = false;
                 kitchenIsWin = false;
@@ -227,6 +229,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 kitchenObjs.ResetObjs();
                 urinalIsWin = false;
                 UrinalIsDone = false;
+                urinal.resetUrinal();
                 BossCooldown = false;
                 MeetingTaskUi.SetActive(true);
                 CloseTrigger.enabled = true;
@@ -314,6 +317,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
         KitchenIsDone = false;
         meetingIsWin = false;
         MeetingIsDone = false;
+        urinal.resetUrinal();
         //show todo lsit
         ToDoList.SetActive(true);
         ComputerTaskUi.SetActive(true);
