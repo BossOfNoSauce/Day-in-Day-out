@@ -187,6 +187,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if(Days == 3)
             {
+                KitchenTaskUi.SetActive(true);
                 kitchenGame.ResetObState();
                 kitchenGame.cooldown = false;
                 kitchDoor.enabled = true;
@@ -210,6 +211,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if(Days == 4)
             {
+                KitchenTaskUi.SetActive(true);
                 kitchenGame.ResetObState();
                 kitchenGame.cooldown = false;
                 meetingDoor.canOpen = true;
