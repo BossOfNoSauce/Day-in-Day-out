@@ -118,6 +118,7 @@ public class Computer : MonoBehaviour, Iinteractable
             
             if (daySystem.ComputerIsDone == false)
             {
+                score = 0;
                 canCompute = false;
                 button.SetActive(false);
                 life = 3;

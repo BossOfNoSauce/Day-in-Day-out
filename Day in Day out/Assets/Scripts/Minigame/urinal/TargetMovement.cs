@@ -75,6 +75,7 @@ public class TargetMovement : MonoBehaviour
         Debug.Log("game fail in urinal, attemting end game");
         GameIsActive = false;
         daySystem.UrinalIsDone = true;
+        daySystem.urinalIsWin = false;
         urinal.endGame();
     }
 
