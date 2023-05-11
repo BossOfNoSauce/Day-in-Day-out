@@ -47,7 +47,7 @@ public class KitchenGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CoffeeIsDone == true && NoodlesIsDone == true && runOnce == true)
+        if (CoffeeIsDone == true && NoodlesIsDone == true && runOnce)
         {
             runOnce = false;
             timer.SetActive(false);
@@ -129,6 +129,6 @@ public class KitchenGame : MonoBehaviour
         microwave.resetmicro();
         grab.noodleEat = false;
         grab.coffeeDrink = false;
-        runOnce = true;
+        runOnce = false;
     }
 }
