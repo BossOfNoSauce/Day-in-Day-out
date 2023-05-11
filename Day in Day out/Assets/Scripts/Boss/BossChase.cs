@@ -69,6 +69,8 @@ public class BossChase : MonoBehaviour
     public AudioSource Boss2;
 
     public GameObject Barrys;
+
+    public GameObject getOutUi;
     void Start()
     {
         //transform.position = Points[pointsIndex].transform.position;
@@ -170,6 +172,7 @@ public class BossChase : MonoBehaviour
         audioSource.PlayOneShot(OpeningElevator);
         BossAnim.SetTrigger("Run");
         startChase = true;
+        getOutUi.SetActive(true);
         audioSource.PlayOneShot(ChaseMusic);
         yield return new WaitForSeconds(4.75f);
         audioSource.Play();

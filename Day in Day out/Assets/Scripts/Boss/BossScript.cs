@@ -42,7 +42,7 @@ public class BossScript : MonoBehaviour, Iinteractable
     public GameObject meetingui;
     public GameObject bossui;
     public GameObject elevatorui;
-    public GameObject getOutUi;
+    
 
     public GameObject button;
 
@@ -219,7 +219,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 daySystem.BossCooldown = true;
                 bossui.SetActive(false);
                 elevatorui.SetActive(true);
-                getOutUi.SetActive(true);
+                
                 ToDoUi.SetActive(true);
                 daySystem.cooldown = false;
                 elevator.SetTrigger("Elevator Open");
