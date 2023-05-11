@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class Urinal : MonoBehaviour, Iinteractable
 {
-    //to-do:
-    //[]put some comments to describe stuff
-    //[]
+    //rewrite-outline
+    //[x]find the color setter
+    //[x]add two public gameobjects for the check and cross
+    //  [x]reveal proper check / cross by replacing the color thing
+    //[x]delet unecissary vars
     PlayerMovement playerController;
 
     public GameObject manager;
@@ -16,7 +18,6 @@ public class Urinal : MonoBehaviour, Iinteractable
     bool inGame = false;//so that cant press e on urinal while in game
     public GameObject Player;//gets payer script
     TargetMovement targetMovement;
-    PlayerCam playerCam;
     public GameObject MainCam;
     FirstPersonCameraRotation firstPersonCameraRotation;
     public GameObject target;
@@ -28,6 +29,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     //ui
     public GameObject urinalUI;
     public GameObject urinalCheck;
+    public GameObject urinalCross;
 
     public GameObject PauseMenu;
     PauseGame pauseGame;
@@ -124,8 +126,14 @@ public class Urinal : MonoBehaviour, Iinteractable
             daySystem.UrinalIsDone = true;
             inGame = false;
             //daySystem.urinalIsWin = !targetMovement.GameFail;
-            Image temp = urinalCheck.GetComponent<Image>();//from todo list, to set the check
-            temp.color = (!daySystem.UrinalIsDone ? new Color32(0, 255, 0, 100) : new Color32(255, 0, 0, 100));//if game is win, set image to green, else red
+            if (daySystem.urinalIsWin)
+            {
+                urinalCheck.SetActive(true);
+            }
+            else
+            {
+                urinalCheck.SetActive(true);
+            }
 
             // disables all previous variables, allowing normal movement
             firstPersonCameraRotation.FreezeMovement = false;
@@ -157,5 +165,10 @@ public class Urinal : MonoBehaviour, Iinteractable
             Debug.Log("done pissing");
             endGame();
         }
+    }
+    public void resetUrinal()
+    {
+        urinalCheck.SetActive(false);
+        urinalCross.SetActive(false);
     }
 }

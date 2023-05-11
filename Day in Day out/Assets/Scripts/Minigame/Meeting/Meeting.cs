@@ -5,7 +5,11 @@ using UnityEngine.UI;
 public class Meeting : MonoBehaviour, Iinteractable 
 {
     [SerializeField] private string prompt;
-
+    //rewrite-outline
+    //[]find the color setter
+    //[]add two public gameobjects for the check and cross
+    //  []reveal proper check / cross by replacing the color thing
+    //[]delet unecissary vars
     public string InteractionPrompt => prompt;
     public GameObject pauseUi;
     PauseGame pause;
@@ -34,6 +38,7 @@ public class Meeting : MonoBehaviour, Iinteractable
     RectTransform BRT;
     //UI
     public GameObject meetingCheck;
+    public GameObject meetingCross;
     //game staTREW BOOLS
     public bool GameIsActive = false;
     bool isGameWin;
@@ -118,8 +123,14 @@ public class Meeting : MonoBehaviour, Iinteractable
         TRT.anchoredPosition = new Vector3(0.0f, 1200.0f, 0.0f);
         BRT.anchoredPosition = new Vector3(0.0f, -1200.0f, 0.0f);
         //set ui checklist / todo list
-        Image temp = meetingCheck.GetComponent<Image>();
-        temp.color = (isGameWin ? new Color32(0, 255, 0, 100) : new Color32(255, 0, 0, 100));//if game is win, set image to green, else red
+        if (isGameWin)
+        {
+            meetingCheck.SetActive(true);
+        }
+        else
+        {
+            meetingCross.SetActive(true);
+        }
     }
     void Sleepy()//reset eyelid speeds
     {
@@ -149,5 +160,10 @@ public class Meeting : MonoBehaviour, Iinteractable
                 endGame();
             }
         }
+    }
+    public void resetMeeting()
+    {
+        meetingCheck.SetActive(false);
+        meetingCross.SetActive(false);
     }
 }

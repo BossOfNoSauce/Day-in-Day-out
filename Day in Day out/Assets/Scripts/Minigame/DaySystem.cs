@@ -43,7 +43,9 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public Animator elevator;
     //game scripts, for reseting purpuses
     public Computer computer;
+    public Urinal urinal;
     public KitchenObjs kitchenObjs;
+    public Meeting meeting;
     //todo list
     public GameObject ToDoList;
     //todo list ui elements
@@ -304,10 +306,14 @@ public class DaySystem : MonoBehaviour, Iinteractable
         //reset computer
         computer.score = 0;
         computer.resetGame();
+        //reset urinal
+        urinal.resetUrinal();
         //reset kitchen
         kitchenGame.ResetObState();
         kitchenObjs.ResetObjs();
         kitchenGame.cooldown = false;
+        //reset meeting
+        meeting.resetMeeting();
         //urinal and meeting dont need a reset
         //reset all game bools
         computerIsWin = false;
