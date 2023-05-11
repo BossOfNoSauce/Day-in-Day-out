@@ -207,7 +207,7 @@ public class Computer : MonoBehaviour, Iinteractable
             Debug.Log(gameManager.gameActive);
             Debug.Log(playerMovement.InGame);
             Debug.Log(firstPersonCameraRotation.FreezeMovement);
-            Player.transform.position = new Vector3(136, 7.41f, 93.8f);
+            Player.transform.position = new Vector3(136.688f, 7.5f, 93.364f);
             //check and reset score
             if(score >= 10)
             {
@@ -249,7 +249,7 @@ public class Computer : MonoBehaviour, Iinteractable
             if (life <= 0)
             {
                 StartCoroutine(EndGame());
-                daySystem.temp = true;
+                
             }
         }
         text.text = "score = " + score + " / 10";

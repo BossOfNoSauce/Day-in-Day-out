@@ -13,7 +13,11 @@ public class NpcSpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Doughnut.SetActive(true);
+        FileGuy.SetActive(true);
+        ClockGuy.SetActive(true);
+        PhoneLady.SetActive(true);
+        Smoker.SetActive(true);
     }
 
     // Update is called once per frame
@@ -21,19 +25,17 @@ public class NpcSpawnManager : MonoBehaviour
     {
         if(ds.Days == 1)
         {
-            Doughnut.SetActive(true);
-            FileGuy.SetActive(true);
+            
         }
         if (ds.Days == 2)
         {
             Doughnut.SetActive(false);
-            ClockGuy.SetActive(true);
+            
         }
         if (ds.Days == 3)
         {
-            PhoneLady.SetActive(true);
-            Smoker.SetActive(true);
-            
+
+            Smoker.SetActive(false);
         }
         if (ds.Days == 4)
         {
@@ -42,7 +44,7 @@ public class NpcSpawnManager : MonoBehaviour
         }
         if (ds.Days == 5)
         {
-            Smoker.SetActive(false);
+            
             PhoneLady.SetActive(false);
            
         }

@@ -109,6 +109,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 audioSource.PlayOneShot(OpeningElevator);
                 Mcollider.enabled = false;
             }
+
             else if (daySystem.BossCooldown == true)
             {
                 audioSource.PlayOneShot(Buzzer);
@@ -142,6 +143,11 @@ public class BossScript : MonoBehaviour, Iinteractable
                 audioSource.PlayOneShot(OpeningElevator);
                 Mcollider.enabled = false;
             }
+            if (daySystem.computerIsWin == false || daySystem.urinalIsWin == false)
+            {
+                daySystem.temp = true;
+            }
+
             else if (daySystem.BossCooldown == true)
             {
                 audioSource.PlayOneShot(Buzzer);
@@ -176,6 +182,10 @@ public class BossScript : MonoBehaviour, Iinteractable
                 audioSource.PlayOneShot(OpeningElevator);
                 Mcollider.enabled = false;
             }
+            if (daySystem.computerIsWin == false || daySystem.urinalIsWin == false || daySystem.kitchenIsWin == false)
+            {
+                daySystem.temp = true;
+            }
             else if (daySystem.BossCooldown == true)
             {
                 audioSource.PlayOneShot(Buzzer);
@@ -209,6 +219,10 @@ public class BossScript : MonoBehaviour, Iinteractable
                 audioSource.PlayOneShot(OpeningElevator);
                 daySystem.BossCooldown = true;
                 Mcollider.enabled = false;
+            }
+            if (daySystem.computerIsWin == false || daySystem.urinalIsWin == false || daySystem.kitchenIsWin == false || daySystem.meetingIsWin == false)
+            {
+                daySystem.temp = true;
             }
             else if (daySystem.BossCooldown == true)
             {
