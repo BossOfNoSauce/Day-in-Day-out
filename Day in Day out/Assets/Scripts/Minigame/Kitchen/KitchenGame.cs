@@ -102,7 +102,7 @@ public class KitchenGame : MonoBehaviour
         yield return new WaitForSeconds(45);
         audioSource.PlayOneShot(urgency);
         yield return new WaitForSeconds(45);
-        if(CoffeeIsDone == false && NoodlesIsDone == false)
+        if(CoffeeIsDone == false || NoodlesIsDone == false)
         {
             daySystem.KitchenIsDone = true;
             daySystem.kitchenIsWin = false;

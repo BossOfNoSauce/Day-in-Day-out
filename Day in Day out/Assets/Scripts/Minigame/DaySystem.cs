@@ -118,9 +118,10 @@ public class DaySystem : MonoBehaviour, Iinteractable
     {
         if (Days != 5)
         {
-            ToDoList.SetActive(false);
+            
             if (BossCheck == true)
             {
+                ToDoList.SetActive(false);
                 StartCoroutine(EndDay());
             }
 
@@ -137,9 +138,11 @@ public class DaySystem : MonoBehaviour, Iinteractable
             //somethings out of order
             BossCooldown = false;
             Debug.Log("day end");
+            //put player into elevator & lock
             player.transform.position = new Vector3(142, 7.4f, -43f);
             playerMovement.InGame = true;
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(2);
+            //close elevator
             elevator.SetTrigger("Elevator Close");
             yield return new WaitForSeconds(2);
             animator.SetTrigger("Ftb");//fade out
@@ -178,11 +181,6 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 urinalIsWin = false;
                 UrinalIsDone = false;
                 BossCooldown = false;
-                ToDoList.SetActive(true);
-                ElevatorTaskUi.SetActive(false);
-                BossTaskUi.SetActive(false);
-                ComputerTaskUi.SetActive(true);
-                UrinalTaskUi.SetActive(true);
                 CloseTrigger.enabled = true;
                
             }
@@ -206,11 +204,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 KitchenIsDone = false;
                 kitchenObjs.ResetObjs();
                 BossCooldown = false;
-                ToDoList.SetActive(true);
                 KitchenTaskUi.SetActive(true);
-                CloseTrigger.enabled = true;
-                ElevatorTaskUi.SetActive(false);
-                BossTaskUi.SetActive(false);
             }
             if(Days == 4)
             {
@@ -234,11 +228,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 urinalIsWin = false;
                 UrinalIsDone = false;
                 BossCooldown = false;
-                ToDoList.SetActive(true);
                 MeetingTaskUi.SetActive(true);
                 CloseTrigger.enabled = true;
-                ElevatorTaskUi.SetActive(false);
-                BossTaskUi.SetActive(false);
             }
             if (Days == 5)
             {
@@ -246,7 +237,6 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 audioSource.Play();
                 BossCheck = false;
                 computer.resetGame();
-                ToDoList.SetActive(true);
                 AbleToChase = true;
                 //calenders
                 Calender4.SetActive(false);
@@ -259,9 +249,6 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 kitchenObjs.ResetObjs();
                 UrinalIsDone = true;
                 CloseTrigger.enabled = true;
-                
-                ElevatorTaskUi.SetActive(false);
-                BossTaskUi.SetActive(false);
 
 
             }

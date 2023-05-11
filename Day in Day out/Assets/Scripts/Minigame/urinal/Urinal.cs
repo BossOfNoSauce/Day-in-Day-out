@@ -121,6 +121,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     {
         if (daySystem.UrinalIsDone)//end game in here, constantly called
         {
+            StopCoroutine(StartUrination());
             //setting bools
             targetMovement.GameIsActive = false;
             daySystem.UrinalIsDone = true;
@@ -158,13 +159,13 @@ public class Urinal : MonoBehaviour, Iinteractable
         audioSource.Play();
         noMovement = true; // this locks camera on the target
         yield return new WaitForSeconds(20); // game timer
-        if (!daySystem.UrinalIsDone)
-        {//so that if game fail, wont make it win
+        //if (!daySystem.UrinalIsDone)
+        //{//so that if game fail, wont make it win
             daySystem.UrinalIsDone = true;
             daySystem.urinalIsWin = true;
             Debug.Log("done pissing");
             endGame();
-        }
+        //}
     }
     public void resetUrinal()
     {
