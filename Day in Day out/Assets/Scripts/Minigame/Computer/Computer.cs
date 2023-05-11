@@ -206,12 +206,6 @@ public class Computer : MonoBehaviour, Iinteractable
             Debug.Log(playerMovement.InGame);
             Debug.Log(firstPersonCameraRotation.FreezeMovement);
             Player.transform.position = new Vector3(136.688f, 7.5f, 93.364f);
-            //check and reset score
-            if(score >= 10)
-            {
-                daySystem.computerIsWin = true;
-                
-            }
             score = 0;
             //set game bools and dayscript bools
             
@@ -235,6 +229,11 @@ public class Computer : MonoBehaviour, Iinteractable
         if (isGood)
         {
             score = score + 1;
+            if(score == 10)
+            {
+                daySystem.computerIsWin = true;
+                StartCoroutine(EndGame());
+            }
         }
         else
         {
@@ -242,6 +241,7 @@ public class Computer : MonoBehaviour, Iinteractable
             lifeCountUi[life].color = new Color32(255, 0, 0, 100);
             if (life <= 0)
             {
+                daySystem.computerIsWin = false;
                 StartCoroutine(EndGame());
                 
             }
