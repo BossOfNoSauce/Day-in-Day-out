@@ -107,7 +107,6 @@ public class KitchenGame : MonoBehaviour
             daySystem.KitchenIsDone = true;
             daySystem.kitchenIsWin = false;
             timer.SetActive(false);
-            daySystem.temp = true;
             Debug.Log("you fucked up");
             kitchenCross.SetActive(true);
         }

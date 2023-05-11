@@ -211,10 +211,6 @@ public class Computer : MonoBehaviour, Iinteractable
                 daySystem.computerIsWin = true;
                 
             }
-            //else
-            //{
-           //     daySystem.ComputerIsDone = true;
-           // }
             score = 0;
             //set game bools and dayscript bools
             

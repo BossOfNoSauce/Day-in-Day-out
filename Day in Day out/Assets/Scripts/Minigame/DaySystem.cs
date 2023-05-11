@@ -134,6 +134,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
     {
         if(cooldown == false)
         {
+            //somethings out of order
             BossCooldown = false;
             Debug.Log("day end");
             player.transform.position = new Vector3(142, 7.4f, -43f);

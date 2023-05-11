@@ -42,7 +42,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     public GameObject DayManager;
     DaySystem daySystem;
 
-
+    //[]urinal is being difficult afgainb
 
     public bool Interact(Interactor interactor)
     {
@@ -132,7 +132,7 @@ public class Urinal : MonoBehaviour, Iinteractable
             }
             else
             {
-                urinalCheck.SetActive(true);
+                urinalCross.SetActive(true);
             }
 
             // disables all previous variables, allowing normal movement
