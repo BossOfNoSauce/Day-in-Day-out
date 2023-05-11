@@ -103,4 +103,8 @@ public class Microwave : MonoBehaviour, Iinteractable
         }
         
     }
+    public void resetmicro()
+    {
+        Mcollider.enabled = true;
+    }
 }
