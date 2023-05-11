@@ -14,6 +14,7 @@ public class PauseGame : MonoBehaviour
     public AudioSource audioSource;
     public AudioSource BossaudioSource;
     public AudioSource Music;
+    public AudioSource BossaudioSource2;
     public bool AbleToPause = true;
     public bool menuActive = false;
     FirstPersonCameraRotation firstPersonCameraRotation;
@@ -30,6 +31,7 @@ public class PauseGame : MonoBehaviour
             audioSource.Pause();
             Music.Pause();
             BossaudioSource.Pause();
+            BossaudioSource2.Pause();
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
 
@@ -54,6 +56,7 @@ public class PauseGame : MonoBehaviour
             audioSource.UnPause();
             BossaudioSource.UnPause();
             Music.UnPause();
+            BossaudioSource2.UnPause();
             cursor.SetActive(false);
 
 

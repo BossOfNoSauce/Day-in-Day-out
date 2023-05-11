@@ -245,6 +245,7 @@ public class Computer : MonoBehaviour, Iinteractable
             if (life <= 0)
             {
                 StartCoroutine(EndGame());
+                daySystem.temp = true;
             }
         }
         text.text = "score = " + score + " / 10";

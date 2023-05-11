@@ -41,8 +41,7 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 	
     private void Start()
     {
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
+		
 
 
 	} 
@@ -59,6 +58,13 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 	const string yAxis = "Mouse Y";
 
 	void Update(){
+
+        //james, before you complain, it being in update prevents it from being unlocked after you do something that sets it to confined. 
+        //put an if statement if needed
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+
         if (David == true)
         {
 			StartCoroutine(Thing());
