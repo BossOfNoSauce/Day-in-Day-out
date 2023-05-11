@@ -88,6 +88,7 @@ public class KitchenGame : MonoBehaviour
             if(daySystem.kitchenIsWin || daySystem.KitchenIsDone)
             {
                 StopCoroutine(GameTimer());
+                audioSource.Stop();
             }
         }
     }
