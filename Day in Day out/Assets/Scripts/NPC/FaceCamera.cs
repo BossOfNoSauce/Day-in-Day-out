@@ -13,6 +13,8 @@ public class FaceCamera : MonoBehaviour, Iinteractable
 
     public AudioClip[] audioClips;
 
+    public bool toilet;
+    
     
     public FaceCamera(GameObject target)
     {
@@ -42,6 +44,8 @@ public class FaceCamera : MonoBehaviour, Iinteractable
         audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
         audioSource.Play();
         return true;
+        
+
     }
 
 }

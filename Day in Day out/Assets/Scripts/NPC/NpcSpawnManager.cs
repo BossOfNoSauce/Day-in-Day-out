@@ -10,6 +10,7 @@ public class NpcSpawnManager : MonoBehaviour
     public GameObject Smoker;
     public GameObject Doughnut;
     public GameObject FileGuy;
+    public GameObject ToiletGuy;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,8 @@ public class NpcSpawnManager : MonoBehaviour
         ClockGuy.SetActive(true);
         PhoneLady.SetActive(true);
         Smoker.SetActive(true);
+        ToiletGuy.SetActive(true);
+
     }
 
     // Update is called once per frame
@@ -36,6 +39,7 @@ public class NpcSpawnManager : MonoBehaviour
         {
 
             Smoker.SetActive(false);
+            ToiletGuy.SetActive(false);
         }
         if (ds.Days == 4)
         {
