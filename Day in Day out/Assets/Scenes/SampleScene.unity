@@ -35460,7 +35460,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Mash spacebar when your eyelids start to close. Dont fall asleep or else
-    your co-workers will report youto the boss!
+    your co-workers will report you to the boss!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -70487,12 +70487,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'HOW 2 COMPUTER
+  m_text: 'Move your hand with your mouse to press the right buttons!
 
-    1. slam hand into yellow to increes score
-
-    2.
-    dont press red square
+    Press
+    the yellow buttons, avoid the red ones
 
 '
   m_isRightToLeft: 0
