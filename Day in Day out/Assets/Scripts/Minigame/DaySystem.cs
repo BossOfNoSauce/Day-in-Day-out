@@ -211,6 +211,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if(Days == 4)
             {
+                MeetingTaskUi.SetActive(true);
                 KitchenTaskUi.SetActive(true);
                 kitchenGame.ResetObState();
                 kitchenGame.cooldown = false;
