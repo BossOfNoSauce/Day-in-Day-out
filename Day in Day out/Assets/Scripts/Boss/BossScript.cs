@@ -79,7 +79,12 @@ public class BossScript : MonoBehaviour, Iinteractable
 
     public IEnumerator Boss()
     {
-        
+        bossui.SetActive(false);
+        computerui.SetActive(false);
+        urinalui.SetActive(false);
+        breakroomui.SetActive(false);
+        meetingui.SetActive(false);
+        elevatorui.SetActive(true);
         if (daySystem.Days == 1)
         {
             if ( daySystem.BossCooldown == false && daySystem.computerIsWin == true)
@@ -100,8 +105,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
-                bossui.SetActive(false);
-                elevatorui.SetActive(true);
+                
                 ToDoUi.SetActive(true);
                 daySystem.cooldown = false;
 
@@ -135,8 +139,6 @@ public class BossScript : MonoBehaviour, Iinteractable
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
-                bossui.SetActive(false);
-                elevatorui.SetActive(true);
                 ToDoUi.SetActive(true);
                 daySystem.cooldown = false;
                 elevator.SetTrigger("Elevator Open");
@@ -174,8 +176,6 @@ public class BossScript : MonoBehaviour, Iinteractable
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
-                bossui.SetActive(false);
-                elevatorui.SetActive(true);
                 ToDoUi.SetActive(true);
                 daySystem.cooldown = false;
                 elevator.SetTrigger("Elevator Open");
@@ -211,8 +211,6 @@ public class BossScript : MonoBehaviour, Iinteractable
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
                 daySystem.BossCooldown = true;
-                bossui.SetActive(false);
-                elevatorui.SetActive(true);
                 ToDoUi.SetActive(true);
                 daySystem.cooldown = false;
                 elevator.SetTrigger("Elevator Open");
