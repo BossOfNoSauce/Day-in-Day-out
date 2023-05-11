@@ -121,5 +121,6 @@ public class KitchenGame : MonoBehaviour
         noodleStage = 0;
         coffeeStage = 0;
         microwave.thebool = true;
+        microwave.resetmicro();
     }
 }
