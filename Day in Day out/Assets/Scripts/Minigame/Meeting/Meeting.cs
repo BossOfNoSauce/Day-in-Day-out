@@ -21,6 +21,7 @@ public class Meeting : MonoBehaviour, Iinteractable
     public Vector3 playerPosition;
     //player / cam stuff
     public GameObject Camera;
+    public FirstPersonCameraRotation camera;
     PlayerMovement playerMovement;
     public GameObject Player;
     public GameObject MainCam;
@@ -48,6 +49,8 @@ public class Meeting : MonoBehaviour, Iinteractable
     public GameObject button;
     public bool Interact(Interactor interactor)
     {
+        camera.FreezeMovement = true;
+        playerMovement.InGame = true;
         //this is what happenes when you interact
         Debug.Log("Meeting Time");
        // tutUi.SetActive(true);
@@ -117,6 +120,8 @@ public class Meeting : MonoBehaviour, Iinteractable
         Player.transform.position = new Vector3(-15, 7.4f, -60.9f);
         collider.enabled = false;
         daySystem.MeetingIsDone = true;
+        camera.FreezeMovement = false;
+        playerMovement.InGame = false;
         //RESET EYELIDS TO ORIGINAL POSIOTIONs and velocitys
         TRB.velocity = Vector3.zero;
         BRB.velocity = Vector3.zero;
