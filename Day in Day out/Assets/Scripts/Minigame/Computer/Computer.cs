@@ -71,9 +71,6 @@ public class Computer : MonoBehaviour, Iinteractable
         //this is what happenes when you interact
 
         StartCoroutine(StartComputing());
-        
-        
-        
         return true;
     }
 
