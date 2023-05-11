@@ -1554,7 +1554,7 @@ MonoBehaviour:
   MeetingAnimator: {fileID: 1497480396}
   PeeDoor: {fileID: 1904140794}
   PeeAnimator: {fileID: 1904140792}
-  B: {fileID: 8300000, guid: 8ce8244bef309b24889acafd6894245a, type: 3}
+  B: {fileID: 8300000, guid: c8fc7e44b629b06488983433d1a071c1, type: 3}
   kitchenGame: {fileID: 1065320139}
   Tint: {fileID: 975285406}
   playerscript: {fileID: 963194229}
@@ -1574,7 +1574,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6d26c126d6f4bdf4dac7efd45080e536, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c8fc7e44b629b06488983433d1a071c1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.76
   m_Pitch: 1
@@ -75184,7 +75184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1491718015
 Transform:
   m_ObjectHideFlags: 0
