@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1523,11 +1523,11 @@ MonoBehaviour:
   urinalIsWin: 0
   MeetingIsDone: 0
   meetingIsWin: 0
-  Days: 2
+  Days: 1
   audioSource: {fileID: 26645121}
   DaySound: {fileID: 8300000, guid: 59eebf1817b5a084486f09ea833de533, type: 3}
   OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
-  BossCheck: 1
+  BossCheck: 0
   AbleToChase: 0
   BossCooldown: 0
   JukeBoxObj: {fileID: 830215002}
@@ -45398,6 +45398,9 @@ MonoBehaviour:
   subtitle: {fileID: 1818565579}
   Boss2: {fileID: 741036051}
   Barrys: {fileID: 200321124}
+  taskUI: {fileID: 0}
+  eleUI: {fileID: 0}
+  bossUI: {fileID: 0}
   getOutUi: {fileID: 1961650768}
   Crash: {fileID: 0}
 --- !u!212 &913893885
