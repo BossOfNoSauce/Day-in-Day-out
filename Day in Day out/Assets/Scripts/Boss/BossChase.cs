@@ -68,6 +68,8 @@ public class BossChase : MonoBehaviour
     public GameObject Door;
 
     public SubtitleManager subtitle;
+
+    public AudioSource Boss2;
     void Start()
     {
         //transform.position = Points[pointsIndex].transform.position;
@@ -171,6 +173,7 @@ public class BossChase : MonoBehaviour
         audioSource.PlayOneShot(ChaseMusic);
         yield return new WaitForSeconds(4.75f);
         audioSource.Play();
+        Boss2.enabled = true;
 
     }
 

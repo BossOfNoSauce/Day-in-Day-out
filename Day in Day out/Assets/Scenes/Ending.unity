@@ -6904,7 +6904,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b58f21e6264d98f40abeff87ce4d79fe, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 06442fc6429fc3a44aa0c0c83e0d6a85, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -7216,6 +7216,7 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   BossaudioSource: {fileID: 0}
   Music: {fileID: 0}
+  BossaudioSource2: {fileID: 0}
   AbleToPause: 1
   menuActive: 0
 --- !u!114 &929654044
@@ -14259,6 +14260,7 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   BossaudioSource: {fileID: 0}
   Music: {fileID: 0}
+  BossaudioSource2: {fileID: 0}
   AbleToPause: 1
   menuActive: 0
 --- !u!114 &1733781214

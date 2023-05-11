@@ -33637,14 +33637,14 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741036048}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 136eb82e842ee5f49af7b921fd5ca9dc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -42795,6 +42795,7 @@ MonoBehaviour:
   Barrier3: {fileID: 919531546}
   Door: {fileID: 7003743040466257241}
   subtitle: {fileID: 1818565579}
+  Boss2: {fileID: 741036051}
 --- !u!212 &913893885
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -99408,8 +99409,11 @@ MonoBehaviour:
   audioSource: {fileID: 2036852451}
   audioClips:
   - {fileID: 8300000, guid: 9e76696379c990d4fb759c10f36b5780, type: 3}
-  - {fileID: 8300000, guid: f52d3721bbb8eac43b08ae77f90708ae, type: 3}
-  - {fileID: 8300000, guid: ee04a8769d0fbb44590489c8358cc3d7, type: 3}
+  - {fileID: 8300000, guid: d783e2e70c2a9db4aba764d00c25286b, type: 3}
+  - {fileID: 8300000, guid: 1c3f32952c64d9a41b3d7d49b6848459, type: 3}
+  - {fileID: 8300000, guid: 6348f8f1fb64fd84eaebb405dadc642a, type: 3}
+  - {fileID: 8300000, guid: 51afff46085150941a09d4383a7256ca, type: 3}
+  - {fileID: 8300000, guid: aec11e5ab4fe47e419b34242329dd665, type: 3}
 --- !u!212 &2036852457
 SpriteRenderer:
   m_ObjectHideFlags: 0
