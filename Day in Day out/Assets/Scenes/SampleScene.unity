@@ -90316,6 +90316,7 @@ MonoBehaviour:
   button: {fileID: 8465163}
   subtitle: {fileID: 1818565579}
   BossDoorAnim: {fileID: 36496103}
+  Fail: {fileID: 8300000, guid: 6a86f2a82edc4604ab9f0e86e282eede, type: 3}
 --- !u!64 &1743486947
 MeshCollider:
   m_ObjectHideFlags: 0
