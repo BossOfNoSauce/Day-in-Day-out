@@ -80,6 +80,12 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public FirstPersonCameraRotation playerscript;
 
     public bool temp = false;
+
+    public GameObject Calender1;
+    public GameObject Calender2;
+    public GameObject Calender3;
+    public GameObject Calender4;
+    public GameObject Calender5;
     // Start is called before the first frame update
     void Start()
     {
@@ -163,8 +169,9 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 computerIsWin = false;
                 ComputerIsDone = false;
                 computer.score = 0;
-                
-                
+                //calenders
+                Calender1.SetActive(false);
+                Calender2.SetActive(true);
                 urinalIsWin = false;
                 UrinalIsDone = false;
                 BossCooldown = false;
@@ -185,6 +192,9 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 computer.score = 0;
                 BossCheck = false;
                 computer.resetGame();
+                //calenders
+                Calender2.SetActive(false);
+                Calender3.SetActive(true);
                 urinalIsWin = false;
                 UrinalIsDone = false;
                 computerIsWin = false;
@@ -208,6 +218,9 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 computer.score = 0;
                 BossCheck = false;
                 computer.resetGame();
+                //calenders
+                Calender3.SetActive(false);
+                Calender4.SetActive(true);
                 computerIsWin = false;
                 ComputerIsDone = false;
                 meetingIsWin = false;
@@ -232,6 +245,9 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 computer.resetGame();
                 ToDoList.SetActive(true);
                 AbleToChase = true;
+                //calenders
+                Calender4.SetActive(false);
+                Calender5.SetActive(true);
                 jukebox.StopMus();
                 jukebox.startMus = false;
                 ComputerIsDone = true;
