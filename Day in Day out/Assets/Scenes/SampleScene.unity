@@ -89099,6 +89099,7 @@ MonoBehaviour:
   meetingui: {fileID: 600919174}
   bossui: {fileID: 136793434}
   elevatorui: {fileID: 1846320552}
+  getOutUi: {fileID: 1961650768}
   button: {fileID: 8465163}
   subtitle: {fileID: 1818565579}
   BossDoorAnim: {fileID: 36496103}
