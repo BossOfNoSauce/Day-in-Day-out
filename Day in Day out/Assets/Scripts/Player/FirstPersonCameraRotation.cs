@@ -61,8 +61,7 @@ public class FirstPersonCameraRotation : MonoBehaviour {
 
         //james, before you complain, it being in update prevents it from being unlocked after you do something that sets it to confined. 
         //put an if statement if needed
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        
 
 
         if (David == true)
