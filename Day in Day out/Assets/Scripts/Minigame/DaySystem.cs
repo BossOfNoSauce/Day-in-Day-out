@@ -256,6 +256,12 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 kitchenObjs.ResetObjs();
                 UrinalIsDone = true;
                 CloseTrigger.enabled = true;
+                ComputerTaskUi.SetActive(false);
+                UrinalTaskUi.SetActive(false);
+                KitchenTaskUi.SetActive(false);
+                MeetingTaskUi.SetActive(false);
+                BossTaskUi.SetActive(true);
+                
 
 
             }

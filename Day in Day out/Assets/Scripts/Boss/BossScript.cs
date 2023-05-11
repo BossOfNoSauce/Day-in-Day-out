@@ -251,6 +251,9 @@ public class BossScript : MonoBehaviour, Iinteractable
                 yield return new WaitForSeconds(20); // Number is not confirmed, dependant on sound file
                 ToDoUi.SetActive(true);
                 BossImage.SetActive(false);
+                computerui.SetActive(false);
+                urinalui.SetActive(false);
+                bossui.SetActive(true);
                 BossDoorAnim.SetTrigger("BossOpen");
                 // swing open door
             }
