@@ -67,7 +67,38 @@ public class BossScript : MonoBehaviour, Iinteractable
             }    
         }
 
-        
+        if (daySystem.computerIsWin == true && daySystem.urinalIsWin == true && daySystem.BossCooldown == false)
+        {
+            if (daySystem.Days == 2)
+            {
+                computerui.SetActive(false);
+                urinalui.SetActive(false);
+                bossui.SetActive(true);
+            }
+        }
+
+        if (daySystem.computerIsWin == true && daySystem.urinalIsWin == true && daySystem.kitchenIsWin == true && daySystem.BossCooldown == false)
+        {
+            if (daySystem.Days == 3)
+            {
+                computerui.SetActive(false);
+                urinalui.SetActive(false);
+                breakroomui.SetActive(false);
+                bossui.SetActive(true);
+            }
+        }
+
+        if (daySystem.computerIsWin == true && daySystem.urinalIsWin == true && daySystem.KitchenIsDone == true && daySystem.meetingIsWin == true && daySystem.BossCooldown == false)
+        {
+            if (daySystem.Days == 4)
+            {
+                computerui.SetActive(false);
+                urinalui.SetActive(false);
+                breakroomui.SetActive(false);
+                meetingui.SetActive(false);
+                bossui.SetActive(true);
+            }
+        }
     }
 
     public bool Interact(Interactor interactor)
@@ -251,6 +282,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 yield return new WaitForSeconds(20); // Number is not confirmed, dependant on sound file
                 ToDoUi.SetActive(true);
                 BossImage.SetActive(false);
+                elevatorui.SetActive(false);
                 computerui.SetActive(false);
                 urinalui.SetActive(false);
                 bossui.SetActive(true);

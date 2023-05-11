@@ -70,6 +70,9 @@ public class BossChase : MonoBehaviour
 
     public GameObject Barrys;
 
+    public GameObject taskUI;
+    public GameObject eleUI;
+    public GameObject bossUI;
     public GameObject getOutUi;
     void Start()
     {
@@ -141,7 +144,7 @@ public class BossChase : MonoBehaviour
 
     IEnumerator Stare()
     {
-
+        taskUI.SetActive(false);
         playerMovement.InGame = true;
         firstPersonCamera.FreezeMovement = true;
         Camera.transform.LookAt(Boss.transform.position, Vector3.up);
@@ -163,6 +166,9 @@ public class BossChase : MonoBehaviour
         ChaseDoor.SetActive(false);
         Barrys.SetActive(true);
         yield return new WaitForSeconds(35);
+        taskUI.SetActive(true);
+        bossUI.SetActive(false);
+        eleUI.SetActive(true);
         playerMovement.InGame = false;
         firstPersonCamera.FreezeMovement = false;
         audioSource.PlayOneShot(Roar);
