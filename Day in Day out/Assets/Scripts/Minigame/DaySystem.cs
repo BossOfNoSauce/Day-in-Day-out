@@ -230,6 +230,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 BossCooldown = false;
                 MeetingTaskUi.SetActive(true);
                 CloseTrigger.enabled = true;
+                KitchenTaskUi.SetActive(true);
             }
             if (Days == 5)
             {
