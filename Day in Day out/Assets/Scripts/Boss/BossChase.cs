@@ -74,6 +74,8 @@ public class BossChase : MonoBehaviour
     public GameObject eleUI;
     public GameObject bossUI;
     public GameObject getOutUi;
+
+    public AudioClip Crash;
     void Start()
     {
         //transform.position = Points[pointsIndex].transform.position;
@@ -191,8 +193,10 @@ public class BossChase : MonoBehaviour
 
         yield return new WaitForSeconds(3);
         Crash1.SetActive(true);
-        yield return new WaitForSeconds(72);
+        audioSource.PlayOneShot(Crash);
+        yield return new WaitForSeconds(70);
         Crash2.SetActive(true);
+        audioSource.PlayOneShot(Crash);
 
 
 

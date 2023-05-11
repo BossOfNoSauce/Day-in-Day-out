@@ -29,12 +29,14 @@ public class KitchenGame : MonoBehaviour
 
     public GameObject DayManager;
     DaySystem daySystem;
-    bool runOnce = true;
+    public bool runOnce = true;
 
     public Microwave microwave;
     //todo ui stuff
     public GameObject kitchenCheck;
     public GameObject kitchenCross;
+
+    public grabObj grab;
     void Start()
     {
         daySystem = DayManager.GetComponent<DaySystem>();
@@ -55,6 +57,12 @@ public class KitchenGame : MonoBehaviour
             daySystem.KitchenIsDone = true;
             StopCoroutine(GameTimer());
             kitchenCheck.SetActive(true);
+        }
+
+        if (daySystem.kitchenIsWin || daySystem.KitchenIsDone)
+        {
+            StopCoroutine(GameTimer());
+            audioSource.Stop();
         }
     }
 
@@ -85,11 +93,7 @@ public class KitchenGame : MonoBehaviour
             
             
 
-            if(daySystem.kitchenIsWin || daySystem.KitchenIsDone)
-            {
-                StopCoroutine(GameTimer());
-                audioSource.Stop();
-            }
+            
         }
     }
 
@@ -123,5 +127,8 @@ public class KitchenGame : MonoBehaviour
         coffeeStage = 0;
         microwave.thebool = true;
         microwave.resetmicro();
+        grab.noodleEat = false;
+        grab.coffeeDrink = false;
+        runOnce = false;
     }
 }

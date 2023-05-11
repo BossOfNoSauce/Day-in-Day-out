@@ -65,7 +65,7 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
             kitchenGame.CoffeeIsDone = true;
             grab.coffeeDrink = true;
         }
-        else if (kitchenGame.noodleStage == 2 && GrabBool && grab.noodleEat == false)//coffee stage only goes to 3 when mug in hand, so this is fine
+        else if (kitchenGame.noodleStage == 2 && GrabBool && grab.noodleEat == false)
         {//drink coffee when in hand
             Debug.Log("eating noodles");
             audioSource.PlayOneShot(Drink);

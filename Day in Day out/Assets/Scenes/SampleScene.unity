@@ -1523,11 +1523,11 @@ MonoBehaviour:
   urinalIsWin: 0
   MeetingIsDone: 0
   meetingIsWin: 0
-  Days: 1
+  Days: 2
   audioSource: {fileID: 26645121}
   DaySound: {fileID: 8300000, guid: 59eebf1817b5a084486f09ea833de533, type: 3}
   OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
-  BossCheck: 0
+  BossCheck: 1
   AbleToChase: 0
   BossCooldown: 0
   JukeBoxObj: {fileID: 830215002}
@@ -45399,6 +45399,7 @@ MonoBehaviour:
   Boss2: {fileID: 741036051}
   Barrys: {fileID: 200321124}
   getOutUi: {fileID: 1961650768}
+  Crash: {fileID: 0}
 --- !u!212 &913893885
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53309,9 +53310,11 @@ MonoBehaviour:
   urgency: {fileID: 8300000, guid: 9eb6e31167fe7e741aca8192e5a72cf6, type: 3}
   timer: {fileID: 1687284781}
   DayManager: {fileID: 26645115}
+  runOnce: 1
   microwave: {fileID: 2849589460736681141}
   kitchenCheck: {fileID: 1077197020}
   kitchenCross: {fileID: 489314405}
+  grab: {fileID: 952766453}
 --- !u!82 &1065320140
 AudioSource:
   m_ObjectHideFlags: 0
@@ -91858,7 +91861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1769158074
 Transform:
   m_ObjectHideFlags: 0
@@ -97914,7 +97917,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.491
   m_Pitch: 1
   Loop: 0
   Mute: 0
