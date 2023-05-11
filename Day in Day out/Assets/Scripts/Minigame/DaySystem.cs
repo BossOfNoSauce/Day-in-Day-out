@@ -63,6 +63,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
 
     public Door kitchDoor;
     public Animator KitchenAnimator;
+
+    public Door meetingDoor;
     public Animator MeetingAnimator;
 
     public Door PeeDoor;
@@ -87,6 +89,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
         KitchenAnimator.enabled = false;
        // PeeDoor.enabled = false;
         PeeAnimator.enabled = false;
+        MeetingAnimator.enabled = false;
         image = gameObject.GetComponent<Image>();
 
 
@@ -145,7 +148,11 @@ public class DaySystem : MonoBehaviour, Iinteractable
             ComputerIsDone = false;
             playerMovement.InGame = false;
             CloseTrigger.enabled = true;
-            
+            ToDoList.SetActive(true);
+            ComputerTaskUi.SetActive(true);
+            UrinalTaskUi.SetActive(true);
+            ElevatorTaskUi.SetActive(false);
+            BossTaskUi.SetActive(false);
             if (Days == 2)
             {
                 PeeDoor.canOpen = true;
@@ -156,6 +163,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 computerIsWin = false;
                 ComputerIsDone = false;
                 computer.score = 0;
+                
                 
                 urinalIsWin = false;
                 UrinalIsDone = false;
@@ -188,11 +196,14 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 ToDoList.SetActive(true);
                 KitchenTaskUi.SetActive(true);
                 CloseTrigger.enabled = true;
+                ElevatorTaskUi.SetActive(false);
+                BossTaskUi.SetActive(false);
             }
             if(Days == 4)
             {
                 kitchenGame.ResetObState();
                 kitchenGame.cooldown = false;
+                meetingDoor.canOpen = true;
                 MeetingAnimator.enabled = true;
                 computer.score = 0;
                 BossCheck = false;
@@ -210,6 +221,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 ToDoList.SetActive(true);
                 MeetingTaskUi.SetActive(true);
                 CloseTrigger.enabled = true;
+                ElevatorTaskUi.SetActive(false);
+                BossTaskUi.SetActive(false);
             }
             if (Days == 5)
             {
@@ -227,8 +240,9 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 kitchenObjs.ResetObjs();
                 UrinalIsDone = true;
                 CloseTrigger.enabled = true;
-                NPC1.SetActive(false);
-                NPC2.SetActive(false);
+                
+                ElevatorTaskUi.SetActive(false);
+                BossTaskUi.SetActive(false);
 
 
             }

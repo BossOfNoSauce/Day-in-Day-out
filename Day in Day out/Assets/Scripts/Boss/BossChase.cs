@@ -70,6 +70,8 @@ public class BossChase : MonoBehaviour
     public SubtitleManager subtitle;
 
     public AudioSource Boss2;
+
+    public GameObject Barrys;
     void Start()
     {
         //transform.position = Points[pointsIndex].transform.position;
@@ -160,6 +162,7 @@ public class BossChase : MonoBehaviour
         Benches.SetActive(false);
         StrewnBenches.SetActive(true);
         ChaseDoor.SetActive(false);
+        Barrys.SetActive(true);
         yield return new WaitForSeconds(35);
         playerMovement.InGame = false;
         firstPersonCamera.FreezeMovement = false;

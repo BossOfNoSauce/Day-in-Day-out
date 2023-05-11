@@ -48,7 +48,7 @@ public class Computer : MonoBehaviour, Iinteractable
     public bool cooldown;
     //game win states
     bool isGameWin;
-    bool isGameFinished = false;
+   
     //so that you cant use computer while cutscene plays
     public bool canCompute = false;
 
@@ -67,7 +67,7 @@ public class Computer : MonoBehaviour, Iinteractable
     public bool Interact(Interactor interactor)
     {
         Debug.Log(canCompute);
-        Debug.Log(isGameFinished);
+        
         //this is what happenes when you interact
 
         StartCoroutine(StartComputing());
@@ -193,7 +193,7 @@ public class Computer : MonoBehaviour, Iinteractable
 
     IEnumerator EndGame()
     {
-        if(isGameFinished == false)
+        if(daySystem.ComputerIsDone == false)
         {
             
             yield return new WaitForSeconds(1);
@@ -204,19 +204,23 @@ public class Computer : MonoBehaviour, Iinteractable
             gameUi.SetActive(false);
             ToDoUI.SetActive(true);
             pause.AbleToPause = true;
+            Debug.Log(gameManager.gameActive);
+            Debug.Log(playerMovement.InGame);
+            Debug.Log(firstPersonCameraRotation.FreezeMovement);
             Player.transform.position = new Vector3(136, 7.41f, 93.8f);
             //check and reset score
             if(score >= 10)
             {
-                daySystem.ComputerIsDone = true;
-            }
-            else
-            {
                 daySystem.computerIsWin = true;
+                
             }
+            //else
+            //{
+           //     daySystem.ComputerIsDone = true;
+           // }
             score = 0;
             //set game bools and dayscript bools
-            isGameFinished = true;
+            
             daySystem.ComputerIsDone = true;
             
             //hile current spots
@@ -257,7 +261,7 @@ public class Computer : MonoBehaviour, Iinteractable
     {
         computerCheck.SetActive(false);
         computerCross.SetActive(false);
-        isGameFinished = false;
+        daySystem.ComputerIsDone = false;
         text.text = "score = " + score + " / 10";
         for (int i = 0; i < 3; i++)
         {
