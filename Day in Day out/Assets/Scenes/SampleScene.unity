@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -45402,7 +45402,7 @@ MonoBehaviour:
   eleUI: {fileID: 1846320552}
   bossUI: {fileID: 136793434}
   getOutUi: {fileID: 1961650768}
-  Crash: {fileID: 0}
+  Crash: {fileID: 8300000, guid: 788c71ce47a936d47a1c5bd83b3c9f5d, type: 3}
 --- !u!212 &913893885
 SpriteRenderer:
   m_ObjectHideFlags: 0
