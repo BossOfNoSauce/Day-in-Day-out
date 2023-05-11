@@ -167,7 +167,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 ToDoUi.SetActive(false);
                 audioSource.PlayOneShot(day2monologue, 1);
                 StartCoroutine(subtitle.Boss2());
-                yield return new WaitForSeconds(40);
+                yield return new WaitForSeconds(37);
                 daySystem.BossCheck = true;
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);
@@ -243,7 +243,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 ToDoUi.SetActive(false);
                 audioSource.PlayOneShot(day4monologue, 1);
                 StartCoroutine(subtitle.Boss4());
-                yield return new WaitForSeconds(31);
+                yield return new WaitForSeconds(29);
                 daySystem.BossCheck = true;
                 Debug.Log(daySystem.BossCheck);
                 BossImage.SetActive(false);

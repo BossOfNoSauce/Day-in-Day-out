@@ -276,6 +276,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
     }
     IEnumerator reset()
     {
+        ElevatorTaskUi.SetActive(false);
+        ToDoList.SetActive(false);
         Debug.Log("fade out");
         //fade out and reveal text "YOUR FIRED" w/ a reset button
         animator.SetTrigger("Ftb");//fade out
