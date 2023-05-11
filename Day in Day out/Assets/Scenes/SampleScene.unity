@@ -1523,7 +1523,7 @@ MonoBehaviour:
   urinalIsWin: 0
   MeetingIsDone: 0
   meetingIsWin: 0
-  Days: 1
+  Days: 2
   audioSource: {fileID: 26645121}
   DaySound: {fileID: 8300000, guid: 59eebf1817b5a084486f09ea833de533, type: 3}
   OpeningElevator: {fileID: 8300000, guid: 06b52a217910a2e4391cc1caf3311bbb, type: 3}
@@ -1535,9 +1535,9 @@ MonoBehaviour:
   animator: {fileID: 735071144}
   elevator: {fileID: 1806412101}
   computer: {fileID: 2098371508}
-  urinal: {fileID: 0}
+  urinal: {fileID: 2114999374}
   kitchenObjs: {fileID: 86406507}
-  meeting: {fileID: 0}
+  meeting: {fileID: 1487526586}
   ToDoList: {fileID: 50045296}
   ComputerTaskUi: {fileID: 1707859798}
   UrinalTaskUi: {fileID: 1938780379}
@@ -36005,7 +36005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &756433540
 Transform:
   m_ObjectHideFlags: 0
@@ -42678,7 +42678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3791236704787660373, guid: 435acfdf71bb1ad45916ec927906c210, type: 3}
       propertyPath: m_Name
-      value: Computer (1)
+      value: Computer (Robot)
       objectReference: {fileID: 0}
     - target: {fileID: 3791236704787660373, guid: 435acfdf71bb1ad45916ec927906c210, type: 3}
       propertyPath: m_Layer
@@ -42785,7 +42785,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.507
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -44669,7 +44669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3791236704787660373, guid: 435acfdf71bb1ad45916ec927906c210, type: 3}
       propertyPath: m_Name
-      value: Computer (1)
+      value: Computer (Robot)
       objectReference: {fileID: 0}
     - target: {fileID: 3791236704787660373, guid: 435acfdf71bb1ad45916ec927906c210, type: 3}
       propertyPath: m_Layer
@@ -44798,7 +44798,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.507
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -98533,7 +98533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1904140791
 Transform:
   m_ObjectHideFlags: 0

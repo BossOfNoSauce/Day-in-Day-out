@@ -297,6 +297,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
         elevator.SetTrigger("Elevator Open");
         audioSource.PlayOneShot(OpeningElevator);
         playerscript.FreezeMovement = false;
+        pause.AbleToPause = true;
         cooldown = true;
         jukebox.startMus = true;
         playerMovement.InGame = false;
