@@ -6,7 +6,11 @@ public class KitchenGame : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Arm;
-
+    //rewrite-outline
+    //[]find the color setter
+    //[]add two public gameobjects for the check and cross
+    //  []reveal proper check / cross by replacing the color thing
+    //[]delet unecissary vars
     public bool cooldown;
    
     HAND Hand;
