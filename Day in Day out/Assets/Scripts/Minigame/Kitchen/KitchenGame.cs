@@ -129,6 +129,6 @@ public class KitchenGame : MonoBehaviour
         microwave.resetmicro();
         grab.noodleEat = false;
         grab.coffeeDrink = false;
-        runOnce = false;
+        runOnce = true;
     }
 }
