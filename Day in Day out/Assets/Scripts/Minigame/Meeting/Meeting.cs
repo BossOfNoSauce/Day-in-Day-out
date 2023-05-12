@@ -49,6 +49,7 @@ public class Meeting : MonoBehaviour, Iinteractable
     public GameObject button;
     public bool Interact(Interactor interactor)
     {
+        //this is to prove that shit is working
         camera.FreezeMovement = true;
         playerMovement.InGame = true;
         //this is what happenes when you interact
