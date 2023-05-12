@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2003,7 +2003,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start!
+  m_text: START
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7924,14 +7924,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'how 2 hand:
+  m_text: 'Art of the Hand:
 
-    1. look at what you want to grab
+    1. Look at what you want to grab
 
-    2. press E
+    2. Press E
 
     3.
-    enjoy holding your item!
+    Enjoy holding your item!
+
+    4. While holding press E to drop
 
 '
   m_isRightToLeft: 0
@@ -35397,8 +35399,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mash spacebar when your eyelids start to close. Dont fall asleep or else
-    your co-workers will report you to the boss!
+  m_text: 'Mash spacebar when your eyelids start to close
+
+
+    Dont fall asleep
+    or else your co-workers will report you to the boss!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -37448,7 +37453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: START
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -66692,9 +66697,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'play
-
-'
+  m_text: START
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -70433,8 +70436,12 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Move your hand with your mouse to press the right buttons!
 
+
     Press
-    the yellow buttons, avoid the red ones
+    the yellow buttons
+
+
+    Avoid the red ones
 
 '
   m_isRightToLeft: 0
@@ -79971,16 +79978,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'how 2 make coffee:
+  m_text: 'Making Coffee for Dummies:
 
-    1. add coffee bag to coffee maker
+    1. Add coffee bag to coffee maker
 
-    2. turn
-    the maker on
+    2.
+    Turn the maker on
 
-    3. put your mug in the maker
+    3. Put your mug in the maker
 
-    4. enjoy! (press E)'
+    4. Enjoy! (press E)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -103078,7 +103085,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: if you drop any ingredients, they will be returned to the counter
+  m_text: If you drop any ingredients, they will be returned to the counter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -107563,16 +107570,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'how 2 cook noodle:
+  m_text: 'How 2 Cook Noodles:
 
-    1. grab noodle cube
+    1. Grab the noodle cube
 
-    2. pour water onto the
-    cube
+    2. Pour water onto
+    the cube
 
-    3. put into microwave for 15 seconds
+    3. Put into microwave for 15 seconds
 
-    4. enjoy! (press E)'
+    4. Enjoy! (press E)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -110142,8 +110149,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hold down A D keys or LEFT RIGHT arrow keys to counteract looking at the
-    fellow urinal-goers
+  m_text: 'Hold down A D keys or LEFT RIGHT arrow keys to turn keep looking straight
+    ahead
+
+
+    Avoid being a creep and turn away from looking at your fellow bathroom
+    enthusiast'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -110206,7 +110217,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -104.502785, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
