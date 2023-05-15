@@ -103,6 +103,16 @@ public class BossScript : MonoBehaviour, Iinteractable
         }
     }
 
+    public void BossUi()
+    {
+        bossui.SetActive(false);
+        computerui.SetActive(false);
+        urinalui.SetActive(false);
+        breakroomui.SetActive(false);
+        meetingui.SetActive(false);
+        elevatorui.SetActive(true);
+    }
+
     public bool Interact(Interactor interactor)
     {
         Debug.Log("interacted");
@@ -113,12 +123,7 @@ public class BossScript : MonoBehaviour, Iinteractable
 
     public IEnumerator Boss()
     {
-        bossui.SetActive(false);
-        computerui.SetActive(false);
-        urinalui.SetActive(false);
-        breakroomui.SetActive(false);
-        meetingui.SetActive(false);
-        elevatorui.SetActive(true);
+        
         if (daySystem.Days == 1)
         {
             if ( daySystem.BossCooldown == false && daySystem.ComputerIsDone == true)
@@ -146,6 +151,9 @@ public class BossScript : MonoBehaviour, Iinteractable
                 elevator.SetTrigger("Elevator Open");
                 audioSource.PlayOneShot(OpeningElevator);
                 Mcollider.enabled = false;
+
+                BossUi();
+
             }
 
             else if (daySystem.BossCooldown == true)
@@ -179,6 +187,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 elevator.SetTrigger("Elevator Open");
                 audioSource.PlayOneShot(OpeningElevator);
                 Mcollider.enabled = false;
+                BossUi();
             }
             if (daySystem.computerIsWin == false || daySystem.urinalIsWin == false)
             {
@@ -219,6 +228,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 elevator.SetTrigger("Elevator Open");
                 audioSource.PlayOneShot(OpeningElevator);
                 Mcollider.enabled = false;
+                BossUi();
             }
             if (daySystem.computerIsWin == false || daySystem.urinalIsWin == false || daySystem.kitchenIsWin == false)
             {
@@ -261,6 +271,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 audioSource.PlayOneShot(OpeningElevator);
                 daySystem.BossCooldown = true;
                 Mcollider.enabled = false;
+                BossUi();
             }
             if (daySystem.computerIsWin == false || daySystem.urinalIsWin == false || daySystem.kitchenIsWin == false || daySystem.meetingIsWin == false)
             {
@@ -298,5 +309,7 @@ public class BossScript : MonoBehaviour, Iinteractable
 
         yield return new WaitForSeconds(1);
     }
+
+    
     
 }
