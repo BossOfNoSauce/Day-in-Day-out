@@ -203,17 +203,6 @@ public class BossChase : MonoBehaviour
 
 
 
-        /* transform.Translate(Vector3.forward * Time.deltaTime * speed);
-         yield return new WaitForSeconds(3);
-         transform.Translate(0, 0, 0);
-         transform.Rotate(xAngle, yAngle, zAngle, Space.Self);
-         transform.Translate(Vector3.forward * Time.deltaTime * speed); // first turn
-         yield return new WaitForSeconds(4);
-
-         transform.Translate(0, 0, 0);
-
-
-         transform.Translate(Vector3.forward * Time.deltaTime * speed);// second turn */
 
 
 
@@ -221,6 +210,13 @@ public class BossChase : MonoBehaviour
     }
 
     
-
+    public void ResetChase()
+    {
+        Barrier.SetActive(false);
+        Door.SetActive(false);
+        Barrier2.SetActive(false);
+        Barrier3.SetActive(false);
+        debrisTrigger.SetActive(false);
+    }
 
 }
