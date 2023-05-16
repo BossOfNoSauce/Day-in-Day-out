@@ -19,6 +19,7 @@ public class BossChase : MonoBehaviour
     public Collider trigger;
 
     public AudioSource audioSource;
+    public AudioSource sfxSource;
     public AudioClip BigMonologue;
     public bool startChase;
     public AudioClip Roar;
@@ -76,6 +77,10 @@ public class BossChase : MonoBehaviour
     public GameObject getOutUi;
 
     public AudioClip Crash;
+
+    public bool hasDied;
+
+    public GameObject ChaseConstraints;
     void Start()
     {
         //transform.position = Points[pointsIndex].transform.position;
@@ -146,33 +151,37 @@ public class BossChase : MonoBehaviour
 
     IEnumerator Stare()
     {
-        taskUI.SetActive(false);
-        playerMovement.InGame = true;
-        firstPersonCamera.FreezeMovement = true;
-        Camera.transform.LookAt(Boss.transform.position, Vector3.up);
-        audioSource.PlayOneShot(BigMonologue, 1f);
-        StartCoroutine(subtitle.BossEnd());
-        yield return new WaitForSeconds(3);
-        BossAnim.SetTrigger("Turn");
-        Barrier.SetActive(true);
-        Door.SetActive(true);
-        Barrier2.SetActive(true);
-        Barrier3.SetActive(true);
-        debrisTrigger.SetActive(true);
-        //show debris
-        debris.SetActive(true);
-        //hide normal stuff
-        desks.SetActive(false);
-        Sofa.SetActive(false);
-        Benches.SetActive(false);
-        ChaseDoor.SetActive(false);
-        Barrys.SetActive(true);
-        yield return new WaitForSeconds(35);
-        taskUI.SetActive(true);
-        bossUI.SetActive(false);
-        eleUI.SetActive(true);
-        playerMovement.InGame = false;
-        firstPersonCamera.FreezeMovement = false;
+        if(hasDied == false)
+        {
+            taskUI.SetActive(false);
+            playerMovement.InGame = true;
+            firstPersonCamera.FreezeMovement = true;
+            Camera.transform.LookAt(Boss.transform.position, Vector3.up);
+            audioSource.PlayOneShot(BigMonologue, 1f);
+            StartCoroutine(subtitle.BossEnd());
+            yield return new WaitForSeconds(3);
+            BossAnim.SetTrigger("Turn");
+            Barrier.SetActive(true);
+            Door.SetActive(true);
+            Barrier2.SetActive(true);
+            Barrier3.SetActive(true);
+            debrisTrigger.SetActive(true);
+            //show debris
+            debris.SetActive(true);
+            //hide normal stuff
+            desks.SetActive(false);
+            Sofa.SetActive(false);
+            Benches.SetActive(false);
+            ChaseDoor.SetActive(false);
+            Barrys.SetActive(true);
+            yield return new WaitForSeconds(35);
+            taskUI.SetActive(true);
+            bossUI.SetActive(false);
+            eleUI.SetActive(true);
+            playerMovement.InGame = false;
+            firstPersonCamera.FreezeMovement = false;
+        }
+
         audioSource.PlayOneShot(Roar);
         BossAnim.SetTrigger("Roar");
         yield return new WaitForSeconds(5);
@@ -193,10 +202,10 @@ public class BossChase : MonoBehaviour
 
         yield return new WaitForSeconds(3);
         Crash1.SetActive(true);
-        audioSource.PlayOneShot(Crash);
+        sfxSource.PlayOneShot(Crash);
         yield return new WaitForSeconds(70);
         Crash2.SetActive(true);
-        audioSource.PlayOneShot(Crash);
+        sfxSource.PlayOneShot(Crash);
 
 
 
@@ -212,6 +221,7 @@ public class BossChase : MonoBehaviour
     
     public void ResetChase()
     {
+        BossAnim.SetTrigger("Back");
         Boss2.enabled = false;
         Barrier.SetActive(false);
         Door.SetActive(false);
@@ -220,6 +230,12 @@ public class BossChase : MonoBehaviour
         debrisTrigger.SetActive(false);
         trigger.enabled = true;
         audioSource.Stop();
+        desks.SetActive(true);
+        Sofa.SetActive(true);
+        Benches.SetActive(true);
+        ChaseDoor.SetActive(true);
+        Barrys.SetActive(false);
+        ChaseConstraints.SetActive(false);
     }
 
 }
