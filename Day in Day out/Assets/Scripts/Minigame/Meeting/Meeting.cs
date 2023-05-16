@@ -119,7 +119,7 @@ public class Meeting : MonoBehaviour, Iinteractable
         daySystem.meetingIsWin = isGameWin;
         //reset player posiotion
         Player.transform.position = new Vector3(-15, 7.4f, -60.9f);
-        collider.enabled = false;
+        collider.enabled = true;
         daySystem.MeetingIsDone = true;
         camera.FreezeMovement = false;
         playerMovement.InGame = false;
