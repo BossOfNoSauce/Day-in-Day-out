@@ -212,11 +212,14 @@ public class BossChase : MonoBehaviour
     
     public void ResetChase()
     {
+        Boss2.enabled = false;
         Barrier.SetActive(false);
         Door.SetActive(false);
         Barrier2.SetActive(false);
         Barrier3.SetActive(false);
         debrisTrigger.SetActive(false);
+        trigger.enabled = true;
+        audioSource.Stop();
     }
 
 }
