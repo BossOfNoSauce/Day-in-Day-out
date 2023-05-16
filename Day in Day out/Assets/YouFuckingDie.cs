@@ -71,6 +71,8 @@ public class YouFuckingDie : MonoBehaviour
         bossTrigger.enabled = true;
         playerMovement.InGame = false;
         firstPersonCamera.FreezeMovement = false;
+        bossChase.hasDied = true;
+        bossChase.ResetChase();
         //reset the boss chase so you dont just end the game
 
 
