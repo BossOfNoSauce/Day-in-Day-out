@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class EndingCredits : MonoBehaviour
 {
+    public GameObject title;
+    public Animator titleAnim;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,10 @@ public class EndingCredits : MonoBehaviour
     public IEnumerator Ending()
     {
         yield return new WaitForSeconds(25);
-        SceneManager.LoadScene("MainMenu");
+        title.SetActive(true);
+        titleAnim.SetTrigger("Title");
+        //SceneManager.LoadScene("MainMenu");
+        
     }
 
 }
