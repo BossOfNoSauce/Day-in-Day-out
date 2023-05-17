@@ -239,6 +239,7 @@ public class BossChase : MonoBehaviour
         ChaseConstraints.SetActive(false);
         barrir.SetActive(false);
         transform.localPosition = new Vector3(38, 12.5f, 0.5f);
+        // reset movement array
     }
 
 }
