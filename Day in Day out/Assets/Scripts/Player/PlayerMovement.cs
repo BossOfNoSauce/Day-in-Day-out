@@ -111,8 +111,8 @@ public class PlayerMovement : MonoBehaviour
         {
             audioSource.enabled = false;
         }
-
-        if (Input.GetKey(KeyCode.LeftShift))
+        //Debug.Log("horz: " + horizontalInput + " |ver: " + verticalInput);//debug line
+        if (Input.GetKey(KeyCode.LeftShift) && (horizontalInput != 0.0f || verticalInput != 0.0f))
         {
             if (stamina > 0 && !isFatigued)
             {
@@ -122,35 +122,47 @@ public class PlayerMovement : MonoBehaviour
                 moveSpeed = runSpeed;
                 isRunning = true;
             }
-            else
-
+            else if (isRunning || isFatigued)
+            { 
+                moveSpeed = walkSpeed; isRunning = false; 
+            }
+        }
+        else
+        {
             if (isRunning || isFatigued)
-            { moveSpeed = walkSpeed; isRunning = false; }
+            {
+                moveSpeed = walkSpeed; isRunning = false;
+            }
+        }
+        if (isRunning)
+        {
+            stamina -= Time.deltaTime * drainRate; 
+        }
+        else if (!isRunning && stamina > 0 && stamina < 100)
+        { 
+            stamina += Time.deltaTime * reChargeRate; 
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        { if (isRunning || isFatigued)
-            { moveSpeed = walkSpeed; isRunning = false; } }
-
-        if (isRunning)
-        {stamina -= Time.deltaTime * drainRate; }
-        else
-        if (!isRunning && stamina > 0 && stamina < 100)
-        { stamina += Time.deltaTime * reChargeRate; }
-
         if (stamina <= 0f && fatigueTimer <= 3)
-        { fatigueTimer += Time.deltaTime;
-            isFatigued = true;}
-        else
-        if (fatigueTimer >= 3)
-        { stamina += Time.deltaTime * reChargeRate;
+        {
+            fatigueTimer += Time.deltaTime;
+            isFatigued = true;
+        }
+        else if (fatigueTimer >= 3)
+        {
+            stamina += Time.deltaTime * reChargeRate;
             isFatigued = false;
-            fatigueTimer = 0;}
+            fatigueTimer = 0;
+        }
 
         if (stamina < 0f)
-        { stamina = 0f;}
+        {
+            stamina = 0f;
+        }
         if (stamina > 100f)
-        { stamina = 100f; }
+        { 
+            stamina = 100f;
+        }
 
        
 
