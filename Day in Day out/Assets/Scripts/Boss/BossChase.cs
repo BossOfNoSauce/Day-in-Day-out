@@ -183,6 +183,7 @@ public class BossChase : MonoBehaviour
         }
 
         audioSource.PlayOneShot(Roar);
+        BossAnim.SetTrigger("Turn");
         BossAnim.SetTrigger("Roar");
         yield return new WaitForSeconds(5);
         elevator.SetTrigger("Elevator Open");
@@ -236,6 +237,8 @@ public class BossChase : MonoBehaviour
         ChaseDoor.SetActive(true);
         Barrys.SetActive(false);
         ChaseConstraints.SetActive(false);
+        barrir.SetActive(false);
+        transform.localPosition = new Vector3(38, 12.5f, 0.5f);
     }
 
 }
