@@ -29,6 +29,7 @@ public class Urinal : MonoBehaviour, Iinteractable
     public GameObject urinalUI;
     public GameObject urinalCheck;
     public GameObject urinalCross;
+    Slider pissValue;
 
     public GameObject PauseMenu;
     PauseGame pauseGame;
@@ -79,6 +80,8 @@ public class Urinal : MonoBehaviour, Iinteractable
 
         gameManager = manager.GetComponent<GameManager>();
 
+        pissValue = urinalUI.GetComponent<Slider>();
+
         button.SetActive(true);
 
     }
@@ -109,11 +112,11 @@ public class Urinal : MonoBehaviour, Iinteractable
 
     public void game()
     {
+        
         targetMovement.transform.localPosition.Set(-3.32f, -12.00449f, 3.566877f);//reset lookat target
         playerController.InGame = true;
         //sets player to inGame, freezing them in place
         StartCoroutine(StartUrination());
-
        
     }
     public void endGame()
@@ -121,6 +124,7 @@ public class Urinal : MonoBehaviour, Iinteractable
         if (daySystem.UrinalIsDone)//end game in here, constantly called
         {
             StopCoroutine(StartUrination());
+            urinalUI.SetActive(false);
             //setting bools
             targetMovement.GameIsActive = false;
             inGame = false;
@@ -145,7 +149,12 @@ public class Urinal : MonoBehaviour, Iinteractable
 
     IEnumerator StartUrination()
     {
-        //urinalUI.SetActive(true);
+        //show piss bar and reset it
+        urinalUI.SetActive(true);
+        pissValue.value = 1.0f;
+        //start draining piss bar hehe
+        StartCoroutine(pissBar());
+        //reset target transform
         target.transform.localPosition = new Vector3(-3.32f, -12, 3.5f);
         firstPersonCameraRotation.FreezeMovement = true;
         pauseGame.AbleToPause = false; //dissables pause menu
@@ -168,5 +177,14 @@ public class Urinal : MonoBehaviour, Iinteractable
     {
         urinalCheck.SetActive(false);
         urinalCross.SetActive(false);
+    }
+    //drains the piss bar
+    IEnumerator pissBar()
+    {
+        for (int i = 20; i > 0; i--)
+        {
+            yield return new WaitForSeconds(1);
+            pissValue.value -= 0.05f;
+        }
     }
 }
