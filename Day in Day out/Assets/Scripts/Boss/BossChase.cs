@@ -81,6 +81,8 @@ public class BossChase : MonoBehaviour
     public bool hasDied;
 
     public GameObject ChaseConstraints;
+
+    bool cooldown = false;
     void Start()
     {
         //transform.position = Points[pointsIndex].transform.position;
@@ -200,23 +202,16 @@ public class BossChase : MonoBehaviour
 
     public IEnumerator MoveTowards()
     {
-
-        yield return new WaitForSeconds(3);
-        Crash1.SetActive(true);
-        sfxSource.PlayOneShot(Crash);
-        yield return new WaitForSeconds(70);
-        Crash2.SetActive(true);
-        sfxSource.PlayOneShot(Crash);
-
-
-
-
-
-
-
-
-
-
+        if(cooldown == false)
+        {
+            cooldown = true;
+            yield return new WaitForSeconds(3);
+            Crash1.SetActive(true);
+            sfxSource.PlayOneShot(Crash);
+            yield return new WaitForSeconds(70);
+            Crash2.SetActive(true);
+            sfxSource.PlayOneShot(Crash);
+        }
     }
 
     
@@ -240,6 +235,12 @@ public class BossChase : MonoBehaviour
         barrir.SetActive(false);
         transform.localPosition = new Vector3(38, 12.5f, 0.5f);
         // reset movement array
+        pointsIndex = 1;
+        //reset wall crash
+        Crash1.SetActive(false);
+        Crash2.SetActive(false);
+        // reset ui
+        getOutUi.SetActive(false);
     }
 
 }
