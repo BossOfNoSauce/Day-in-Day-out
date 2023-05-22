@@ -163,27 +163,28 @@ public class BossChase : MonoBehaviour
             StartCoroutine(subtitle.BossEnd());
             yield return new WaitForSeconds(3);
             BossAnim.SetTrigger("Turn");
-            Barrier.SetActive(true);
-            Door.SetActive(true);
-            Barrier2.SetActive(true);
-            Barrier3.SetActive(true);
-            debrisTrigger.SetActive(true);
-            //show debris
-            debris.SetActive(true);
-            //hide normal stuff
-            desks.SetActive(false);
-            Sofa.SetActive(false);
-            Benches.SetActive(false);
-            ChaseDoor.SetActive(false);
-            Barrys.SetActive(true);
+            
             yield return new WaitForSeconds(35);
             taskUI.SetActive(true);
-            bossUI.SetActive(false);
-            eleUI.SetActive(true);
+            
             playerMovement.InGame = false;
             firstPersonCamera.FreezeMovement = false;
         }
-
+        bossUI.SetActive(false);
+        eleUI.SetActive(true);
+        Barrier.SetActive(true);
+        Door.SetActive(true);
+        Barrier2.SetActive(true);
+        Barrier3.SetActive(true);
+        debrisTrigger.SetActive(true);
+        //show debris
+        debris.SetActive(true);
+        //hide normal stuff
+        desks.SetActive(false);
+        Sofa.SetActive(false);
+        Benches.SetActive(false);
+        ChaseDoor.SetActive(false);
+        Barrys.SetActive(true);
         audioSource.PlayOneShot(Roar);
         BossAnim.SetTrigger("Turn");
         BossAnim.SetTrigger("Roar");
@@ -243,6 +244,8 @@ public class BossChase : MonoBehaviour
         Crash2.SetActive(false);
         // reset ui
         getOutUi.SetActive(false);
+        bossUI.SetActive(true);
+        eleUI.SetActive(false);
     }
 
 }
