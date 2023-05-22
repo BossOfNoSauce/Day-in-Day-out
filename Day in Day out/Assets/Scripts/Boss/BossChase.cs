@@ -217,6 +217,8 @@ public class BossChase : MonoBehaviour
     
     public void ResetChase()
     {
+        cooldown = false;
+        StopCoroutine(MoveTowards());
         BossAnim.SetTrigger("Back");
         Boss2.enabled = false;
         Barrier.SetActive(false);

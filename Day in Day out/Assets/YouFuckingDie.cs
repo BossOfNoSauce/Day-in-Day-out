@@ -58,8 +58,9 @@ public class YouFuckingDie : MonoBehaviour
     {
         playerMovement.InGame = true;
         firstPersonCamera.FreezeMovement = true;
-        yield return new WaitForSeconds(1);
+        
         animator.SetTrigger("Ftb");
+        yield return new WaitForSeconds(1);
         //you died text
         player.transform.position = new Vector3(142, 7.4f, -43f);
         yield return new WaitForSeconds(3);
