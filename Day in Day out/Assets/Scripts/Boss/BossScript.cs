@@ -303,6 +303,7 @@ public class BossScript : MonoBehaviour, Iinteractable
                 urinalui.SetActive(false);
                 bossui.SetActive(true);
                 BossDoorAnim.SetTrigger("BossOpen");
+                Mcollider.enabled = false;
                 // swing open door
             }
         }
