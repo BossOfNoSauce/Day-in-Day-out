@@ -4029,13 +4029,14 @@ GameObject:
   - component: {fileID: 489822531}
   - component: {fileID: 489822533}
   - component: {fileID: 489822532}
+  - component: {fileID: 489822534}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &489822531
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4052,8 +4053,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0982, y: 32}
-  m_SizeDelta: {x: 1812.0828, y: 948.2892}
+  m_AnchoredPosition: {x: 0.0982, y: -1790}
+  m_SizeDelta: {x: 1812.0828, y: 2383.7434}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &489822532
 MonoBehaviour:
@@ -4088,13 +4089,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Daniel Hultman - Art and Design\n\nJames Smith - Programming and modeling\n\nChristian
-    Donovan - Music\n\nJaden Mullert - Sound Design\n\nEthan Cichowicz - Design and
-    programming\n\n\nVOICES\n\nNatalie Edward - Phone Lady\r\n\r\nJadis Wilkin- Toilet
-    Guy\r\n\r\nJesse Eaton - Detective\r\n\r\nGrant Marshall - Clock Guy\r\n\r\nDaniel
-    Hultman - File Guy\r\n\r\nEthan Cichowicz - The Boss\n\n\nGENERAL QUALITY ASSURANCE\n\r\nFred
-    Horvatin - Game Tester\r\n\r\nMatthew Ramos - Emotional Support\n\nPhillip Hockaday
-    - Texan/Jesus enthusiast \n\n\n"
+  m_Text: "Credits\n\n\n\nDaniel Hultman - Art and Design\n\n\nJames Smith - Programming
+    and modeling\n\n\nChristian Donovan - Music\n\n\nJaden Mullert - Sound Design\n\n\nEthan
+    Cichowicz - Design and programming\n\n\n\n\nVOICES\n\n\nNatalie Edward - Phone
+    Lady\r\n\r\n\nJadis Wilkin- Toilet Guy\r\n\r\n\nJesse Eaton - Detective\r\n\r\n\nGrant
+    Marshall - Clock Guy\r\n\r\n\nDaniel Hultman - File Guy\r\n\r\n\nEthan Cichowicz
+    - The Boss\n\n\n\nGENERAL QUALITY ASSURANCE\n\r\n\nFred Horvatin - Game Tester\r\n\r\n\nMatthew
+    Ramos - Emotional Support\n\n\nPhillip Hockaday - Texan/Jesus enthusiast \n\n\n\n\n\n\n\n\n\n"
 --- !u!222 &489822533
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4103,6 +4104,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489822530}
   m_CullTransparentMesh: 1
+--- !u!95 &489822534
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489822530}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1f94d67584556de4a922313b20335936, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &494561422
 GameObject:
   m_ObjectHideFlags: 0
@@ -6994,6 +7014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: {fileID: 1690945960}
   titleAnim: {fileID: 1690945962}
+  creditAnim: {fileID: 489822534}
 --- !u!1 &896480697
 GameObject:
   m_ObjectHideFlags: 0
@@ -7991,6 +8012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: {fileID: 1690945960}
   titleAnim: {fileID: 1690945962}
+  creditAnim: {fileID: 489822534}
 --- !u!212 &984708833
 SpriteRenderer:
   m_ObjectHideFlags: 0
