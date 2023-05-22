@@ -35009,8 +35009,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.2880673, y: 2.7600284, z: 7.3403}
-  m_Center: {x: -0.027705776, y: -0.7026358, z: -0.32528082}
+  m_Size: {x: 4.4722304, y: 2.7600284, z: 11.06069}
+  m_Center: {x: -0.047788735, y: -0.7026358, z: -0.58399194}
 --- !u!82 &741036051
 AudioSource:
   m_ObjectHideFlags: 0
@@ -35495,7 +35495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &756433540
 Transform:
   m_ObjectHideFlags: 0
