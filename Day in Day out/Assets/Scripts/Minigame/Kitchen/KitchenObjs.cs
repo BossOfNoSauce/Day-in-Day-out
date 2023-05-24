@@ -17,6 +17,7 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
 
     public bool GrabBool;
     public grabObj grab;
+    public bool isNoodle = false;
 
     public GameObject Kitchen;
      KitchenGame kitchenGame;
@@ -37,7 +38,7 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
         coffeeMachine = cMachine.GetComponent<CoffeeMachine>();
     }
 
-    public void ResetObjs()
+    public void ResetObjs()//reserts food items to original positions and the stage they're in
     {
         kitchenGame.coffeeStage = 0;
         kitchenGame.noodleStage = 0;
@@ -65,8 +66,8 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
             kitchenGame.CoffeeIsDone = true;
             grab.coffeeDrink = true;
         }
-        else if (kitchenGame.noodleStage == 2 && GrabBool && grab.noodleEat == false)
-        {//drink coffee when in hand
+        else if (kitchenGame.noodleStage == 2 && GrabBool && grab.noodleEat == false && grab.isNoodle)//noodle stage is set to 2 when not in hand, so this elif needs to get changed
+        {//eat noodles when in hand
             Debug.Log("eating noodles");
             audioSource.PlayOneShot(Drink);
             kitchenGame.NoodlesIsDone = true;
@@ -74,15 +75,15 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
         }
         else
         {
-            if (grab.grabbing && GrabBool || !grab.grabbing && ! GrabBool)//if this object is held or no objects are held
+            if (grab.grabbing && GrabBool || !grab.grabbing && ! GrabBool)//if this object is held in hand or no objects are held in hand
             {
                 Debug.Log("dropping / grabbing item");
                 this.ObjectGrabPointTransform = ObjectGrabPointTransform;
 
                 //this sets the button to the opposite of its current active state. theoretically
                 button.SetActive(!button);
-
-                grab.grabbing = !grab.grabbing;
+                grab.isNoodle = isNoodle;
+                grab.grabbing = !grab.grabbing;//constant bool, to check if an item is in the hand
                 GrabBool = !GrabBool;//grab bool moves transform to grab point
                 //sp trhat it dont fall / rotate away
                 RB.freezeRotation = !RB.freezeRotation;
