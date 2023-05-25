@@ -23,8 +23,9 @@ public class KitchenGame : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip ticking;
     public AudioClip urgency;
-
+    //ui elements to hide / reveal
     public GameObject timer;
+    public GameObject taskList;
     //i know improper grammer, stfu
 
     public GameObject DayManager;
@@ -59,7 +60,7 @@ public class KitchenGame : MonoBehaviour
             kitchenCheck.SetActive(true);
         }
 
-        if (daySystem.kitchenIsWin || daySystem.KitchenIsDone)
+        if (daySystem.KitchenIsDone)
         {
             StopCoroutine(GameTimer());
             audioSource.Stop();
@@ -72,7 +73,9 @@ public class KitchenGame : MonoBehaviour
         {
             if(cooldown == false)
             {
+                //hide / revela ui stuff
                 Arm.SetActive(true);
+                taskList.SetActive(false);
                 StartCoroutine(GameTimer());
                 cooldown = true;
             }
@@ -87,8 +90,9 @@ public class KitchenGame : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-
+            //hide / revela ui stuff
             Arm.SetActive(false);
+            taskList.SetActive(true);
             Hand.HandActive = true;
             
             

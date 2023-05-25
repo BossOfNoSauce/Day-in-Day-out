@@ -80,8 +80,7 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
                 Debug.Log("dropping / grabbing item");
                 this.ObjectGrabPointTransform = ObjectGrabPointTransform;
 
-                //this sets the button to the opposite of its current active state. theoretically
-                button.SetActive(!button);
+                button.SetActive(!button.activeSelf);//set interaction prompt to oppisite of itself
                 grab.isNoodle = isNoodle;
                 grab.grabbing = !grab.grabbing;//constant bool, to check if an item is in the hand
                 GrabBool = !GrabBool;//grab bool moves transform to grab point
@@ -119,13 +118,6 @@ public class KitchenObjs : MonoBehaviour, Iinteractable
                 RB.MovePosition(ObjectGrabPointTransform.position);
             }
         }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            
-            
-        }
-
      if (AbleToGrab == true)
      {
             gameObject.layer = LayerMask.NameToLayer("Interact");
