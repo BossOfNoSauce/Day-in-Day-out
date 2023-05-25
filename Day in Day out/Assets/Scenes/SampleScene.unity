@@ -3816,7 +3816,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 78a2a618b85d93744a645fe3a1a1166d, type: 3}
   - {fileID: 8300000, guid: f52d3721bbb8eac43b08ae77f90708ae, type: 3}
   - {fileID: 8300000, guid: ee04a8769d0fbb44590489c8358cc3d7, type: 3}
-  isNpc: 0
+  isNpc: 1
   addYrot: 0
 --- !u!212 &56856362
 SpriteRenderer:
@@ -4971,7 +4971,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 78a2a618b85d93744a645fe3a1a1166d, type: 3}
   - {fileID: 8300000, guid: f52d3721bbb8eac43b08ae77f90708ae, type: 3}
   - {fileID: 8300000, guid: ee04a8769d0fbb44590489c8358cc3d7, type: 3}
-  isNpc: 0
+  isNpc: 1
   addYrot: 0
 --- !u!212 &78791128
 SpriteRenderer:
@@ -9280,7 +9280,7 @@ MonoBehaviour:
   audioSource: {fileID: 178587956}
   audioClips:
   - {fileID: 8300000, guid: 6589cb70a64f0a64c9129447c8811120, type: 3}
-  isNpc: 0
+  isNpc: 1
   addYrot: 0
 --- !u!212 &178587953
 SpriteRenderer:
@@ -13683,7 +13683,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 78a2a618b85d93744a645fe3a1a1166d, type: 3}
   - {fileID: 8300000, guid: f52d3721bbb8eac43b08ae77f90708ae, type: 3}
   - {fileID: 8300000, guid: ee04a8769d0fbb44590489c8358cc3d7, type: 3}
-  isNpc: 0
+  isNpc: 1
   addYrot: 0
 --- !u!54 &269059057
 Rigidbody:
@@ -21937,7 +21937,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 78a2a618b85d93744a645fe3a1a1166d, type: 3}
   - {fileID: 8300000, guid: f52d3721bbb8eac43b08ae77f90708ae, type: 3}
   - {fileID: 8300000, guid: ee04a8769d0fbb44590489c8358cc3d7, type: 3}
-  isNpc: 0
+  isNpc: 1
   addYrot: 0
 --- !u!212 &465126590
 SpriteRenderer:
@@ -48437,7 +48437,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 78a2a618b85d93744a645fe3a1a1166d, type: 3}
   - {fileID: 8300000, guid: f52d3721bbb8eac43b08ae77f90708ae, type: 3}
   - {fileID: 8300000, guid: ee04a8769d0fbb44590489c8358cc3d7, type: 3}
-  isNpc: 0
+  isNpc: 1
   addYrot: 0
 --- !u!212 &973013547
 SpriteRenderer:
@@ -59917,7 +59917,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 78a2a618b85d93744a645fe3a1a1166d, type: 3}
   - {fileID: 8300000, guid: f52d3721bbb8eac43b08ae77f90708ae, type: 3}
   - {fileID: 8300000, guid: ee04a8769d0fbb44590489c8358cc3d7, type: 3}
-  isNpc: 0
+  isNpc: 1
   addYrot: 0
 --- !u!212 &1187730051
 SpriteRenderer:
@@ -69458,7 +69458,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 78a2a618b85d93744a645fe3a1a1166d, type: 3}
   - {fileID: 8300000, guid: f52d3721bbb8eac43b08ae77f90708ae, type: 3}
   - {fileID: 8300000, guid: ee04a8769d0fbb44590489c8358cc3d7, type: 3}
-  isNpc: 0
+  isNpc: 1
   addYrot: 0
 --- !u!212 &1363114646
 SpriteRenderer:
@@ -97852,7 +97852,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 78a2a618b85d93744a645fe3a1a1166d, type: 3}
   - {fileID: 8300000, guid: f52d3721bbb8eac43b08ae77f90708ae, type: 3}
   - {fileID: 8300000, guid: ee04a8769d0fbb44590489c8358cc3d7, type: 3}
-  isNpc: 0
+  isNpc: 1
   addYrot: 0
 --- !u!212 &1893536296
 SpriteRenderer:
@@ -102480,7 +102480,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5bf3cde6005c739479d26145fc7bb91b, type: 3}
   - {fileID: 8300000, guid: c7b1a1e5aa337af4dba526f39c921a61, type: 3}
   - {fileID: 8300000, guid: fa5639f9395218e4399164b1e766a7f0, type: 3}
-  isNpc: 0
+  isNpc: 1
   addYrot: 0
 --- !u!54 &1970573324
 Rigidbody:
@@ -106099,7 +106099,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6348f8f1fb64fd84eaebb405dadc642a, type: 3}
   - {fileID: 8300000, guid: 51afff46085150941a09d4383a7256ca, type: 3}
   - {fileID: 8300000, guid: aec11e5ab4fe47e419b34242329dd665, type: 3}
-  isNpc: 0
+  isNpc: 1
   addYrot: 0
 --- !u!212 &2036852457
 SpriteRenderer:
