@@ -74534,7 +74534,7 @@ MonoBehaviour:
   GameIsActive: 0
   right: {x: 10, y: 0, z: 0}
   m_rigidbody: {fileID: 1467735993}
-  Power: 14
+  Power: 7
   velocityActive: 1
   urinalArrow: {fileID: 0}
   urinal: {fileID: 2114999374}
@@ -110345,7 +110345,7 @@ MonoBehaviour:
 
 
     Avoid being a creep and turn away from looking at your fellow bathroom
-    enthusiast'
+    enthusiast. Get ready! it comes up quick'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
