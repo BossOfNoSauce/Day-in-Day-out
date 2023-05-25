@@ -130,7 +130,7 @@ public class BossChase : MonoBehaviour
                     pointsIndex += 1;
                 }
             }*/
-            StartCoroutine(MoveTowards());
+            
         }
     }
 
@@ -146,6 +146,18 @@ public class BossChase : MonoBehaviour
                 StartCoroutine(Stare());
             }
            
+        }
+
+        if(other.gameObject.tag == "CrashTrigger")
+        {
+            Crash1.SetActive(true);
+            sfxSource.PlayOneShot(Crash);
+        }
+
+        if (other.gameObject.tag == "Crash2Trigger")
+        {
+            Crash2.SetActive(true);
+            sfxSource.PlayOneShot(Crash);
         }
 
 
@@ -201,25 +213,13 @@ public class BossChase : MonoBehaviour
 
     }
 
-    public IEnumerator MoveTowards()
-    {
-        if(cooldown == false)
-        {
-            cooldown = true;
-            yield return new WaitForSeconds(3);
-            Crash1.SetActive(true);
-            sfxSource.PlayOneShot(Crash);
-            yield return new WaitForSeconds(70);
-            Crash2.SetActive(true);
-            sfxSource.PlayOneShot(Crash);
-        }
-    }
+   
 
     
     public void ResetChase()
     {
         cooldown = false;
-        StopCoroutine(MoveTowards());
+        
         BossAnim.SetTrigger("Back");
         Boss2.enabled = false;
         Barrier.SetActive(false);

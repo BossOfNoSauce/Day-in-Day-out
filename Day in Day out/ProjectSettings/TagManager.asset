@@ -10,6 +10,8 @@ TagManager:
   - Noodles
   - cutscene
   - SubBoss
+  - CrashTrigger
+  - Crash2Trigger
   layers:
   - Default
   - TransparentFX
