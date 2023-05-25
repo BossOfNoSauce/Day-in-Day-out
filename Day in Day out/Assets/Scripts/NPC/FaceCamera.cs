@@ -13,7 +13,8 @@ public class FaceCamera : MonoBehaviour, Iinteractable
 
     public AudioClip[] audioClips;
 
-    public bool toilet;
+    public bool isNpc = true;
+    public float addYrot = 0.0f;
     
     
     public FaceCamera(GameObject target)
@@ -34,18 +35,23 @@ public class FaceCamera : MonoBehaviour, Iinteractable
 
         transform.LookAt(targetPosition);
 
-        transform.rotation.Set(0.0f, transform.rotation.y, 0.0f, transform.rotation.w);//rotation correcting, the x and z rot shouldnt be modified so set to 0
+        transform.rotation.Set(0.0f, transform.rotation.y + 0.0f, 0.0f, transform.rotation.w);//rotation correcting, the x and z rot shouldnt be modified so set to 0
 
         
     }
 
     public bool Interact(Interactor interactor)
     {
-        audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
-        audioSource.Play();
-        return true;
-        
-
+        if (isNpc)
+        {
+            audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
+            audioSource.Play();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }
