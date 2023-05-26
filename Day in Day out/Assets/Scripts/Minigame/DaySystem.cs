@@ -88,6 +88,8 @@ public class DaySystem : MonoBehaviour, Iinteractable
     public GameObject Calender3;
     public GameObject Calender4;
     public GameObject Calender5;
+
+    public bool canMeet = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -240,6 +242,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
             }
             if (Days == 5)
             {
+                BossCooldown = false;
                 Tint.GetComponent<Image>().color = new Color32(255, 0, 15, 26);
                 audioSource.Play();
                 BossCheck = false;
@@ -261,6 +264,7 @@ public class DaySystem : MonoBehaviour, Iinteractable
                 KitchenTaskUi.SetActive(false);
                 MeetingTaskUi.SetActive(false);
                 BossTaskUi.SetActive(true);
+                canMeet = false;
                 
 
 

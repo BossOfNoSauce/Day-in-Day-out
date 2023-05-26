@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class BossChase : MonoBehaviour
 {
@@ -83,6 +85,9 @@ public class BossChase : MonoBehaviour
     public GameObject ChaseConstraints;
 
     bool cooldown = false;
+
+    public GameObject Tint;
+    Image image;
     void Start()
     {
         //transform.position = Points[pointsIndex].transform.position;
@@ -246,6 +251,7 @@ public class BossChase : MonoBehaviour
         getOutUi.SetActive(false);
         bossUI.SetActive(true);
         eleUI.SetActive(false);
+        Tint.GetComponent<Image>().color = new Color32(255, 0, 15, 26);
     }
 
 }

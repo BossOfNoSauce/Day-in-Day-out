@@ -55,7 +55,11 @@ public class Meeting : MonoBehaviour, Iinteractable
         //this is what happenes when you interact
         Debug.Log("Meeting Time");
        // tutUi.SetActive(true);
-        StartCoroutine(MeetingTime());
+       if(daySystem.canMeet == true)
+        {
+            StartCoroutine(MeetingTime());
+        }
+        
         return true;
     }
 

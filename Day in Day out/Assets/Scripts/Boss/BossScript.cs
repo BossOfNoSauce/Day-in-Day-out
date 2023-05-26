@@ -288,7 +288,7 @@ public class BossScript : MonoBehaviour, Iinteractable
         if(daySystem.Days == 5)
         {
            
-            if (daySystem.AbleToChase == true)
+            if (daySystem.AbleToChase == true && daySystem.BossCooldown == false)
             {
                 Mcollider.enabled = true;
                 BossImage.SetActive(true);
@@ -304,7 +304,8 @@ public class BossScript : MonoBehaviour, Iinteractable
                 bossui.SetActive(true);
                 BossDoorAnim.SetTrigger("BossOpen");
                 Mcollider.enabled = false;
-                // swing open door
+                daySystem.BossCooldown = true;
+                
             }
         }
 
