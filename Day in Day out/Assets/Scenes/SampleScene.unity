@@ -27311,6 +27311,7 @@ GameObject:
   - component: {fileID: 588822329}
   - component: {fileID: 588822331}
   - component: {fileID: 588822330}
+  - component: {fileID: 588822332}
   m_Layer: 0
   m_Name: Button (1)
   m_TagString: Untagged
@@ -27402,6 +27403,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &588822332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588822328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6747649f4754964eb548e6f29562354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1926878008}
+  prompt: 
+  audioSource: {fileID: 0}
+  audioClips: []
+  isNpc: 0
+  addYrot: 180
 --- !u!1 &589953797
 GameObject:
   m_ObjectHideFlags: 0
@@ -65180,6 +65199,7 @@ GameObject:
   - component: {fileID: 1297668589}
   - component: {fileID: 1297668591}
   - component: {fileID: 1297668590}
+  - component: {fileID: 1297668592}
   m_Layer: 0
   m_Name: Button  (4)
   m_TagString: Untagged
@@ -65271,6 +65291,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1297668592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297668588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6747649f4754964eb548e6f29562354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1926878008}
+  prompt: 
+  audioSource: {fileID: 0}
+  audioClips: []
+  isNpc: 0
+  addYrot: 180
 --- !u!1001 &1298665741
 PrefabInstance:
   m_ObjectHideFlags: 0

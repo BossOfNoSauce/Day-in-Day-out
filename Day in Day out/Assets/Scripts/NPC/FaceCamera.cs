@@ -35,7 +35,7 @@ public class FaceCamera : MonoBehaviour, Iinteractable
 
         transform.LookAt(targetPosition);
 
-        transform.rotation.Set(0.0f, transform.rotation.y + 0.0f, 0.0f, transform.rotation.w);//rotation correcting, the x and z rot shouldnt be modified so set to 0
+        transform.rotation.Set(0.0f, transform.rotation.y + addYrot, 0.0f, transform.rotation.w);//rotation correcting, the x and z rot shouldnt be modified so set to 0
 
         
     }
