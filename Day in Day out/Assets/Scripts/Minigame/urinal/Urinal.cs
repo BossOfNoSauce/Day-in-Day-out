@@ -124,6 +124,7 @@ public class Urinal : MonoBehaviour, Iinteractable
         if (daySystem.UrinalIsDone)//end game in here, constantly called
         {
             StopCoroutine(StartUrination());
+            StopCoroutine(pissBar());
             urinalUI.SetActive(false);
             //setting bools
             targetMovement.GameIsActive = false;

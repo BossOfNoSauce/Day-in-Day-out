@@ -31,7 +31,7 @@ public class TargetMovement : MonoBehaviour
         
     }
 
-    void Update()
+    void FixedUpdate()
     {
         time += Time.deltaTime;
         
