@@ -14,7 +14,7 @@ public class LittleBookScript : MonoBehaviour, Iinteractable
     public GameObject PeeUI;
     public GameObject KitUI;
     public GameObject MetUI;
-
+    public GameManager gameManager;
     public Transform target;
 
     public bool startSlide;
@@ -44,6 +44,7 @@ public class LittleBookScript : MonoBehaviour, Iinteractable
             KitUI.SetActive(false);
             MetUI.SetActive(false);
             gameObject.SetActive(false);
+            gameManager.bookPickup = true;
             return true;
         }
         else

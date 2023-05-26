@@ -8,18 +8,17 @@ public class GameManager : MonoBehaviour
     public bool gameActive;
     public AudioSource audioSource;
     public AudioClip Dialogue;
-    public Animator animator;
+    public Animator animatorDoor;
     public AudioClip door;
-    public bool TheBool;
-    public GameObject textBox;
-
+    //audio
     public GameObject JukBox;
     Jukebox jukebox;
+    //minigame bool
     public Computer computer;
-    
-    public bool StartGame;
-
-
+    //bools
+    public bool bookPickup;
+    public bool oneShot = false;
+    bool sceneOver = false;
     public SubtitleManager subtitle;
     // Start is called before the first frame update
     void Start()
@@ -31,25 +30,25 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (sceneOver && bookPickup)
+        {
+            audioSource.PlayOneShot(door, 0.7f);
+            animatorDoor.SetTrigger("Open");
+            jukebox.startMus = true;
+            computer.TheFunnyBool = true;
+        }
     }
     //Intro cutscene
     public IEnumerator IntroCutscene()
     {
-        if(TheBool == false)
+        if(oneShot == false)
         {
-            
-            TheBool = true;
-            //computer.canCompute = false;
+            oneShot = true;
             yield return new WaitForSeconds(8);
             audioSource.PlayOneShot(Dialogue, 0.7F);
             StartCoroutine(subtitle.intro());
             yield return new WaitForSeconds(53);
-            audioSource.PlayOneShot(door, 0.7f);
-            animator.SetTrigger("Open");
-            jukebox.startMus = true;
-            computer.TheFunnyBool = true;
-            
+            sceneOver = true;
         }
         
 

@@ -39296,6 +39296,7 @@ MonoBehaviour:
   PeeUI: {fileID: 1938780379}
   KitUI: {fileID: 1963583632}
   MetUI: {fileID: 600919174}
+  gameManager: {fileID: 1818565576}
   target: {fileID: 893085371}
   startSlide: 0
 --- !u!65 &817218332
@@ -47589,7 +47590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &958188745
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48607,7 +48608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &975285407
 RectTransform:
   m_ObjectHideFlags: 0
@@ -93930,13 +93931,12 @@ MonoBehaviour:
   gameActive: 0
   audioSource: {fileID: 1818565578}
   Dialogue: {fileID: 8300000, guid: cbe280c0f4f9e41488abfa0bb57f0192, type: 3}
-  animator: {fileID: 756433541}
+  animatorDoor: {fileID: 756433541}
   door: {fileID: 8300000, guid: 173f757791818af4c99b4c1532b4d044, type: 3}
-  TheBool: 0
-  textBox: {fileID: 0}
   JukBox: {fileID: 830215002}
   computer: {fileID: 2098371508}
-  StartGame: 0
+  bookPickup: 0
+  oneShot: 0
   subtitle: {fileID: 1818565579}
 --- !u!4 &1818565577
 Transform:
