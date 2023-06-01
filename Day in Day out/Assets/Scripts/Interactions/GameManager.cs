@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public bool bookPickup;
     public bool oneShot = false;
     bool sceneOver = false;
+    bool doorOneShot = true;
     public SubtitleManager subtitle;
     // Start is called before the first frame update
     void Start()
@@ -30,8 +31,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sceneOver && bookPickup)
+        if (sceneOver && bookPickup && doorOneShot)
         {
+            doorOneShot = false;
             audioSource.PlayOneShot(door, 0.7f);
             animatorDoor.SetTrigger("Open");
             jukebox.startMus = true;
